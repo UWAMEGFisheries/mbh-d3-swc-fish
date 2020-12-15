@@ -83,8 +83,10 @@ write.csv(metadata,paste(study,"metadata.csv",sep="_"),row.names = FALSE)
 ## Combine Points and Count files into maxn ----
 maxn<-ga.create.em.maxn()%>%
   dplyr::inner_join(metadata)%>%
-  dplyr::filter(successful.count=="Yes")%>%
+  #dplyr::filter(successful.count=="Yes")%>%
   dplyr::filter(maxn>0)
+
+unique(maxn$sample)
 
 # Save MaxN file ----
 setwd(staging.dir)

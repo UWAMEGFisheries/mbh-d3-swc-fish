@@ -54,10 +54,10 @@ working.dir<-dirname(rstudioapi::getActiveDocumentContext()$path) # sets working
 
 ## Save these directory names to use later----
 data.dir<-paste(working.dir,"Data",sep="/")
-plots.dir=paste(working.dir,"Plots",sep="/")
+plots.dir<-paste(working.dir,"Plots",sep="/")
 download.dir<-paste(data.dir,"2020-06_south-west_stereo-BRUVs",sep="/")
 
-to.be.checked.dir<-paste(data.dir,"Data to be checked",sep="/") 
+to.be.checked.dir<-paste(data.dir,"Staging",sep="/") 
 tidy.dir<-paste(data.dir,"Tidy",sep="/")
 error.dir=paste(data.dir,"Errors to check",sep="/")
 
@@ -79,6 +79,10 @@ maxn<-read_csv(paste(study,"maxn.csv",sep="_"))%>%
   select(campaignid,sample,family,genus,species,maxn)%>%
   replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
   glimpse()
+
+#select(-c(project))
+
+unique(maxn$sample)
 
 # Import length/3d file----
 length<-read_csv(file=paste(study,"length3dpoints.csv",sep = "_"),na = c("", " "))%>%

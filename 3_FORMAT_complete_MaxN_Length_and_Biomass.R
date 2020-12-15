@@ -262,6 +262,9 @@ write.csv(complete.length.number.mass, file=paste(study,"complete.mass.csv",sep 
 complete.length.number<-complete.length.number%>%
   filter(number>0)
 
+unique(complete.maxn$sample)
+
+
 # Write .fst files for shiny app ---
 write.fst(complete.maxn, "complete.maxn.fst")
 write.fst(complete.length.number,"complete.length.fst")
