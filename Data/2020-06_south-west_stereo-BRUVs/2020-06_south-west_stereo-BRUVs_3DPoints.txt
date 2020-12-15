@@ -1,0 +1,4 @@
+OpCode	ImagePtPair	FilenameLeft	FrameLeft	FilenameRight	FrameRight	Time	Period	PeriodTime	X	Y	Z	sX	sY	sZ	RMS	Range	Direction	Family	Genus	Species	Code	Number	Stage	Activity	Comment	Attribute9	Attribute10
+05	0	05_L375.avi	18043	05_R376.avi	17532	12.02867		-1.00000																	sync		
+10	0	10_L375.avi	1270	10_R376.avi	992	0.84667		-1.00000																	sync		
+13	0	13_L378.avi	2131	13_R377.avi	1424	1.42067		-1.00000																	sync		
