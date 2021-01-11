@@ -15,4 +15,4 @@ library(devtools)
 devtools::install_github('skiptoniam/ecomix')
 #install_github("twitter/AnomalyDetection")
 library(ecomix)
-library(AnomalyDetection)
+
