@@ -78,7 +78,7 @@ str(df2)
 levels(df2$sample)
 names(df2)
 
-# get habitat data --
+# get habitat data - used detailed but can use coarse --
 h <- read.csv("G:/My Drive/Anita/NESP_D3/2020-06._detailed.habitat.csv")%>%
   mutate_at(vars(sample, site, location), list(as.factor)) %>% # make these columns as factors
   mutate(sample = recode(sample,
@@ -103,6 +103,10 @@ dfh <- merge(df2 %>% select(-c(X, campaignid.x, campaignid.y, site, observer, su
   glimpse()
 
 str(dfh)
+names(dfh)
+
+dfh <- dfh %>% rename(bathy = SW_bathy.to.260m, flowdir =  SW_flowdir.to.260m, slope = SW_slope.to.260m, 
+                      Temp_mean = SSTmean_SSTARRS, Temp_sterr = SSTsterr_SSTARRS, Temp_trend = SSTtrend_SSTARRS)
 
 # Save csv of MaxN and covariates ----
 write.csv(dfh, paste(dt.dir, "2020-06_sw_maxn.meta.cov.csv", sep='/'))

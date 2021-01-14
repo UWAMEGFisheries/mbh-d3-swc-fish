@@ -32,15 +32,31 @@ r.dir <- paste(w.dir, "rasters", sep='/')
 
 
 # Load data ----
-df <- read.csv(paste(dt.dir, "2020-06_sw_maxn.metadata.csv", sep = '/'))%>%
-  mutate_at(vars(sample, family, unique.name, genus, full.name, species, status, cluster), list(as.factor)) %>% # make these columns as factors
+df <- read.csv(paste(dt.dir, "2020-06_sw_maxn.meta.cov.csv", sep = '/'))%>%
+  mutate_at(vars(sample, family, unique.name, genus, full.name, species, location, status, cluster), list(as.factor)) %>% # make these columns as factors
   glimpse()
 head(df)
 str(df)
+names(df)
 
+
+# if want to plot ----
 dfs <- df
 coordinates(dfs) <- ~longitude+latitude 
 
+# Prepare data ----
+pd <- table_to_species_data(
+  df,
+  site_id = "cluster", # use cluster? or status?
+  species_id = "full.name",
+  measurement_id = "maxn"
+)
+
+pd
+
+cd <- make_mixture_data(species_data = df$maxn,
+  covariate_data = c(mean.relief, sd.relief, depth)
+)
 
 
 
