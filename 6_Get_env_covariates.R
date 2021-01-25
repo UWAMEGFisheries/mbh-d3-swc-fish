@@ -5,7 +5,7 @@
 #library(devtools)
 #devtools::install_github('skiptoniam/ecomix')
 #install_github("twitter/AnomalyDetection")
-library(ecomix)
+#ibrary(ecomix)
 library(plyr)
 library(dplyr)
 library(stringr)
@@ -14,6 +14,8 @@ library(sp)
 library(sf)
 library(raster)
 library(rgdal)
+library(spastat)
+
 
 # clear workspace ----
 rm(list = ls())
@@ -40,23 +42,24 @@ str(df)
 dfs <- df
 coordinates(dfs) <- ~longitude+latitude 
 
-# Get bathy derivatives ----
+# Get bathy and derivatives ----
 b <- raster(paste(r.dir, "SW_bathy-to-260m.tif", sep='/'))
 plot(b)
 points(dfs)
-f <- raster(paste(r.dir, "SW_flowdir-to-260m.tif", sep='/'))
-plot(f)
-s <- raster(paste(r.dir, "SW_slope-to-260m.tif", sep='/'))
-plot(s)
+d <- stack(paste(r.dir, "SW_detrendend.derivatives-to-260m.tif", sep='/'))
+plot(d)
+names(d)
+n <- read.csv(paste(r.dir, "names.det.bath.csv", sep='/'))
+head(n)
+names(d) <- n[,2]
 
-bd <- stack(b, f, s)
-plot(bd)
 
 # Extract bathy derivatives from data points --
-dfs <- raster::extract(bd, dfs, sp = T)
+dfs <- raster::extract(b, dfs, sp = T)
 str(dfs)
 
-
+dfs <- raster::extract(d, dfs, sp = T)
+str(dfs)
 
 # Get SST covariates ----
 t1 <- raster(paste(r.dir, "SSTmean_SSTARRS.tif", sep='/'))
@@ -91,22 +94,18 @@ levels(h$sample)
 names(h)
 
 # Merge df2 with habitat data by sample --
-dfh <- merge(df2 %>% select(sample, family, unique.name, genus, full.name, species, maxn, latitude, longitude, date, time, location, status, depth,
-                            cluster, SW_bathy.to.260m, SW_flowdir.to.260m),
-             h %>% select(sample, mean.relief, sd.relief, detailed.Consolidated.Boulder),
-             by = 'sample') %>%
-  glimpse()
 
-dfh <- merge(df2 %>% select(-c(X, campaignid.x, campaignid.y, site, observer, successful.count, successful.length, deployment, notes)),
-             h %>% select(-c(latitude, longitude, date, time, site, location, successful.count, fov.Limited, fov.Open, type)),
+dfh <- merge(df2 %>% dplyr::select(-c(X, campaignid.x, campaignid.y, site, observer, successful.count, successful.length, deployment, notes)),
+             h %>% dplyr::select(-c(latitude, longitude, date, time, site, location, successful.count, fov.Limited, fov.Open, type)),
              by = 'sample') %>%
   glimpse()
 
 str(dfh)
 names(dfh)
 
-dfh <- dfh %>% rename(bathy = SW_bathy.to.260m, flowdir =  SW_flowdir.to.260m, slope = SW_slope.to.260m, 
-                      Temp_mean = SSTmean_SSTARRS, Temp_sterr = SSTsterr_SSTARRS, Temp_trend = SSTtrend_SSTARRS)
+dfh <- dfh %>% rename(bathy = SW_bathy.to.260m, slope = detr.slope, flowdir =  detr.flowdir, tri = detr.tri,
+                      tpi = detr.tpi, aspect = detr.aspect,
+                      temp_mean = SSTmean_SSTARRS, temp_sterr = SSTsterr_SSTARRS, temp_trend = SSTtrend_SSTARRS)
 
 # Save csv of MaxN and covariates ----
 write.csv(dfh, paste(dt.dir, "2020-06_sw_maxn.meta.cov.csv", sep='/'))

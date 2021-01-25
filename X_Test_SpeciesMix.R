@@ -16,6 +16,9 @@ library(raster)
 library(rgdal)
 library(reshape2)
 library(tidyr)
+library(devtools)
+
+
 
 # clear workspace ----
 rm(list = ls())
@@ -55,23 +58,30 @@ sp.to.remove <- df %>%
   dplyr::summarise_at(vars(37:75), funs(sum)) %>%
   dplyr::mutate(total.counts=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>% # get occurrence no of BRUVS at which each sp. occurred
   dplyr::ungroup() %>%
-  dplyr::arrange(total.counts) %>% # arrange asciending to see if any species found in less than 2 BRUVs
+  dplyr::arrange(total.counts) %>% # arrange ascending to see if any species found in less than 2 BRUVs
   dplyr::filter(total.counts < 2) %>%
   dplyr::select(full.name) %>%
   glimpse() # in this case, no species found in less than 2 BRUVs
 
 glimpse(sp.to.remove)
 names(sp.to.remove)
+to.remove <- sp.to.remove$full.name
+length(sp.to.remove$full.name)
 
 # Remove species from df -- UP TO HERE -----
-df2 <- droplevels(df, exclude = sp.to.remove$full.name)
-str(df2)
+df2 <- df %>% dplyr::filter(!full.name %in% to.remove) # remove rare sp
+df2 %>% count(full.name)
+df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
 
+df2 <- droplevels(df2)
+str(df2)  # 471 obs
+
+names(df2)
 
 # 3. Make covariates in long formate using reshape2 package --
-dfl <- melt(df,
-            id.vars = names(df)[c(3:15, 17)],
-            measure.vars = names(df)[c(16, 18:38)],
+dfl <- melt(df2,
+            id.vars = names(df)[c(2:14, 16)],
+            measure.vars = names(df)[c(15, 17:41)],
             variable.name = "covariate",
             value.name = "value"
 )
@@ -102,8 +112,6 @@ cd <- table_to_species_data(
 cd
 class(cd)
 
-cd <- make_mixture_data(species_data = pd,
-  covariate_data = df[,c(18:38)])
 
 # 6. Make matrix of species and covariates ----
 dd <- make_mixture_data(species_data = pd,
@@ -115,11 +123,11 @@ dd # I think this is what I need to use for the models
 # this works but need to figure out what is should be the archetype formula ----
 
 test_model <- species_mix(
-  archetype_formula = pd~1+depth+flowdir+slope+Temp_mean+sd.relief,
+  archetype_formula = pd~1+depth+slope,
   species_formula = stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 3,
+  nArchetypes = 4,
   family = "negative.binomial",
   offset = NULL,
   weights = NULL,
@@ -132,7 +140,38 @@ test_model <- species_mix(
   titbits = TRUE
 )
 
-summary(test_model)# this is not working
+summary.species_mix(test_model, digits = 4)# this is not working
 print(test_model)
+coef(test_model)
+class(test_model)
 
 BIC(test_model) # this gives a valie of BIC
+
+sp.boot <- species_mix.bootstrap(
+  test_model,
+  nboot = 100,
+  type = "BayesBoot",
+  mc.cores = 2,
+  quiet = FALSE
+)
+
+sp.var <- vcov(
+  test_model,
+  sp.boot = NULL,
+  method = "BayesBoot",
+  nboot = 10,
+  mc.cores = 2
+)
+
+controls <- as.list(c(1,2,3))
+class(controls)
+
+test2 <- species_mix.fit(
+  y = pd,
+  X = cd,
+  W = NULL,
+  G = 6,
+  S = NULL,
+  disty = 'negative.binomial',
+  control = controls
+)
