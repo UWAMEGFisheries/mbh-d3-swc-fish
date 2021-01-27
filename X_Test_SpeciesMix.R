@@ -129,22 +129,22 @@ test_model <- species_mix(
   data=dd,
   nArchetypes = 4,
   family = "negative.binomial",
-  offset = NULL,
-  weights = NULL,
-  bb_weights = NULL,
-  size = NULL,
-  power = 1.6,
-  control = list(),
-  inits = NULL,
-  standardise = FALSE,
-  titbits = TRUE
+  #offset = NULL,
+  #weights = NULL,
+  #bb_weights = NULL,
+  #size = NULL, # for presence absence - benthic point data
+  #power = NULL, # for tweedie : eg. biomass data
+  control = list(), # for tuning the model if needed
+  #inits = NULL, # if you have fitted the model previously: use the same values
+  #standardise = FALSE, # has been removed in new update it scales
+  #titbits = TRUE # could turn this off
 )
 
 summary.species_mix(test_model, digits = 4)# this is not working
 print(test_model)
 coef(test_model)
 class(test_model)
-
+test_model$taus
 BIC(test_model) # this gives a valie of BIC
 
 sp.boot <- species_mix.bootstrap(
