@@ -1,0 +1,318 @@
+"campaignid","dataset","sample","latitude","longitude","date","time","location","status","site","depth","observer","successful.count","successful.length"
+"2020-06_south-west_stereo-BRUVs",NA,"1","-34.128599","114.930865","20200602","9:10","South-west","No-take",NA,"46.7","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"2","-34.125316","114.928838","20200602","9:18","South-west","No-take",NA,"44.4","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"3","-34.126906","114.925945","20200602","9:27","South-west","No-take",NA,"39.3","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"4","-34.122634","114.920337","20200602","9:44","South-west","No-take",NA,"44.1","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"5","-34.131497","114.915753","20200602","9:57","South-west","No-take",NA,"44.1","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"6","-34.132842","114.912405","20200602","10:06","South-west","No-take",NA,"43.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"7","-34.134771","114.910241","20200602","10:16","South-west","No-take",NA,"43.9","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"8","-34.129352","114.911755","20200602","13:48","South-west","No-take",NA,"39.6","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"9","-34.119541","114.916105","20200602","11:45","South-west","No-take",NA,"43.8","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"10","-34.117294","114.918685","20200602","11:51","South-west","No-take",NA,"45.7","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"11","-34.117752","114.92306","20200602","13:55","South-west","No-take",NA,"45.08","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"12","-34.132262","114.928545","20200602","12:03","South-west","No-take",NA,"40.1","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"13","-34.128506","114.930547","20200602","12:09","South-west","No-take",NA,"45.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"14","-34.128381","114.925457","20200602","12:16","South-west","No-take",NA,"35","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"15","-34.125012","114.91032","20200602","14:09","South-west","No-take",NA,"43","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"16","-34.126181","114.906548","20200602","14:14","South-west","No-take",NA,"40.9","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"17","-34.132142","114.92083","20200602","14:20","South-west","No-take",NA,"40.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"18","-34.128679","114.924078","20200602","14:25","South-west","No-take",NA,"35.8","Hayley","Yes","18 left converted wrong. Check BU to convert again"
+"2020-06_south-west_stereo-BRUVs",NA,"19","-34.122542","114.927818","20200602","14:30","South-west","No-take",NA,"44.9",NA,NA,"No"
+"2020-06_south-west_stereo-BRUVs",NA,"20","-34.130219","114.820233","20200603","8:16","South-west","No-take",NA,"51.7","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"21","-34.128151","114.817448","20200603","8:24","South-west","No-take",NA,"52.4","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"22","-34.126271","114.819552","20200603","8:32","South-west","No-take",NA,"51.9","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"23","-34.124217","114.817017","20200603","8:38","South-west","No-take",NA,"51.3","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"24","-34.118739","114.826402","20200603","8:47","South-west","No-take",NA,"49.8","Hayey","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"25","-34.116829","114.828432","20200603","8:54","South-west","No-take",NA,"48.4","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"26","-34.120881","114.828907","20200603","9:02","South-west","No-take",NA,"48.4","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"27","-34.121824","114.832898","20200603","10:19","South-west","No-take",NA,"47.8","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"28","-34.112916","114.852137","20200603","10:27","South-west","No-take",NA,"44.7","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"29","-34.111084","114.855648","20200603","10:31","South-west","No-take",NA,"43","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"30","-34.112094","114.85946","20200603","10:37","South-west","No-take",NA,"42.9","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"31","-34.116007","114.860738","20200603","10:42","South-west","No-take",NA,"44.4","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"32","-34.130076","114.86109","20200603","10:49","South-west","No-take",NA,"43.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"33","-34.133067","114.8627","20200603","10:54","South-west","No-take",NA,"43.6","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"34","-34.131334","114.866053","20200603","12:18","South-west","No-take",NA,"42.7","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"35","-34.134801","114.869348","20200603","12:23","South-west","No-take",NA,"43.8","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"36","-34.130484","114.878263","20200603","12:29","South-west","No-take",NA,"42.2","Hayey","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"37","-34.126354","114.878937","20200603","12:34","South-west","No-take",NA,"41.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"38","-34.127912","114.883938","20200603","12:39","South-west","No-take",NA,"41.8","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"39","-34.132294","114.884797","20200603","12:42","South-west","No-take",NA,"42.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"40","-34.133669","114.880443","20200603","12:46","South-west","No-take",NA,"41.2","Hayley","Yes",NA
+"2020-06_south-west_stereo-BRUVs",NA,"08 - failed","-34.129336","114.911822","20200602","11:36","South-west","No-take",NA,"41.7",NA,"No","No"
+"2020-06_south-west_stereo-BRUVs",NA,"11 - failed","-34.117769","114.923158","20200602","11:55","South-west","No-take",NA,"46.7",NA,"No","No"
+"2020-10_south-west_stereo-BRUVs","FH","FH102","-33.68868897","114.9288721","20201017","06:42:00",NA,NA,NA,"44.1","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FHA","-33.683135","114.937827","20201017","06:55:00",NA,NA,NA,"44.6","Daphne","Yes","if maxn is unmeasurable do some at a different time? 3D point even though too far away?"
+"2020-10_south-west_stereo-BRUVs","FH","FHB","-33.681655","114.957127","20201017","07:02:00",NA,NA,NA,"41.3","Daphne","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FHD","-33.686897","114.958507","20201017","07:12:00",NA,NA,NA,"39.5","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FHE","-33.687267","114.951172","20201017","07:16:00",NA,NA,NA,"42.3","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH31","-33.67368897","114.8238721","20201012","08:27:00",NA,NA,NA,"45.4","Daphne","Yes","pullers - maxN isn't in both frames, use other points?"
+"2020-10_south-west_stereo-BRUVs","FH","FH5","-33.69368897","114.9413721","20201017","08:46:00",NA,NA,NA,"44.5","Daphne","Yes","sweep - if can't get measurement change # or 3D point?"
+"2020-10_south-west_stereo-BRUVs","FH","FH108","-33.76118897","114.9238721","20201017","09:32:00",NA,NA,NA,"44.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH6","-33.70618897","114.8213721","20201012","10:50:00",NA,NA,NA,"46","Daphne","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH95","-33.75868897","114.8913721","20201017","11:07:00",NA,NA,NA,"46.8","Daphne","Yes","sp1 - if maxn is unmeasurable do some at a different time? 3D point even though too far away?"
+"2020-10_south-west_stereo-BRUVs","IO","IO272","-34.00868897","114.8138721","20201019","06:56:00",NA,NA,NA,"49.2",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH44","-33.77118897","114.8638721","20201017","11:28:00",NA,NA,NA,"43.3","Daphne","Yes","pullers/sp1 - too blurry, change #? what if too far away?"
+"2020-10_south-west_stereo-BRUVs","FH","FH20","-33.78618897","114.8738721","20201017","11:40:00",NA,NA,NA,"43.1","Daphne","Yes","check stingray measurement is ok"
+"2020-10_south-west_stereo-BRUVs","FH","FH7","-33.78368897","114.8788721","20201017","11:45:00",NA,NA,NA,"45","Daphne","Yes","sweep - if can't get measurement change # or 3D point?"
+"2020-10_south-west_stereo-BRUVs","FH","FH34","-33.78618897","114.8838721","20201017","11:51:00",NA,NA,NA,"44.8","Daphne","Yes","3D point or change number?"
+"2020-10_south-west_stereo-BRUVs","FH","FH18","-33.79118897","114.8213721","20201012","13:19:00",NA,NA,NA,"43.5","Daphne","Yes","pullers - if can't get measurement change # or 3D point?"
+"2020-10_south-west_stereo-BRUVs","FH","FH26","-33.81118897","114.8288721","20201012","15:10:00",NA,NA,NA,"44.1","Daphne","Yes","check calibration"
+"2020-10_south-west_stereo-BRUVs","FH","FH27","-33.83618897","114.8713721","20201012","15:39:00",NA,NA,NA,"42.9","Daphne","Yes","3D point even if they are too far away?"
+"2020-10_south-west_stereo-BRUVs","IO","IO333","-34.11301667","114.7251333","20201022","10:01:00",NA,NA,NA,"127","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO332","-34.09718333","114.7344833","20201022","10:33:00",NA,NA,NA,"124","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO319","-34.09368897","114.7313721","20201022","10:37:00",NA,NA,NA,"124","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO337","-34.00536667","114.8202333","20201019","07:02:00",NA,NA,NA,"43","Daphne","Yes","coming back with fresh brain"
+"2020-10_south-west_stereo-BRUVs","IO","IORedo344","-34.0844","114.6744","20201123","07:12",NA,NA,NA,"138","Daphne - finishes at 59:27","Yes","CALs shit, come back"
+"2020-10_south-west_stereo-BRUVs","IO","IO269","-33.98868897","114.8138721","20201019","07:18:00",NA,NA,NA,"47.6","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO300","-34.08618897","114.6688721","20201123","07:18",NA,NA,NA,"138","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO58","-34.13618897","114.7738721","20201022","07:21:00",NA,NA,NA,"92.7","Brooke Gibbons","Yes","CALs shit, come back"
+"2020-10_south-west_stereo-BRUVs","IO","IO343","-34.10261667","114.6407167","20201123","07:38",NA,NA,NA,"140","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO62","-34.13368897","114.7663721","20201022","07:45:00",NA,NA,NA,"105","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO282","-34.14618897","114.5438721","20201029","07:20:00",NA,NA,NA,"146",NA,"No","No"
+"2020-10_south-west_stereo-BRUVs","IO","IO278","-34.11118897","114.6388721","20201123","07:45",NA,NA,NA,"140","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO277","-34.10618897","114.6463721","20201123","07:53",NA,NA,NA,"139","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO110","-34.14118897","114.7288721","20201022","08:00:00",NA,NA,NA,"128","Brooke Gibbons","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO98","-34.13368897","114.7313721","20201022","08:13:00",NA,NA,NA,"128","Daphne","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO95","-34.12618897","114.7338721","20201022","08:21:00",NA,NA,NA,"124","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO264","-34.01868897","114.8738721","20201019","09:31:00",NA,NA,NA,"42","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO339","-34.01461667","114.8785","20201019","09:41:00",NA,NA,NA,"41.1","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO352","-34.03618897","114.5988721","20201123","09:43",NA,NA,NA,"133","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO323","-34.03103333","114.6001","20201123","09:48",NA,NA,NA,"141","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO263","-34.00868897","114.8788721","20201019","09:52:00",NA,NA,NA,"42.4","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO307","-34.11868897","114.7263721","20201022","09:56:00",NA,NA,NA,"128","Daphne - finishes at 59:36","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO350","-34.02618897","114.6038721","20201123","09:56",NA,NA,NA,"135","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO369","-34.02868897","114.5913721","20201123","10:08",NA,NA,NA,"133","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO37","-34.10868897","114.7188721","20201022","10:12:00",NA,NA,NA,"130","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO351","-34.03118897","114.5963721","20201123","10:13",NA,NA,NA,"142","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO40","-34.10368897","114.7138721","20201022","10:17:00",NA,NA,NA,"131","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IOCP2311","-34.01858","114.601465","20201123","10:19",NA,NA,NA,"142","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH37","-33.71118897","114.8138721","20201012","11:03:00",NA,NA,NA,"44.2","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO338","-33.97231667","114.92245","20201019","11:50:00",NA,NA,NA,"46","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO253","-34.01368897","114.7038721","20201123","12:15",NA,NA,NA,"124","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO364","-34.00868897","114.6888721","20201123","12:21",NA,NA,NA,"130","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO180","-33.99618897","114.7038721","20201123","12:36",NA,NA,NA,"122","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IOCP11-1","-33.992845","114.696642","20201123","12:39",NA,NA,NA,"124","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IOCP11-2","-33.974332","114.692773","20201123","12:47",NA,NA,NA,"124","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO164","-34.03368897","114.9038721","20201016","07:14:00",NA,NA,NA,"44.1","Hayley","Yes","check calibration"
+"2020-10_south-west_stereo-BRUVs","IO","IO184","-34.04118897","114.9038721","20201016","07:19:00",NA,NA,NA,"45.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO165","-34.04368897","114.8988721","20201016","07:23:00",NA,NA,NA,"42.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO374","-33.98618897","114.7463721","20201015","07:31:00",NA,NA,NA,"72.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO361","-33.98868897","114.7413721","20201015","07:35:00",NA,NA,NA,"84.7","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO155","-34.04368897","114.8838721","20201016","07:42:00",NA,NA,NA,"41.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO325","-33.991557","114.743378","20201015","07:44:00",NA,NA,NA,"85","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IOC06","-34.048689","114.876372","20201016","07:48:00",NA,NA,NA,"41.5","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO266","-34.02118897","114.7588721","20201015","08:06:00",NA,NA,NA,"67.3","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO327","-34.02946667","114.7623833","20201015","08:17:00",NA,NA,NA,"65.4","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO210","-34.09118897","114.8738721","20201016","10:09:00",NA,NA,NA,"43.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO17","-34.06368897","114.8763721","20201016","08:07:00",NA,NA,NA,"41.1",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO334","-34.06155","114.7753667","20201015","10:11:00",NA,NA,NA,"64","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO267","-34.02618897","114.7638721","20201015","08:11:00",NA,NA,NA,"62.5",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO312","-34.05868897","114.7788721","20201015","10:17:00",NA,NA,NA,"61.2","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO81","-34.09868897","114.8913721","20201016","10:20:00",NA,NA,NA,"42","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO158","-33.98118897","114.8188721","20201013","10:21:00",NA,NA,NA,"44.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO207","-34.06118897","114.7863721","20201015","10:23:00",NA,NA,NA,"60.4","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO145","-33.98618897","114.8238721","20201013","10:24:00",NA,NA,NA,"45.5","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO91","-34.09368897","114.8938721","20201016","10:25:00",NA,NA,NA,"43.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO80","-34.09368897","114.8888721","20201016","10:30:00",NA,NA,NA,"41.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO335","-34.06686667","114.7939833","20201015","10:31:00",NA,NA,NA,"58","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO204","-34.06618897","114.7863721","20201015","10:35:00",NA,NA,NA,"61.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO3","-34.07618897","114.7838721","20201015","12:03:00",NA,NA,NA,"62","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH32","-33.69618897","114.9463721","20201017","08:50:00",NA,NA,NA,"42.9",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO254","-34.01868897","114.6963721","20201029","08:51:00",NA,NA,NA,"129",NA,"No","No"
+"2020-10_south-west_stereo-BRUVs","IO","IO239","-34.09118897","114.9313721","20201016","12:05:00",NA,NA,NA,"45.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH36","-33.69868897","114.9338721","20201017","08:59:00",NA,NA,NA,"44.4",NA,"No","No"
+"2020-10_south-west_stereo-BRUVs","IO","IO1","-34.07868897","114.7788721","20201015","12:07:00",NA,NA,NA,"64.6","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO357","-34.08496667","114.928","20201016","12:08:00",NA,NA,NA,"45.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO237","-34.08118897","114.9363721","20201016","12:15:00",NA,NA,NA,"43.2","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH54","-33.76618897","114.9388721","20201017","09:20:00",NA,NA,NA,"43.2",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO73","-34.02868897","114.8588721","20201019","09:22:00",NA,NA,NA,"40.4","Ramesh","Yes","No"
+"2020-10_south-west_stereo-BRUVs","IO","IO4","-34.09118897","114.7813721","20201015","12:17:00",NA,NA,NA,"65.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO152","-33.98118897","114.8688721","20201013","12:18:00",NA,NA,NA,"41.2","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO218","-34.07368897","114.9213721","20201016","12:28:00",NA,NA,NA,"46.8","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO344","-34.0844","114.6744","20201023","09:28:00",NA,NA,NA,"138",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO215","-34.06868897","114.9263721","20201016","12:34:00",NA,NA,NA,"46.7","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO125","-34.10868897","114.8263721","20201015","12:38:00",NA,NA,NA,"55.8","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO123","-34.10618897","114.8188721","20201015","12:42:00",NA,NA,NA,"49.1","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO132","-33.99118897","114.8713721","20201013","12:47:00",NA,NA,NA,"42.6","Hayley","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO225","-34.07118897","114.8338721","20201015","14:20:00",NA,NA,NA,"44.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO223","-34.07118897","114.8463721","20201015","14:25:00",NA,NA,NA,"42.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO16","-34.07368897","114.8688721","20201016","09:43:00",NA,NA,NA,"41.4",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO224","-34.06118897","114.8388721","20201015","14:35:00",NA,NA,NA,"43.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO353","-34.05436667","114.8390667","20201015","14:43:00",NA,NA,NA,"44.1","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO201","-34.05618897","114.8338721","20201015","14:46:00",NA,NA,NA,"45.3","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO222","-34.06618897","114.8313721","20201015","14:54:00",NA,NA,NA,"45","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH25","-33.87868897","114.8163721","20201013","07:34:00",NA,NA,NA,"45.4","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH42","-33.88118897","114.8113721","20201013","07:38:00",NA,NA,NA,"45.7","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH58","-33.66368897","114.8413721","20201012","07:47:00",NA,NA,NA,"45.1","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH9","-33.90118897","114.8513721","20201013","07:58:00",NA,NA,NA,"43.6","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH41","-33.67118897","114.8388721","20201012","08:01:00",NA,NA,NA,"44.1","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH16","-33.90118897","114.8563721","20201013","08:02:00",NA,NA,NA,"43.1","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH51","-33.90618897","114.8538721","20201013","08:06:00",NA,NA,NA,"43","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH70","-33.67368897","114.8463721","20201012","08:07:00",NA,NA,NA,"48.6","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH47","-33.90618897","114.8488721","20201013","08:09:00",NA,NA,NA,"43.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH63","-33.67868897","114.8163721","20201012","08:20:00",NA,NA,NA,"46.3","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH59","-33.66868897","114.8188721","20201012","08:32:00",NA,NA,NA,"44.6","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO336","-34.0924","114.8663667","20201016","10:03:00",NA,NA,NA,"43.2",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FHCO3","-33.948622","114.819555","20201013","09:56:00",NA,NA,NA,"44.5","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH68","-33.95118897","114.8288721","20201013","10:01:00",NA,NA,NA,"44.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH99","-33.95368897","114.8363721","20201013","10:04:00",NA,NA,NA,"43.5","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH89","-33.68618897","114.8013721","20201012","10:34:00",NA,NA,NA,"45.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH45","-33.69368897","114.7988721","20201012","10:39:00",NA,NA,NA,"47.6","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH69","-33.69618897","114.8038721","20201012","10:43:00",NA,NA,NA,"46.9","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH65","-33.71368897","114.8188721","20201012","10:59:00",NA,NA,NA,"45.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH10","-33.98618897","114.8863721","20201013","12:32:00",NA,NA,NA,"42.9","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH52","-33.99118897","114.8888721","20201013","12:36:00",NA,NA,NA,"42.1","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH74","-33.73118897","114.8063721","20201012","12:47:00",NA,NA,NA,"44.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH57","-33.78868897","114.8113721","20201012","13:12:00",NA,NA,NA,"45.8","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH106","-33.78868897","114.8163721","20201012","13:16:00",NA,NA,NA,"47.1","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO157","-33.97118897","114.8238721","20201013","10:14:00",NA,NA,NA,"45.6",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH48","-33.79618897","114.8138721","20201012","13:23:00",NA,NA,NA,"48.5","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH60","-33.81618897","114.8213721","20201012","15:14:00",NA,NA,NA,"44.5","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH96","-33.81868897","114.8338721","20201012","15:20:00",NA,NA,NA,"44.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH56","-33.83118897","114.8663721","20201012","15:31:00",NA,NA,NA,"43.5","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH61","-33.84118897","114.8638721","20201012","15:43:00",NA,NA,NA,"43.9","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO241","-33.99368897","114.7913721","20201019","06:26:00",NA,NA,NA,"50.6","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO229","-33.99368897","114.7863721","20201019","06:31:00",NA,NA,NA,"53","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO227","-33.99868897","114.7838721","20201019","06:37:00",NA,NA,NA,"52.9","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO72","-34.03618897","114.8463721","20201019","09:05:00",NA,NA,NA,"43.6","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO262","-34.01368897","114.8738721","20201019","09:46:00",NA,NA,NA,"41.9","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO65","-34.01118897","114.8888721","20201019","11:20:00",NA,NA,NA,"43","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO64","-34.01368897","114.8963721","20201019","11:26:00",NA,NA,NA,"43.3","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO245","-34.00868897","114.9013721","20201019","11:30:00",NA,NA,NA,"42.3","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO261","-33.97618897","114.9213721","20201019","11:46:00",NA,NA,NA,"46.9","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO258","-33.96618897","114.9138721","20201019","12:05:00",NA,NA,NA,"45.2","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO206","-34.06368897","114.7913721","20201015","10:28:00",NA,NA,NA,"58.2",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO46","-34.06868897","114.7113721","20201023","06:44:00",NA,NA,NA,"129","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO47","-34.06368897","114.7113721","20201023","06:53:00",NA,NA,NA,"127","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO290","-34.06868897","114.7188721","20201023","07:07:00",NA,NA,NA,"124","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO302","-34.07118897","114.7238721","20201023","07:13:00",NA,NA,NA,"122","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO113","-34.05868897","114.7388721","20201023","07:30:00",NA,NA,NA,"111","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO115","-34.05368897","114.7363721","20201023","07:34:00",NA,NA,NA,"112","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO280","-34.08868897","114.6738721","20201023","09:24:00",NA,NA,NA,"139","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO105","-34.06368897","114.6688721","20201023","09:45:00",NA,NA,NA,"139","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO107","-34.06368897","114.6763721","20201023","09:50:00",NA,NA,NA,"137","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO108","-34.05118897","114.6688721","20201023","10:04:00",NA,NA,NA,"138","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO101","-34.07868897","114.8963721","20201029","10:10:00",NA,NA,NA,"43.5","Rachel","Yes","come back with different CAL"
+"2020-10_south-west_stereo-BRUVs","IO","IO102","-34.07118897","114.9113721","20201029","10:26:00",NA,NA,NA,"45.2","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO216","-34.06118897","114.9163721","20201029","10:33:00",NA,NA,NA,"47.5","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO355","-34.05473333","114.9111","20201029","10:38:00",NA,NA,NA,"45","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO211","-34.05618897","114.9063721","20201029","10:42:00",NA,NA,NA,"43.5","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IOC05","-34.05394","114.899843","20201029","10:46:00",NA,NA,NA,"43.2","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH33","-33.70868897","114.8263721","20201012","10:54:00",NA,NA,NA,"42.3",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO378","-33.99368897","114.6388721","20201023","12:04:00",NA,NA,NA,"141","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO370","-33.99618897","114.6463721","20201023","12:10:00",NA,NA,NA,"141","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO297","-34.10618897","114.7488721","20201022","12:21:00",NA,NA,NA,"114","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO295","-34.10368897","114.7538721","20201022","12:25:00",NA,NA,NA,"109","Rachel","Yes","Yes but check cal, accepted errors"
+"2020-10_south-west_stereo-BRUVs","IO","IO192","-33.98618897","114.6688721","20201023","12:36:00",NA,NA,NA,"138","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH62","-33.75618897","114.8813721","20201017","11:17:00",NA,NA,NA,"45.1",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH87","-33.92868897","114.8938721","20201029","12:36:00",NA,NA,NA,"43.8","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH14","-33.76618897","114.8713721","20201017","11:24:00",NA,NA,NA,"44.4",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH12","-33.91868897","114.8963721","20201029","12:46:00",NA,NA,NA,"46.1","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH55","-33.92368897","114.9088721","20201029","12:52:00",NA,NA,NA,"44.9","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO293","-34.08868897","114.7588721","20201022","12:55:00",NA,NA,NA,"111","Claude","Yes","leave til last"
+"2020-10_south-west_stereo-BRUVs","IO","IO330","-34.08833333","114.7545","20201022","13:00:00",NA,NA,NA,"116","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH109","-33.91618897","114.9088721","20201029","13:04:00",NA,NA,NA,"45.9","Rachel","Yes","CAL not so good"
+"2020-10_south-west_stereo-BRUVs","IO","IO291","-34.08368897","114.7488721","20201022","13:09:00",NA,NA,NA,"109","Rachel","Yes","Claude"
+"2020-10_south-west_stereo-BRUVs","IO","IOC04","-34.08755","114.749265","20201022","13:16:00",NA,NA,NA,"109","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH94","-33.90868897","114.9413721","20201029","14:36:00",NA,NA,NA,"41.9","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH11","-33.89868897","114.9388721","20201029","14:48:00",NA,NA,NA,"42.3","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH78","-33.89118897","114.9163721","20201029","14:56:00",NA,NA,NA,"45.8","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO372","-34.00618897","114.6438721","20201023","11:53:00",NA,NA,NA,"140",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH67","-33.88868897","114.9238721","20201029","15:00:00",NA,NA,NA,"46.1","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH72","-33.88868897","114.9288721","20201029","15:06:00",NA,NA,NA,"44.1","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH35","-33.88368897","114.9313721","20201029","15:09:00",NA,NA,NA,"45.2","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH82","-33.68618897","114.9238721","20201017","06:46:00",NA,NA,NA,"44.8","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO228","-34.00368897","114.7938721","20201019","06:46:00",NA,NA,NA,"50.4","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH50","-33.68118897","114.9313721","20201017","06:51:00",NA,NA,NA,"44.6","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO379","-34.08368897","114.6813721","20201123","06:58",NA,NA,NA,"138","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO49","-34.06118897","114.7063721","20201023","06:59:00",NA,NA,NA,"129","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FHC","-33.680718","114.965092","20201017","07:07:00",NA,NA,NA,"36.2","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO273","-33.99868897","114.8213721","20201019","07:07:00",NA,NA,NA,"44.9","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO328","-33.99356667","114.8213667","20201019","07:13:00",NA,NA,NA,"43.8","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO329","-34.06481667","114.7266333","20201023","07:18:00",NA,NA,NA,"121","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO117","-34.06368897","114.7388721","20201023","07:25:00",NA,NA,NA,"115","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO363","-33.98618897","114.7513721","20201015","07:26:00",NA,NA,NA,"66.2","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH71","-33.88368897","114.8188721","20201013","07:30:00",NA,NA,NA,"45.3","Daphne","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO59","-34.14118897","114.7663721","20201022","07:33:00",NA,NA,NA,"109","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO276","-34.10118897","114.6363721","20201123","07:34",NA,NA,NA,"140","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO153","-34.04618897","114.8888721","20201016","07:36:00",NA,NA,NA,"42.6","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO377","-34.13868897","114.7588721","20201022","07:40:00",NA,NA,NA,"113","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH79","-33.88618897","114.8088721","20201013","07:43:00",NA,NA,NA,"44.9","Daphne","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH24","-33.66868897","114.8438721","20201012","07:55:00",NA,NA,NA,"47.6","Daphne - THIS NEEDS TO BE ANALYSED AGAIN AS 42 WAS ANALYSED TWICE NOT 24!!!!!!",NA,NA
+"2020-10_south-west_stereo-BRUVs","IO","IO130","-33.98118897","114.8763721","20201013","12:24:00",NA,NA,NA,"41.1",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO15","-34.06118897","114.8663721","20201016","07:59:00",NA,NA,NA,"40.8","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO34","-34.06118897","114.8713721","20201016","08:02:00",NA,NA,NA,"41.3","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO326","-34.00425","114.6892833","20201123","12:26",NA,NA,NA,"121",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO96","-34.13618897","114.7363721","20201022","08:06:00",NA,NA,NA,"127","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH83","-33.91118897","114.8463721","20201013","08:13:00",NA,NA,NA,"40.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO365","-34.02368897","114.7538721","20201015","08:23:00",NA,NA,NA,"73.7","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FHCO1","-33.669869","114.809825","20201012","08:38:00",NA,NA,NA,"44.8","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO189","-33.98868897","114.6638721","20201023","12:31:00",NA,NA,NA,"139",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH64","-33.70118897","114.9388721","20201017","08:56:00",NA,NA,NA,"44.2","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO75","-34.03368897","114.8538721","20201019","09:10:00",NA,NA,NA,"42.2","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO74","-34.02868897","114.8513721","20201019","09:14:00",NA,NA,NA,"42.2","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH28","-33.76368897","114.9338721","20201017","09:24:00",NA,NA,NA,"44.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH46","-33.76618897","114.9288721","20201017","09:28:00",NA,NA,NA,"44.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO299","-34.08118897","114.6763721","20201023","09:32:00",NA,NA,NA,"139","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO66","-34.01618897","114.8813721","20201019","09:36:00",NA,NA,NA,"42.8","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO298","-34.07618897","114.6713721","20201023","09:39:00",NA,NA,NA,"138","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH23","-33.94618897","114.8288721","20201013","09:51:00",NA,NA,NA,"44.2","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO199","-34.08618897","114.8613721","20201016","09:51:00",NA,NA,NA,"42.1","Claude","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO195","-34.09368897","114.8588721","20201016","09:57:00",NA,NA,NA,"43.4","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO109","-34.05618897","114.6738721","20201023","09:57:00",NA,NA,NA,"138","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH40","-33.92368897","114.8888721","20201029","12:40:00",NA,NA,NA,"42.9",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","FH","FH113","-33.72368897","114.7963721","20201012","12:41:00",NA,NA,NA,"45",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO311","-34.05618897","114.7688721","20201015","10:03:00",NA,NA,NA,"66.1","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH77","-33.99618897","114.8763721","20201013","12:42:00",NA,NA,NA,"42",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO349","-34.02368897","114.5963721","20201123","10:03",NA,NA,NA,"133","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH2","-33.91868897","114.8913721","20201029","12:43:00",NA,NA,NA,"43.9",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO310","-34.05868897","114.7738721","20201015","10:06:00",NA,NA,NA,"64.7","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO308","-34.11118897","114.7288721","20201022","10:06:00",NA,NA,NA,"126","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO92","-34.09868897","114.8863721","20201016","10:16:00",NA,NA,NA,"42.3","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO146","-33.97618897","114.8213721","20201013","10:17:00",NA,NA,NA,"45.7","Claude","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO119","-34.07618897","114.9038721","20201029","10:17:00",NA,NA,NA,"43.8","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO235","-34.06618897","114.9138721","20201016","12:49:00",NA,NA,NA,"46.5",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO100","-34.07618897","114.9088721","20201029","10:21:00",NA,NA,NA,"43.6","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO36","-34.10368897","114.7188721","20201022","10:23:00",NA,NA,NA,"130","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO147","-33.98118897","114.8313721","20201013","10:28:00",NA,NA,NA,"44","Claude","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH15","-33.68868897","114.8063721","20201012","10:29:00",NA,NA,NA,"48","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO306","-34.10118897","114.7338721","20201022","10:29:00",NA,NA,NA,"124","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO148","-34.01118897","114.5963721","20201123","10:31",NA,NA,NA,"140","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH30","-33.75118897","114.8888721","20201017","11:12:00",NA,NA,NA,"46.2","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FHCO2","-33.72358","114.813293","20201012","11:13:00",NA,NA,NA,"42","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH93","-33.77618897","114.8688721","20201017","11:33:00",NA,NA,NA,"43.3","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO244","-34.00368897","114.9063721","20201019","11:35:00",NA,NA,NA,"44.7","Ramesh","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO260","-33.97118897","114.9163721","20201019","11:55:00",NA,NA,NA,"46.3","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO324","-34.00006","114.639778","20201023","11:59:00",NA,NA,NA,"141","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO259","-33.96868897","114.9213721","20201019","12:00:00",NA,NA,NA,"46.8","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO254","-34.01868897","114.6963721","20201123","12:10",NA,NA,NA,"119","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO5","-34.08868897","114.7763721","20201015","12:12:00",NA,NA,NA,"66.7","Claude","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO134","-33.98368897","114.8613721","20201013","12:14:00",NA,NA,NA,"41.2","Claude","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","IO","IO191","-33.99868897","114.6713721","20201023","12:20:00",NA,NA,NA,"137","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO236","-34.08118897","114.9238721","20201016","12:22:00",NA,NA,NA,"46.8","Hayley","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO194","-33.99618897","114.6638721","20201023","12:24:00",NA,NA,NA,"139","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH111","-33.98618897","114.8788721","20201013","12:28:00",NA,NA,NA,"41.4","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO331","-34.0984","114.75005","20201022","12:30:00",NA,NA,NA,"112","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO126","-34.11368897","114.8188721","20201015","12:31:00",NA,NA,NA,"58.2","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO275","-34.09868897","114.6463721","20201123","14:38",NA,NA,NA,"140",NA,NA,"No"
+"2020-10_south-west_stereo-BRUVs","IO","IO71","-34.00368897","114.6988721","20201123","12:31",NA,NA,NA,"121","Rachel","Yes","Yes"
+"2020-10_south-west_stereo-BRUVs","FH","FH8","-33.72368897","114.8013721","20201012","12:34:00",NA,NA,NA,"43.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO122","-34.11618897","114.8263721","20201015","12:35:00",NA,NA,NA,"57.4","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO356","-34.06956667","114.9184667","20201016","12:39:00",NA,NA,NA,"46.8","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO217","-34.06618897","114.9188721","20201016","12:43:00",NA,NA,NA,"47.1","Claude","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO313","-34.09618897","114.7563721","20201022","12:47:00",NA,NA,NA,"108","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO133","-33.99118897","114.8663721","20201013","12:50:00",NA,NA,NA,"40.8","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH84","-33.73368897","114.7988721","20201012","12:50:00",NA,NA,NA,"45.6","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH85","-33.92618897","114.9138721","20201029","12:55:00",NA,NA,NA,"44.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH49","-33.92118897","114.9163721","20201029","13:00:00",NA,NA,NA,"43.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO294","-34.08368897","114.7538721","20201022","13:04:00",NA,NA,NA,"114","Rachel","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH21","-33.79368897","114.8088721","20201012","13:26:00",NA,NA,NA,"45","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO354","-34.06605","114.84","20201015","14:29:00",NA,NA,NA,"45","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO226","-34.06368897","114.8438721","20201015","14:32:00",NA,NA,NA,"42.8","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","IO","IO220","-34.05618897","114.8438721","20201015","14:39:00",NA,NA,NA,"43.7","Brooke Gibbons","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH66","-33.90618897","114.9363721","20201029","14:40:00",NA,NA,NA,"41.8","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH39","-33.90368897","114.9313721","20201029","14:44:00",NA,NA,NA,"44.8","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH110","-33.80868897","114.8213721","20201012","15:06:00",NA,NA,NA,"44.7","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH17","-33.83368897","114.8763721","20201012","15:35:00",NA,NA,NA,"42.9","Daphne","Yes",NA
+"2020-10_south-west_stereo-BRUVs","FH","FH92","-33.84368897","114.8713721","20201012","15:47:00",NA,NA,NA,"44.2","Daphne","Yes",NA

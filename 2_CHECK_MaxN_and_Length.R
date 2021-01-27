@@ -35,10 +35,11 @@ library(plyr)
 library(dplyr)
 library(readr)
 library(ggplot2)
+library(stringr)
 
 ## Set Study Name ----
 # Change this to suit your study name. This will also be the prefix on your final saved files.
-study<-"2020-06_south-west_stereo-BRUVs"
+study<-"2020_south-west_stereo-BRUVs"
 
 ## Folder Structure ----
 # This script uses one main folder ('working directory')
@@ -55,7 +56,7 @@ working.dir<-dirname(rstudioapi::getActiveDocumentContext()$path) # sets working
 ## Save these directory names to use later----
 data.dir<-paste(working.dir,"Data",sep="/")
 plots.dir<-paste(working.dir,"Plots",sep="/")
-download.dir<-paste(data.dir,"2020-06_south-west_stereo-BRUVs",sep="/")
+download.dir<-paste(data.dir,"Raw",sep="/")
 
 to.be.checked.dir<-paste(data.dir,"Staging",sep="/") 
 tidy.dir<-paste(data.dir,"Tidy",sep="/")
@@ -218,8 +219,8 @@ length<-ga.change.synonyms(length,return.changes=T,save.report = T)
 maxn.species.not.previously.observed<-master%>%
   anti_join(maxn,.,by=c("family","genus","species"))%>% 
   distinct(campaignid,sample,family,genus,species)%>% # use this line to show specific drops OR
-  # distinct(family,genus,species)%>% # use this line to keep only fam, gen, spe
-  filter(!species%in%c("spp"))%>% # Ignore spp in the report
+  #distinct(family,genus,species)%>% # use this line to keep only fam, gen, spe
+  filter(!species%in%c("spp","sp1","sp"))%>% # Ignore spp in the report
   glimpse()
 
 setwd(error.dir)
