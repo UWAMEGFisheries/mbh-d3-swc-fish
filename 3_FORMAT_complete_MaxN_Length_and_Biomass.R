@@ -41,7 +41,7 @@ library(ggplot2)
 library(fst)
 
 # Study name---
-study<-"2020-06_south-west_stereo-BRUVs"
+study<-"2020_south-west_stereo-BRUVs"
 
 ## Set your working directory ----
 working.dir<-dirname(rstudioapi::getActiveDocumentContext()$path) # to directory of current file - or type your own
