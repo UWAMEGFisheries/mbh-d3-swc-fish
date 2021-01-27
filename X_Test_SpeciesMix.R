@@ -17,7 +17,8 @@ library(rgdal)
 library(reshape2)
 library(tidyr)
 library(devtools)
-
+library(BBmisc) # to normalize
+library(corrplot)
 
 
 # clear workspace ----
@@ -68,7 +69,7 @@ names(sp.to.remove)
 to.remove <- sp.to.remove$full.name
 length(sp.to.remove$full.name)
 
-# Remove species from df -- UP TO HERE -----
+# Remove species from df --
 df2 <- df %>% dplyr::filter(!full.name %in% to.remove) # remove rare sp
 df2 %>% count(full.name)
 df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
@@ -93,41 +94,158 @@ str(dfl)
 # 4. Species data into matrix ----
 pd <- table_to_species_data(
   dfl,
-  site_id = "cluster", # use cluster? or status?
+  site_id = "sample", # use cluster? or status?
   species_id = "full.name",
   measurement_id = "maxn"
 )
 
 pd
 class(pd)
+dim(pd)
+# change column names for fomula because long names don't work with function --
+colnames(pd) # col names as species names
+new.names <- paste0('spp',1:59)
+colnames(pd) <- new.names
+pd
+
 
 # 5. Covariate data into matrix ----
 cd <- table_to_species_data(
   dfl,
-  site_id = "cluster", # use cluster? or status?
+  site_id = "sample", # use cluster? or status?
   species_id = "covariate",
   measurement_id = "value"
 )
 
 cd
 class(cd)
+colnames(cd)
+dim(cd)
+
+# 6. Standarize the covariates --
+cd.stand <- normalize(cd, method = "standardize", range = c(0,1))
+colnames(cd.stand) <- colnames(cd)
+colnames(cd.stand) 
+dim(cd.stand)
+
+# use only a set of covariates for the moment --
+cd.stand <- cd.stand[,c(2:13)]
+colnames(cd.stand) 
+
+# 7. Calculate correlation coeficient between covariates ----
+
+# Plot predictors correlations by class --
+
+### Check Predicitor correlations ---
+
+# compute correlation matrix --
+C <- cor(cd.stand)
+head(round(C,2))
+
+# correlogram : visualizing the correlation matrix --
+# http://www.sthda.com/english/wiki/visualize-correlation-matrix-using-correlogram#:~:text=Correlogram%20is%20a%20graph%20of%20correlation%20matrix.&text=In%20this%20plot%2C%20correlation%20coefficients,corrplot%20package%20is%20used%20here.
+#Positive correlations are displayed in blue and negative correlations in red color. 
+#Color intensity and the size of the circle are proportional to the correlation coefficients
+corrplot(C, method="circle")
+corrplot(C, method="pie")
+corrplot(C, method="color")
+corrplot(C, method="number", type = "upper")
+corrplot(C, method="color", type = "lower", order="hclust") #  “hclust” for hierarchical clustering order is used in the following examples
+
+# compute the p-value of correlations --
+# mat : is a matrix of data
+# ... : further arguments to pass to the native R cor.test function
+cor.mtest <- function(mat, ...) {
+  mat <- as.matrix(mat)
+  n <- ncol(mat)
+  p.mat<- matrix(NA, n, n)
+  diag(p.mat) <- 0
+  for (i in 1:(n - 1)) {
+    for (j in (i + 1):n) {
+      tmp <- cor.test(mat[, i], mat[, j], ...)
+      p.mat[i, j] <- p.mat[j, i] <- tmp$p.value
+    }
+  }
+  colnames(p.mat) <- rownames(p.mat) <- colnames(mat)
+  p.mat
+}
+# matrix of the p-value of the correlation
+p.mat <- cor.mtest(cd.stand)
+head(p.mat[, 1:5])
+
+# customize correlogram --
+col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
+corrplot(C, method="color", col=col(100),  
+         type="upper", order="hclust", 
+         addCoef.col = "black", # Add coefficient of correlation
+         tl.col="black", tl.srt=45, #Text label color and rotation
+         # Combine with significance
+         p.mat = p.mat, sig.level = 0.01, insig = "blank", 
+         # hide correlation coefficient on the principal diagonal
+         diag=FALSE 
+)
 
 
-# 6. Make matrix of species and covariates ----
+# define function mosthighlycorrelated --
+# https://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/src/multivariateanalysis.html
+
+# linear correlation coefficients for each pair of variables in your data set, 
+# in order of the correlation coefficient. This lets you see very easily which pair of variables are most highly correlated.
+
+mosthighlycorrelated <- function(mydataframe,numtoreport)
+{
+  # find the correlations
+  cormatrix <- cor(mydataframe)
+  # set the correlations on the diagonal or lower triangle to zero,
+  # so they will not be reported as the highest ones:
+  diag(cormatrix) <- 0
+  cormatrix[lower.tri(cormatrix)] <- 0
+  # flatten the matrix into a dataframe for easy sorting
+  fm <- as.data.frame(as.table(cormatrix))
+  # assign human-friendly names
+  names(fm) <- c("First.Variable", "Second.Variable","Correlation")
+  # sort and print the top n correlations
+  head(fm[order(abs(fm$Correlation),decreasing=T),],n=numtoreport)
+}
+
+
+mosthighlycorrelated(cd.stand, 20) # This results in only depth, rough and slope 4 not being correlated above 0.95
+
+
+# 8. Make matrix of species and covariates ----
 dd <- make_mixture_data(species_data = pd,
-                        covariate_data = cd)
+                        covariate_data = cd.stand)
 dd # I think this is what I need to use for the models
 
 
-# 7. Try fiting a species mix model ----
+# 9. Try fiting a species mix model ----
 # this works but need to figure out what is should be the archetype formula ----
 
+colnames(cd.stand)
+class(cd.stand)
+head(cd.stand)
+cd.df <- as.data.frame(cd.stand)
+colnames(pd)
+
+sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
+                                                    collapse = ','),") ~ bathy + slope"))
+
+
+sam_form2 <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
+                                                    collapse = ','),") ~ poly(bathy, 2) + poly(slope, 2)"))
+
+                                                  
+sp_form <- ~1
+
+
 test_model <- species_mix(
-  archetype_formula = pd~1+depth+slope,
-  species_formula = stats::as.formula(~1),
+  archetype_formula = sam_form2,
+    #poly(slope, degree = 2, raw = TRUE) + poly(tpi, degree = 2, raw = TRUE) + poly(aspect, degree = 2, raw = TRUE) +
+    #poly(temp_mean, degree = 2, raw = TRUE) + poly(temp_trend, degree = 2, raw = TRUE)),
+  species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 4,
+  nArchetypes = 3,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -175,3 +293,9 @@ test2 <- species_mix.fit(
   disty = 'negative.binomial',
   control = controls
 )
+
+
+# from Skip for formula -----
+
+
+poly(temp, degree = 2, raw = TRUE) + poly(slope, degree = 2, raw = TRUE)
