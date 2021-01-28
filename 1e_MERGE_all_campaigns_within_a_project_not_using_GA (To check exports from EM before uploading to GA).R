@@ -64,7 +64,7 @@ dir.create(file.path(data.dir, "Tidy"))
 # Metadata ----
 metadata <-ga.list.files("_Metadata.csv")%>% # list all files ending in "_Metadata.csv"
   purrr::map_df(~ga.read.files_em.csv(.))%>% # combine into dataframe
-  dplyr::select(campaignid,dataset,sample,latitude,longitude,date,time,location,status,site,depth,observer,successful.count,successful.length)%>% # This line ONLY keep the 15 columns listed. Remove or turn this line off to keep all columns (Turn off with a # at the front).
+  dplyr::select(campaignid,dataset,planned.or.exploratory,sample,latitude,longitude,date,time,location,status,site,depth,observer,successful.count,successful.length)%>% # This line ONLY keep the 15 columns listed. Remove or turn this line off to keep all columns (Turn off with a # at the front).
   glimpse()
 
 unique(metadata$campaignid) # check the number of campaigns in metadata, and the campaign name
