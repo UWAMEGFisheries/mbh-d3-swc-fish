@@ -42,6 +42,93 @@ str(df)
 
 
 # add cluster numbers ----
+
+# check cluster data ---
+
+# open fish highway clusters and bruvs --
+fw <- readOGR(paste(s.dir, "planned-SW-Bruvs-Oct2020", "BruvNcluster-FHWY-d7.shp", sep='/'))
+plot(fw, col='red')
+fwd <- as.data.frame(fw)
+head(fwd)
+str(fwd) # 114 clusters
+
+fwd <- fwd %>%
+  mutate_at(vars(ID, n), list(~as.factor(.))) %>%
+  dplyr::rename(sample = UniqueID, cluster = ID) %>%
+  glimpse() # check n is only one level of factor
+
+# check and rename clusters
+levels(fwd$cluster)
+cluster <- levels(fwd$cluster)
+cluster.new <- paste(paste0('C.FH.',1:24), sep = ',')
+cluster.levs <- as.data.frame(cbind(cluster, cluster.new))
+str(cluster.levs)
+cluster.levs$cluster <- as.factor(cluster.levs$cluster)
+cluster.levs$cluster.new <- as.factor(cluster.levs$cluster.new)
+
+# merge with fish hwy data --
+fwd2 <- merge(cluster.levs, fwd, by = 'cluster')
+head(fwd2)
+str(fwd2) # 114 obs
+                     
+
+# open in and out clusters and bruvs --
+io <- readOGR(paste(s.dir, "planned-SW-Bruvs-Oct2020", "BruvNclusters-InNOutMP-d3.shp", sep ='/'))
+plot(io, add=T)
+iod <- as.data.frame(io)
+head(iod)
+str(iod) # 397 bruvs 
+
+#define unwanted levels of n
+unwanted <- c(2,3)
+
+iod <- iod %>% 
+  dplyr::select(class, BRUVid, clusterx, clustery, clusterID, clustercla, n, feature_x, feature_y, nearest_x, nearest_y, coords.x1, coords.x2) %>%
+  mutate_at(vars(class, BRUVid, clusterID, clustercla, n), list(~as.factor(.))) %>%
+  dplyr::rename(sample = BRUVid, cluster = clusterID, cluster.class = clustercla) %>%
+  dplyr::filter(!as.integer(n) %in% unwanted) %>% # remove unwanted levels of n -- this is from Qgis, when getting the cluster no. for each bruv
+  glimpse() 
+
+str(iod) # now 376 bruvs and n has only 1 level, this means only one cluster number per BRUV
+
+levels(iod$cluster)
+cluster <- levels(iod$cluster)
+cluster.new <- paste(paste0('C.IO.',1:70), sep = ',')
+cluster.levs <- as.data.frame(cbind(cluster, cluster.new))
+str(cluster.levs)
+cluster.levs$cluster <- as.factor(cluster.levs$cluster)
+cluster.levs$cluster.new <- as.factor(cluster.levs$cluster.new)
+
+# merge with in and out data --
+iod2 <- merge(cluster.levs, iod, by = 'cluster', all = T)
+head(iod2)
+str(iod2) # 376 obs
+
+# join fish highway and in and out data ----
+names(fwd2)
+names(iod2)
+
+
+### UP to here !! ####
+# 1 go back and add letters to sample numbers like Brooke: FH or IO
+# make same colums for data
+# r bind two data sets 
+# save data
+# compare with deployed bruvs - so metadata
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # load data
 cs <- read.csv(paste(dt.dir, '2020-06_sw_deployed-clusters-samples.csv', sep='/')) %>% # this csv was done manually with Q GIS
   mutate_at(vars(sample, cluster), funs(as.factor)) %>%
