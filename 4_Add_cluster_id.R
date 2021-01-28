@@ -1,4 +1,5 @@
-### script to Join maxN to metadata and cluster names ####
+### script to Join cluster sites to maxn data ####
+# use the complete.maxn data, it should  have metadata already ##
 
 
 library(ggplot2)
@@ -25,7 +26,7 @@ s.dir <- paste(w.dir, 'shapefiles', sep='/')
 
 
 ## Load data ----
-file.name <- "2020-06_south-west_stereo-BRUVs.checked.maxn.csv"
+file.name <- "2020_south-west_stereo-BRUVs.complete.maxn.csv"
 
 df <- read.csv(paste(dt.dir, file.name, sep='/')) %>% 
   glimpse()
@@ -34,29 +35,11 @@ df <- read.csv(paste(dt.dir, file.name, sep='/')) %>%
 df <- df %>% 
   unite(unique.name, c(family, genus, species), sep = " ", remove = FALSE) %>% # make full name
   unite(full.name, c(genus, species), sep = " ", remove = FALSE) %>% # make full name
-  mutate_at(vars(campaignid, sample, unique.name, full.name), funs(as.factor)) %>%  # define factors
+  mutate_at(vars(campaignid, sample, unique.name, full.name), list(~as.factor(.))) %>% 
   glimpse()
 
 str(df)
 
-
-# Load metadata ----
-metadata <- "2020-06_south-west_stereo-BRUVs.checked.metadata.csv"
-
-md <- read.csv(paste(dt.dir, metadata, sep='/')) %>% 
-  #mutate(sample = str_remove(sample, "0"))
-  mutate(sample = str_replace(sample, "^0*", "")) %>% # remove zeros in front of numbers so it matches the df data - stringr::str_replace
-  mutate_at(vars(campaignid, sample, location, status), funs(as.factor)) %>%
-  #mutate(sample = recode(sample, '01'='1', '02'='2')) %>%
-  glimpse()  # METADATA IS MISSING CLUSTER COLUMN
-  
-
-# Merge with metadata ----
-fishdf <- merge(df, md, by = 'sample') %>%
-  glimpse()
-str(fishdf) # 39 BRUVs
-levels(fishdf$sample)
-summary(fishdf)
 
 # add cluster numbers ----
 # load data

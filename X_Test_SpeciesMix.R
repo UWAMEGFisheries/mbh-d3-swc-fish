@@ -232,7 +232,7 @@ sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
 
 
 sam_form2 <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
-                                                    collapse = ','),") ~ poly(bathy, 2) + poly(slope, 2)"))
+                                                    collapse = ','),") ~ poly(bathy, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
                                                   
 sp_form <- ~1
