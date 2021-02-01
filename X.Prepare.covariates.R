@@ -8,7 +8,7 @@ library(sp)
 library(sf)
 library(raster)
 library(rgdal)
-library(spastat)
+library(spatstat)
 #install_github("leandroroser/EcoGenetics-devel")
 library(EcoGenetics) # for detrended bathy 
 
