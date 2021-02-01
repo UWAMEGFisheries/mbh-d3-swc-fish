@@ -1,7 +1,9 @@
 "campaignid","sample","family","genus","species","maxn","stereo.maxn","difference","percent.difference"
 "2020-10_south-west_stereo-BRUVs","IO343","Berycidae","Centroberyx","gerrardi",151,65,86,56.953642384106
+"2020-10_south-west_stereo-BRUVs","FH44","Serranidae","Caesioperca","sp1",29,8,21,72.4137931034483
 "2020-10_south-west_stereo-BRUVs","IO278","NA","Unknown","NA",0,21,21,Inf
 "2020-10_south-west_stereo-BRUVs","IO378","Parascylliidae","Parascyllium","NA",0,4,4,Inf
+"2020-10_south-west_stereo-BRUVs","FH95","Labridae","Ophthalmolepis","lineolatus",10,13,3,30
 "2020-10_south-west_stereo-BRUVs","IO290","Monacanthidae","Nelusetta","ayraud",9,12,3,33.3333333333333
 "2020-10_south-west_stereo-BRUVs","IO132","Labridae","Coris","auricularis",14,16,2,14.2857142857143
 "2020-10_south-west_stereo-BRUVs","IO147","Labridae","Coris","auricularis",3,5,2,66.6666666666667
@@ -15,6 +17,7 @@
 "2020-10_south-west_stereo-BRUVs","IOC05","Scombridae","Unknown","NA",0,2,2,Inf
 "2020-10_south-west_stereo-BRUVs","FH12","Labridae","Coris","auricularis",58,59,1,1.72413793103448
 "2020-10_south-west_stereo-BRUVs","FH12","Labridae","Ophthalmolepis","lineolatus",5,6,1,20
+"2020-10_south-west_stereo-BRUVs","FH34","Carangidae","Unknown","NA",0,1,1,Inf
 "2020-10_south-west_stereo-BRUVs","FH55","Labridae","Coris","auricularis",24,25,1,4.16666666666667
 "2020-10_south-west_stereo-BRUVs","FH55","Labridae","Ophthalmolepis","lineolatus",2,3,1,50
 "2020-10_south-west_stereo-BRUVs","FH71","Labridae","Ophthalmolepis","lineolatus",8,9,1,12.5
@@ -35,12 +38,15 @@
 "2020-10_south-west_stereo-BRUVs","IO146","Labridae","Ophthalmolepis","lineolatus",5,6,1,20
 "2020-10_south-west_stereo-BRUVs","IO152","Labridae","Ophthalmolepis","lineolatus",2,3,1,50
 "2020-10_south-west_stereo-BRUVs","IO152","Urolophidae","Trygonoptera","ovalis",1,2,1,100
+"2020-10_south-west_stereo-BRUVs","IO184","Labridae","Coris","auricularis",8,9,1,12.5
+"2020-10_south-west_stereo-BRUVs","IO184","Labridae","Ophthalmolepis","lineolatus",5,6,1,20
 "2020-10_south-west_stereo-BRUVs","IO199","Labridae","Ophthalmolepis","lineolatus",6,7,1,16.6666666666667
 "2020-10_south-west_stereo-BRUVs","IO211","Cheilodactylidae","Nemadactylus","valenciennesi",1,2,1,100
 "2020-10_south-west_stereo-BRUVs","IO211","Labridae","Ophthalmolepis","lineolatus",7,8,1,14.2857142857143
 "2020-10_south-west_stereo-BRUVs","IO211","Labridae","Pseudolabrus","biserialis",15,14,1,6.66666666666667
 "2020-10_south-west_stereo-BRUVs","IO216","Labridae","Coris","auricularis",12,13,1,8.33333333333333
 "2020-10_south-west_stereo-BRUVs","IO254","Squalidae","Squalus","NA",0,1,1,Inf
+"2020-10_south-west_stereo-BRUVs","IO276","Monacanthidae","Nelusetta","ayraud",11,12,1,9.09090909090909
 "2020-10_south-west_stereo-BRUVs","IO277","Monacanthidae","Nelusetta","ayraud",7,8,1,14.2857142857143
 "2020-10_south-west_stereo-BRUVs","IO278","Monacanthidae","Nelusetta","ayraud",6,7,1,16.6666666666667
 "2020-10_south-west_stereo-BRUVs","IO280","Squalidae","Squalus","NA",0,1,1,Inf
