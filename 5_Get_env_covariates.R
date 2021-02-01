@@ -67,7 +67,8 @@ t2 <- raster(paste(r.dir, "SSTsterr_SSTARRS.tif", sep='/'))
 t3 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
 
 ts <- stack(t1, t2, t3)
-plot(ts)
+plot(ts$SSTmean_SSTARRS)
+points(dfs)
 
 dfs <- raster::extract(ts, dfs, sp = T)
 str(dfs)
