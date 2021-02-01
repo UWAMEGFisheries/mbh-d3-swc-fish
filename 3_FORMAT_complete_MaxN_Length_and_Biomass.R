@@ -52,7 +52,6 @@ plots.dir=paste(working.dir,"Plots",sep="/")
 tidy.dir<-paste(data.dir,"Tidy",sep="/")
 error.dir=paste(data.dir,"Errors to check",sep="/")
 
-
 # Read in the data----
 setwd(tidy.dir)
 dir()
@@ -61,6 +60,8 @@ dir()
 metadata<-read_csv(file=paste(study,"checked.metadata.csv",sep = "."),na = c("", " "))%>%
   dplyr::mutate(id=paste(campaignid,sample,sep="."))%>%
   glimpse()
+
+unique(metadata$sample) # 316 - this includes unsuccessful drops!!!
 
 # Make complete.maxn: fill in 0s and join in factors----
 dat<-read_csv(file=paste(study,"checked.maxn.csv",sep = "."),na = c("", " "))%>%
@@ -137,8 +138,9 @@ ggplot(data=expanded.length, aes(y=as.numeric(length))) +
 # Make mass data from complete.length.number----
 # There are 6 steps
 # 1. use life.history---
-master<-gs_title("Australia.life.history")%>%
-  gs_read_csv(ws = "australia.life.history")%>%ga.clean.names()%>%
+url <- "https://docs.google.com/spreadsheets/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPLcXd3lJ5g5Bo/edit?ts=5e6f36e2#gid=825736197"
+
+master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
   filter(grepl('Australia', global.region))%>%
   filter(grepl('NW', marine.region))%>%
   dplyr::mutate(all=as.numeric(all))%>%

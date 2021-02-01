@@ -84,7 +84,6 @@ unique(maxn$sample)
 setwd(staging.dir)
 write.csv(maxn,paste(study,"maxn.csv",sep="_"),row.names = FALSE)
 
-
 ## Combine Length, Lengths and 3D point files into length3dpoints----
 length3dpoints<-ga.create.em.length3dpoints()%>%
   dplyr::select(-c(time,comment))%>% # take time out as there is also a time column in the metadata
@@ -96,12 +95,7 @@ length3dpoints<-ga.create.em.length3dpoints()%>%
 setwd(staging.dir)
 write.csv(length3dpoints,paste(study,"length3dpoints.csv",sep="_"),row.names = FALSE)
 
-
-
-
-
-
-# TO GET CO-ORDS
+# TO GET CO-ORDS for metadata
 # setwd(download.dir)
 # dir()
 # 

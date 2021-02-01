@@ -184,8 +184,6 @@ out.of.range<-filter(length,range>10000)%>% # 10 m = 10000 mm
 # 'Lord.Howe.Island' - Lord Howe Island
 
 # Use the abbreviation in the code below
-# currently set for the Pilbara, Australia example data set ('NW' for North-west)
-
 url <- "https://docs.google.com/spreadsheets/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPLcXd3lJ5g5Bo/edit?ts=5e6f36e2#gid=825736197"
 
 master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
@@ -330,8 +328,8 @@ length<-length%>%
   glimpse()
 
 # CAUTION Remove taxa that don't match from the final data ----
-maxn<-anti_join(maxn,maxn.taxa.not.match.life.history)
-length<-anti_join(length,length.taxa.not.match)
+maxn<-anti_join(maxn,maxn.species.not.previously.observed)
+length<-anti_join(length,length.species.not.previously.observed)
 
 # CAUTION Drop wrong lengths ----
 drop.length<-wrong.length.taxa%>% # TO REMOVE LENGTHS OUTSIDE THE MIN/MAX OF MASTER LIST
