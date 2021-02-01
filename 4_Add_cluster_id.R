@@ -30,6 +30,11 @@ s.dir <- paste(w.dir, 'shapefiles', sep='/')
 mdc <- read.csv(paste(dt.dir, "2020_south-west_stereo_BRUVs.metadata.clusters.csv", sep='/')) %>%
   glimpse() # 490 bruvs planned
 
+mdc.multiples <- mdc %>% # There are three deployments with multiple rows
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(n=n()) %>%
+  filter(n>1)
+
 # Load BRUV maxn data ---
 
 bfile <- "2020_south-west_stereo-BRUVs.complete.maxn.csv"
