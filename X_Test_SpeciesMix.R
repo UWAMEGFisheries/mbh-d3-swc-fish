@@ -37,59 +37,84 @@ r.dir <- paste(w.dir, "rasters", sep='/')
 
 
 # 1. Load data ----
-df <- read.csv(paste(dt.dir, "2020-06_sw_maxn.meta.cov.csv", sep = '/'))%>%
-  mutate_at(vars(sample, family, unique.name, genus, full.name, species, location, status, cluster), list(as.factor)) %>% # make these columns as factors
+df <- read.csv(paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep = '/'))%>%
+  mutate_at(vars(sample, family, genus, species, dataset.x, unique.name, full.name, location, status, cluster, cluster.new, number, n, class), list(as.factor)) %>% # make these columns as factors
+  # At some point filter for successful count
   glimpse()
 head(df)
 str(df)
-names(df)
+names(df) # 233 BRUV deployments
 summary(df)
+
 
 
 # 2. Remove sp that are encountered less than 2.5% of the time ----
 # as per Foster et al 2015 ----
-# To test and because we only have 40 BRUVs so far, going to work with 2.5% which is more than 2 BRUVs
+# 233 BRUV drops so far, going to work with 2.5% which is more than 2 BRUVs
 head(df)
+names(df)
+
+no.bruvs <- length(levels(df$sample))
+threshold <- round(no.bruvs*0.025)
 
 # Species from wide to long --
 sp.to.remove <- df %>% 
-  dplyr::mutate(count = 1) %>% # create new column with count = 1 
-  tidyr::pivot_wider(names_from = sample, values_from = count, values_fill = 0) %>% # spread and if NA then = 0
+  dplyr::mutate(count = ifelse(maxn >= 1, '1', '0')) %>% # create new column with count = 1 
+  #tidyr::pivot_wider(names_from = sample, values_from = count, values_fill = 0) %>% # spread and if NA then = 0
   dplyr::group_by(full.name) %>%
-  dplyr::summarise_at(vars(37:75), funs(sum)) %>%
+  #dplyr::summarise_at(vars(37:75), funs(sum)) %>%
+  #dplyr::summarise_at(vars(33:42), list(~ sum(.))) %>%
+  dplyr::summarise_at(vars(5), list(~ sum(.))) %>% # sumarize by max n
   dplyr::mutate(total.counts=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>% # get occurrence no of BRUVS at which each sp. occurred
   dplyr::ungroup() %>%
   dplyr::arrange(total.counts) %>% # arrange ascending to see if any species found in less than 2 BRUVs
-  dplyr::filter(total.counts < 2) %>%
+  dplyr::filter(total.counts < threshold) %>%
   dplyr::select(full.name) %>%
-  glimpse() # in this case, no species found in less than 2 BRUVs
+  glimpse() 
 
 glimpse(sp.to.remove)
 names(sp.to.remove)
 to.remove <- sp.to.remove$full.name
-length(sp.to.remove$full.name)
+length(sp.to.remove$full.name) # 80 species removed
 
 # Remove species from df --
 df2 <- df %>% dplyr::filter(!full.name %in% to.remove) # remove rare sp
 df2 %>% count(full.name)
 df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
 
-df2 <- droplevels(df2)
-str(df2)  # 471 obs
+df2 <- droplevels(df2) 
+str(df2)  # 19035 obs, 81 species remaining
 
 names(df2)
 
 # 3. Make covariates in long formate using reshape2 package --
 dfl <- melt(df2,
-            id.vars = names(df)[c(2:14, 16)],
-            measure.vars = names(df)[c(15, 17:41)],
+            id.vars = names(df)[c(3:33)],
+            measure.vars = names(df)[c(34:43)],
             variable.name = "covariate",
             value.name = "value"
 )
 head(dfl)
 str(dfl)
+any(is.na(dfl$value))
+which(is.na(dfl$value))
 
+# Remove temp vars for the moment ----
+levels(dfl$covariate)
 
+dfl <- dfl %>%
+  dplyr::filter(covariate != "SSTmean_SSTARRS" & covariate != "SSTsterr_SSTARRS" & covariate != "SSTtrend_SSTARRS") %>%
+  droplevels
+
+str(dfl)
+levels(dfl$covariate) #check that levels were droped
+class(dfl)
+
+# check for NAs again --
+any(is.na(dfl$value))
+which(is.na(dfl$value))
+
+### TO ADDRESS - these NAs in covariate data!!! ----
 
 # 4. Species data into matrix ----
 pd <- table_to_species_data(
@@ -104,33 +129,34 @@ class(pd)
 dim(pd)
 # change column names for fomula because long names don't work with function --
 colnames(pd) # col names as species names
-new.names <- paste0('spp',1:59)
+new.names <- paste0('spp',1:81)
 colnames(pd) <- new.names
 pd
 
 
-# 5. Covariate data into matrix ----
-cd <- table_to_species_data(
-  dfl,
-  site_id = "sample", # use cluster? or status?
-  species_id = "covariate",
-  measurement_id = "value"
-)
+# 5. Covariate data into wide df ----
+
+cd <- reshape(dfl[,c(1,32:33)], idvar = "sample", timevar = "covariate", direction = "wide")
 
 cd
 class(cd)
 colnames(cd)
 dim(cd)
 
+cdm <- as.matrix(cd)
+
 # 6. Standarize the covariates --
-cd.stand <- normalize(cd, method = "standardize", range = c(0,1))
+cd.stand <- BBmisc::normalize(cd, method = "standardize", range = c(0,1))
 colnames(cd.stand) <- colnames(cd)
-colnames(cd.stand) 
+colnames(cd.stand) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
+                        "tpi"  ,       "aspect"  )
 dim(cd.stand)
 
 # use only a set of covariates for the moment --
-cd.stand <- cd.stand[,c(2:13)]
-colnames(cd.stand) 
+#cd.stand <- cd.stand[,c(2:13)]
+#colnames(cd.stand) 
+
+
 
 # 7. Calculate correlation coeficient between covariates ----
 
@@ -139,7 +165,7 @@ colnames(cd.stand)
 ### Check Predicitor correlations ---
 
 # compute correlation matrix --
-C <- cor(cd.stand)
+C <- cor(cd[,c(2:8)], use = 'complete.obs') # remove NAs because they mess up the corr matrix
 head(round(C,2))
 
 # correlogram : visualizing the correlation matrix --
@@ -170,7 +196,7 @@ cor.mtest <- function(mat, ...) {
   p.mat
 }
 # matrix of the p-value of the correlation
-p.mat <- cor.mtest(cd.stand)
+p.mat <- cor.mtest(cd[,c(2:8)])
 head(p.mat[, 1:5])
 
 # customize correlogram --
@@ -195,7 +221,7 @@ corrplot(C, method="color", col=col(100),
 mosthighlycorrelated <- function(mydataframe,numtoreport)
 {
   # find the correlations
-  cormatrix <- cor(mydataframe)
+  cormatrix <- cor(mydataframe, use = 'complete.obs')
   # set the correlations on the diagonal or lower triangle to zero,
   # so they will not be reported as the highest ones:
   diag(cormatrix) <- 0
@@ -209,17 +235,17 @@ mosthighlycorrelated <- function(mydataframe,numtoreport)
 }
 
 
-mosthighlycorrelated(cd.stand, 20) # This results in only depth, rough and slope 4 not being correlated above 0.95
+mosthighlycorrelated(cd[,c(2:8)], 30) # This results in only depth, rough and slope 4 not being correlated above 0.95
 
 
 # 8. Make matrix of species and covariates ----
 dd <- make_mixture_data(species_data = pd,
-                        covariate_data = cd.stand)
+                        covariate_data = cd.stand) # use standarlized covariates
 dd # I think this is what I need to use for the models
 
 
-# 9. Try fiting a species mix model ----
-# this works but need to figure out what is should be the archetype formula ----
+# 9. Optimize number of archetypes ----
+# Fit species mix model using diffent number of archetypes and checking BIC --
 
 colnames(cd.stand)
 class(cd.stand)
@@ -227,25 +253,25 @@ head(cd.stand)
 cd.df <- as.data.frame(cd.stand)
 colnames(pd)
 
-sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
-                                                    collapse = ','),") ~ bathy + slope"))
-
-
-sam_form2 <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59),
-                                                    collapse = ','),") ~ poly(bathy, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+#sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59), collapse = ','),") ~ bathy + slope"))
+                                                    
+sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+                                                    collapse = ','),
+                                                    ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                                
 
                                                   
 sp_form <- ~1
 
 
 test_model <- species_mix(
-  archetype_formula = sam_form2,
+  archetype_formula = sam_form_full,
     #poly(slope, degree = 2, raw = TRUE) + poly(tpi, degree = 2, raw = TRUE) + poly(aspect, degree = 2, raw = TRUE) +
     #poly(temp_mean, degree = 2, raw = TRUE) + poly(temp_trend, degree = 2, raw = TRUE)),
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 3,
+  nArchetypes = 5,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -258,12 +284,54 @@ test_model <- species_mix(
   #titbits = TRUE # could turn this off
 )
 
-summary.species_mix(test_model, digits = 4)# this is not working
+BIC(test_model) # this gives a valie of BIC
 print(test_model)
+
+summary.species_mix(test_model, digits = 4)# this is not working
+
 coef(test_model)
 class(test_model)
 test_model$taus
-BIC(test_model) # this gives a valie of BIC
+
+
+## 10. Optimize number of covariates ----
+# now that you know the no. of archetypes, start removing convariates and test AIC to find the most parismonious model--
+
+# remove one covariate at a time ----
+sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+                                                         collapse = ','),
+                                          ") ~ poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+
+
+test_model_b <- species_mix(
+  archetype_formula = sam_form_b,
+  #poly(slope, degree = 2, raw = TRUE) + poly(tpi, degree = 2, raw = TRUE) + poly(aspect, degree = 2, raw = TRUE) +
+  #poly(temp_mean, degree = 2, raw = TRUE) + poly(temp_trend, degree = 2, raw = TRUE)),
+  species_formula = sp_form, #stats::as.formula(~1),
+  all_formula = NULL,
+  data=dd,
+  nArchetypes = 9,
+  family = "negative.binomial",
+  #offset = NULL,
+  #weights = NULL,
+  #bb_weights = NULL,
+  #size = NULL, # for presence absence - benthic point data
+  #power = NULL, # for tweedie : eg. biomass data
+  control = list(), # for tuning the model if needed
+  #inits = NULL, # if you have fitted the model previously: use the same values
+  #standardise = FALSE, # has been removed in new update it scales
+  #titbits = TRUE # could turn this off
+)
+
+BIC(test_model_b) # this gives a valie of BIC
+print(test_model_b)
+
+
+
+
+
+
+
 
 sp.boot <- species_mix.bootstrap(
   test_model,
