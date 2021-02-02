@@ -26,9 +26,9 @@ working.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
 
 ## Set sub directories----
 d.dir <- paste(working.dir,"Data/Tidy",sep="/") 
-s.dir <- paste(working.dir,"shapefiles",sep="/") # spatial is where I keep spatial data files, rasters and shapefiles
+s.dir <- paste(working.dir,"shapefiles",sep="/")
 p.dir <- paste(working.dir,"Plots",sep="/")
-m.dir <- paste(working.dir,"Model Out GAM", sep="/") #suggest make a model.out.gam folder to keep things seperate
+m.dir <- paste(working.dir,"Model Out GAM", sep="/")
 
 # Bring in and format the data----
 name <- '2020_south-west_stereo-BRUVs' # for the study
@@ -37,7 +37,7 @@ name <- '2020_south-west_stereo-BRUVs' # for the study
 setwd(d.dir)
 dir()
 
-dat <-read.csv('2020_south-west_stereo-BRUVs.complete.maxn.with.clusters.csv')%>%
+dat <-read.csv('2020_south-west_stereo-BRUVs.complete.maxn.csv')%>%
   glimpse()
 
 names(dat)
@@ -46,29 +46,27 @@ metadata <- read.csv('2020_south-west_stereo-BRUVs.checked.metadata.csv')
 
 names(metadata)
 
+# Create total abundance and species richness ----
+ta.sr <- dat%>%
+  dplyr::ungroup()%>%
+  dplyr::group_by(scientific,sample)%>%
+  dplyr::summarise(maxn = sum(maxn))%>%
+  spread(scientific,maxn, fill = 0)%>%
+  dplyr::mutate(total.abundance=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>% #Add in Totals
+  dplyr::mutate(species.richness=rowSums(.[,2:(ncol(.))] > 0))%>% # double check these
+  dplyr::select(sample,total.abundance,species.richness)%>%
+  gather(.,"scientific","maxn",2:3)%>%
+  dplyr::left_join(metadata)
+
 # Set predictor variables---
-pred.vars=c("campaignid","dataset","planned.or.exploratory",)
+pred.vars=c("depth","latitude","longitude")
 
 # Check for correlation of predictor variables- remove anything highly correlated (>0.95)---
 round(cor(dat[,pred.vars], use = "complete.obs"),2)
 
 # TRI is super correlated to both slope and roughness, Roughness also super correlated with slope,
-pred.vars=c("TPI","Slope","Aspect","FlowDir","mean.relief",
-            "sd.relief","reef","distance.to.ramp","pos.bathymetry")
-
-# Plot of likely transformations
-par(mfrow=c(3,2))
-for (i in pred.vars) {
-  x<-legal.dat[ ,i]
-  x = as.numeric(unlist(x))
-  hist((x))#Looks best
-  plot((x),main = paste(i))
-  hist(sqrt(x))
-  plot(sqrt(x))
-  hist(log(x+1))
-  plot(log(x+1))
-}
-
+# pred.vars=c("TPI","Slope","Aspect","FlowDir","mean.relief",
+#             "sd.relief","reef","distance.to.ramp","pos.bathymetry")
 
 # Plot of likely transformations
 par(mfrow=c(3,2))
@@ -83,20 +81,14 @@ for (i in pred.vars) {
   plot((x)^3)
 }
 
-# Review of individual predictors - we have to make sure they have an even distribution---
-# Bathymetry, distance to ramp, sd.relief, mean.relief, flow.dir, aspect, TPI leave untransformed - should use 
-# sqrt for TPI but it generates a lot of NAs as some values negative and some are positive 
-# Percent reef, slope use sqrt transformation
-# Roughness use log+1 transformation 
-
 # Transform variables 
-dat <- dat%>%
-  mutate(sqrt.reef=sqrt(reef))%>%
-  mutate(sqrt.slope=sqrt(Slope))%>%
-  # mutate(sqrt.TPI=sqrt(TPI))%>%
-  mutate(log.roughness=log(Roughness+1))%>%
-  mutate(cube.Aspect=(Aspect)^3)%>%
-  glimpse()
+# dat <- dat%>%
+#   mutate(sqrt.reef=sqrt(reef))%>%
+#   mutate(sqrt.slope=sqrt(Slope))%>%
+#   # mutate(sqrt.TPI=sqrt(TPI))%>%
+#   mutate(log.roughness=log(Roughness+1))%>%
+#   mutate(cube.Aspect=(Aspect)^3)%>%
+#   glimpse()
 
 #Reset predictor variables 
 pred.vars=c("bathymetry","sqrt.slope","cube.Aspect","log.roughness","FlowDir","mean.relief",
@@ -171,7 +163,7 @@ gam.check(m1)
 setwd(m.dir)
 resp.vars=unique.vars.use
 use.dat=dat
-factor.vars=c("status") # Status as a Factor with two levels
+factor.vars=c("status") # Status as a Factor with two levels # "campaignid","dataset","planned.or.exploratory"
 out.all=list()
 var.imp=list()
 

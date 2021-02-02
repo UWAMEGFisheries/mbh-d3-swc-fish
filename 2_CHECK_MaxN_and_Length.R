@@ -312,6 +312,21 @@ ggplot(taxa.maxn.vs.stereo.summary,aes(x=maxn,y=stereo.maxn,label = paste(genus,
 setwd(plots.dir)
 ggsave(file=paste(study,"check.stereo.vs.maxn.png",sep = "_"))
 
+############                STOP     AND    READ      NEXT      PART        ############     
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+############                STOP     AND    READ      NEXT      PART        ############    
+
 # We strongly encourage you to fix these errors at the source (i.e. EMObs), however, there may be observations that you want to keep in the raw data but not upload to Global Archive (i.e. seasnakes), that you can drop using the code below.
 # NOW check through the files in your "Errors to check" folder and make corrections to .EMObs / generic files and then re-run this script.
 # IF you are happy to proceed by removing the species, length and range errors here you can run the lines below and write the checked data 

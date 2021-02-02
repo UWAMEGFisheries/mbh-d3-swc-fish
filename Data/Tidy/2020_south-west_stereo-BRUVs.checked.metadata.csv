@@ -42,10 +42,10 @@
 "2020-06_south-west_stereo-BRUVs","08 - failed",NA,"MBH",-34.129336,114.911822,20200602,"11:36","South-west","No-take","c3",41.7,NA,"No","No","National Park Zone",NA
 "2020-06_south-west_stereo-BRUVs","11 - failed",NA,"MBH",-34.117769,114.923158,20200602,"11:55","South-west","No-take","c2",46.7,NA,"No","No","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","FH102","FH","MBH",-33.68868897,114.9288721,20201017,"06:42:00","South-west","No-take","C.FH.3",44.1,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
-"2020-10_south-west_stereo-BRUVs","FHA","FH","Captains pick",-33.683135,114.937827,20201017,"06:55:00","South-west","No-take",NA,44.6,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
-"2020-10_south-west_stereo-BRUVs","FHB","FH","Captains pick",-33.681655,114.957127,20201017,"07:02:00","South-west","No-take",NA,41.3,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
-"2020-10_south-west_stereo-BRUVs","FHD","FH","Captains pick",-33.686897,114.958507,20201017,"07:12:00","South-west","No-take",NA,39.5,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
-"2020-10_south-west_stereo-BRUVs","FHE","FH","Captains pick",-33.687267,114.951172,20201017,"07:16:00","South-west","No-take",NA,42.3,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
+"2020-10_south-west_stereo-BRUVs","FHA","FH","Captains pick",-33.683135,114.937827,20201017,"06:55:00","South-west","No-take","C.FH.3",44.6,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
+"2020-10_south-west_stereo-BRUVs","FHB","FH","Captains pick",-33.681655,114.957127,20201017,"07:02:00","South-west","No-take","C.FH.A",41.3,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
+"2020-10_south-west_stereo-BRUVs","FHD","FH","Captains pick",-33.686897,114.958507,20201017,"07:12:00","South-west","No-take","C.FH.A",39.5,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
+"2020-10_south-west_stereo-BRUVs","FHE","FH","Captains pick",-33.687267,114.951172,20201017,"07:16:00","South-west","No-take","C.FH.A",42.3,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
 "2020-10_south-west_stereo-BRUVs","FH31","FH","MBH",-33.67368897,114.8238721,20201012,"08:27:00","South-west","Fished","C.FH.2",45.4,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH5","FH","MBH",-33.69368897,114.9413721,20201017,"08:46:00","South-west","No-take","C.FH.5",44.5,"Daphne","Yes","Yes",NA,"Injidup Sanctuary Zone"
 "2020-10_south-west_stereo-BRUVs","FH108","FH","MBH",-33.76118897,114.9238721,20201017,"09:32:00","South-west","Fished","C.FH.9",44.7,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
@@ -86,14 +86,14 @@
 "2020-10_south-west_stereo-BRUVs","IO37","IO","MBH",-34.10868897,114.7188721,20201022,"10:12:00","South-west","No-take","C.IO.55",130,"Brooke Gibbons","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO351","IO","MBH",-34.03118897,114.5963721,20201123,"10:13","South-west","Fished","C.IO.27",142,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO40","IO","MBH",-34.10368897,114.7138721,20201022,"10:17:00","South-west","No-take","C.IO.55",131,"Brooke Gibbons","Yes","Yes","National Park Zone",NA
-"2020-10_south-west_stereo-BRUVs","IOCP2311","IO","Captains pick",-34.01858,114.601465,20201123,"10:19","South-west","Fished",NA,142,"Daphne","Yes","CALs shit, come back","Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","IOCP2311","IO","Captains pick",-34.01858,114.601465,20201123,"10:19","South-west","Fished","C.IO.46",142,"Daphne","Yes","CALs shit, come back","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH37","FH","MBH",-33.71118897,114.8138721,20201012,"11:03:00","South-west","Fished","C.FH.6",44.2,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO338","IO","MBH",-33.97231667,114.92245,20201019,"11:50:00","South-west","Fished","C.IO.20",46,"Daphne","Yes","Yes",NA,NA
 "2020-10_south-west_stereo-BRUVs","IO253","IO","MBH",-34.01368897,114.7038721,20201123,"12:15","South-west","Fished","C.IO.49",124,"Brooke Gibbons","Yes","Yes but shit CAL accepted errors","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO364","IO","MBH",-34.00868897,114.6888721,20201123,"12:21","South-west","Fished","C.IO.24",130,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO180","IO","MBH",-33.99618897,114.7038721,20201123,"12:36","South-west","Fished","C.IO.41",122,"Brooke Gibbons","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","IOCP11-1","IO","Captains pick",-33.992845,114.696642,20201123,"12:39","South-west","Fished",NA,124,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","IOCP11-2","IO","Captains pick",-33.974332,114.692773,20201123,"12:47","South-west","Fished",NA,124,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","IOCP11-1","IO","Captains pick",-33.992845,114.696642,20201123,"12:39","South-west","Fished","C.IO.41",124,"Daphne","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","IOCP11-2","IO","Captains pick",-33.974332,114.692773,20201123,"12:47","South-west","Fished",NA,124,"Daphne","Yes","Yes but try remeasure C. lineatus w/ dif CAL","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO164","IO","MBH",-34.03368897,114.9038721,20201016,"07:14:00","South-west","Fished","C.IO.62",44.1,"Hayley","Yes","check calibration","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO184","IO","MBH",-34.04118897,114.9038721,20201016,"07:19:00","South-west","Fished","C.IO.62",45.9,"Hayley","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO165","IO","MBH",-34.04368897,114.8988721,20201016,"07:23:00","South-west","Fished","C.IO.62",42.6,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
@@ -101,7 +101,7 @@
 "2020-10_south-west_stereo-BRUVs","IO361","IO","MBH",-33.98868897,114.7413721,20201015,"07:35:00","South-west","Fished","C.IO.25",84.7,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO155","IO","MBH",-34.04368897,114.8838721,20201016,"07:42:00","South-west","Fished","C.IO.65",41.9,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO325","IO","MBH",-33.991557,114.743378,20201015,"07:44:00","South-west","Fished","C.IO.25",85,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","IOC06","IO","Captains pick",-34.048689,114.876372,20201016,"07:48:00","South-west","Fished",NA,41.5,"Ramesh","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","IOC06","IO","Captains pick",-34.048689,114.876372,20201016,"07:48:00","South-west","Fished","C.IO.65",41.5,"Ramesh","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO266","IO","MBH",-34.02118897,114.7588721,20201015,"08:06:00","South-west","Fished","C.IO.23",67.3,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO327","IO","MBH",-34.02946667,114.7623833,20201015,"08:17:00","South-west","Fished","C.IO.23",65.4,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO210","IO","MBH",-34.09118897,114.8738721,20201016,"10:09:00","South-west","No-take","C.IO.6",43.5,"Hayley","Yes",NA,"National Park Zone",NA
@@ -154,7 +154,7 @@
 "2020-10_south-west_stereo-BRUVs","FH63","FH","MBH",-33.67868897,114.8163721,20201012,"08:20:00","South-west","Fished","C.FH.2",46.3,"Claude","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH59","FH","MBH",-33.66868897,114.8188721,20201012,"08:32:00","South-west","Fished","C.FH.2",44.6,"Claude","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO336","IO","MBH",-34.0924,114.8663667,20201016,"10:03:00","South-west","No-take","C.IO.6",43.2,NA,NA,"No","National Park Zone",NA
-"2020-10_south-west_stereo-BRUVs","FHCO3","FH","Captains pick",-33.948622,114.819555,20201013,"09:56:00","South-west","Fished",NA,44.5,"Claude","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","FHCO3","FH","Captains pick",-33.948622,114.819555,20201013,"09:56:00","South-west","Fished","C.FH.22",44.5,"Claude","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH68","FH","MBH",-33.95118897,114.8288721,20201013,"10:01:00","South-west","Fished","C.FH.22",44.5,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH99","FH","MBH",-33.95368897,114.8363721,20201013,"10:04:00","South-west","Fished","C.FH.22",43.5,"Hayley","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH89","FH","MBH",-33.68618897,114.8013721,20201012,"10:34:00","South-west","Fished","C.FH.4",45.7,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
@@ -181,7 +181,7 @@
 "2020-10_south-west_stereo-BRUVs","IO64","IO","MBH",-34.01368897,114.8963721,20201019,"11:26:00","South-west","Fished","C.IO.47",43.3,"Ramesh","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO245","IO","MBH",-34.00868897,114.9013721,20201019,"11:30:00","South-west","Fished","C.IO.47",42.3,"Ramesh","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO261","IO","MBH",-33.97618897,114.9213721,20201019,"11:46:00","South-west","Fished","C.IO.20",46.9,"Ramesh","Yes",NA,NA,NA
-"2020-10_south-west_stereo-BRUVs","IO258","IO","MBH",-33.96618897,114.9138721,20201019,"12:05:00","South-west","Fished",NA,45.2,"Ramesh","Yes",NA,NA,NA
+"2020-10_south-west_stereo-BRUVs","IO258","IO","MBH",-33.96618897,114.9138721,20201019,"12:05:00","South-west","Fished","C.IO.20",45.2,"Ramesh","Yes",NA,NA,NA
 "2020-10_south-west_stereo-BRUVs","IO206","IO","MBH",-34.06368897,114.7913721,20201015,"10:28:00","South-west","No-take","C.IO.7",58.2,NA,NA,"No","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO46","IO","MBH",-34.06868897,114.7113721,20201023,"06:44:00","South-west","No-take","C.IO.34",129,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO47","IO","MBH",-34.06368897,114.7113721,20201023,"06:53:00","South-west","No-take","C.IO.34",127,"Rachel","Yes","Yes","National Park Zone",NA
@@ -198,7 +198,7 @@
 "2020-10_south-west_stereo-BRUVs","IO216","IO","MBH",-34.06118897,114.9163721,20201029,"10:33:00","South-west","No-take","C.IO.3",47.5,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO355","IO","MBH",-34.05473333,114.9111,20201029,"10:38:00","South-west","No-take","C.IO.3",45,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO211","IO","MBH",-34.05618897,114.9063721,20201029,"10:42:00","South-west","No-take","C.IO.3",43.5,"Rachel","Yes","Yes","National Park Zone",NA
-"2020-10_south-west_stereo-BRUVs","IOC05","IO","Captains pick",-34.05394,114.899843,20201029,"10:46:00","South-west","No-take",NA,43.2,"Rachel","Yes","Yes","National Park Zone",NA
+"2020-10_south-west_stereo-BRUVs","IOC05","IO","Captains pick",-34.05394,114.899843,20201029,"10:46:00","South-west","No-take","C.IO.3",43.2,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","FH33","FH","MBH",-33.70868897,114.8263721,20201012,"10:54:00","South-west","Fished","C.FH.6",42.3,NA,NA,"No","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO378","IO","MBH",-33.99368897,114.6388721,20201023,"12:04:00","South-west","Fished","C.IO.26",141,"Rachel","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO370","IO","MBH",-33.99618897,114.6463721,20201023,"12:10:00","South-west","Fished","C.IO.26",141,"Rachel","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
@@ -214,7 +214,7 @@
 "2020-10_south-west_stereo-BRUVs","IO330","IO","MBH",-34.08833333,114.7545,20201022,"13:00:00","South-west","No-take","C.IO.12",116,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","FH109","FH","MBH",-33.91618897,114.9088721,20201029,"13:04:00","South-west","Fished","C.FH.20",45.9,"Rachel","Yes","come back with different CAL","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO291","IO","MBH",-34.08368897,114.7488721,20201022,"13:09:00","South-west","No-take","C.IO.12",109,"Rachel","Yes","Yes","National Park Zone",NA
-"2020-10_south-west_stereo-BRUVs","IOC04","IO","Captains pick",-34.08755,114.749265,20201022,"13:16:00","South-west","No-take",NA,109,"Rachel","Yes","Yes","National Park Zone",NA
+"2020-10_south-west_stereo-BRUVs","IOC04","IO","Captains pick",-34.08755,114.749265,20201022,"13:16:00","South-west","No-take","C.IO.12",109,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","FH94","FH","MBH",-33.90868897,114.9413721,20201029,"14:36:00","South-west","Fished","C.FH.18",41.9,"Rachel","Yes","Yes",NA,NA
 "2020-10_south-west_stereo-BRUVs","FH11","FH","MBH",-33.89868897,114.9388721,20201029,"14:48:00","South-west","Fished","C.FH.18",42.3,"Rachel","Yes","Yes",NA,NA
 "2020-10_south-west_stereo-BRUVs","FH78","FH","MBH",-33.89118897,114.9163721,20201029,"14:56:00","South-west","Fished","C.FH.17",45.8,"Rachel","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
@@ -227,7 +227,7 @@
 "2020-10_south-west_stereo-BRUVs","FH50","FH","MBH",-33.68118897,114.9313721,20201017,"06:51:00","South-west","No-take","C.FH.3",44.6,"Daphne","Yes",NA,NA,"Injidup Sanctuary Zone"
 "2020-10_south-west_stereo-BRUVs","IO379","IO","MBH",-34.08368897,114.6813721,20201123,"06:58","South-west","No-take","C.IO.14",138,"Rachel","Yes","Yes","National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO49","IO","MBH",-34.06118897,114.7063721,20201023,"06:59:00","South-west","No-take","C.IO.34",129,"Rachel","Yes",NA,"National Park Zone",NA
-"2020-10_south-west_stereo-BRUVs","FHC","FH","Captains pick",-33.680718,114.965092,20201017,"07:07:00","South-west","No-take",NA,36.2,"Daphne","Yes",NA,NA,"Injidup Sanctuary Zone"
+"2020-10_south-west_stereo-BRUVs","FHC","FH","Captains pick",-33.680718,114.965092,20201017,"07:07:00","South-west","No-take","C.FH.A",36.2,"Daphne","Yes",NA,NA,"Injidup Sanctuary Zone"
 "2020-10_south-west_stereo-BRUVs","IO273","IO","MBH",-33.99868897,114.8213721,20201019,"07:07:00","South-west","Fished","C.IO.22",44.9,"Rachel","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO328","IO","MBH",-33.99356667,114.8213667,20201019,"07:13:00","South-west","Fished","C.IO.22",43.8,"Rachel","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO329","IO","MBH",-34.06481667,114.7266333,20201023,"07:18:00","South-west","No-take","C.IO.13",121,"Rachel","Yes",NA,"National Park Zone",NA
@@ -246,8 +246,8 @@
 "2020-10_south-west_stereo-BRUVs","IO326","IO","MBH",-34.00425,114.6892833,20201123,"12:26","South-west","Fished","C.IO.24",121,NA,NA,"No","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO96","IO","MBH",-34.13618897,114.7363721,20201022,"08:06:00","South-west","No-take","C.IO.68",127,"Brooke Gibbons","Yes",NA,"National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","FH83","FH","MBH",-33.91118897,114.8463721,20201013,"08:13:00","South-west","Fished","C.FH.19",40.9,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","IO365","IO","MBH",-34.02368897,114.7538721,20201015,"08:23:00","South-west","Fished",NA,73.7,"Brooke Gibbons","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","FHCO1","FH","Captains pick",-33.669869,114.809825,20201012,"08:38:00","South-west","Fished",NA,44.8,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","IO365","IO","MBH",-34.02368897,114.7538721,20201015,"08:23:00","South-west","Fished","C.IO.23",73.7,"Brooke Gibbons","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","FHCO1","FH","Captains pick",-33.669869,114.809825,20201012,"08:38:00","South-west","Fished","C.FH.2",44.8,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO189","IO","MBH",-33.98868897,114.6638721,20201023,"12:31:00","South-west","Fished","C.IO.40",139,NA,NA,"No","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH64","FH","MBH",-33.70118897,114.9388721,20201017,"08:56:00","South-west","No-take","C.FH.5",44.2,"Daphne","Yes",NA,NA,"Injidup Sanctuary Zone"
 "2020-10_south-west_stereo-BRUVs","IO75","IO","MBH",-34.03368897,114.8538721,20201019,"09:10:00","South-west","Fished","C.IO.60",42.2,"Rachel","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
@@ -280,7 +280,7 @@
 "2020-10_south-west_stereo-BRUVs","IO306","IO","MBH",-34.10118897,114.7338721,20201022,"10:29:00","South-west","No-take","C.IO.10",124,"Rachel","Yes",NA,"National Park Zone",NA
 "2020-10_south-west_stereo-BRUVs","IO148","IO","MBH",-34.01118897,114.5963721,20201123,"10:31","South-west","Fished","C.IO.46",140,"Rachel","Yes","Yes","Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH30","FH","MBH",-33.75118897,114.8888721,20201017,"11:12:00","South-west","Fished","C.FH.8",46.2,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
-"2020-10_south-west_stereo-BRUVs","FHCO2","FH","Captains pick",-33.72358,114.813293,20201012,"11:13:00","South-west","Fished",NA,42,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
+"2020-10_south-west_stereo-BRUVs","FHCO2","FH","Captains pick",-33.72358,114.813293,20201012,"11:13:00","South-west","Fished","C.FH.6",42,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","FH93","FH","MBH",-33.77618897,114.8688721,20201017,"11:33:00","South-west","Fished","C.FH.10",43.3,"Daphne","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO244","IO","MBH",-34.00368897,114.9063721,20201019,"11:35:00","South-west","Fished","C.IO.47",44.7,"Ramesh","Yes",NA,"Special Purpose Zone (Mining Exclusion)",NA
 "2020-10_south-west_stereo-BRUVs","IO260","IO","MBH",-33.97118897,114.9163721,20201019,"11:55:00","South-west","Fished","C.IO.20",46.3,"Rachel","Yes",NA,NA,NA

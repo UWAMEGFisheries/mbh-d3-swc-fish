@@ -26,7 +26,7 @@ tidy.dir=paste(working.dir,"Data/Tidy",sep="/")
 setwd(tidy.dir)
 dir()
 
-maxn <- read_csv("2020_south-west_stereo-BRUVs.complete.maxn.with.clusters.csv")%>%
+maxn <- read_csv("2020_south-west_stereo-BRUVs.complete.maxn.csv")%>%
   mutate(scientific=paste(family,genus,species,sep=" "))%>%
   glimpse()
 
@@ -50,8 +50,20 @@ master<-googlesheets4::read_sheet(url)%>%
 
 names(master)
 
-# Create Species list ----
 
+
+
+
+###### NEED TO READ IN LUMPED COMMON NAMES FOR PSEUDOCARANX
+###### WILL ALSO NEED TO ADD INTO CHECKEM AND VISUALISER!!!!!!!
+
+
+
+
+
+
+
+# Create Species list ----
 species.table <- maxn%>%
   group_by(family,genus,species,scientific)%>%
   summarise_at(vars("maxn"),funs(sum,mean,sd,se=sd(.)/sqrt(n())))%>%
