@@ -300,7 +300,7 @@ test_model$taus
 # remove one covariate at a time ----
 sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
                                                          collapse = ','),
-                                          ") ~ poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                          ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 test_model_b <- species_mix(
@@ -310,7 +310,7 @@ test_model_b <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 9,
+  nArchetypes = 10,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -327,10 +327,52 @@ BIC(test_model_b) # this gives a valie of BIC
 print(test_model_b)
 
 
+# 11. Final model ----
+
+sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+                                                      collapse = ','),
+                                       ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
+A_model <- species_mix(
+  archetype_formula = sam_form,
+  #poly(slope, degree = 2, raw = TRUE) + poly(tpi, degree = 2, raw = TRUE) + poly(aspect, degree = 2, raw = TRUE) +
+  #poly(temp_mean, degree = 2, raw = TRUE) + poly(temp_trend, degree = 2, raw = TRUE)),
+  species_formula = sp_form, #stats::as.formula(~1),
+  all_formula = NULL,
+  data=dd,
+  nArchetypes = 4,
+  family = "negative.binomial",
+  #offset = NULL,
+  #weights = NULL,
+  #bb_weights = NULL,
+  #size = NULL, # for presence absence - benthic point data
+  #power = NULL, # for tweedie : eg. biomass data
+  control = list(), # for tuning the model if needed
+  #inits = NULL, # if you have fitted the model previously: use the same values
+  #standardise = FALSE, # has been removed in new update it scales
+  #titbits = TRUE # could turn this off
+)
+
+BIC(A_model) # this gives a valie of BIC
+print(A_model)
+
+# 12. Probability of each sp. belonging to each archetype ----
+arch_prob <- A_model$taus
+head(arch_prob)
+
+# 13. Plots ----
+
+plot(A_model)
+
+preds <- c("bathy", "slope", "tpi", "aspect")
 
 
+ef.plot <- effectPlotData(preds, A_model)
+head(ef.plot)
+
+ef.plot$bathy
+plot(ef.plot, A_model)
 
 
 sp.boot <- species_mix.bootstrap(
@@ -367,3 +409,11 @@ test2 <- species_mix.fit(
 
 
 poly(temp, degree = 2, raw = TRUE) + poly(slope, degree = 2, raw = TRUE)
+
+
+
+
+
+
+#####################
+
