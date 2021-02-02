@@ -5,6 +5,7 @@
 
 #library(devtools)
 #devtools::install_github('skiptoniam/ecomix')
+#library(Rcpp)
 library(ecomix)
 library(plyr)
 library(dplyr)
@@ -38,19 +39,19 @@ r.dir <- paste(w.dir, "rasters", sep='/')
 
 # 1. Load data ----
 df <- read.csv(paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep = '/'))%>%
-  mutate_at(vars(sample, family, genus, species, dataset.x, unique.name, full.name, location, status, cluster, cluster.new, number, n, class), list(as.factor)) %>% # make these columns as factors
+  mutate_at(vars(sample, family, genus, species, dataset, unique.name, full.name, location, status, cluster, cluster.new, number, n, class), list(as.factor)) %>% # make these columns as factors
   # At some point filter for successful count
   glimpse()
 head(df)
 str(df)
-names(df) # 233 BRUV deployments
+names(df) # 278 BRUV deployments
 summary(df)
 
 
 
 # 2. Remove sp that are encountered less than 2.5% of the time ----
 # as per Foster et al 2015 ----
-# 233 BRUV drops so far, going to work with 2.5% which is more than 2 BRUVs
+# 278 BRUV drops so far, going to work with 2.5% which is more than 2 BRUVs
 head(df)
 names(df)
 
@@ -75,7 +76,7 @@ sp.to.remove <- df %>%
 glimpse(sp.to.remove)
 names(sp.to.remove)
 to.remove <- sp.to.remove$full.name
-length(sp.to.remove$full.name) # 80 species removed
+length(sp.to.remove$full.name) # 69 species removed
 
 # Remove species from df --
 df2 <- df %>% dplyr::filter(!full.name %in% to.remove) # remove rare sp
@@ -83,38 +84,41 @@ df2 %>% count(full.name)
 df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
 
 df2 <- droplevels(df2) 
-str(df2)  # 19035 obs, 81 species remaining
+str(df2)  # 19035 obs, 83 species remaining
 
 names(df2)
 
 # 3. Make covariates in long formate using reshape2 package --
 dfl <- melt(df2,
             id.vars = names(df)[c(3:33)],
-            measure.vars = names(df)[c(34:43)],
+            measure.vars = names(df)[c(34:40)],
             variable.name = "covariate",
             value.name = "value"
 )
 head(dfl)
 str(dfl)
+
+# check for NAs in covariates
 any(is.na(dfl$value))
 which(is.na(dfl$value))
 
-# Remove temp vars for the moment ----
-levels(dfl$covariate)
+# Remove covars if needed ----
+#levels(dfl$covariate)
 
-dfl <- dfl %>%
-  dplyr::filter(covariate != "SSTmean_SSTARRS" & covariate != "SSTsterr_SSTARRS" & covariate != "SSTtrend_SSTARRS") %>%
-  droplevels
+#dfl <- dfl %>%
+#  dplyr::filter(covariate != "SSTmean_SSTARRS" & covariate != "SSTsterr_SSTARRS" & covariate != "SSTtrend_SSTARRS") %>%
+ # droplevels
 
-str(dfl)
-levels(dfl$covariate) #check that levels were droped
-class(dfl)
+#str(dfl)
+#levels(dfl$covariate) #check that levels were droped
+#class(dfl)
 
 # check for NAs again --
-any(is.na(dfl$value))
-which(is.na(dfl$value))
+#any(is.na(dfl$value))
+#which(is.na(dfl$value))
 
-### TO ADDRESS - these NAs in covariate data!!! ----
+
+
 
 # 4. Species data into matrix ----
 pd <- table_to_species_data(

@@ -33,8 +33,11 @@ r.dir <- paste(w.dir, "rasters", sep='/')
 
 
 # Load data ----
-df <- read.csv(paste(dt.dir, "2020_sw_complete_maxn-clusters.csv", sep = '/'))%>%
-  mutate_at(vars(sample, family, unique.name, genus, full.name, species, status, cluster, cluster.new, number, n, dataset.x), list(as.factor)) %>% # make these columns as factors
+
+study <- "2020_south-west_stereo-BRUVs"
+
+df <- read.csv(paste(dt.dir, paste(study, "complete.maxn.with.clusters.csv", sep='.'), sep = '/'))%>%
+  mutate_at(vars(sample, family, unique.name, genus, full.name, species, status, cluster, cluster.new, number, n, dataset), list(as.factor)) %>% # make these columns as factors
   glimpse()
 head(df)
 str(df)
@@ -50,8 +53,9 @@ d <- stack(paste(r.dir, "SW_detrendend.derivatives-to-260m.tif", sep='/'))
 plot(d)
 names(d)
 n <- read.csv(paste(r.dir, "names.det.bath.csv", sep='/'))
-head(n)
-names(d) <- n[,2]
+n
+n$covs <- c("detrended.bathy", "slope", "flowdir", "tri", "tpi", "aspect")
+names(d) <- n[,3]
 
 
 # Extract bathy derivatives from data points --
@@ -60,6 +64,18 @@ str(dfs)
 
 dfs <- raster::extract(d, dfs, sp = T)
 str(dfs)
+head(dfs)
+
+
+## so far just using bathy covariates ##
+
+# save up to here ----
+write.csv(dfs, paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep='/'))
+
+
+###       ###       ###       ###
+
+# Still working on this section ----
 
 # Get SST covariates ----
 t1 <- raster(paste(r.dir, "SSTmean_SSTARRS.tif", sep='/'))
@@ -70,7 +86,27 @@ ts <- stack(t1, t2, t3)
 plot(ts$SSTmean_SSTARRS)
 points(dfs)
 
-dfs <- raster::extract(ts, dfs, sp = T)
+dfs <- raster::extract(ts$SSTmean_SSTARRS, dfs, sp = T)
+head(dfs)
+dfs@data
+
+dist <- distance(dfs)
+
+
+head(df)
+names(df)
+xy <- df[,c(12,11)]
+
+
+## Remove NA's by replacing with nearest neighbor ----
+# https://stackoverflow.com/questions/27562076/if-raster-value-na-search-and-extract-the-nearest-non-na-pixel
+
+# use normal extract function to show that NAs are extracted for some points
+extracted <- raster::extract(x = ts$SSTmean_SSTARRS, y = xy)
+
+
+# then take the raster value with lowest distance to point AND non-NA value in the raster
+dfs$sampled <-  apply(X = xy, MARGIN = 1, FUN = function(xy) ts$SSTmean_SSTARRS@data@values[which.min(replace(distanceFromPoints(ts$SSTmean_SSTARRS, xy), is.na(ts$SSTmean_SSTARRS), NA))])
 str(dfs)
 levels(dfs$sample)
 
