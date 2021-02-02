@@ -17,21 +17,34 @@ library(RColorBrewer)
 # clear workspace ----
 rm(list = ls())
 
-
 ## Set working directories ----
 w.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
 dt.dir <-  paste(w.dir, "Data/Tidy", sep='/')
 s.dir <- paste(w.dir, 'shapefiles', sep='/')
 
-
+# Study name---
+study <- "2020_south-west_stereo-BRUVs"
 
 ## Load metadata with cluster ID ----
-
 mdc <- read.csv(paste(dt.dir, "2020_south-west_stereo_BRUVs.metadata.clusters.csv", sep='/')) %>%
   glimpse() # 490 bruvs planned
 
-# Load BRUV maxn data ---
+mdc.multiples <- mdc %>% # There are three deployments with multiple rows
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(n=n()) %>%
+  filter(n>1)
 
+mdc.clean <- mdc %>%
+  filter(!(sample  %in% c("IO235")&X%in%c("487"))) %>%
+  filter(!(sample  %in% c("IO28"))) %>%
+  filter(!(sample  %in% c("IO312")&X%in%c("478")))
+
+mdc.multiples <- mdc.clean %>% # 
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(n=n()) %>%
+  filter(n>1)
+
+# Load BRUV maxn data ---
 bfile <- "2020_south-west_stereo-BRUVs.complete.maxn.csv"
 
 b <- read.csv(paste(dt.dir, bfile, sep='/')) %>%
@@ -41,23 +54,21 @@ b <- read.csv(paste(dt.dir, bfile, sep='/')) %>%
   glimpse()
 
 
-levels(b$sample) # 277 bruvs deployed
-str(b) # 47260 obs
+levels(b$sample) # 278 bruvs deployed (this number will drop BG)
+str(b) # 45198  obs
 names(b)
 
 # Merge deployed bruv data with metadata ----
+bwc <- b %>%
+  dplyr::left_join(mdc.clean)
 
-bwc <- merge(b, mdc, by = 'sample', all=T)
-str(bwc) # 47686 obs -> 426 more
-levels(bwc$sample) # 531
-
-# Remove rows with NA's in maxn column --
-bwc2  <- bwc[!is.na(bwc$maxn),]
-str(bwc2) # 39950 obs -> 7310 less
-levels(bwc2$sample) # 277
+str(bwc) # 45198  obs -> 426 more
+names(bwc)
 
 # SAVE complete maxn with cluster info ----
-#write.csv(bwc2, paste(dt.dir, "2020_sw_complete_maxn-clusters.csv", sep='/'))
+setwd(dt.dir)
+
+write.csv(bwc, paste(study, "complete.maxn.with.clusters.csv", sep='.'))
 
 
 
