@@ -19,6 +19,7 @@ library(tidyr)
 library(devtools)
 library(BBmisc) # to normalize
 library(corrplot)
+library(tibble)
 
 
 # clear workspace ----
@@ -34,6 +35,7 @@ s.dir <- (paste(w.dir, "shapefiles", sep='/'))
 # Set graph directory - to save plots
 p.dir <- paste(w.dir, "Plots", sep='/')
 r.dir <- paste(w.dir, "rasters", sep='/')
+o.dir <- paste(w.dir, "outputs", sep='/')
 
 
 # 1. Load data ----
@@ -87,7 +89,7 @@ str(df2)  # 19035 obs, 83 species remaining
 
 names(df2)
 
-# 3. Make covariates in long formate using reshape2 package --
+# 3. Make covariates in long formate using reshape2 package ----
 dfl <- melt(df2,
             id.vars = names(df)[c(3:33)],
             measure.vars = names(df)[c(34:40)],
@@ -100,6 +102,21 @@ str(dfl)
 # check for NAs in covariates
 any(is.na(dfl$value))
 which(is.na(dfl$value))
+
+# check for NAs in cluster
+any(is.na(dfl$cluster.new))
+which(is.na(dfl$cluster.new))
+
+# to check which BRUVs have NA cluster ----
+str(dfl)
+levels(dfl$sample)
+ndf <- as.data.frame(cbind(as.character(dfl$sample), as.character(dfl$cluster.new)))
+str(ndf)
+head(ndf)
+bruv.cluster <- unique(ndf[,c(1,2)])
+any(is.na(bruv.cluster$V2))
+which(is.na(bruv.cluster$V2)) # which ones
+length(which(is.na(bruv.cluster$V2))) # how many
 
 # Remove covars if needed ----
 #levels(dfl$covariate)
@@ -131,13 +148,17 @@ pd
 class(pd)
 dim(pd)
 # change column names for fomula because long names don't work with function --
-colnames(pd) # col names as species names
-new.names <- paste0('spp',1:81)
+sp.names <- colnames(pd) # col names as species names
+new.names <- paste0('spp',1:83)
 colnames(pd) <- new.names
 pd
 
+# save names for later
+sp.names.no <- as.data.frame(cbind(sp.names, new.names))
+head(sp.names.no)
 
 # 5. Covariate data into wide df ----
+names(dfl)
 
 cd <- reshape(dfl[,c(1,32:33)], idvar = "sample", timevar = "covariate", direction = "wide")
 
@@ -148,7 +169,7 @@ dim(cd)
 
 cdm <- as.matrix(cd)
 
-# 6. Standarize the covariates --
+# 6. Standarize the covariates ----
 cd.stand <- BBmisc::normalize(cd, method = "standardize", range = c(0,1))
 colnames(cd.stand) <- colnames(cd)
 colnames(cd.stand) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
@@ -258,7 +279,7 @@ colnames(pd)
 
 #sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59), collapse = ','),") ~ bathy + slope"))
                                                     
-sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
                                                     collapse = ','),
                                                     ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
                                                 
@@ -274,7 +295,7 @@ test_model <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 5,
+  nArchetypes = 13,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -301,9 +322,9 @@ test_model$taus
 # now that you know the no. of archetypes, start removing convariates and test AIC to find the most parismonious model--
 
 # remove one covariate at a time ----
-sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
                                                          collapse = ','),
-                                          ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                          ") ~ poly(bathy, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 test_model_b <- species_mix(
@@ -313,7 +334,7 @@ test_model_b <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 10,
+  nArchetypes = 4,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -332,9 +353,9 @@ print(test_model_b)
 
 # 11. Final model ----
 
-sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:81),
+sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
                                                       collapse = ','),
-                                       ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                       ") ~ poly(bathy, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 A_model <- species_mix(
@@ -361,14 +382,46 @@ BIC(A_model) # this gives a valie of BIC
 print(A_model)
 
 # 12. Probability of each sp. belonging to each archetype ----
-arch_prob <- A_model$taus
+arch_prob <- as.data.frame(A_model$taus)
 head(arch_prob)
+names(arch_prob)
+head(sp.names.no)
+
+arch <- cbind(arch_prob, sp.names.no)
+head(arch)
+
+# Get archetype with maximum probability for each sp --
+arch2 <- arch_prob %>%
+  tibble::rownames_to_column() %>% # 1. add row ids as a column
+  gather(column, value, -rowname) %>%
+  dplyr::group_by(rowname) %>%
+  dplyr::filter(rank(-value) == 1) %>%
+  glimpse()
+
+head(arch2)
+str(arch2)
+arch2 <- as.data.frame(arch2)
+names(arch2) <- c('new.names', 'archetype', 'prob')
+
+arch3 <- arch2 %>%
+  dplyr::left_join(sp.names.no) %>%
+  dplyr::mutate_at(vars(archetype), list(as.factor)) %>%
+  glimpse()
+
+str(arch3)
+summary(arch3)
+
+# to save this list --
+#write.csv(arch3, paste(o.dir, "species_archetypes.csv", sep ='/'))
+
+
+
 
 # 13. Plots ----
 
 plot(A_model)
 
-preds <- c("bathy", "slope", "tpi", "aspect")
+preds <- c("bathy", "slope", "aspect")
 
 
 ef.plot <- effectPlotData(preds, A_model)
@@ -379,44 +432,153 @@ plot(ef.plot, A_model)
 
 
 sp.boot <- species_mix.bootstrap(
-  test_model,
+  A_model,
   nboot = 100,
   type = "BayesBoot",
   mc.cores = 2,
   quiet = FALSE
 )
 
+
+plot(ef.plot,
+     A_model, 
+     sp.boot,
+     )
+
+
+# still not sure what to use this for --
 sp.var <- vcov(
-  test_model,
-  sp.boot = NULL,
+  A_model,
+  sp.boot = sp.boot,
   method = "BayesBoot",
   nboot = 10,
   mc.cores = 2
 )
 
-controls <- as.list(c(1,2,3))
-class(controls)
 
-test2 <- species_mix.fit(
-  y = pd,
-  X = cd,
-  W = NULL,
-  G = 6,
-  S = NULL,
-  disty = 'negative.binomial',
-  control = controls
+
+
+## 14. Predict ----
+
+# load predictors --
+
+# bathy --
+b <- raster(paste(r.dir, "SW_bathy-to-260m.tif", sep='/'))
+plot(b)
+
+# derivatives --
+d <- stack(paste(r.dir, "SW_detrendend.derivatives-to-260m.tif", sep='/'))
+plot(d)
+names(d)
+n <- read.csv(paste(r.dir, "names.det.bath.csv", sep='/'))
+n
+n$covs <- c("detrended.bathy", "slope", "flowdir", "tri", "tpi", "aspect")
+names(d) <- n[,3]
+
+# crop bathy to stack --
+b2 <- crop(b, d)
+
+# stack preds --
+d2 <- stack(d$slope, d$aspect, b2)
+plot(d2)
+
+d3 <- as.data.frame(d2, xy = TRUE)
+dim(d3)
+head(d3)
+names(d3) <- c('x', 'y', 'slope', 'aspect', 'bathy')
+str(d3)
+any(is.na(d3$slope))
+length(which(is.na(d3$slope)))
+d3 <- na.omit(d3)
+str(d3)
+
+
+# predict ##
+ptest <- predict(
+  A_model,
+  sp.boot,
+  d3[,c(3:5)],
+  mc.cores = 2,
+  prediction.type = "archetype"
 )
 
 
-# from Skip for formula -----
+class(ptest)
+str(ptest$ptPreds)
+head(ptest$ptPreds)
+ptest$
+
+Apreds <- ptest$ptPreds
+head(Apreds)
+
+SAMpreds <- cbind(d3, Apreds)
+head(SAMpreds)
 
 
-poly(temp, degree = 2, raw = TRUE) + poly(slope, degree = 2, raw = TRUE)
+coordinates(SAMpreds) <- ~x+y
+A1 <- SAMpreds[,4]
+A2 <- SAMpreds[,5]
+A3 <- SAMpreds[,6]
+A4 <- SAMpreds[,7]
+
+gridded(A1) <- TRUE
+gridded(A2) <- TRUE
+gridded(A3) <- TRUE
+gridded(A4) <- TRUE
+
+A1preds <- raster(A1)
+A2preds <- raster(A2)
+A3preds <- raster(A3)
+A4preds <- raster(A4)
+
+Allpreds <- stack(A1preds, A2preds, A3preds, A4preds)
+plot(Allpreds)
+
+# PREDICT USING STAND COVS ----
+
+## Standarize the covariates --
+d3.stand <- BBmisc::normalize(d3[,c(3:5)], method = "standardize", range = c(0,1))
+colnames(d3.stand) <- colnames(d3[,c(3:5)])
+dim(d3.stand)
+head(d3.stand)
 
 
+ptest2 <- predict(
+  A_model,
+  sp.boot,
+  d3.stand,
+  prediction.type = "archetype"
+)
+
+class(ptest2)
+str(ptest2$ptPreds)
+head(ptest2$ptPreds)
+  
+Bpreds <- ptest2$ptPreds
+head(Bpreds)
+
+SAMpreds <- cbind(d3, Bpreds)
+head(SAMpreds)
 
 
+coordinates(SAMpreds) <- ~x+y
+A1 <- SAMpreds[,4]
+A2 <- SAMpreds[,5]
+A3 <- SAMpreds[,6]
+A4 <- SAMpreds[,7]
 
+gridded(A1) <- TRUE
+gridded(A2) <- TRUE
+gridded(A3) <- TRUE
+gridded(A4) <- TRUE
+
+A1preds <- raster(A1)
+A2preds <- raster(A2)
+A3preds <- raster(A3)
+A4preds <- raster(A4)
+
+AllpredsB <- stack(A1preds, A2preds, A3preds, A4preds)
+plot(AllpredsB)
 
 #####################
 
