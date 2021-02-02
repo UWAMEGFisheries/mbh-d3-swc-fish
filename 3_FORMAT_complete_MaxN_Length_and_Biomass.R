@@ -59,7 +59,7 @@ dir()
 # Read in metadata----
 metadata<-read_csv(file=paste(study,"checked.metadata.csv",sep = "."),na = c("", " "))%>%
   dplyr::mutate(id=paste(campaignid,sample,sep="."))%>%
-  glimpse()
+  dplyr::glimpse()
 
 unique(metadata$sample) # 316 - this includes unsuccessful drops!!!
 
@@ -69,13 +69,13 @@ dat<-read_csv(file=paste(study,"checked.maxn.csv",sep = "."),na = c("", " "))%>%
   dplyr::select(c(id,campaignid,sample,family,genus,species,maxn))%>%
   tidyr::complete(nesting(id,campaignid,sample),nesting(family,genus,species)) %>%
   replace_na(list(maxn = 0))%>%
-  group_by(sample,family,genus,species)%>%
+  dplyr::group_by(sample,family,genus,species)%>%
   dplyr::summarise(maxn=sum(maxn))%>%
-  ungroup()%>% #always a good idea to ungroup() after you have finished using the group_by()!
-  mutate(scientific=paste(family,genus,species,sep=" "))%>%
+  dplyr::ungroup()%>% #always a good idea to ungroup() after you have finished using the group_by()!
+  dplyr::mutate(scientific=paste(family,genus,species,sep=" "))%>%
   dplyr::select(sample,scientific,maxn)%>%
   spread(scientific,maxn, fill = 0)%>% #why do we need this?
-  glimpse()
+  dplyr::glimpse()
 
 # Make family, genus and species names to merge back in after data is complete ---
 maxn.families<-read_csv(file=paste(study,"checked.maxn.csv",sep = "."),na = c("", " "))%>%
@@ -112,8 +112,8 @@ complete.length.number<-read_csv(file=paste(study,"checked.length.csv",sep = "."
   left_join(.,metadata)%>%
   glimpse()
 
-length(unique(metadata$id)) # 1121
-length(unique(complete.length.number$id)) # 1121
+length(unique(metadata$id)) # 316
+length(unique(complete.length.number$id)) # 316
 
 # Make the expanded length data----
 # For use in length analyses - i.e KDE or histograms
@@ -142,7 +142,7 @@ url <- "https://docs.google.com/spreadsheets/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPL
 
 master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
   filter(grepl('Australia', global.region))%>%
-  filter(grepl('NW', marine.region))%>%
+  filter(grepl('SW', marine.region))%>%
   dplyr::mutate(all=as.numeric(all))%>%
   dplyr::mutate(bll=as.numeric(bll))%>%
   dplyr::mutate(a=as.numeric(a))%>%
