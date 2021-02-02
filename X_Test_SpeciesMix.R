@@ -5,7 +5,6 @@
 
 #library(devtools)
 #devtools::install_github('skiptoniam/ecomix')
-#library(Rcpp)
 library(ecomix)
 library(plyr)
 library(dplyr)
