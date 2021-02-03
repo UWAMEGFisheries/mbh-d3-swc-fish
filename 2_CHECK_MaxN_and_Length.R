@@ -81,6 +81,8 @@ maxn<-read_csv(paste(study,"maxn.csv",sep="_"))%>%
   replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
   dplyr::glimpse()
 
+# Check that there is no fish with family unknown
+
 unique(maxn$sample) # 287 - will drop
 
 # Import length/3d file----

@@ -80,10 +80,33 @@ setwd(staging.dir)
 write.csv(metadata,paste(study,"metadata.csv",sep="_"),row.names = FALSE)
 
 ## Combine Points and Count files into maxn ----
-maxn<-ga.create.em.maxn()%>%
-  dplyr::inner_join(metadata)%>%
-  #dplyr::filter(successful.count=="Yes")%>% # This will need to be turned on once  we have cleaned the metadata
-  dplyr::filter(maxn>0)
+points.files <-ga.list.files("_Points.txt") # list all files ending in "Lengths.txt"
+points.files$lines<-sapply(points.files,countLines) # Count lines in files (to avoid empty files breaking the script)
+
+points<-as.data.frame(points.files)%>%
+  dplyr::mutate(campaign=row.names(.))%>%
+  filter(lines>1)%>% # filter out all empty text files
+  dplyr::select(campaign)%>%
+  as_vector(.)%>% # remove all empty files
+  purrr::map_df(~ga.read.files_txt(.))%>%
+  dplyr::mutate(campaignid=str_replace_all(.$project,c("_Points.txt"="")))%>%
+  dplyr::select(-c(project))
+
+maxn<-points%>%
+  dplyr::mutate(species=if_else(genus%in%c("Orectolobus","Caesioperca","Platycephalus","Squalus"),"spp",species))%>%
+  dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species,comment)%>%
+  dplyr::mutate(number=as.numeric(number))%>%
+  dplyr::summarise(maxn=sum(number))%>%
+  dplyr::group_by(campaignid,sample,family,genus,species)%>%
+  dplyr::slice(which.max(maxn))%>%
+  dplyr::ungroup()%>%
+  dplyr::filter(!is.na(maxn))%>%
+  dplyr::select(-frame)%>%
+  tidyr::replace_na(list(maxn=0))%>%
+  dplyr::mutate(maxn=as.numeric(maxn))%>%
+  dplyr::filter(maxn>0)%>%
+  dplyr::inner_join(metadata)#%>%
+  #dplyr::filter(successful.count=="Yes") # This will need to be turned on once  we have cleaned the metadata
 
 unique(maxn$sample) #287 (this should drop)
 
@@ -93,6 +116,7 @@ write.csv(maxn,paste(study,"maxn.csv",sep="_"),row.names = FALSE)
 
 ## Combine Length, Lengths and 3D point files into length3dpoints----
 length3dpoints<-ga.create.em.length3dpoints()%>%
+  dplyr::mutate(species=if_else(genus%in%c("Orectolobus","Caesioperca","Platycephalus","Squalus"),"spp",species))%>%
   dplyr::select(-c(time,comment))%>% # take time out as there is also a time column in the metadata
   dplyr::inner_join(metadata)%>%
   dplyr::filter(successful.length=="Yes")%>%

@@ -6,7 +6,7 @@
 "2020-06_south-west_stereo-BRUVs","01","Labridae","Pseudolabrus","biserialis",17
 "2020-06_south-west_stereo-BRUVs","01","Pomacentridae","Chromis","klunzingeri",36
 "2020-06_south-west_stereo-BRUVs","01","Scorpididae","Tilodon","sexfasciatus",1
-"2020-06_south-west_stereo-BRUVs","01","Serranidae","Caesioperca","sp1",13
+"2020-06_south-west_stereo-BRUVs","01","Serranidae","Caesioperca","spp",13
 "2020-06_south-west_stereo-BRUVs","01","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-06_south-west_stereo-BRUVs","01","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","01","Triakidae","Furgaleus","macki",1
@@ -18,7 +18,7 @@
 "2020-06_south-west_stereo-BRUVs","02","Pomacentridae","Chromis","klunzingeri",52
 "2020-06_south-west_stereo-BRUVs","02","Scombridae","Sarda","spp",4
 "2020-06_south-west_stereo-BRUVs","02","Scorpididae","Neatypus","obliquus",6
-"2020-06_south-west_stereo-BRUVs","02","Serranidae","Caesioperca","sp1",26
+"2020-06_south-west_stereo-BRUVs","02","Serranidae","Caesioperca","spp",26
 "2020-06_south-west_stereo-BRUVs","02","Triakidae","Furgaleus","macki",1
 "2020-06_south-west_stereo-BRUVs","03","Gerreidae","Parequula","melbournensis",2
 "2020-06_south-west_stereo-BRUVs","03","Glaucosomatidae","Glaucosoma","hebraicum",3
@@ -110,7 +110,7 @@
 "2020-06_south-west_stereo-BRUVs","09","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-06_south-west_stereo-BRUVs","09","Pomacentridae","Chromis","klunzingeri",4
 "2020-06_south-west_stereo-BRUVs","09","Scorpididae","Neatypus","obliquus",15
-"2020-06_south-west_stereo-BRUVs","09","Serranidae","Caesioperca","sp1",11
+"2020-06_south-west_stereo-BRUVs","09","Serranidae","Caesioperca","spp",11
 "2020-06_south-west_stereo-BRUVs","09","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-06_south-west_stereo-BRUVs","10","Batrachoididae","Batrachomoeus","rubricephalus",1
 "2020-06_south-west_stereo-BRUVs","10","Carangidae","Pseudocaranx","spp",2
@@ -135,7 +135,7 @@
 "2020-06_south-west_stereo-BRUVs","11","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-06_south-west_stereo-BRUVs","11","Pomacentridae","Chromis","klunzingeri",53
 "2020-06_south-west_stereo-BRUVs","11","Scorpididae","Neatypus","obliquus",4
-"2020-06_south-west_stereo-BRUVs","11","Serranidae","Caesioperca","sp1",3
+"2020-06_south-west_stereo-BRUVs","11","Serranidae","Caesioperca","spp",3
 "2020-06_south-west_stereo-BRUVs","12","Carangidae","Seriola","hippos",1
 "2020-06_south-west_stereo-BRUVs","12","Cheilodactylidae","Nemadactylus","valenciennesi",2
 "2020-06_south-west_stereo-BRUVs","12","Kyphosidae","Kyphosus","sydneyanus",1
@@ -147,7 +147,7 @@
 "2020-06_south-west_stereo-BRUVs","12","Monacanthidae","Meuschenia","flavolineata",1
 "2020-06_south-west_stereo-BRUVs","12","Monacanthidae","Meuschenia","galii",1
 "2020-06_south-west_stereo-BRUVs","12","Myliobatidae","Myliobatis","tenuicaudatus",1
-"2020-06_south-west_stereo-BRUVs","12","Orectolobidae","Orectolobus","maculatus",1
+"2020-06_south-west_stereo-BRUVs","12","Orectolobidae","Orectolobus","spp",1
 "2020-06_south-west_stereo-BRUVs","12","Pomacentridae","Parma","bicolor",1
 "2020-06_south-west_stereo-BRUVs","12","Scorpaenidae","Scorpaena","sumptuosa",1
 "2020-06_south-west_stereo-BRUVs","12","Scorpididae","Neatypus","obliquus",17
@@ -163,7 +163,7 @@
 "2020-06_south-west_stereo-BRUVs","13","Labridae","Pseudolabrus","biserialis",9
 "2020-06_south-west_stereo-BRUVs","13","Monacanthidae","Meuschenia","flavolineata",1
 "2020-06_south-west_stereo-BRUVs","13","Pomacentridae","Parma","bicolor",1
-"2020-06_south-west_stereo-BRUVs","13","Serranidae","Caesioperca","rasor",3
+"2020-06_south-west_stereo-BRUVs","13","Serranidae","Caesioperca","spp",3
 "2020-06_south-west_stereo-BRUVs","13","Serranidae","Epinephelides","armatus",1
 "2020-06_south-west_stereo-BRUVs","13","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-06_south-west_stereo-BRUVs","13","Triakidae","Furgaleus","macki",1
@@ -180,7 +180,7 @@
 "2020-06_south-west_stereo-BRUVs","14","Scorpididae","Neatypus","obliquus",5
 "2020-06_south-west_stereo-BRUVs","14","Scorpididae","Scorpis","georgiana",1
 "2020-06_south-west_stereo-BRUVs","14","Scorpididae","Tilodon","sexfasciatus",1
-"2020-06_south-west_stereo-BRUVs","14","Serranidae","Caesioperca","rasor",3
+"2020-06_south-west_stereo-BRUVs","14","Serranidae","Caesioperca","spp",3
 "2020-06_south-west_stereo-BRUVs","14","Serranidae","Epinephelides","armatus",1
 "2020-06_south-west_stereo-BRUVs","14","Sparidae","Chrysophrys","auratus",2
 "2020-06_south-west_stereo-BRUVs","15","Carangidae","Pseudocaranx","spp",6
@@ -192,7 +192,7 @@
 "2020-06_south-west_stereo-BRUVs","15","Muraenidae","Gymnothorax","prasinus",1
 "2020-06_south-west_stereo-BRUVs","15","Pomacentridae","Chromis","klunzingeri",1
 "2020-06_south-west_stereo-BRUVs","15","Scorpididae","Scorpis","aequipinnis",1
-"2020-06_south-west_stereo-BRUVs","15","Serranidae","Caesioperca","rasor",2
+"2020-06_south-west_stereo-BRUVs","15","Serranidae","Caesioperca","spp",2
 "2020-06_south-west_stereo-BRUVs","15","Serranidae","Epinephelides","armatus",1
 "2020-06_south-west_stereo-BRUVs","15","Triakidae","Furgaleus","macki",1
 "2020-06_south-west_stereo-BRUVs","15","Triakidae","Mustelus","antarcticus",1
@@ -228,7 +228,7 @@
 "2020-06_south-west_stereo-BRUVs","17","Scorpididae","Neatypus","obliquus",1
 "2020-06_south-west_stereo-BRUVs","17","Scorpididae","Scorpis","aequipinnis",1
 "2020-06_south-west_stereo-BRUVs","17","Scorpididae","Scorpis","georgiana",1
-"2020-06_south-west_stereo-BRUVs","17","Serranidae","Caesioperca","sp1",1
+"2020-06_south-west_stereo-BRUVs","17","Serranidae","Caesioperca","spp",1
 "2020-06_south-west_stereo-BRUVs","17","Serranidae","Epinephelides","armatus",1
 "2020-06_south-west_stereo-BRUVs","17","Sparidae","Chrysophrys","auratus",9
 "2020-06_south-west_stereo-BRUVs","17","Triakidae","Furgaleus","macki",1
@@ -252,7 +252,7 @@
 "2020-06_south-west_stereo-BRUVs","20","Labridae","Coris","auricularis",20
 "2020-06_south-west_stereo-BRUVs","20","Labridae","Pseudolabrus","biserialis",1
 "2020-06_south-west_stereo-BRUVs","20","Scorpididae","Neatypus","obliquus",58
-"2020-06_south-west_stereo-BRUVs","20","Serranidae","Caesioperca","sp1",1
+"2020-06_south-west_stereo-BRUVs","20","Serranidae","Caesioperca","spp",1
 "2020-06_south-west_stereo-BRUVs","20","Serranidae","Epinephelides","armatus",2
 "2020-06_south-west_stereo-BRUVs","20","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","20","Urolophidae","Trygonoptera","ovalis",1
@@ -265,7 +265,7 @@
 "2020-06_south-west_stereo-BRUVs","21","Monacanthidae","Meuschenia","galii",1
 "2020-06_south-west_stereo-BRUVs","21","Pomacentridae","Chromis","klunzingeri",1
 "2020-06_south-west_stereo-BRUVs","21","Scorpididae","Neatypus","obliquus",29
-"2020-06_south-west_stereo-BRUVs","21","Serranidae","Caesioperca","sp1",1
+"2020-06_south-west_stereo-BRUVs","21","Serranidae","Caesioperca","spp",1
 "2020-06_south-west_stereo-BRUVs","21","Serranidae","Epinephelides","armatus",2
 "2020-06_south-west_stereo-BRUVs","21","Urolophidae","Trygonoptera","ovalis",1
 "2020-06_south-west_stereo-BRUVs","22","Labridae","Austrolabrus","maculatus",2
@@ -278,7 +278,7 @@
 "2020-06_south-west_stereo-BRUVs","22","Pomacentridae","Chromis","klunzingeri",2
 "2020-06_south-west_stereo-BRUVs","22","Scorpididae","Neatypus","obliquus",10
 "2020-06_south-west_stereo-BRUVs","22","Scorpididae","Tilodon","sexfasciatus",1
-"2020-06_south-west_stereo-BRUVs","22","Serranidae","Caesioperca","sp1",8
+"2020-06_south-west_stereo-BRUVs","22","Serranidae","Caesioperca","spp",8
 "2020-06_south-west_stereo-BRUVs","22","Sparidae","Chrysophrys","auratus",2
 "2020-06_south-west_stereo-BRUVs","22","Urolophidae","Urolophus","circularis",1
 "2020-06_south-west_stereo-BRUVs","23","Heterodontidae","Heterodontus","portusjacksoni",1
@@ -291,7 +291,7 @@
 "2020-06_south-west_stereo-BRUVs","23","Odacidae","Siphonognathus","caninis",1
 "2020-06_south-west_stereo-BRUVs","23","Pomacentridae","Chromis","klunzingeri",26
 "2020-06_south-west_stereo-BRUVs","23","Scorpididae","Neatypus","obliquus",31
-"2020-06_south-west_stereo-BRUVs","23","Serranidae","Caesioperca","sp1",5
+"2020-06_south-west_stereo-BRUVs","23","Serranidae","Caesioperca","spp",5
 "2020-06_south-west_stereo-BRUVs","23","Sparidae","Chrysophrys","auratus",2
 "2020-06_south-west_stereo-BRUVs","24","Aplodactylidae","Aplodactylus","westralis",1
 "2020-06_south-west_stereo-BRUVs","24","Cheilodactylidae","Nemadactylus","valenciennesi",1
@@ -307,7 +307,7 @@
 "2020-06_south-west_stereo-BRUVs","24","Pomacentridae","Chromis","klunzingeri",23
 "2020-06_south-west_stereo-BRUVs","24","Pomacentridae","Chromis","westaustralis",2
 "2020-06_south-west_stereo-BRUVs","24","Scorpididae","Neatypus","obliquus",32
-"2020-06_south-west_stereo-BRUVs","24","Serranidae","Caesioperca","sp1",3
+"2020-06_south-west_stereo-BRUVs","24","Serranidae","Caesioperca","spp",3
 "2020-06_south-west_stereo-BRUVs","24","Serranidae","Epinephelides","armatus",2
 "2020-06_south-west_stereo-BRUVs","24","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","24","Rhinobatidae","Trygonorrhina","dumerilii",1
@@ -319,7 +319,7 @@
 "2020-06_south-west_stereo-BRUVs","25","Pomacentridae","Chromis","klunzingeri",4
 "2020-06_south-west_stereo-BRUVs","25","Scorpididae","Neatypus","obliquus",18
 "2020-06_south-west_stereo-BRUVs","25","Scorpididae","Tilodon","sexfasciatus",1
-"2020-06_south-west_stereo-BRUVs","25","Serranidae","Caesioperca","sp1",22
+"2020-06_south-west_stereo-BRUVs","25","Serranidae","Caesioperca","spp",22
 "2020-06_south-west_stereo-BRUVs","25","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","26","Chaetodontidae","Chelmonops","curiosus",1
 "2020-06_south-west_stereo-BRUVs","26","Cheilodactylidae","Nemadactylus","valenciennesi",1
@@ -334,7 +334,7 @@
 "2020-06_south-west_stereo-BRUVs","26","Pomacentridae","Chromis","westaustralis",4
 "2020-06_south-west_stereo-BRUVs","26","Pomacentridae","Parma","bicolor",1
 "2020-06_south-west_stereo-BRUVs","26","Scorpididae","Neatypus","obliquus",34
-"2020-06_south-west_stereo-BRUVs","26","Serranidae","Caesioperca","sp1",20
+"2020-06_south-west_stereo-BRUVs","26","Serranidae","Caesioperca","spp",20
 "2020-06_south-west_stereo-BRUVs","26","Serranidae","Epinephelides","armatus",2
 "2020-06_south-west_stereo-BRUVs","26","Urolophidae","Trygonoptera","ovalis",1
 "2020-06_south-west_stereo-BRUVs","27","Cheilodactylidae","Nemadactylus","valenciennesi",1
@@ -364,7 +364,7 @@
 "2020-06_south-west_stereo-BRUVs","29","Monacanthidae","Meuschenia","galii",1
 "2020-06_south-west_stereo-BRUVs","29","Pomacentridae","Chromis","klunzingeri",10
 "2020-06_south-west_stereo-BRUVs","29","Scorpididae","Neatypus","obliquus",19
-"2020-06_south-west_stereo-BRUVs","29","Serranidae","Caesioperca","sp1",7
+"2020-06_south-west_stereo-BRUVs","29","Serranidae","Caesioperca","spp",7
 "2020-06_south-west_stereo-BRUVs","29","Triakidae","Furgaleus","macki",1
 "2020-06_south-west_stereo-BRUVs","29","Rhinobatidae","Trygonorrhina","dumerilii",2
 "2020-06_south-west_stereo-BRUVs","29","Urolophidae","Trygonoptera","ovalis",1
@@ -379,7 +379,7 @@
 "2020-06_south-west_stereo-BRUVs","30","Mullidae","Upeneichthys","vlamingii",1
 "2020-06_south-west_stereo-BRUVs","30","Pomacentridae","Chromis","klunzingeri",3
 "2020-06_south-west_stereo-BRUVs","30","Scorpididae","Neatypus","obliquus",8
-"2020-06_south-west_stereo-BRUVs","30","Serranidae","Caesioperca","sp1",5
+"2020-06_south-west_stereo-BRUVs","30","Serranidae","Caesioperca","spp",5
 "2020-06_south-west_stereo-BRUVs","30","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-06_south-west_stereo-BRUVs","30","Urolophidae","Trygonoptera","ovalis",1
 "2020-06_south-west_stereo-BRUVs","31","Carangidae","Pseudocaranx","spp",1
@@ -392,7 +392,7 @@
 "2020-06_south-west_stereo-BRUVs","31","Mullidae","Upeneichthys","vlamingii",1
 "2020-06_south-west_stereo-BRUVs","31","Pomacentridae","Chromis","klunzingeri",18
 "2020-06_south-west_stereo-BRUVs","31","Scorpididae","Neatypus","obliquus",5
-"2020-06_south-west_stereo-BRUVs","31","Serranidae","Caesioperca","sp1",33
+"2020-06_south-west_stereo-BRUVs","31","Serranidae","Caesioperca","spp",33
 "2020-06_south-west_stereo-BRUVs","31","Serranidae","Epinephelides","armatus",1
 "2020-06_south-west_stereo-BRUVs","31","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","31","Triakidae","Furgaleus","macki",1
@@ -416,14 +416,13 @@
 "2020-06_south-west_stereo-BRUVs","33","Pomacentridae","Chromis","klunzingeri",40
 "2020-06_south-west_stereo-BRUVs","33","Pomacentridae","Chromis","westaustralis",1
 "2020-06_south-west_stereo-BRUVs","33","Scorpididae","Neatypus","obliquus",4
-"2020-06_south-west_stereo-BRUVs","33","Serranidae","Caesioperca","rasor",1
-"2020-06_south-west_stereo-BRUVs","33","Serranidae","Caesioperca","sp1",1
+"2020-06_south-west_stereo-BRUVs","33","Serranidae","Caesioperca","spp",1
 "2020-06_south-west_stereo-BRUVs","33","Sparidae","Chrysophrys","auratus",1
 "2020-06_south-west_stereo-BRUVs","34","Labridae","Coris","auricularis",4
 "2020-06_south-west_stereo-BRUVs","34","Labridae","Eupetrichthys","angustipes",2
 "2020-06_south-west_stereo-BRUVs","34","Pinguipedidae","Parapercis","haackei",1
 "2020-06_south-west_stereo-BRUVs","34","Pinguipedidae","Parapercis","ramsayi",1
-"2020-06_south-west_stereo-BRUVs","34","Serranidae","Caesioperca","sp1",1
+"2020-06_south-west_stereo-BRUVs","34","Serranidae","Caesioperca","spp",1
 "2020-06_south-west_stereo-BRUVs","34","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-06_south-west_stereo-BRUVs","34","Urolophidae","Trygonoptera","ovalis",1
 "2020-06_south-west_stereo-BRUVs","35","Heterodontidae","Heterodontus","portusjacksoni",2
@@ -446,7 +445,7 @@
 "2020-06_south-west_stereo-BRUVs","36","Mullidae","Upeneichthys","vlamingii",2
 "2020-06_south-west_stereo-BRUVs","36","Pomacentridae","Chromis","klunzingeri",1
 "2020-06_south-west_stereo-BRUVs","36","Scorpididae","Neatypus","obliquus",19
-"2020-06_south-west_stereo-BRUVs","36","Serranidae","Caesioperca","sp1",24
+"2020-06_south-west_stereo-BRUVs","36","Serranidae","Caesioperca","spp",24
 "2020-06_south-west_stereo-BRUVs","36","Urolophidae","Trygonoptera","ovalis",1
 "2020-06_south-west_stereo-BRUVs","37","Dasyatidae","Bathytoshia","brevicaudata",1
 "2020-06_south-west_stereo-BRUVs","37","Heterodontidae","Heterodontus","portusjacksoni",2
@@ -505,7 +504,7 @@
 "2020-10_south-west_stereo-BRUVs","FH102","Mullidae","Parupeneus","chrysopleuron",1
 "2020-10_south-west_stereo-BRUVs","FH102","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","FH102","Pinguipedidae","Parapercis","ramsayi",1
-"2020-10_south-west_stereo-BRUVs","FH102","Platycephalidae","Platycephalus","sp",5
+"2020-10_south-west_stereo-BRUVs","FH102","Platycephalidae","Platycephalus","spp",5
 "2020-10_south-west_stereo-BRUVs","FH102","Rhinobatidae","Aptychotrema","vincentiana",1
 "2020-10_south-west_stereo-BRUVs","FH102","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH102","Urolophidae","Trygonoptera","ovalis",1
@@ -535,7 +534,7 @@
 "2020-10_south-west_stereo-BRUVs","FH108","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH108","Pinguipedidae","Parapercis","ramsayi",1
 "2020-10_south-west_stereo-BRUVs","FH108","Pomacentridae","Chromis","klunzingeri",4
-"2020-10_south-west_stereo-BRUVs","FH108","Serranidae","Caesioperca","sp1",6
+"2020-10_south-west_stereo-BRUVs","FH108","Serranidae","Caesioperca","spp",6
 "2020-10_south-west_stereo-BRUVs","FH109","Carangidae","Pseudocaranx","spp",1
 "2020-10_south-west_stereo-BRUVs","FH109","Cheilodactylidae","Dactylophora","nigricans",1
 "2020-10_south-west_stereo-BRUVs","FH109","Cheilodactylidae","Nemadactylus","valenciennesi",2
@@ -551,7 +550,7 @@
 "2020-10_south-west_stereo-BRUVs","FH109","Monacanthidae","Scobinichthys","granulatus",1
 "2020-10_south-west_stereo-BRUVs","FH109","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH109","Oplegnathidae","Oplegnathus","woodwardi",1
-"2020-10_south-west_stereo-BRUVs","FH109","Orectolobidae","Orectolobus","hutchinsi",1
+"2020-10_south-west_stereo-BRUVs","FH109","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","FH109","Pempherididae","Pempheris","klunzingeri",2
 "2020-10_south-west_stereo-BRUVs","FH109","Pomacentridae","Chromis","klunzingeri",36
 "2020-10_south-west_stereo-BRUVs","FH109","Scorpididae","Neatypus","obliquus",15
@@ -566,7 +565,7 @@
 "2020-10_south-west_stereo-BRUVs","FH11","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH11","Pomacentridae","Chromis","klunzingeri",26
 "2020-10_south-west_stereo-BRUVs","FH11","Scorpididae","Neatypus","obliquus",2
-"2020-10_south-west_stereo-BRUVs","FH11","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","FH11","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","FH11","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","FH11","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH11","Urolophidae","Trygonoptera","ovalis",1
@@ -613,7 +612,7 @@
 "2020-10_south-west_stereo-BRUVs","FH15","Labridae","Suezichthys","bifurcatus",2
 "2020-10_south-west_stereo-BRUVs","FH15","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","FH15","Platycephalidae","Platycephalus","spp",2
-"2020-10_south-west_stereo-BRUVs","FH15","Serranidae","Caesioperca","sp",1
+"2020-10_south-west_stereo-BRUVs","FH15","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH16","Cheilodactylidae","Nemadactylus","valenciennesi",1
 "2020-10_south-west_stereo-BRUVs","FH16","Clupeidae","Nematalosa","vlaminghi",1
 "2020-10_south-west_stereo-BRUVs","FH16","Glaucosomatidae","Glaucosoma","hebraicum",1
@@ -638,7 +637,7 @@
 "2020-10_south-west_stereo-BRUVs","FH17","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","FH17","Pomacentridae","Chromis","klunzingeri",5
 "2020-10_south-west_stereo-BRUVs","FH17","Scorpididae","Neatypus","obliquus",4
-"2020-10_south-west_stereo-BRUVs","FH17","Serranidae","Caesioperca","sp1",14
+"2020-10_south-west_stereo-BRUVs","FH17","Serranidae","Caesioperca","spp",14
 "2020-10_south-west_stereo-BRUVs","FH17","Triakidae","Furgaleus","macki",1
 "2020-10_south-west_stereo-BRUVs","FH17","Urolophidae","Trygonoptera","ovalis",2
 "2020-10_south-west_stereo-BRUVs","FH18","Carangidae","Seriola","lalandi",1
@@ -654,7 +653,7 @@
 "2020-10_south-west_stereo-BRUVs","FH18","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","FH18","Pinguipedidae","Parapercis","ramsayi",1
 "2020-10_south-west_stereo-BRUVs","FH18","Pomacentridae","Chromis","klunzingeri",4
-"2020-10_south-west_stereo-BRUVs","FH18","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH18","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH20","Dasyatidae","Bathytoshia","brevicaudata",1
 "2020-10_south-west_stereo-BRUVs","FH20","Heterodontidae","Heterodontus","portusjacksoni",1
 "2020-10_south-west_stereo-BRUVs","FH20","Labridae","Austrolabrus","maculatus",1
@@ -675,7 +674,7 @@
 "2020-10_south-west_stereo-BRUVs","FH21","Pomacentridae","Chromis","klunzingeri",16
 "2020-10_south-west_stereo-BRUVs","FH21","Scorpididae","Neatypus","obliquus",7
 "2020-10_south-west_stereo-BRUVs","FH21","Scorpididae","Tilodon","sexfasciatus",2
-"2020-10_south-west_stereo-BRUVs","FH21","Serranidae","Caesioperca","sp1",11
+"2020-10_south-west_stereo-BRUVs","FH21","Serranidae","Caesioperca","spp",11
 "2020-10_south-west_stereo-BRUVs","FH21","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH23","Belonidae","Strongylura","leiura",1
 "2020-10_south-west_stereo-BRUVs","FH23","Carangidae","Pseudocaranx","spp",1
@@ -723,7 +722,7 @@
 "2020-10_south-west_stereo-BRUVs","FH26","Pomacentridae","Chromis","klunzingeri",12
 "2020-10_south-west_stereo-BRUVs","FH26","Pomacentridae","Chromis","westaustralis",2
 "2020-10_south-west_stereo-BRUVs","FH26","Scorpididae","Neatypus","obliquus",12
-"2020-10_south-west_stereo-BRUVs","FH26","Serranidae","Caesioperca","sp1",18
+"2020-10_south-west_stereo-BRUVs","FH26","Serranidae","Caesioperca","spp",18
 "2020-10_south-west_stereo-BRUVs","FH27","Gerreidae","Parequula","melbournensis",2
 "2020-10_south-west_stereo-BRUVs","FH27","Labridae","Austrolabrus","maculatus",1
 "2020-10_south-west_stereo-BRUVs","FH27","Labridae","Choerodon","rubescens",1
@@ -738,7 +737,7 @@
 "2020-10_south-west_stereo-BRUVs","FH27","Pomacentridae","Chromis","klunzingeri",10
 "2020-10_south-west_stereo-BRUVs","FH27","Scorpididae","Neatypus","obliquus",5
 "2020-10_south-west_stereo-BRUVs","FH27","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","FH27","Serranidae","Caesioperca","sp1",10
+"2020-10_south-west_stereo-BRUVs","FH27","Serranidae","Caesioperca","spp",10
 "2020-10_south-west_stereo-BRUVs","FH28","Carangidae","Pseudocaranx","spp",2
 "2020-10_south-west_stereo-BRUVs","FH28","Gerreidae","Parequula","melbournensis",4
 "2020-10_south-west_stereo-BRUVs","FH28","Labridae","Coris","auricularis",9
@@ -746,7 +745,7 @@
 "2020-10_south-west_stereo-BRUVs","FH28","Labridae","Ophthalmolepis","lineolatus",1
 "2020-10_south-west_stereo-BRUVs","FH28","Monacanthidae","Acanthaluteres","brownii",1
 "2020-10_south-west_stereo-BRUVs","FH28","Monacanthidae","Acanthaluteres","vittiger",1
-"2020-10_south-west_stereo-BRUVs","FH28","Platycephalidae","Platycephalus","sp",4
+"2020-10_south-west_stereo-BRUVs","FH28","Platycephalidae","Platycephalus","spp",4
 "2020-10_south-west_stereo-BRUVs","FH28","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH30","Carangidae","Pseudocaranx","spp",1
 "2020-10_south-west_stereo-BRUVs","FH30","Carangidae","Seriola","hippos",1
@@ -787,7 +786,7 @@
 "2020-10_south-west_stereo-BRUVs","FH34","Pomacentridae","Chromis","klunzingeri",3
 "2020-10_south-west_stereo-BRUVs","FH34","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH34","Scorpididae","Neatypus","obliquus",8
-"2020-10_south-west_stereo-BRUVs","FH34","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH34","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH34","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","FH35","Carangidae","Pseudocaranx","spp",6
 "2020-10_south-west_stereo-BRUVs","FH35","Gerreidae","Parequula","melbournensis",1
@@ -808,7 +807,7 @@
 "2020-10_south-west_stereo-BRUVs","FH37","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH37","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","FH37","Scorpididae","Neatypus","obliquus",1
-"2020-10_south-west_stereo-BRUVs","FH37","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH37","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH37","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH39","Carangidae","Pseudocaranx","spp",2
 "2020-10_south-west_stereo-BRUVs","FH39","Rhinobatidae","Trygonorrhina","dumerilii",2
@@ -862,7 +861,7 @@
 "2020-10_south-west_stereo-BRUVs","FH44","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","FH44","Pomacentridae","Chromis","klunzingeri",9
 "2020-10_south-west_stereo-BRUVs","FH44","Scorpididae","Neatypus","obliquus",21
-"2020-10_south-west_stereo-BRUVs","FH44","Serranidae","Caesioperca","sp1",29
+"2020-10_south-west_stereo-BRUVs","FH44","Serranidae","Caesioperca","spp",29
 "2020-10_south-west_stereo-BRUVs","FH44","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","FH45","Carangidae","Pseudocaranx","spp",18
 "2020-10_south-west_stereo-BRUVs","FH45","Gerreidae","Parequula","melbournensis",1
@@ -879,7 +878,7 @@
 "2020-10_south-west_stereo-BRUVs","FH45","Pomacentridae","Chromis","klunzingeri",10
 "2020-10_south-west_stereo-BRUVs","FH45","Rhinobatidae","Aptychotrema","vincentiana",1
 "2020-10_south-west_stereo-BRUVs","FH45","Scorpididae","Neatypus","obliquus",5
-"2020-10_south-west_stereo-BRUVs","FH45","Serranidae","Caesioperca","sp1",2
+"2020-10_south-west_stereo-BRUVs","FH45","Serranidae","Caesioperca","spp",2
 "2020-10_south-west_stereo-BRUVs","FH45","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH46","Carangidae","Seriola","hippos",1
 "2020-10_south-west_stereo-BRUVs","FH46","Gerreidae","Parequula","melbournensis",1
@@ -889,7 +888,7 @@
 "2020-10_south-west_stereo-BRUVs","FH46","Monacanthidae","Meuschenia","freycineti",1
 "2020-10_south-west_stereo-BRUVs","FH46","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH46","Scorpididae","Neatypus","obliquus",21
-"2020-10_south-west_stereo-BRUVs","FH46","Serranidae","Caesioperca","sp1",20
+"2020-10_south-west_stereo-BRUVs","FH46","Serranidae","Caesioperca","spp",20
 "2020-10_south-west_stereo-BRUVs","FH47","Cheilodactylidae","Nemadactylus","valenciennesi",2
 "2020-10_south-west_stereo-BRUVs","FH47","Diodontidae","Diodon","nicthemerus",2
 "2020-10_south-west_stereo-BRUVs","FH47","Heterodontidae","Heterodontus","portusjacksoni",1
@@ -906,7 +905,7 @@
 "2020-10_south-west_stereo-BRUVs","FH47","Pomacentridae","Chromis","westaustralis",3
 "2020-10_south-west_stereo-BRUVs","FH47","Scorpididae","Neatypus","obliquus",25
 "2020-10_south-west_stereo-BRUVs","FH47","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","FH47","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH47","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH47","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH47","Unknown","Unknown","granulatus",1
 "2020-10_south-west_stereo-BRUVs","FH47","Unknown","Unknown","spp",1
@@ -956,7 +955,7 @@
 "2020-10_south-west_stereo-BRUVs","FH5","Pomacentridae","Parma","occidentalis",1
 "2020-10_south-west_stereo-BRUVs","FH5","Pomacentridae","Parma","sp",1
 "2020-10_south-west_stereo-BRUVs","FH5","Scorpididae","Neatypus","obliquus",31
-"2020-10_south-west_stereo-BRUVs","FH5","Serranidae","Caesioperca","rasor",2
+"2020-10_south-west_stereo-BRUVs","FH5","Serranidae","Caesioperca","spp",2
 "2020-10_south-west_stereo-BRUVs","FH5","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","FH5","Sparidae","Chrysophrys","auratus",3
 "2020-10_south-west_stereo-BRUVs","FH5","Rhinobatidae","Trygonorrhina","dumerilii",1
@@ -1021,7 +1020,7 @@
 "2020-10_south-west_stereo-BRUVs","FH56","Neosebastidae","Neosebastes","bougainvillii",1
 "2020-10_south-west_stereo-BRUVs","FH56","Pomacentridae","Chromis","klunzingeri",6
 "2020-10_south-west_stereo-BRUVs","FH56","Scorpididae","Neatypus","obliquus",2
-"2020-10_south-west_stereo-BRUVs","FH56","Serranidae","Caesioperca","sp1",8
+"2020-10_south-west_stereo-BRUVs","FH56","Serranidae","Caesioperca","spp",8
 "2020-10_south-west_stereo-BRUVs","FH56","Sphyraenidae","Sphyraena","novaehollandiae",1
 "2020-10_south-west_stereo-BRUVs","FH57","Aplodactylidae","Aplodactylus","westralis",1
 "2020-10_south-west_stereo-BRUVs","FH57","Carangidae","Pseudocaranx","spp",1
@@ -1053,7 +1052,7 @@
 "2020-10_south-west_stereo-BRUVs","FH58","Pomacentridae","Chromis","klunzingeri",20
 "2020-10_south-west_stereo-BRUVs","FH58","Scorpididae","Neatypus","obliquus",19
 "2020-10_south-west_stereo-BRUVs","FH58","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","FH58","Serranidae","Caesioperca","sp1",6
+"2020-10_south-west_stereo-BRUVs","FH58","Serranidae","Caesioperca","spp",6
 "2020-10_south-west_stereo-BRUVs","FH58","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","FH58","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH59","Heterodontidae","Heterodontus","portusjacksoni",1
@@ -1079,7 +1078,7 @@
 "2020-10_south-west_stereo-BRUVs","FH6","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","FH6","Scorpididae","Neatypus","obliquus",1
 "2020-10_south-west_stereo-BRUVs","FH6","Scyliorhinidae","Aulohalaelurus","labiosus",1
-"2020-10_south-west_stereo-BRUVs","FH6","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH6","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH60","Carangidae","Pseudocaranx","spp",2
 "2020-10_south-west_stereo-BRUVs","FH60","Labridae","Austrolabrus","maculatus",3
 "2020-10_south-west_stereo-BRUVs","FH60","Labridae","Coris","auricularis",6
@@ -1091,7 +1090,7 @@
 "2020-10_south-west_stereo-BRUVs","FH60","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","FH60","Pinguipedidae","Parapercis","ramsayi",2
 "2020-10_south-west_stereo-BRUVs","FH60","Scorpididae","Neatypus","obliquus",3
-"2020-10_south-west_stereo-BRUVs","FH60","Serranidae","Caesioperca","sp1",12
+"2020-10_south-west_stereo-BRUVs","FH60","Serranidae","Caesioperca","spp",12
 "2020-10_south-west_stereo-BRUVs","FH60","Tetraodontidae","Omegophora","armilla",1
 "2020-10_south-west_stereo-BRUVs","FH61","Cheilodactylidae","Nemadactylus","valenciennesi",1
 "2020-10_south-west_stereo-BRUVs","FH61","Gerreidae","Parequula","melbournensis",3
@@ -1105,7 +1104,7 @@
 "2020-10_south-west_stereo-BRUVs","FH61","Pempherididae","Pempheris","klunzingeri",2
 "2020-10_south-west_stereo-BRUVs","FH61","Pomacentridae","Chromis","klunzingeri",15
 "2020-10_south-west_stereo-BRUVs","FH61","Scorpididae","Neatypus","obliquus",5
-"2020-10_south-west_stereo-BRUVs","FH61","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH61","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH61","Serranidae","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","FH63","Gerreidae","Parequula","melbournensis",2
 "2020-10_south-west_stereo-BRUVs","FH63","Labridae","Austrolabrus","maculatus",1
@@ -1122,7 +1121,7 @@
 "2020-10_south-west_stereo-BRUVs","FH64","Carangidae","Pseudocaranx","spp",7
 "2020-10_south-west_stereo-BRUVs","FH64","Gerreidae","Parequula","melbournensis",4
 "2020-10_south-west_stereo-BRUVs","FH64","Labridae","Coris","auricularis",1
-"2020-10_south-west_stereo-BRUVs","FH64","Platycephalidae","Platycephalus","sp",3
+"2020-10_south-west_stereo-BRUVs","FH64","Platycephalidae","Platycephalus","spp",3
 "2020-10_south-west_stereo-BRUVs","FH64","Rhinobatidae","Aptychotrema","vincentiana",1
 "2020-10_south-west_stereo-BRUVs","FH64","Sparidae","Chrysophrys","auratus",4
 "2020-10_south-west_stereo-BRUVs","FH65","Carangidae","Pseudocaranx","spp",4
@@ -1137,7 +1136,7 @@
 "2020-10_south-west_stereo-BRUVs","FH65","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH65","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","FH65","Scorpididae","Neatypus","obliquus",8
-"2020-10_south-west_stereo-BRUVs","FH65","Serranidae","Caesioperca","sp1",4
+"2020-10_south-west_stereo-BRUVs","FH65","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","FH65","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH66","Chaetodontidae","Chelmonops","curiosus",2
 "2020-10_south-west_stereo-BRUVs","FH66","Labridae","Austrolabrus","maculatus",1
@@ -1161,7 +1160,7 @@
 "2020-10_south-west_stereo-BRUVs","FH66","Scorpaenidae","Scorpaena","sumptuosa",1
 "2020-10_south-west_stereo-BRUVs","FH66","Scorpididae","Neatypus","obliquus",3
 "2020-10_south-west_stereo-BRUVs","FH66","Scorpididae","Scorpis","georgiana",1
-"2020-10_south-west_stereo-BRUVs","FH66","Serranidae","Caesioperca","sp1",7
+"2020-10_south-west_stereo-BRUVs","FH66","Serranidae","Caesioperca","spp",7
 "2020-10_south-west_stereo-BRUVs","FH66","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","FH66","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH67","Carangidae","Trachurus","novaezelandiae",3
@@ -1217,7 +1216,7 @@
 "2020-10_south-west_stereo-BRUVs","FH7","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","FH7","Pomacentridae","Chromis","klunzingeri",9
 "2020-10_south-west_stereo-BRUVs","FH7","Scorpididae","Neatypus","obliquus",30
-"2020-10_south-west_stereo-BRUVs","FH7","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH7","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH7","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH70","Labridae","Coris","auricularis",3
 "2020-10_south-west_stereo-BRUVs","FH70","Labridae","Eupetrichthys","angustipes",1
@@ -1242,7 +1241,7 @@
 "2020-10_south-west_stereo-BRUVs","FH71","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","FH71","Pomacentridae","Chromis","klunzingeri",6
 "2020-10_south-west_stereo-BRUVs","FH71","Scorpididae","Neatypus","obliquus",6
-"2020-10_south-west_stereo-BRUVs","FH71","Serranidae","Caesioperca","sp1",3
+"2020-10_south-west_stereo-BRUVs","FH71","Serranidae","Caesioperca","spp",3
 "2020-10_south-west_stereo-BRUVs","FH71","Sphyraenidae","Sphyraena","novaehollandiae",1
 "2020-10_south-west_stereo-BRUVs","FH71","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH72","Labridae","Austrolabrus","maculatus",1
@@ -1255,7 +1254,7 @@
 "2020-10_south-west_stereo-BRUVs","FH72","Neosebastidae","Neosebastes","bougainvillii",1
 "2020-10_south-west_stereo-BRUVs","FH72","Pomacentridae","Chromis","klunzingeri",8
 "2020-10_south-west_stereo-BRUVs","FH72","Scorpididae","Neatypus","obliquus",10
-"2020-10_south-west_stereo-BRUVs","FH72","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH72","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH72","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","FH72","Sphyraenidae","Sphyraena","spp",1
 "2020-10_south-west_stereo-BRUVs","FH74","Carangidae","Pseudocaranx","spp",1
@@ -1291,7 +1290,7 @@
 "2020-10_south-west_stereo-BRUVs","FH79","Myliobatidae","Myliobatis","tenuicaudatus",2
 "2020-10_south-west_stereo-BRUVs","FH79","Pomacentridae","Chromis","klunzingeri",14
 "2020-10_south-west_stereo-BRUVs","FH79","Scorpididae","Neatypus","obliquus",4
-"2020-10_south-west_stereo-BRUVs","FH79","Serranidae","Caesioperca","sp1",3
+"2020-10_south-west_stereo-BRUVs","FH79","Serranidae","Caesioperca","spp",3
 "2020-10_south-west_stereo-BRUVs","FH79","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH8","Carangidae","Pseudocaranx","spp",6
 "2020-10_south-west_stereo-BRUVs","FH8","Labridae","Austrolabrus","maculatus",1
@@ -1305,7 +1304,7 @@
 "2020-10_south-west_stereo-BRUVs","FH8","Monacanthidae","Scobinichthys","granulatus",2
 "2020-10_south-west_stereo-BRUVs","FH8","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","FH8","Myliobatidae","Myliobatis","tenuicaudatus",1
-"2020-10_south-west_stereo-BRUVs","FH8","Orectolobidae","Orectolobus","hutchinsi",1
+"2020-10_south-west_stereo-BRUVs","FH8","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","FH8","Pomacentridae","Chromis","klunzingeri",4
 "2020-10_south-west_stereo-BRUVs","FH8","Scorpididae","Neatypus","obliquus",14
 "2020-10_south-west_stereo-BRUVs","FH8","Serranidae","Hypoplectrodes","nigroruber",1
@@ -1322,9 +1321,9 @@
 "2020-10_south-west_stereo-BRUVs","FH82","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","FH82","Ostraciidae","Aracana","aurita",1
 "2020-10_south-west_stereo-BRUVs","FH82","Pinguipedidae","Parapercis","ramsayi",1
-"2020-10_south-west_stereo-BRUVs","FH82","Platycephalidae","Platycephalus","sp",2
+"2020-10_south-west_stereo-BRUVs","FH82","Platycephalidae","Platycephalus","spp",2
 "2020-10_south-west_stereo-BRUVs","FH82","Rhinobatidae","Trygonorrhina","dumerilii",3
-"2020-10_south-west_stereo-BRUVs","FH82","Serranidae","Caesioperca","sp",9
+"2020-10_south-west_stereo-BRUVs","FH82","Serranidae","Caesioperca","spp",9
 "2020-10_south-west_stereo-BRUVs","FH82","Triakidae","Mustelus","antarcticus",1
 "2020-10_south-west_stereo-BRUVs","FH82","Urolophidae","Urolophus","circularis",1
 "2020-10_south-west_stereo-BRUVs","FH83","Enoplosidae","Enoplosus","armatus",2
@@ -1356,7 +1355,7 @@
 "2020-10_south-west_stereo-BRUVs","FH84","Myliobatidae","Myliobatis","tenuicaudatus",2
 "2020-10_south-west_stereo-BRUVs","FH84","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","FH84","Scorpididae","Neatypus","obliquus",9
-"2020-10_south-west_stereo-BRUVs","FH84","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","FH84","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FH85","Heterodontidae","Heterodontus","portusjacksoni",1
 "2020-10_south-west_stereo-BRUVs","FH85","Labridae","Austrolabrus","maculatus",4
 "2020-10_south-west_stereo-BRUVs","FH85","Labridae","Coris","auricularis",1
@@ -1433,7 +1432,7 @@
 "2020-10_south-west_stereo-BRUVs","FH93","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","FH93","Pomacentridae","Chromis","klunzingeri",32
 "2020-10_south-west_stereo-BRUVs","FH93","Scorpididae","Neatypus","obliquus",6
-"2020-10_south-west_stereo-BRUVs","FH93","Serranidae","Caesioperca","sp1",19
+"2020-10_south-west_stereo-BRUVs","FH93","Serranidae","Caesioperca","spp",19
 "2020-10_south-west_stereo-BRUVs","FH93","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FH94","Gerreidae","Parequula","melbournensis",2
 "2020-10_south-west_stereo-BRUVs","FH94","Heterodontidae","Heterodontus","portusjacksoni",1
@@ -1446,7 +1445,7 @@
 "2020-10_south-west_stereo-BRUVs","FH94","Pomacentridae","Chromis","klunzingeri",7
 "2020-10_south-west_stereo-BRUVs","FH94","Rhinobatidae","Aptychotrema","vincentiana",1
 "2020-10_south-west_stereo-BRUVs","FH94","Scorpididae","Neatypus","obliquus",9
-"2020-10_south-west_stereo-BRUVs","FH94","Serranidae","Caesioperca","sp1",4
+"2020-10_south-west_stereo-BRUVs","FH94","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","FH94","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","FH95","Carangidae","Pseudocaranx","spp",3
 "2020-10_south-west_stereo-BRUVs","FH95","Cheilodactylidae","Dactylophora","nigricans",1
@@ -1465,7 +1464,7 @@
 "2020-10_south-west_stereo-BRUVs","FH95","Pomacentridae","Chromis","klunzingeri",1
 "2020-10_south-west_stereo-BRUVs","FH95","Scorpididae","Neatypus","obliquus",17
 "2020-10_south-west_stereo-BRUVs","FH95","Scorpididae","Scorpis","georgiana",1
-"2020-10_south-west_stereo-BRUVs","FH95","Serranidae","Caesioperca","sp1",6
+"2020-10_south-west_stereo-BRUVs","FH95","Serranidae","Caesioperca","spp",6
 "2020-10_south-west_stereo-BRUVs","FH95","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","FH95","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","FH96","Gerreidae","Parequula","melbournensis",1
@@ -1483,7 +1482,7 @@
 "2020-10_south-west_stereo-BRUVs","FH96","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","FH96","Pomacentridae","Chromis","klunzingeri",12
 "2020-10_south-west_stereo-BRUVs","FH96","Scorpididae","Neatypus","obliquus",12
-"2020-10_south-west_stereo-BRUVs","FH96","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","FH96","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","FH96","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","FH99","Cheilodactylidae","Nemadactylus","valenciennesi",1
 "2020-10_south-west_stereo-BRUVs","FH99","Enoplosidae","Enoplosus","armatus",2
@@ -1511,7 +1510,7 @@
 "2020-10_south-west_stereo-BRUVs","FHA","Neosebastidae","Neosebastes","pandus",2
 "2020-10_south-west_stereo-BRUVs","FHA","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","FHA","Pinguipedidae","Parapercis","ramsayi",1
-"2020-10_south-west_stereo-BRUVs","FHA","Platycephalidae","Platycephalus","sp",1
+"2020-10_south-west_stereo-BRUVs","FHA","Platycephalidae","Platycephalus","spp",1
 "2020-10_south-west_stereo-BRUVs","FHA","Rhinobatidae","Aptychotrema","vincentiana",1
 "2020-10_south-west_stereo-BRUVs","FHA","Rhinobatidae","Trygonorrhina","dumerilii",2
 "2020-10_south-west_stereo-BRUVs","FHB","Labridae","Austrolabrus","maculatus",3
@@ -1535,7 +1534,7 @@
 "2020-10_south-west_stereo-BRUVs","FHC","Scorpididae","Neatypus","obliquus",23
 "2020-10_south-west_stereo-BRUVs","FHC","Scorpididae","Scorpis","aequipinnis",1
 "2020-10_south-west_stereo-BRUVs","FHC","Scorpididae","Tilodon","sexfasciatus",2
-"2020-10_south-west_stereo-BRUVs","FHC","Serranidae","Caesioperca","rasor",1
+"2020-10_south-west_stereo-BRUVs","FHC","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","FHC","Sparidae","Chrysophrys","auratus",3
 "2020-10_south-west_stereo-BRUVs","FHC","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","FHCO1","Labridae","Austrolabrus","maculatus",2
@@ -1550,7 +1549,7 @@
 "2020-10_south-west_stereo-BRUVs","FHCO1","Pomacentridae","Chromis","klunzingeri",5
 "2020-10_south-west_stereo-BRUVs","FHCO1","Scorpididae","Neatypus","obliquus",6
 "2020-10_south-west_stereo-BRUVs","FHCO1","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","FHCO1","Serranidae","Caesioperca","sp1",20
+"2020-10_south-west_stereo-BRUVs","FHCO1","Serranidae","Caesioperca","spp",20
 "2020-10_south-west_stereo-BRUVs","FHCO2","Cheilodactylidae","Nemadactylus","valenciennesi",1
 "2020-10_south-west_stereo-BRUVs","FHCO2","Glaucosomatidae","Glaucosoma","hebraicum",2
 "2020-10_south-west_stereo-BRUVs","FHCO2","Labridae","Choerodon","rubescens",1
@@ -1622,7 +1621,7 @@
 "2020-10_south-west_stereo-BRUVs","IO100","Odacidae","Siphonognathus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO100","Pomacentridae","Chromis","klunzingeri",25
 "2020-10_south-west_stereo-BRUVs","IO100","Pomacentridae","Chromis","westaustralis",1
-"2020-10_south-west_stereo-BRUVs","IO100","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","IO100","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","IO100","Triakidae","Furgaleus","macki",1
 "2020-10_south-west_stereo-BRUVs","IO100","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO101","Glaucosomatidae","Glaucosoma","hebraicum",2
@@ -1682,7 +1681,7 @@
 "2020-10_south-west_stereo-BRUVs","IO110","Monacanthidae","Nelusetta","ayraud",13
 "2020-10_south-west_stereo-BRUVs","IO110","Oplegnathidae","Oplegnathus","woodwardi",4
 "2020-10_south-west_stereo-BRUVs","IO110","Pinguipedidae","Parapercis","ramsayi",1
-"2020-10_south-west_stereo-BRUVs","IO110","Squalidae","Squalus","sp1",4
+"2020-10_south-west_stereo-BRUVs","IO110","Squalidae","Squalus","spp",4
 "2020-10_south-west_stereo-BRUVs","IO110","Unknown","Unknown","spp",2
 "2020-10_south-west_stereo-BRUVs","IO113","Gerreidae","Gerres","subfasciatus",5
 "2020-10_south-west_stereo-BRUVs","IO113","Monacanthidae","Nelusetta","ayraud",4
@@ -1725,7 +1724,7 @@
 "2020-10_south-west_stereo-BRUVs","IO122","Pomacentridae","Chromis","klunzingeri",1
 "2020-10_south-west_stereo-BRUVs","IO122","Pomacentridae","Chromis","westaustralis",1
 "2020-10_south-west_stereo-BRUVs","IO122","Scorpididae","Neatypus","obliquus",9
-"2020-10_south-west_stereo-BRUVs","IO122","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO122","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO122","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","IO122","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO122","Serranidae","Othos","dentex",1
@@ -1752,7 +1751,7 @@
 "2020-10_south-west_stereo-BRUVs","IO125","Monacanthidae","Nelusetta","ayraud",1
 "2020-10_south-west_stereo-BRUVs","IO125","Pomacentridae","Chromis","klunzingeri",1
 "2020-10_south-west_stereo-BRUVs","IO125","Scorpididae","Neatypus","obliquus",1
-"2020-10_south-west_stereo-BRUVs","IO125","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO125","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO125","Sparidae","Chrysophrys","auratus",2
 "2020-10_south-west_stereo-BRUVs","IO125","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO126","Aplodactylidae","Aplodactylus","westralis",1
@@ -1826,7 +1825,7 @@
 "2020-10_south-west_stereo-BRUVs","IO134","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO134","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO134","Scorpididae","Neatypus","obliquus",3
-"2020-10_south-west_stereo-BRUVs","IO134","Serranidae","Caesioperca","sp1",4
+"2020-10_south-west_stereo-BRUVs","IO134","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","IO145","Heterodontidae","Heterodontus","portusjacksoni",2
 "2020-10_south-west_stereo-BRUVs","IO145","Labridae","Austrolabrus","maculatus",1
 "2020-10_south-west_stereo-BRUVs","IO145","Labridae","Coris","auricularis",30
@@ -1852,7 +1851,7 @@
 "2020-10_south-west_stereo-BRUVs","IO146","Ostraciidae","Aracana","aurita",1
 "2020-10_south-west_stereo-BRUVs","IO146","Pomacentridae","Chromis","klunzingeri",7
 "2020-10_south-west_stereo-BRUVs","IO146","Scorpididae","Neatypus","obliquus",6
-"2020-10_south-west_stereo-BRUVs","IO146","Serranidae","Caesioperca","sp1",10
+"2020-10_south-west_stereo-BRUVs","IO146","Serranidae","Caesioperca","spp",10
 "2020-10_south-west_stereo-BRUVs","IO147","Heterodontidae","Heterodontus","portusjacksoni",1
 "2020-10_south-west_stereo-BRUVs","IO147","Labridae","Coris","auricularis",3
 "2020-10_south-west_stereo-BRUVs","IO147","Labridae","Eupetrichthys","angustipes",1
@@ -1882,7 +1881,7 @@
 "2020-10_south-west_stereo-BRUVs","IO15","Monacanthidae","Scobinichthys","granulatus",1
 "2020-10_south-west_stereo-BRUVs","IO15","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO15","Pomacentridae","Chromis","klunzingeri",12
-"2020-10_south-west_stereo-BRUVs","IO15","Serranidae","Caesioperca","sp1",3
+"2020-10_south-west_stereo-BRUVs","IO15","Serranidae","Caesioperca","spp",3
 "2020-10_south-west_stereo-BRUVs","IO15","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO15","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO15","Unknown","Unknown","spp",1
@@ -1956,7 +1955,7 @@
 "2020-10_south-west_stereo-BRUVs","IO165","Monacanthidae","Scobinichthys","granulatus",1
 "2020-10_south-west_stereo-BRUVs","IO165","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO165","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","IO165","Serranidae","Caesioperca","sp1",70
+"2020-10_south-west_stereo-BRUVs","IO165","Serranidae","Caesioperca","spp",70
 "2020-10_south-west_stereo-BRUVs","IO165","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO180","Monacanthidae","Nelusetta","ayraud",3
 "2020-10_south-west_stereo-BRUVs","IO180","Oplegnathidae","Oplegnathus","woodwardi",1
@@ -1973,7 +1972,7 @@
 "2020-10_south-west_stereo-BRUVs","IO184","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO184","Pomacentridae","Chromis","klunzingeri",3
 "2020-10_south-west_stereo-BRUVs","IO184","Scorpididae","Neatypus","obliquus",14
-"2020-10_south-west_stereo-BRUVs","IO184","Serranidae","Caesioperca","sp1",18
+"2020-10_south-west_stereo-BRUVs","IO184","Serranidae","Caesioperca","spp",18
 "2020-10_south-west_stereo-BRUVs","IO191","Monacanthidae","Nelusetta","ayraud",3
 "2020-10_south-west_stereo-BRUVs","IO191","Oplegnathidae","Oplegnathus","woodwardi",2
 "2020-10_south-west_stereo-BRUVs","IO191","Scyliorhinidae","Asymbolus","occiduus",1
@@ -1999,7 +1998,7 @@
 "2020-10_south-west_stereo-BRUVs","IO195","Monacanthidae","Nelusetta","ayraud",4
 "2020-10_south-west_stereo-BRUVs","IO195","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO195","Pomacentridae","Chromis","klunzingeri",7
-"2020-10_south-west_stereo-BRUVs","IO195","Serranidae","Caesioperca","sp1",2
+"2020-10_south-west_stereo-BRUVs","IO195","Serranidae","Caesioperca","spp",2
 "2020-10_south-west_stereo-BRUVs","IO199","Heterodontidae","Heterodontus","portusjacksoni",4
 "2020-10_south-west_stereo-BRUVs","IO199","Labridae","Austrolabrus","maculatus",2
 "2020-10_south-west_stereo-BRUVs","IO199","Labridae","Coris","auricularis",4
@@ -2010,7 +2009,7 @@
 "2020-10_south-west_stereo-BRUVs","IO199","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO199","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO199","Scorpididae","Neatypus","obliquus",1
-"2020-10_south-west_stereo-BRUVs","IO199","Serranidae","Caesioperca","sp1",2
+"2020-10_south-west_stereo-BRUVs","IO199","Serranidae","Caesioperca","spp",2
 "2020-10_south-west_stereo-BRUVs","IO199","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO201","Heterodontidae","Heterodontus","portusjacksoni",4
 "2020-10_south-west_stereo-BRUVs","IO201","Labridae","Austrolabrus","maculatus",1
@@ -2038,7 +2037,7 @@
 "2020-10_south-west_stereo-BRUVs","IO204","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO204","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO204","Pinguipedidae","Parapercis","ramsayi",1
-"2020-10_south-west_stereo-BRUVs","IO204","Serranidae","Caesioperca","sp1",4
+"2020-10_south-west_stereo-BRUVs","IO204","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","IO204","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO204","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO207","Labridae","Austrolabrus","maculatus",1
@@ -2050,7 +2049,7 @@
 "2020-10_south-west_stereo-BRUVs","IO207","Pomacentridae","Chromis","klunzingeri",2
 "2020-10_south-west_stereo-BRUVs","IO207","Pomacentridae","Chromis","westaustralis",1
 "2020-10_south-west_stereo-BRUVs","IO207","Scorpididae","Neatypus","obliquus",2
-"2020-10_south-west_stereo-BRUVs","IO207","Serranidae","Caesioperca","sp1",78
+"2020-10_south-west_stereo-BRUVs","IO207","Serranidae","Caesioperca","spp",78
 "2020-10_south-west_stereo-BRUVs","IO207","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO210","Carcharhinidae","Carcharhinus","brevipinna",1
 "2020-10_south-west_stereo-BRUVs","IO210","Heterodontidae","Heterodontus","portusjacksoni",1
@@ -2078,7 +2077,7 @@
 "2020-10_south-west_stereo-BRUVs","IO211","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","IO211","Pomacentridae","Chromis","klunzingeri",48
 "2020-10_south-west_stereo-BRUVs","IO211","Scorpididae","Neatypus","obliquus",7
-"2020-10_south-west_stereo-BRUVs","IO211","Serranidae","Caesioperca","sp1",20
+"2020-10_south-west_stereo-BRUVs","IO211","Serranidae","Caesioperca","spp",20
 "2020-10_south-west_stereo-BRUVs","IO215","Gerreidae","Parequula","melbournensis",3
 "2020-10_south-west_stereo-BRUVs","IO215","Labridae","Coris","auricularis",1
 "2020-10_south-west_stereo-BRUVs","IO215","Myliobatidae","Myliobatis","tenuicaudatus",1
@@ -2096,7 +2095,7 @@
 "2020-10_south-west_stereo-BRUVs","IO216","Mullidae","Parupeneus","chrysopleuron",1
 "2020-10_south-west_stereo-BRUVs","IO216","Neosebastidae","Neosebastes","pandus",1
 "2020-10_south-west_stereo-BRUVs","IO216","Platycephalidae","Platycephalus","spp",1
-"2020-10_south-west_stereo-BRUVs","IO216","Serranidae","Caesioperca","sp1",30
+"2020-10_south-west_stereo-BRUVs","IO216","Serranidae","Caesioperca","spp",30
 "2020-10_south-west_stereo-BRUVs","IO216","Triakidae","Furgaleus","macki",1
 "2020-10_south-west_stereo-BRUVs","IO217","Berycidae","Centroberyx","gerrardi",1
 "2020-10_south-west_stereo-BRUVs","IO217","Carangidae","Unknown","spp",2
@@ -2153,7 +2152,7 @@
 "2020-10_south-west_stereo-BRUVs","IO223","Mullidae","Parupeneus","chrysopleuron",1
 "2020-10_south-west_stereo-BRUVs","IO223","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO223","Neosebastidae","Neosebastes","pandus",1
-"2020-10_south-west_stereo-BRUVs","IO223","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO223","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO223","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO224","Heterodontidae","Heterodontus","portusjacksoni",2
 "2020-10_south-west_stereo-BRUVs","IO224","Labridae","Austrolabrus","maculatus",3
@@ -2185,7 +2184,7 @@
 "2020-10_south-west_stereo-BRUVs","IO226","Labridae","Pseudolabrus","biserialis",5
 "2020-10_south-west_stereo-BRUVs","IO226","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO226","Pomacentridae","Chromis","klunzingeri",12
-"2020-10_south-west_stereo-BRUVs","IO226","Serranidae","Caesioperca","sp1",14
+"2020-10_south-west_stereo-BRUVs","IO226","Serranidae","Caesioperca","spp",14
 "2020-10_south-west_stereo-BRUVs","IO227","Labridae","Coris","auricularis",24
 "2020-10_south-west_stereo-BRUVs","IO227","Labridae","Ophthalmolepis","lineolatus",6
 "2020-10_south-west_stereo-BRUVs","IO227","Labridae","Pseudolabrus","biserialis",2
@@ -2223,7 +2222,7 @@
 "2020-10_south-west_stereo-BRUVs","IO229","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO229","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO229","Scorpididae","Neatypus","obliquus",28
-"2020-10_south-west_stereo-BRUVs","IO229","Serranidae","Caesioperca","sp1",11
+"2020-10_south-west_stereo-BRUVs","IO229","Serranidae","Caesioperca","spp",11
 "2020-10_south-west_stereo-BRUVs","IO229","Urolophidae","Trygonoptera","ovalis",2
 "2020-10_south-west_stereo-BRUVs","IO229","Unknown","Unknown","spp",4
 "2020-10_south-west_stereo-BRUVs","IO236","Gerreidae","Parequula","melbournensis",1
@@ -2237,7 +2236,7 @@
 "2020-10_south-west_stereo-BRUVs","IO236","Pomacentridae","Chromis","klunzingeri",7
 "2020-10_south-west_stereo-BRUVs","IO236","Scorpididae","Neatypus","obliquus",1
 "2020-10_south-west_stereo-BRUVs","IO236","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","IO236","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO236","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO236","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO236","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO236","Rhinobatidae","Trygonorrhina","dumerilii",2
@@ -2266,7 +2265,7 @@
 "2020-10_south-west_stereo-BRUVs","IO241","Parascylliidae","Parascyllium","variolatum",1
 "2020-10_south-west_stereo-BRUVs","IO241","Pomacentridae","Chromis","klunzingeri",6
 "2020-10_south-west_stereo-BRUVs","IO241","Scorpididae","Neatypus","obliquus",12
-"2020-10_south-west_stereo-BRUVs","IO241","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO241","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO241","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO241","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO241","Unknown","Unknown","spp",1
@@ -2313,8 +2312,7 @@
 "2020-10_south-west_stereo-BRUVs","IO258","Parascylliidae","Parascyllium","variolatum",1
 "2020-10_south-west_stereo-BRUVs","IO258","Pomacentridae","Chromis","klunzingeri",51
 "2020-10_south-west_stereo-BRUVs","IO258","Scorpididae","Neatypus","obliquus",2
-"2020-10_south-west_stereo-BRUVs","IO258","Serranidae","Caesioperca","rasor",1
-"2020-10_south-west_stereo-BRUVs","IO258","Serranidae","Caesioperca","sp1",15
+"2020-10_south-west_stereo-BRUVs","IO258","Serranidae","Caesioperca","spp",15
 "2020-10_south-west_stereo-BRUVs","IO258","Sparidae","Chrysophrys","auratus",6
 "2020-10_south-west_stereo-BRUVs","IO258","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO258","Unknown","Unknown","spp",1
@@ -2329,7 +2327,7 @@
 "2020-10_south-west_stereo-BRUVs","IO259","Monacanthidae","Meuschenia","galii",1
 "2020-10_south-west_stereo-BRUVs","IO259","Scorpididae","Neatypus","obliquus",13
 "2020-10_south-west_stereo-BRUVs","IO259","Scorpididae","Scorpis","georgiana",1
-"2020-10_south-west_stereo-BRUVs","IO259","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","IO259","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","IO259","Serranidae","Othos","dentex",1
 "2020-10_south-west_stereo-BRUVs","IO259","Sparidae","Chrysophrys","auratus",3
 "2020-10_south-west_stereo-BRUVs","IO259","Triakidae","Furgaleus","macki",1
@@ -2349,8 +2347,7 @@
 "2020-10_south-west_stereo-BRUVs","IO260","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","IO260","Pomacentridae","Chromis","klunzingeri",5
 "2020-10_south-west_stereo-BRUVs","IO260","Scorpididae","Neatypus","obliquus",10
-"2020-10_south-west_stereo-BRUVs","IO260","Serranidae","Caesioperca","rasor",1
-"2020-10_south-west_stereo-BRUVs","IO260","Serranidae","Caesioperca","sp1",10
+"2020-10_south-west_stereo-BRUVs","IO260","Serranidae","Caesioperca","spp",10
 "2020-10_south-west_stereo-BRUVs","IO260","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO260","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO261","Carangidae","Pseudocaranx","spp",2
@@ -2366,7 +2363,7 @@
 "2020-10_south-west_stereo-BRUVs","IO261","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO261","Pomacentridae","Chromis","klunzingeri",2
 "2020-10_south-west_stereo-BRUVs","IO261","Scorpididae","Neatypus","obliquus",2
-"2020-10_south-west_stereo-BRUVs","IO261","Serranidae","Caesioperca","sp1",11
+"2020-10_south-west_stereo-BRUVs","IO261","Serranidae","Caesioperca","spp",11
 "2020-10_south-west_stereo-BRUVs","IO261","Sparidae","Chrysophrys","auratus",3
 "2020-10_south-west_stereo-BRUVs","IO261","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO262","Dasyatidae","Bathytoshia","brevicaudata",1
@@ -2437,7 +2434,7 @@
 "2020-10_south-west_stereo-BRUVs","IO269","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO269","Scorpididae","Neatypus","obliquus",1
 "2020-10_south-west_stereo-BRUVs","IO269","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","IO269","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO269","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO269","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","IO269","Sparidae","Chrysophrys","auratus",4
 "2020-10_south-west_stereo-BRUVs","IO269","Rhinobatidae","Trygonorrhina","dumerilii",1
@@ -2451,7 +2448,7 @@
 "2020-10_south-west_stereo-BRUVs","IO273","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO273","Pomacentridae","Chromis","klunzingeri",25
 "2020-10_south-west_stereo-BRUVs","IO273","Scorpididae","Neatypus","obliquus",4
-"2020-10_south-west_stereo-BRUVs","IO273","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO273","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO273","Sparidae","Chrysophrys","auratus",5
 "2020-10_south-west_stereo-BRUVs","IO276","Carangidae","Pseudocaranx","spp",2
 "2020-10_south-west_stereo-BRUVs","IO276","Carangidae","Seriola","hippos",2
@@ -2527,7 +2524,7 @@
 "2020-10_south-west_stereo-BRUVs","IO3","Mullidae","Parupeneus","chrysopleuron",1
 "2020-10_south-west_stereo-BRUVs","IO3","Aracanidae","Caprichthys","gymnura",1
 "2020-10_south-west_stereo-BRUVs","IO3","Scyliorhinidae","Cephaloscyllium","variegatum",1
-"2020-10_south-west_stereo-BRUVs","IO3","Serranidae","Caesioperca","sp1",2
+"2020-10_south-west_stereo-BRUVs","IO3","Serranidae","Caesioperca","spp",2
 "2020-10_south-west_stereo-BRUVs","IO3","Tetraodontidae","Omegophora","armilla",1
 "2020-10_south-west_stereo-BRUVs","IO3","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO3","Unknown","Unknown","spp",1
@@ -2555,7 +2552,7 @@
 "2020-10_south-west_stereo-BRUVs","IO307","Pristiophoridae","Pristiophorus","cirratus",1
 "2020-10_south-west_stereo-BRUVs","IO307","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO307","Scyliorhinidae","Asymbolus","occiduus",2
-"2020-10_south-west_stereo-BRUVs","IO307","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO307","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO307","Sillaginidae","Sillago","spp",1
 "2020-10_south-west_stereo-BRUVs","IO307","Triakidae","Galeorhinus","galeus",3
 "2020-10_south-west_stereo-BRUVs","IO307","Triglidae","Pterygotrigla","polyommata",1
@@ -2582,7 +2579,7 @@
 "2020-10_south-west_stereo-BRUVs","IO311","Muraenidae","Gymnothorax","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO311","Oplegnathidae","Oplegnathus","woodwardi",5
 "2020-10_south-west_stereo-BRUVs","IO311","Parascylliidae","Parascyllium","ferrugineum",1
-"2020-10_south-west_stereo-BRUVs","IO311","Serranidae","Caesioperca","sp1",3
+"2020-10_south-west_stereo-BRUVs","IO311","Serranidae","Caesioperca","spp",3
 "2020-10_south-west_stereo-BRUVs","IO311","Sparidae","Chrysophrys","auratus",4
 "2020-10_south-west_stereo-BRUVs","IO311","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO312","Labridae","Bodianus","frenchii",1
@@ -2597,7 +2594,7 @@
 "2020-10_south-west_stereo-BRUVs","IO312","Aracanidae","Caprichthys","gymnura",1
 "2020-10_south-west_stereo-BRUVs","IO312","Pinguipedidae","Parapercis","ramsayi",1
 "2020-10_south-west_stereo-BRUVs","IO312","Scorpididae","Neatypus","obliquus",5
-"2020-10_south-west_stereo-BRUVs","IO312","Serranidae","Caesioperca","sp1",7
+"2020-10_south-west_stereo-BRUVs","IO312","Serranidae","Caesioperca","spp",7
 "2020-10_south-west_stereo-BRUVs","IO312","Sparidae","Chrysophrys","auratus",2
 "2020-10_south-west_stereo-BRUVs","IO312","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO313","Carangidae","Pseudocaranx","spp",7
@@ -2623,7 +2620,7 @@
 "2020-10_south-west_stereo-BRUVs","IO325","Oplegnathidae","Oplegnathus","woodwardi",2
 "2020-10_south-west_stereo-BRUVs","IO325","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO325","Scorpididae","Neatypus","obliquus",7
-"2020-10_south-west_stereo-BRUVs","IO325","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","IO325","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","IO325","Sparidae","Chrysophrys","auratus",7
 "2020-10_south-west_stereo-BRUVs","IO325","Triakidae","Furgaleus","macki",1
 "2020-10_south-west_stereo-BRUVs","IO325","Unknown","Unknown","spp",2
@@ -2641,7 +2638,7 @@
 "2020-10_south-west_stereo-BRUVs","IO327","Monacanthidae","Meuschenia","galii",2
 "2020-10_south-west_stereo-BRUVs","IO327","Monacanthidae","Nelusetta","ayraud",5
 "2020-10_south-west_stereo-BRUVs","IO327","Oplegnathidae","Oplegnathus","woodwardi",1
-"2020-10_south-west_stereo-BRUVs","IO327","Orectolobidae","Orectolobus","hutchinsi",1
+"2020-10_south-west_stereo-BRUVs","IO327","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO327","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO327","Scorpididae","Neatypus","obliquus",7
 "2020-10_south-west_stereo-BRUVs","IO327","Serranidae","Caesioperca","spp",1
@@ -2696,7 +2693,7 @@
 "2020-10_south-west_stereo-BRUVs","IO333","Enoplosidae","Enoplosus","armatus",2
 "2020-10_south-west_stereo-BRUVs","IO333","Monacanthidae","Nelusetta","ayraud",5
 "2020-10_south-west_stereo-BRUVs","IO333","Oplegnathidae","Oplegnathus","woodwardi",5
-"2020-10_south-west_stereo-BRUVs","IO333","Orectolobidae","Orectolobus","halei",1
+"2020-10_south-west_stereo-BRUVs","IO333","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO333","Scombridae","Grammatorcynus","bicarinatus",1
 "2020-10_south-west_stereo-BRUVs","IO333","Sparidae","Chrysophrys","auratus",6
 "2020-10_south-west_stereo-BRUVs","IO333","Unknown","Unknown","spp",1
@@ -2722,7 +2719,7 @@
 "2020-10_south-west_stereo-BRUVs","IO335","Pomacentridae","Chromis","klunzingeri",8
 "2020-10_south-west_stereo-BRUVs","IO335","Pomacentridae","Parma","bicolor",1
 "2020-10_south-west_stereo-BRUVs","IO335","Scorpididae","Neatypus","obliquus",9
-"2020-10_south-west_stereo-BRUVs","IO335","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO335","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO335","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","IO335","Urolophidae","Trygonoptera","ovalis",1
 "2020-10_south-west_stereo-BRUVs","IO335","Unknown","Unknown","spp",1
@@ -2763,7 +2760,7 @@
 "2020-10_south-west_stereo-BRUVs","IO338","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO338","Pomacentridae","Chromis","klunzingeri",1
 "2020-10_south-west_stereo-BRUVs","IO338","Scombridae","Sarda","orientalis",2
-"2020-10_south-west_stereo-BRUVs","IO338","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","IO338","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","IO338","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO338","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO338","Triakidae","Furgaleus","macki",1
@@ -2781,13 +2778,13 @@
 "2020-10_south-west_stereo-BRUVs","IO339","Monacanthidae","Meuschenia","flavolineata",2
 "2020-10_south-west_stereo-BRUVs","IO339","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO339","Myliobatidae","Myliobatis","tenuicaudatus",1
-"2020-10_south-west_stereo-BRUVs","IO339","Orectolobidae","Orectolobus","hutchinsi",1
+"2020-10_south-west_stereo-BRUVs","IO339","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO339","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO339","Pomacentridae","Chromis","klunzingeri",22
 "2020-10_south-west_stereo-BRUVs","IO339","Pomacentridae","Parma","bicolor",2
 "2020-10_south-west_stereo-BRUVs","IO339","Pomacentridae","Parma","occidentalis",1
 "2020-10_south-west_stereo-BRUVs","IO339","Pomacentridae","Parma","sp",1
-"2020-10_south-west_stereo-BRUVs","IO339","Serranidae","Caesioperca","rasor",4
+"2020-10_south-west_stereo-BRUVs","IO339","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","IO339","Serranidae","Epinephelides","armatus",2
 "2020-10_south-west_stereo-BRUVs","IO339","Serranidae","Hypoplectrodes","nigroruber",1
 "2020-10_south-west_stereo-BRUVs","IO339","Serranidae","Othos","dentex",1
@@ -2804,7 +2801,7 @@
 "2020-10_south-west_stereo-BRUVs","IO34","Odacidae","Siphonognathus","caninis",1
 "2020-10_south-west_stereo-BRUVs","IO34","Pomacentridae","Chromis","klunzingeri",3
 "2020-10_south-west_stereo-BRUVs","IO34","Scorpididae","Tilodon","sexfasciatus",2
-"2020-10_south-west_stereo-BRUVs","IO34","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO34","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO34","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO343","Berycidae","Centroberyx","gerrardi",151
 "2020-10_south-west_stereo-BRUVs","IO343","Carangidae","Pseudocaranx","spp",4
@@ -2847,7 +2844,7 @@
 "2020-10_south-west_stereo-BRUVs","IO353","Monacanthidae","Meuschenia","galii",1
 "2020-10_south-west_stereo-BRUVs","IO353","Myliobatidae","Myliobatis","tenuicaudatus",1
 "2020-10_south-west_stereo-BRUVs","IO353","Oplegnathidae","Oplegnathus","woodwardi",1
-"2020-10_south-west_stereo-BRUVs","IO353","Orectolobidae","Orectolobus","ornatus",1
+"2020-10_south-west_stereo-BRUVs","IO353","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO353","Pomacentridae","Chromis","klunzingeri",5
 "2020-10_south-west_stereo-BRUVs","IO353","Scorpididae","Neatypus","obliquus",37
 "2020-10_south-west_stereo-BRUVs","IO353","Tetraodontidae","Omegophora","armilla",1
@@ -2888,7 +2885,7 @@
 "2020-10_south-west_stereo-BRUVs","IO356","Labridae","Coris","auricularis",6
 "2020-10_south-west_stereo-BRUVs","IO356","Labridae","Pseudolabrus","biserialis",5
 "2020-10_south-west_stereo-BRUVs","IO356","Monacanthidae","Meuschenia","flavolineata",2
-"2020-10_south-west_stereo-BRUVs","IO356","Orectolobidae","Orectolobus","ornatus",1
+"2020-10_south-west_stereo-BRUVs","IO356","Orectolobidae","Orectolobus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO356","Pomacentridae","Parma","bicolor",1
 "2020-10_south-west_stereo-BRUVs","IO356","Scorpaenidae","Scorpaena","sumptuosa",1
 "2020-10_south-west_stereo-BRUVs","IO356","Scorpididae","Neatypus","obliquus",24
@@ -2964,7 +2961,7 @@
 "2020-10_south-west_stereo-BRUVs","IO365","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO365","Parascylliidae","Parascyllium","ferrugineum",1
 "2020-10_south-west_stereo-BRUVs","IO365","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","IO365","Serranidae","Caesioperca","sp1",74
+"2020-10_south-west_stereo-BRUVs","IO365","Serranidae","Caesioperca","spp",74
 "2020-10_south-west_stereo-BRUVs","IO369","Carangidae","Pseudocaranx","spp",8
 "2020-10_south-west_stereo-BRUVs","IO369","Cheilodactylidae","Nemadactylus","valenciennesi",1
 "2020-10_south-west_stereo-BRUVs","IO369","Monacanthidae","Nelusetta","ayraud",13
@@ -2979,7 +2976,7 @@
 "2020-10_south-west_stereo-BRUVs","IO37","Pinguipedidae","Parapercis","spp",1
 "2020-10_south-west_stereo-BRUVs","IO37","Scyliorhinidae","Aulohalaelurus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO37","Sparidae","Chrysophrys","auratus",1
-"2020-10_south-west_stereo-BRUVs","IO37","Squalidae","Squalus","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO37","Squalidae","Squalus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO370","Carangidae","Pseudocaranx","spp",4
 "2020-10_south-west_stereo-BRUVs","IO370","Carcharhinidae","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO370","Gerreidae","Gerres","subfasciatus",4
@@ -2998,7 +2995,7 @@
 "2020-10_south-west_stereo-BRUVs","IO374","Oplegnathidae","Oplegnathus","woodwardi",5
 "2020-10_south-west_stereo-BRUVs","IO374","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO374","Parascylliidae","Parascyllium","variolatum",1
-"2020-10_south-west_stereo-BRUVs","IO374","Serranidae","Caesioperca","sp1",5
+"2020-10_south-west_stereo-BRUVs","IO374","Serranidae","Caesioperca","spp",5
 "2020-10_south-west_stereo-BRUVs","IO374","Serranidae","Epinephelides","armatus",1
 "2020-10_south-west_stereo-BRUVs","IO374","Sparidae","Chrysophrys","auratus",3
 "2020-10_south-west_stereo-BRUVs","IO374","Unknown","Unknown","spp",1
@@ -3026,7 +3023,7 @@
 "2020-10_south-west_stereo-BRUVs","IO4","Labridae","Suezichthys","bifurcatus",1
 "2020-10_south-west_stereo-BRUVs","IO4","Monacanthidae","Nelusetta","ayraud",1
 "2020-10_south-west_stereo-BRUVs","IO4","Oplegnathidae","Oplegnathus","woodwardi",2
-"2020-10_south-west_stereo-BRUVs","IO4","Serranidae","Caesioperca","sp1",1
+"2020-10_south-west_stereo-BRUVs","IO4","Serranidae","Caesioperca","spp",1
 "2020-10_south-west_stereo-BRUVs","IO4","Sparidae","Chrysophrys","auratus",2
 "2020-10_south-west_stereo-BRUVs","IO4","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO40","Carangidae","Pseudocaranx","spp",1
@@ -3036,7 +3033,7 @@
 "2020-10_south-west_stereo-BRUVs","IO40","Neosebastidae","Neosebastes","pandus",1
 "2020-10_south-west_stereo-BRUVs","IO40","Oplegnathidae","Oplegnathus","woodwardi",2
 "2020-10_south-west_stereo-BRUVs","IO40","Scyliorhinidae","Asymbolus","occiduus",1
-"2020-10_south-west_stereo-BRUVs","IO40","Squalidae","Squalus","sp1",4
+"2020-10_south-west_stereo-BRUVs","IO40","Squalidae","Squalus","spp",4
 "2020-10_south-west_stereo-BRUVs","IO40","Triglidae","Chelidonichthys","kumu",1
 "2020-10_south-west_stereo-BRUVs","IO46","Monacanthidae","Nelusetta","ayraud",7
 "2020-10_south-west_stereo-BRUVs","IO46","Neosebastidae","Neosebastes","nigropunctatus",6
@@ -3063,8 +3060,7 @@
 "2020-10_south-west_stereo-BRUVs","IO5","Labridae","Suezichthys","bifurcatus",3
 "2020-10_south-west_stereo-BRUVs","IO5","Mullidae","Parupeneus","chrysopleuron",1
 "2020-10_south-west_stereo-BRUVs","IO5","Oplegnathidae","Oplegnathus","woodwardi",1
-"2020-10_south-west_stereo-BRUVs","IO5","Serranidae","Caesioperca","lepidoptera",3
-"2020-10_south-west_stereo-BRUVs","IO5","Serranidae","Caesioperca","sp1",27
+"2020-10_south-west_stereo-BRUVs","IO5","Serranidae","Caesioperca","spp",27
 "2020-10_south-west_stereo-BRUVs","IO5","Sparidae","Chrysophrys","auratus",8
 "2020-10_south-west_stereo-BRUVs","IO58","Carangidae","Pseudocaranx","spp",19
 "2020-10_south-west_stereo-BRUVs","IO58","Labridae","Coris","auricularis",3
@@ -3094,7 +3090,7 @@
 "2020-10_south-west_stereo-BRUVs","IO64","Monacanthidae","Scobinichthys","granulatus",1
 "2020-10_south-west_stereo-BRUVs","IO64","Mullidae","Upeneichthys","vlamingii",1
 "2020-10_south-west_stereo-BRUVs","IO64","Scorpididae","Neatypus","obliquus",9
-"2020-10_south-west_stereo-BRUVs","IO64","Serranidae","Caesioperca","sp1",35
+"2020-10_south-west_stereo-BRUVs","IO64","Serranidae","Caesioperca","spp",35
 "2020-10_south-west_stereo-BRUVs","IO64","Sparidae","Chrysophrys","auratus",1
 "2020-10_south-west_stereo-BRUVs","IO64","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO65","Glaucosomatidae","Glaucosoma","hebraicum",1
@@ -3174,7 +3170,7 @@
 "2020-10_south-west_stereo-BRUVs","IO75","Aracanidae","Anoplocapros","lenticularis",1
 "2020-10_south-west_stereo-BRUVs","IO75","Pomacentridae","Chromis","klunzingeri",6
 "2020-10_south-west_stereo-BRUVs","IO75","Scorpididae","Neatypus","obliquus",15
-"2020-10_south-west_stereo-BRUVs","IO75","Serranidae","Caesioperca","sp1",7
+"2020-10_south-west_stereo-BRUVs","IO75","Serranidae","Caesioperca","spp",7
 "2020-10_south-west_stereo-BRUVs","IO80","Glaucosomatidae","Glaucosoma","hebraicum",1
 "2020-10_south-west_stereo-BRUVs","IO80","Labridae","Austrolabrus","maculatus",1
 "2020-10_south-west_stereo-BRUVs","IO80","Labridae","Coris","auricularis",4
@@ -3214,7 +3210,7 @@
 "2020-10_south-west_stereo-BRUVs","IO91","Oplegnathidae","Oplegnathus","woodwardi",1
 "2020-10_south-west_stereo-BRUVs","IO91","Pomacentridae","Chromis","klunzingeri",1
 "2020-10_south-west_stereo-BRUVs","IO91","Scorpididae","Tilodon","sexfasciatus",1
-"2020-10_south-west_stereo-BRUVs","IO91","Serranidae","Caesioperca","sp1",4
+"2020-10_south-west_stereo-BRUVs","IO91","Serranidae","Caesioperca","spp",4
 "2020-10_south-west_stereo-BRUVs","IO91","Unknown","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO92","Labridae","Austrolabrus","maculatus",2
 "2020-10_south-west_stereo-BRUVs","IO92","Labridae","Coris","auricularis",41
@@ -3228,19 +3224,19 @@
 "2020-10_south-west_stereo-BRUVs","IO95","Carangidae","Pseudocaranx","spp",1
 "2020-10_south-west_stereo-BRUVs","IO95","Monacanthidae","Nelusetta","ayraud",7
 "2020-10_south-west_stereo-BRUVs","IO95","Oplegnathidae","Oplegnathus","woodwardi",2
-"2020-10_south-west_stereo-BRUVs","IO95","Squalidae","Squalus","megalops",1
+"2020-10_south-west_stereo-BRUVs","IO95","Squalidae","Squalus","spp",1
 "2020-10_south-west_stereo-BRUVs","IO96","Berycidae","Centroberyx","gerrardi",1
 "2020-10_south-west_stereo-BRUVs","IO96","Carangidae","Pseudocaranx","spp",3
 "2020-10_south-west_stereo-BRUVs","IO96","Carcharhinidae","Unknown","spp",1
 "2020-10_south-west_stereo-BRUVs","IO96","Monacanthidae","Nelusetta","ayraud",8
 "2020-10_south-west_stereo-BRUVs","IO96","Oplegnathidae","Oplegnathus","woodwardi",3
 "2020-10_south-west_stereo-BRUVs","IO96","Platycephalidae","Platycephalus","spp",2
-"2020-10_south-west_stereo-BRUVs","IO96","Squalidae","Squalus","sp1",2
+"2020-10_south-west_stereo-BRUVs","IO96","Squalidae","Squalus","spp",2
 "2020-10_south-west_stereo-BRUVs","IO96","Rhinobatidae","Trygonorrhina","dumerilii",1
 "2020-10_south-west_stereo-BRUVs","IO98","Monacanthidae","Nelusetta","ayraud",8
 "2020-10_south-west_stereo-BRUVs","IO98","Scorpididae","Tilodon","sexfasciatus",1
 "2020-10_south-west_stereo-BRUVs","IO98","Scyliorhinidae","Asymbolus","occiduus",1
-"2020-10_south-west_stereo-BRUVs","IO98","Squalidae","Squalus","megalops",2
+"2020-10_south-west_stereo-BRUVs","IO98","Squalidae","Squalus","spp",2
 "2020-10_south-west_stereo-BRUVs","IOC04","Carangidae","Pseudocaranx","spp",5
 "2020-10_south-west_stereo-BRUVs","IOC04","Monacanthidae","Nelusetta","ayraud",11
 "2020-10_south-west_stereo-BRUVs","IOC04","Neosebastidae","Neosebastes","nigropunctatus",1

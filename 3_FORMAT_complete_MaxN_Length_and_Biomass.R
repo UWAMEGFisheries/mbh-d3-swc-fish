@@ -79,18 +79,18 @@ dat<-read_csv(file=paste(study,"checked.maxn.csv",sep = "."),na = c("", " "))%>%
 
 # Make family, genus and species names to merge back in after data is complete ---
 maxn.families<-read_csv(file=paste(study,"checked.maxn.csv",sep = "."),na = c("", " "))%>%
-  mutate(scientific=paste(family,genus,species,sep=" "))%>%
-  filter(!(family=="Unknown"))%>%
+  dplyr::mutate(scientific=paste(family,genus,species,sep=" "))%>%
+  dplyr::filter(!(family=="Unknown"))%>%
   dplyr::select(c(family,genus,species,scientific))%>%
-  distinct()%>% #to join back in after complete
+  dplyr::distinct()%>% #to join back in after complete
   glimpse()
 
 # Make complete data and join with metadata
 complete.maxn<-dat%>%
   gather(key=scientific, value = maxn,-sample)%>%
-  inner_join(maxn.families,by=c("scientific"))%>%
-  inner_join(metadata)%>% # Joining metadata will use a lot of memory - # out if you need too
-  glimpse()
+  dplyr::inner_join(maxn.families,by=c("scientific"))%>%
+  dplyr::inner_join(metadata)%>% # Joining metadata will use a lot of memory - # out if you need too
+  dplyr::glimpse()
 
 # Make complete.length.number.mass: fill in 0s and join in factors----
 length.families<-read_csv(file=paste(study,"checked.length.csv",sep = "."),na = c("", " "))%>%
@@ -100,17 +100,17 @@ length.families<-read_csv(file=paste(study,"checked.length.csv",sep = "."),na = 
   glimpse()
 
 complete.length.number<-read_csv(file=paste(study,"checked.length.csv",sep = "."))%>% #na = c("", " "))
-  filter(!family=="Unknown")%>%
+  dplyr::(!family=="Unknown")%>%
   dplyr::mutate(id=paste(campaignid,sample,sep="."))%>%
   dplyr::right_join(metadata ,by = c("id","campaignid", "sample"))%>% # add in all samples
   dplyr::select(id,campaignid,sample,family,genus,species,length,number,range)%>%
   tidyr::complete(nesting(id,campaignid,sample),nesting(family,genus,species)) %>%
   replace_na(list(number = 0))%>% #we add in zeros - in case we want to calulate abundance of species based on a length rule (e.g. greater than legal size)
-  ungroup()%>%
-  filter(!is.na(number))%>% # this should not do anything
-  mutate(length=as.numeric(length))%>%
-  left_join(.,metadata)%>%
-  glimpse()
+  dplyr::ungroup()%>%
+  dplyr::filter(!is.na(number))%>% # this should not do anything
+  dplyr::mutate(length=as.numeric(length))%>%
+  dplyr::left_join(.,metadata)%>%
+  dplyr::glimpse()
 
 length(unique(metadata$id)) # 316
 length(unique(complete.length.number$id)) # 316
