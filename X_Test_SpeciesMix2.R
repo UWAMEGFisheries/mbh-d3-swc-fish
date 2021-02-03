@@ -47,7 +47,19 @@ head(df)
 str(df)
 names(df) # 278 BRUV deployments
 summary(df)
+levels(df$full.name)
 
+# While I wait for checked MaxN, remove certain sp --
+# Caesioperca sp, Caesioperca sp1, Caesioperca spp, Platycephalus sp, Platycephalus spp
+
+df <- df %>%
+  filter(full.name != 'Caesioperca sp' & full.name != 'Caesioperca sp1' & full.name != 'Caesioperca spp'
+         & full.name != 'Platycephalus sp' & full.name != 'Platycephalus spp') %>%
+  glimpse()
+
+df <- droplevels(df)
+levels(df$full.name)
+length(levels(df$full.name))
 
 
 # 2. Remove sp that are encountered less than 2.5% of the time ----
@@ -85,14 +97,14 @@ df2 %>% count(full.name)
 df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
 
 df2 <- droplevels(df2) 
-str(df2)  # 19035 obs, 83 species remaining
+str(df2)  # 19035 obs, 78 species remaining
 
 names(df2)
 
 # 3. Make covariates in long formate using reshape2 package ----
 dfl <- melt(df2,
-            id.vars = names(df)[c(3:33)],
-            measure.vars = names(df)[c(34:40)],
+            id.vars = names(df)[c(3:11,14:33)],
+            measure.vars = names(df)[c(12,13,34:40)],
             variable.name = "covariate",
             value.name = "value"
 )
@@ -106,6 +118,12 @@ which(is.na(dfl$value))
 # check for NAs in cluster
 any(is.na(dfl$cluster.new))
 which(is.na(dfl$cluster.new))
+
+# check maxn numbers
+head(dfl)
+max(dfl$maxn) # 151
+min(dfl$maxn) # 0
+
 
 # to check which BRUVs have NA cluster ----
 str(dfl)
@@ -147,9 +165,10 @@ pd <- table_to_species_data(
 pd
 class(pd)
 dim(pd)
+
 # change column names for fomula because long names don't work with function --
 sp.names <- colnames(pd) # col names as species names
-new.names <- paste0('spp',1:83)
+new.names <- paste0('spp',1:78)
 colnames(pd) <- new.names
 pd
 
@@ -159,13 +178,14 @@ head(sp.names.no)
 
 # 5. Covariate data into wide df ----
 names(dfl)
+str(dfl)
 
-cd <- reshape(dfl[,c(1,32:33)], idvar = "sample", timevar = "covariate", direction = "wide")
+cd <- reshape(dfl[,c(1,30:31)], idvar = "sample", timevar = "covariate", direction = "wide")
 
 cd
 class(cd)
 colnames(cd)
-colnames(cd) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
+colnames(cd) <- c("sample"  ,"y", "x", "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
                                                  "tpi"  ,       "aspect"  )
 dim(cd)
 
@@ -281,7 +301,7 @@ colnames(pd)
 
 #sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59), collapse = ','),") ~ bathy + slope"))
                                                     
-sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
+sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                     collapse = ','),
                                                     ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
                                                 
@@ -297,7 +317,7 @@ test_model <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 13,
+  nArchetypes = 6,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -320,14 +340,59 @@ coef(test_model)
 class(test_model)
 test_model$taus
 
+## Check model fit ----
+BIC(test_model) # this gives a valie of BIC
+print(test_model)
+test_model$coefs
+
+# look at the partial response of each covariate using:
+par(mfrow=c(2,2))
+eff.df <- effectPlotData(focal.predictors = c("bathy","slope","aspect", "tpi", "flowdir"), mod = test_model)
+#eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
+plot(x = eff.df, object = test_model, na.rm = T)
+
+test_model$taus
+
+# Probability of each sp. belonging to each archetype ----
+arch_prob <- as.data.frame(test_model$taus)
+head(arch_prob)
+names(arch_prob)
+head(sp.names.no)
+
+arch <- cbind(arch_prob, sp.names.no)
+head(arch)
+
+# Get archetype with maximum probability for each sp --
+arch2 <- arch_prob %>%
+  tibble::rownames_to_column() %>% # 1. add row ids as a column
+  gather(column, value, -rowname) %>%
+  dplyr::group_by(rowname) %>%
+  dplyr::filter(rank(-value) == 1) %>%
+  glimpse()
+
+head(arch2)
+str(arch2)
+arch2 <- as.data.frame(arch2)
+names(arch2) <- c('new.names', 'archetype', 'prob')
+
+arch3 <- arch2 %>%
+  dplyr::left_join(sp.names.no) %>%
+  dplyr::mutate_at(vars(archetype), list(as.factor)) %>%
+  glimpse()
+
+str(arch3)
+summary(arch3)
+
+
+
 
 ## 10. Optimize number of covariates ----
 # now that you know the no. of archetypes, start removing convariates and test AIC to find the most parismonious model--
 
 # remove one covariate at a time ----
-sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
+sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                          collapse = ','),
-                                          ") ~ poly(bathy, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                          ") ~ poly(x, y, bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 test_model_b <- species_mix(
@@ -351,14 +416,53 @@ test_model_b <- species_mix(
 )
 
 BIC(test_model_b) # this gives a valie of BIC
+AIC(test_model_b)
 print(test_model_b)
+
+# look at the partial response of each covariate using:
+par(mfrow=c(2,2))
+eff.df <- effectPlotData(focal.predictors = c("bathy","tpi"), mod = test_model_b)
+#eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
+plot(x = eff.df, object = test_model_b, na.rm = T)
+
+test_model_b$taus
+
+# Probability of each sp. belonging to each archetype ----
+arch_prob <- as.data.frame(test_model_b$taus)
+head(arch_prob)
+names(arch_prob)
+head(sp.names.no)
+
+arch <- cbind(arch_prob, sp.names.no)
+head(arch)
+
+# Get archetype with maximum probability for each sp --
+arch2 <- arch_prob %>%
+  tibble::rownames_to_column() %>% # 1. add row ids as a column
+  gather(column, value, -rowname) %>%
+  dplyr::group_by(rowname) %>%
+  dplyr::filter(rank(-value) == 1) %>%
+  glimpse()
+
+head(arch2)
+str(arch2)
+arch2 <- as.data.frame(arch2)
+names(arch2) <- c('new.names', 'archetype', 'prob')
+
+arch3 <- arch2 %>%
+  dplyr::left_join(sp.names.no) %>%
+  dplyr::mutate_at(vars(archetype), list(as.factor)) %>%
+  glimpse()
+
+str(arch3)
+summary(arch3)
 
 
 # 11. Final model ----
 
-sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
+sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                       collapse = ','),
-                                       ") ~ poly(bathy, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                       ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) ++ poly(aspect, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 A_model <- species_mix(
@@ -368,7 +472,7 @@ A_model <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 4,
+  nArchetypes = 2,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -393,11 +497,11 @@ A_model$gamma
 A_model$delta
 A_model$theta
 
-
 # look at the partial response of each covariate using:
-par(mfrow=c(1,2))
-eff.df <- effectPlotData(focal.predictors = c("bathy","slope","aspect"), mod = A_model)
+par(mfrow=c(2,2))
+eff.df <- effectPlotData(focal.predictors = c("bathy","tpi", "aspect"), mod = A_model)
 plot(x = eff.df, object = A_model)
+
 
 # 12. Probability of each sp. belonging to each archetype ----
 arch_prob <- as.data.frame(A_model$taus)
@@ -439,7 +543,7 @@ summary(arch3)
 
 plot(A_model)
 
-preds <- c("bathy", "slope", "aspect")
+preds <- c("bathy","tpi", "aspect")
 
 
 ef.plot <- effectPlotData(preds, A_model)
@@ -453,7 +557,7 @@ sp.boot <- species_mix.bootstrap(
   A_model,
   nboot = 100,
   type = "BayesBoot",
-  mc.cores = 2,
+  #mc.cores = 2,
   quiet = FALSE
 )
 
@@ -483,6 +587,10 @@ sp.var <- vcov(
 # bathy --
 b <- raster(paste(r.dir, "SW_bathy-to-260m.tif", sep='/'))
 plot(b)
+# cut to 150 m depth --
+b[b < -150] <- NA
+b[b > -30] <- NA
+plot(b)
 
 # derivatives --
 d <- stack(paste(r.dir, "SW_detrendend.derivatives-to-260m.tif", sep='/'))
@@ -495,15 +603,19 @@ names(d) <- n[,3]
 
 # crop bathy to stack --
 b2 <- crop(b, d)
+d <- mask(d, b2)
+plot(d)
 
 # stack preds --
-d2 <- stack(d$slope, d$aspect, b2)
+d2 <- stack(d$tpi, d$aspect, b2)
 plot(d2)
+
+
 
 d3 <- as.data.frame(d2, xy = TRUE)
 dim(d3)
 head(d3)
-names(d3) <- c('x', 'y', 'slope', 'aspect', 'bathy')
+names(d3) <- c('x', 'y', 'tpi', 'aspect', 'bathy')
 str(d3)
 any(is.na(d3$slope))
 length(which(is.na(d3$slope)))
@@ -512,21 +624,23 @@ str(d3)
 
 
 # predict ##
-ptest <- predict(
+ptest2 <- predict(
   A_model,
   sp.boot,
+  #nboot = 100,
   d3[,c(3:5)],
+  #alpha = 0.95,
   mc.cores = 2,
   prediction.type = "archetype"
 )
 
 
-class(ptest)
-str(ptest$ptPreds)
-head(ptest$ptPreds)
-ptest$
+class(ptest2)
+str(ptest2$ptPreds)
+head(ptest2$ptPreds)
+ptest2$ptPreds
 
-Apreds <- ptest$ptPreds
+Apreds <- ptest2$ptPreds
 head(Apreds)
 
 SAMpreds <- cbind(d3, Apreds)
