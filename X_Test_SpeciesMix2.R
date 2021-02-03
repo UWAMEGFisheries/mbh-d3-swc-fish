@@ -165,16 +165,18 @@ cd <- reshape(dfl[,c(1,32:33)], idvar = "sample", timevar = "covariate", directi
 cd
 class(cd)
 colnames(cd)
+colnames(cd) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
+                                                 "tpi"  ,       "aspect"  )
 dim(cd)
 
 cdm <- as.matrix(cd)
 
 # 6. Standarize the covariates ----
-cd.stand <- BBmisc::normalize(cd, method = "standardize", range = c(0,1))
-colnames(cd.stand) <- colnames(cd)
-colnames(cd.stand) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
-                        "tpi"  ,       "aspect"  )
-dim(cd.stand)
+# cd.stand <- BBmisc::normalize(cd, method = "standardize", range = c(0,1))
+# colnames(cd.stand) <- colnames(cd)
+# colnames(cd.stand) <- c("sample"  , "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
+#                         "tpi"  ,       "aspect"  )
+# dim(cd.stand)
 
 # use only a set of covariates for the moment --
 #cd.stand <- cd.stand[,c(2:13)]
@@ -264,17 +266,17 @@ mosthighlycorrelated(cd[,c(2:8)], 30) # This results in only depth, rough and sl
 
 # 8. Make matrix of species and covariates ----
 dd <- make_mixture_data(species_data = pd,
-                        covariate_data = cd.stand) # use standarlized covariates
+                        covariate_data = cd) # use standarlized covariates
 dd # I think this is what I need to use for the models
 
 
 # 9. Optimize number of archetypes ----
 # Fit species mix model using diffent number of archetypes and checking BIC --
 
-colnames(cd.stand)
-class(cd.stand)
-head(cd.stand)
-cd.df <- as.data.frame(cd.stand)
+colnames(cd)
+class(cd)
+head(cd)
+cd.df <- as.data.frame(cd)
 colnames(pd)
 
 #sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:59), collapse = ','),") ~ bathy + slope"))
@@ -309,6 +311,7 @@ test_model <- species_mix(
 )
 
 BIC(test_model) # this gives a valie of BIC
+AIC(test_model)
 print(test_model)
 
 summary.species_mix(test_model, digits = 4)# this is not working
@@ -353,8 +356,6 @@ print(test_model_b)
 
 # 11. Final model ----
 
-sp_form <- ~1
-
 sam_form <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:83),
                                                       collapse = ','),
                                        ") ~ poly(bathy, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
@@ -380,8 +381,8 @@ A_model <- species_mix(
   #titbits = TRUE # could turn this off
 )
 
-## Check model fit ----
 
+## Check model fit ----
 BIC(A_model) # this gives a valie of BIC
 print(A_model)
 A_model$coefs
@@ -397,7 +398,6 @@ A_model$theta
 par(mfrow=c(1,2))
 eff.df <- effectPlotData(focal.predictors = c("bathy","slope","aspect"), mod = A_model)
 plot(x = eff.df, object = A_model)
-
 
 # 12. Probability of each sp. belonging to each archetype ----
 arch_prob <- as.data.frame(A_model$taus)
