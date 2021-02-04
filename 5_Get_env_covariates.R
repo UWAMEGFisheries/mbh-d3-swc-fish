@@ -45,21 +45,28 @@ str(df)
 dfs <- df
 coordinates(dfs) <- ~longitude+latitude 
 
-# Get bathy and derivatives ----
+# Get bathy and detrended derivatives ----
 b <- raster(paste(r.dir, "SW_bathy-to-260m.tif", sep='/'))
 plot(b)
 points(dfs)
 d <- stack(paste(r.dir, "SW_detrendend.derivatives-to-260m.tif", sep='/'))
-plot(d)
+plot(d$flowdir)
 names(d)
 n <- read.csv(paste(r.dir, "names.det.bath.csv", sep='/'))
 n
-n$covs <- c("detrended.bathy", "slope", "flowdir", "tri", "tpi", "aspect")
-names(d) <- n[,3]
+#n$covs <- c("detrended.bathy", "slope", "flowdir", "tri", "tpi", "aspect")
+names(d) <- n$x
+
+# Get normal derivatives ----
+bds <- stack(paste(r.dir, "SW_bathy.derivatives-to-260m.tif", sep='/'))
+names(bds)
+names2 <- read.csv(paste(r.dir, "names.bathy.ders.csv", sep='/'))
+names(bds) <- names2$x
+
 
 
 # Extract bathy derivatives from data points --
-dfs <- raster::extract(b, dfs, sp = T)
+dfs <- raster::extract(bds, dfs, sp = T)
 str(dfs)
 
 dfs <- raster::extract(d, dfs, sp = T)
@@ -70,7 +77,7 @@ head(dfs)
 ## so far just using bathy covariates ##
 
 # save up to here ----
-write.csv(dfs, paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep='/'))
+#write.csv(dfs, paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep='/'))
 
 
 ###       ###       ###       ###
@@ -83,32 +90,65 @@ t2 <- raster(paste(r.dir, "SSTsterr_SSTARRS.tif", sep='/'))
 t3 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
 
 ts <- stack(t1, t2, t3)
+plot(ts)
 plot(ts$SSTmean_SSTARRS)
-points(dfs)
 
-dfs <- raster::extract(ts$SSTmean_SSTARRS, dfs, sp = T)
+dfs <- raster::extract(ts, dfs, sp=T)
 head(dfs)
-dfs@data
-
-dist <- distance(dfs)
 
 
-head(df)
-names(df)
-xy <- df[,c(12,11)]
+#### save mxn with bathy ders and temp ----
+#write.csv(dfs, paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep='/'))
 
+
+
+
+# load metadata to extract temp covariates ----
+# this is because the metadata has less points than the maxn data
+
+md <- read.csv(paste(dt.dir, "2020_south-west_stereo-BRUVs.checked.metadata.csv", sep='/')) %>%
+  mutate_at(vars(sample), list(as.factor))
+str(md) # 316 levels of factor
+which(duplicated(md$sample))
+# remove duplicates
+md <- md[-288,]
+
+mdsp <- md
+coordinates(mdsp) <- ~longitude+latitude
+
+plot(ts$SSTmean_SSTARRS)
+points(mdsp)
+md2 <- raster::extract(ts$SSTmean_SSTARRS, mdsp, sp = T)
+head(md2)
+md3 <- as.data.frame(md2)
+which(is.na(md3$SSTmean_SSTARRS))
+length(which(is.na(md3$SSTmean_SSTARRS))) # 10 bruvs with Nas for temp
+
+md.no.temp <- md[c(which(is.na(md3$SSTmean_SSTARRS))),]
+points(md.no.temp$longitude, md.no.temp$latitude) # Plot them
+
+###       ###       ###         ###
+
+# THIS IS NOT WORKINK....
 
 ## Remove NA's by replacing with nearest neighbor ----
 # https://stackoverflow.com/questions/27562076/if-raster-value-na-search-and-extract-the-nearest-non-na-pixel
 
+head(md3)
+names(md3)
+xy <- md3[,c(6,5)]
+head(xy)
+
 # use normal extract function to show that NAs are extracted for some points
-extracted <- raster::extract(x = ts$SSTmean_SSTARRS, y = xy)
+extracted <- extract(x = t1, y = xy)
 
 
 # then take the raster value with lowest distance to point AND non-NA value in the raster
-dfs$sampled <-  apply(X = xy, MARGIN = 1, FUN = function(xy) ts$SSTmean_SSTARRS@data@values[which.min(replace(distanceFromPoints(ts$SSTmean_SSTARRS, xy), is.na(ts$SSTmean_SSTARRS), NA))])
-str(dfs)
-levels(dfs$sample)
+sampled <-  apply(X = xy, MARGIN = 1, FUN = function(xy) t1@data@values[which.min(replace(distanceFromPoints(t1, xy), is.na(t1), NA))])
+
+
+# show output of both procedures
+print(data.frame(xy, extracted, sampled))
 
 
 ### ADD this to use habitat coveriates or save ----
