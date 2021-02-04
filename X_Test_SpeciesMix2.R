@@ -2,7 +2,7 @@
 # Fit Mixtures of Archetype Species # 
 
 # Load libraries ----
-
+install.packages('rasterVis')
 #library(devtools)
 #devtools::install_github('skiptoniam/ecomix')
 library(ecomix)
@@ -20,6 +20,7 @@ library(devtools)
 library(BBmisc) # to normalize
 library(corrplot)
 library(tibble)
+library(rasterVis)
 
 
 # clear workspace ----
@@ -97,14 +98,36 @@ df2 %>% count(full.name)
 df2 <- df2 %>% dplyr::filter(full.name != "Unknown spp") # remove unknowns, there are 10 unknowns
 
 df2 <- droplevels(df2) 
-str(df2)  # 19035 obs, 78 species remaining
+length(levels(df2$full.name)) #  78 species remaining
+
+
+
+## In the meantime, remove BRUVs with NA's in covariates ----
+any(is.na(df2$SSTmean_SSTARRS))
+which(is.na(df2$SSTmean_SSTARRS))
+length(which(is.na(df2$SSTmean_SSTARRS))) # 624
+dim(df2) # 21762 rows
+
+
+df2 <- df2[!is.na(df2$SSTmean_SSTARRS),] # remove rows with NAs
+any(is.na(df2$SSTmean_SSTARRS)) # check again
+d2 <- droplevels(df2)
+length(levels(df2$sample)) #  278
+dim(df2) # 21138 rows 
+
+head(df2)
+summary(df2)
+
+temp <- df2 %>% group_by(sample) %>% summarize(mean(SSTmean_SSTARRS))
+any(is.na(temp)) # no NA's in Bruv SST data
+
+# 3. Make covariates in long formate using reshape2 package ----
 
 names(df2)
 
-# 3. Make covariates in long formate using reshape2 package ----
 dfl <- melt(df2,
-            id.vars = names(df)[c(3:11,14:33)],
-            measure.vars = names(df)[c(12,13,34:40)],
+            id.vars = names(df)[c(3:33)],
+            measure.vars = names(df)[c(34:48)],
             variable.name = "covariate",
             value.name = "value"
 )
@@ -115,9 +138,11 @@ str(dfl)
 any(is.na(dfl$value))
 which(is.na(dfl$value))
 
+
 # check for NAs in cluster
 any(is.na(dfl$cluster.new))
 which(is.na(dfl$cluster.new))
+
 
 # check maxn numbers
 head(dfl)
@@ -164,7 +189,7 @@ pd <- table_to_species_data(
 
 pd
 class(pd)
-dim(pd)
+dim(pd) #
 
 # change column names for fomula because long names don't work with function --
 sp.names <- colnames(pd) # col names as species names
@@ -179,14 +204,16 @@ head(sp.names.no)
 # 5. Covariate data into wide df ----
 names(dfl)
 str(dfl)
+head(dfl)
 
-cd <- reshape(dfl[,c(1,30:31)], idvar = "sample", timevar = "covariate", direction = "wide")
+cd <- reshape(dfl[,c(1,32:33)], idvar = "sample", timevar = "covariate", direction = "wide")
 
 cd
 class(cd)
 colnames(cd)
-colnames(cd) <- c("sample"  ,"y", "x", "bathy", "detrended.bathy" , "slope"  ,  "flowdir"  ,   "tri" ,       
-                                                 "tpi"  ,       "aspect"  )
+colnames(cd) <- c("sample"  ,"depth",  "slope"  ,  "aspect", "roughness", "tpi", "flowdir",
+                  "detrended.bathy" , "d.slope", "d.flowdir", "d.tri" ,  "d.tpi"  ,   "d.aspect", "SSTmean", "SSTster", "SSTtrend")     
+                   
 dim(cd)
 
 cdm <- as.matrix(cd)
@@ -211,7 +238,7 @@ cdm <- as.matrix(cd)
 ### Check Predicitor correlations ---
 
 # compute correlation matrix --
-C <- cor(cd[,c(2:8)], use = 'complete.obs') # remove NAs because they mess up the corr matrix
+C <- cor(cd[,c(2:16)], use = 'complete.obs') # remove NAs because they mess up the corr matrix
 head(round(C,2))
 
 # correlogram : visualizing the correlation matrix --
@@ -242,8 +269,8 @@ cor.mtest <- function(mat, ...) {
   p.mat
 }
 # matrix of the p-value of the correlation
-p.mat <- cor.mtest(cd[,c(2:8)])
-head(p.mat[, 1:5])
+p.mat <- cor.mtest(cd[,c(2:16)])
+head(p.mat[, 1:15])
 
 # customize correlogram --
 col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
@@ -281,14 +308,14 @@ mosthighlycorrelated <- function(mydataframe,numtoreport)
 }
 
 
-mosthighlycorrelated(cd[,c(2:8)], 30) # This results in only depth, rough and slope 4 not being correlated above 0.95
+mosthighlycorrelated(cd[,c(2:16)], 30) # This results in only depth, rough and slope 4 not being correlated above 0.95
 
 
 # 8. Make matrix of species and covariates ----
 dd <- make_mixture_data(species_data = pd,
                         covariate_data = cd) # use standarlized covariates
 dd # I think this is what I need to use for the models
-
+dim(dd)
 
 # 9. Optimize number of archetypes ----
 # Fit species mix model using diffent number of archetypes and checking BIC --
@@ -303,7 +330,7 @@ colnames(pd)
                                                     
 sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                     collapse = ','),
-                                                    ") ~ poly(bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                                    ") ~ poly(depth, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
                                                 
 
                                                   
@@ -317,7 +344,7 @@ test_model <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 6,
+  nArchetypes = 3,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -330,28 +357,18 @@ test_model <- species_mix(
   #titbits = TRUE # could turn this off
 )
 
+
 BIC(test_model) # this gives a valie of BIC
 AIC(test_model)
 print(test_model)
 
-summary.species_mix(test_model, digits = 4)# this is not working
-
-coef(test_model)
-class(test_model)
-test_model$taus
-
-## Check model fit ----
-BIC(test_model) # this gives a valie of BIC
-print(test_model)
-test_model$coefs
 
 # look at the partial response of each covariate using:
 par(mfrow=c(2,2))
-eff.df <- effectPlotData(focal.predictors = c("bathy","slope","aspect", "tpi", "flowdir"), mod = test_model)
+eff.df <- effectPlotData(focal.predictors = c("depth","slope","aspect", "tpi", "flowdir", "SSTster", "SSTtrend"), mod = test_model)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model, na.rm = T)
 
-test_model$taus
 
 # Probability of each sp. belonging to each archetype ----
 arch_prob <- as.data.frame(test_model$taus)
@@ -391,8 +408,10 @@ summary(arch3)
 
 # remove one covariate at a time ----
 sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
-                                                         collapse = ','),
-                                          ") ~ poly(x, y, bathy, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                                      collapse = ','),
+                                       ") ~ poly(depth, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+
+
 
 
 test_model_b <- species_mix(
@@ -402,7 +421,7 @@ test_model_b <- species_mix(
   species_formula = sp_form, #stats::as.formula(~1),
   all_formula = NULL,
   data=dd,
-  nArchetypes = 4,
+  nArchetypes = 3,
   family = "negative.binomial",
   #offset = NULL,
   #weights = NULL,
@@ -420,12 +439,30 @@ AIC(test_model_b)
 print(test_model_b)
 
 # look at the partial response of each covariate using:
-par(mfrow=c(2,2))
-eff.df <- effectPlotData(focal.predictors = c("bathy","tpi"), mod = test_model_b)
+par(mfrow=c(2,3))
+eff.df <- effectPlotData(focal.predictors = c("depth","slope", "SSTster", "SSTtrend", "aspect", "flowdir"), mod = test_model_b)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model_b, na.rm = T)
 
-test_model_b$taus
+
+## better response plot --
+sp.boot <- species_mix.bootstrap(
+  test_model_b,
+  nboot = 100,
+  type = "BayesBoot",
+  mc.cores = 10,
+  quiet = FALSE
+)
+
+preds <- c("depth","slope", "SSTster", "SSTtrend", "aspect", "flowdir")
+ef.plot <- effectPlotData(preds, test_model_b)
+head(ef.plot)
+
+plot(ef.plot,
+     test_model_b, 
+     sp.boot,
+)
+
 
 # Probability of each sp. belonging to each archetype ----
 arch_prob <- as.data.frame(test_model_b$taus)
@@ -666,6 +703,279 @@ A4preds <- raster(A4)
 Allpreds <- stack(A1preds, A2preds, A3preds, A4preds)
 plot(Allpreds)
 
+
+
+# PREDICT using test model ----
+
+
+sp.boot <- species_mix.bootstrap(
+  test_model,
+  nboot = 100,
+  type = "BayesBoot",
+  mc.cores = 10,
+  quiet = FALSE
+)
+
+
+
+
+# load predictors --
+
+# bathy --
+b <- stack(paste(r.dir, "SW_bathy.derivatives-to-260m.tif", sep='/'))
+plot(b)
+names(b)
+nam <- read.csv(paste(r.dir, "names.bathy.ders.csv", sep='/'))
+names(b) <- nam$x
+
+d<- dropLayer(b, c(2:6))
+d
+plot(d)
+e <- drawExtent()
+d <- crop(d, e)
+
+# cut to 150 m depth --
+values(d)[values(d) < -150] = NA
+values(d)[values(d) > -30] = NA
+#b[b < -150] <- NA
+#b[b > -30] <- NA
+
+s <- crop(b$slope, d)
+s <- mask(s, d)
+
+a <- crop(b$aspect, d)
+a <- mask(a, d)
+
+t  <- crop(b$tpi, d)
+t <- mask(t, d)
+
+f <- crop(b$flowdir, d)
+f <- mask(f, d)
+
+ds <- stack(d,s,a,t,f)
+plot(ds)
+
+
+# temp --
+t1 <- raster(paste(r.dir, "SSTsterr_SSTARRS.tif", sep='/'))
+t2 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
+
+t <- stack(t1, t2)
+
+t2 <- disaggregate(t, 7.924524)
+t3 <- resample(t2, ds)
+
+
+
+
+# crop bathy to stack --
+#t2 <- crop(t, b)
+#d <- mask(d, b2)
+#plot(d)
+
+# stack preds --
+preds <- stack(ds, t3)
+names(preds)
+plot(preds)
+
+
+pr <- as.data.frame(preds, xy = TRUE)
+dim(pr)
+head(pr)
+names(pr) <- c('x', 'y', 'depth', 'slope', 'aspect', 'tpi',  'flowdir', 'SSTster', 'SSTtrend')
+str(pr)
+any(is.na(pr$slope))
+length(which(is.na(pr$slope)))
+pr <- na.omit(pr)
+str(pr)
+head(pr)
+
+
+# predict ##
+ptest2 <- predict(
+  test_model,
+  sp.boot,
+  #nboot = 100,
+  pr[,c(3:9)],
+  #alpha = 0.95,
+  mc.cores = 10,
+  prediction.type = "archetype"
+)
+
+
+class(ptest2)
+str(ptest2$ptPreds)
+head(ptest2$ptPreds)
+ptest2$ptPreds
+
+Apreds <- ptest2$ptPreds
+head(Apreds)
+
+SAMpreds <- cbind(pr, Apreds)
+head(SAMpreds)
+
+
+coordinates(SAMpreds) <- ~x+y
+A1 <- SAMpreds[,8]
+A2 <- SAMpreds[,9]
+A3 <- SAMpreds[,10]
+#A4 <- SAMpreds[,7]
+
+gridded(A1) <- TRUE
+gridded(A2) <- TRUE
+gridded(A3) <- TRUE
+#gridded(A4) <- TRUE
+
+A1preds <- raster(A1)
+A2preds <- raster(A2)
+A3preds <- raster(A3)
+#A4preds <- raster(A4)
+
+Allpreds <- stack(A1preds, A2preds, A3preds)
+plot(Allpreds)
+
+writeRaster(Allpreds, paste(o.dir, "pred-3a-7cov.tif", sep='/'))
+
+
+
+# PREDICT using test model b ----
+
+
+sp.boot <- species_mix.bootstrap(
+  test_model_b,
+  nboot = 100,
+  type = "BayesBoot",
+  mc.cores = 10,
+  quiet = FALSE
+)
+
+
+
+
+# load predictors --
+
+# bathy --
+b <- stack(paste(r.dir, "SW_bathy.derivatives-to-260m.tif", sep='/'))
+plot(b)
+names(b)
+nam <- read.csv(paste(r.dir, "names.bathy.ders.csv", sep='/'))
+names(b) <- nam$x
+
+d<- dropLayer(b, c(2:6))
+d
+plot(d)
+e <- extent(114.4438, 115.0793, -34.28812, -33.58538)
+d <- crop(d, e)
+plot(d)
+
+# cut to 150 m depth --
+values(d)[values(d) < -150] = NA
+values(d)[values(d) > -30] = NA
+#b[b < -150] <- NA
+#b[b > -30] <- NA
+
+s <- crop(b$slope, d)
+s <- mask(s, d)
+
+a <- crop(b$aspect, d)
+a <- mask(a, d)
+
+t  <- crop(b$tpi, d)
+t <- mask(t, d)
+
+f <- crop(b$flowdir, d)
+f <- mask(f, d)
+
+ds <- stack(d,s,a,f)
+plot(ds)
+
+
+# temp --
+t1 <- raster(paste(r.dir, "SSTsterr_SSTARRS.tif", sep='/'))
+t2 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
+
+t <- stack(t1, t2)
+plot(t)
+
+t2 <- disaggregate(t1, 7.924524)
+t3 <- resample(t2, ds)
+plot(t3)
+
+
+
+
+# crop bathy to stack --
+#t2 <- crop(t, b)
+#d <- mask(d, b2)
+#plot(d)
+
+# stack preds --
+preds <- stack(ds, t3)
+names(preds)
+plot(preds)
+
+
+pr <- as.data.frame(preds, xy = TRUE)
+dim(pr)
+head(pr)
+names(pr) <- c('x', 'y', 'depth', 'slope', 'aspect', 'flowdir', 'SSTster')
+str(pr)
+any(is.na(pr$slope))
+length(which(is.na(pr$slope)))
+pr <- na.omit(pr)
+str(pr)
+head(pr)
+
+
+# predict ##
+ptest2 <- predict(
+  test_model_b,
+  sp.boot,
+  #nboot = 100,
+  pr[,c(3:7)],
+  #alpha = 0.95,
+  mc.cores = 10,
+  prediction.type = "archetype"
+)
+
+
+class(ptest2)
+str(ptest2$ptPreds)
+head(ptest2$ptPreds)
+ptest2$ptPreds
+
+Apreds <- ptest2$ptPreds
+head(Apreds)
+
+SAMpreds <- cbind(pr, Apreds)
+head(SAMpreds)
+
+
+coordinates(SAMpreds) <- ~x+y
+head(SAMpreds)
+A1 <- SAMpreds[,6]
+A2 <- SAMpreds[,7]
+A3 <- SAMpreds[,8]
+#A4 <- SAMpreds[,7]
+
+gridded(A1) <- TRUE
+gridded(A2) <- TRUE
+gridded(A3) <- TRUE
+#gridded(A4) <- TRUE
+
+A1preds <- raster(A1)
+A2preds <- raster(A2)
+A3preds <- raster(A3)
+#A4preds <- raster(A4)
+
+Allpreds <- stack(A1preds, A2preds, A3preds)
+plot(Allpreds)
+
+#writeRaster(Allpreds, paste(o.dir, "pred-3a-notpiSSTtrend.tif", sep='/'))
+
+
+
+
 # PREDICT USING STAND COVS ----
 
 ## Standarize the covariates --
@@ -713,4 +1023,16 @@ AllpredsB <- stack(A1preds, A2preds, A3preds, A4preds)
 plot(AllpredsB)
 
 #####################
+p1 <- stack(paste(o.dir, "pred-3a-5cov-notpiaspect.tif", sep='/'))
+p2 <- stack(paste(o.dir, "pred-3a-6cov-notpi.tif", sep='/'))
+p3 <- stack(paste(o.dir, "pred-3a-7cov.tif", sep='/'))
+p4 <- stack(paste(o.dir, "pred-3a-notpiSSTtrend.tif", sep='/'))
 
+plot(p4)
+names(p4) <- c("Archetype1",  "Archetype2", "Archetype3")
+
+# define breaks manually
+b <- c(-Inf, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 1000, Inf)
+p <- levelplot(p4, par.settings=RdBuTheme(), at=b, 
+               colorkey=list(height=0.8, labels=list(at=b, labels=round(b, 2))))
+p             
