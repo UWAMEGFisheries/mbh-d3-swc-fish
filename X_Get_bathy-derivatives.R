@@ -24,9 +24,10 @@ r.dir <- paste(w.dir, "rasters", sep='/')
 
 study <- "2020_south-west_stereo-BRUVs"
 
-df <- read.csv(paste(dt.dir, paste(study, "complete.maxn.with.clusters.csv", sep='.'), sep = '/'))%>%
-  mutate_at(vars(sample, family, unique.name, genus, full.name, species, status, cluster, cluster.new, number, n, dataset), list(as.factor)) %>% # make these columns as factors
+df <- read.csv(paste(dt.dir, paste(study, "checked.metadata.csv", sep='.'), sep = '/'))%>%
+  mutate_at(vars(campaignid, sample, status, site, dataset), list(as.factor)) %>% # make these columns as factors
   glimpse()
+
 head(df)
 str(df)
 
@@ -50,7 +51,9 @@ dfs <- as.data.frame(dfs)
 str(dfs) # this is the same df initially loaded with added columns for eachderivative
 
 # Save dfs --
+bathy <- dfs %>%
+  dplyr::select(campaignid,sample,slope,aspect,roughness,tpi)
 
+setwd(dt.dir)
 
-
-
+write.csv(bathy,paste(study,"bathymetry.derivatives.csv",sep="."),row.names = F)
