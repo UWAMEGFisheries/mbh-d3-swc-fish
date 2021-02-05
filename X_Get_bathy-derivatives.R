@@ -14,14 +14,13 @@ w.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
 #w.dir <- "H:/Github/GB_2015_Survey"
 # Set data directory - to read the data from
 dt.dir <- (paste(w.dir, "Data/Tidy", sep='/'))
+h.dir <- (paste(w.dir, "Data/Habitat/BRUV Style annotation/tidy data"))
 s.dir <- (paste(w.dir, "shapefiles", sep='/'))
 # Set graph directory - to save plots
 p.dir <- paste(w.dir, "Plots", sep='/')
 r.dir <- paste(w.dir, "rasters", sep='/')
 
-
 # Load data ----
-
 study <- "2020_south-west_stereo-BRUVs"
 
 df <- read.csv(paste(dt.dir, paste(study, "checked.metadata.csv", sep='.'), sep = '/'))%>%
