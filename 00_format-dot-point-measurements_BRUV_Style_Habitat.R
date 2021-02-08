@@ -16,14 +16,15 @@ library(readr)
 library(ggplot2)
 
 # Study name ----
-study <- "2020-10_south-west_stereo_BRUVs_Habitat_BRUV_Syle"  # use this study name to run the example, or change to your own (you will need to save your files with this prefix - see naming of example files)
+study <- "2020-10_south-west_stereo-BRUVs_BRUV_style"  # use this study name to run the example, or change to your own (you will need to save your files with this prefix - see naming of example files)
 
 ## Set your working directory ----
 working.dir<-dirname(rstudioapi::getActiveDocumentContext()$path) # to directory of current file - or type your own
 
 ## Save these directory names to use later----
-raw.dir<-paste(working.dir,"raw data",sep="/") # links to folder called 'example raw data'
-tidy.dir<-paste(working.dir,"tidy data",sep="/") # links to folder called 'example tidy data'
+raw.dir<-paste(working.dir,"Data/Habitat/BRUV Style annotation/raw data",sep="/")
+tidy.dir<-paste(working.dir,"Data/Tidy",sep="/")
+
 
 # Read in the data----
 setwd(raw.dir)
@@ -32,7 +33,7 @@ dir()
 # Read in metadata----
 metadata <- read_csv("2020_10_SW_Metadata.csv") %>% # read in the file
   ga.clean.names() %>% # tidy the column names using GlobalArchive function 
-  dplyr::select(sample, latitude, longitude, date, time, site, location, successful.count) %>% # select only these columns to keep
+  dplyr::select(sample) %>% # select only these columns to keep
   mutate(sample=as.character(sample)) %>% # in this example dataset, the samples are numerical
   glimpse() # preview
 
@@ -40,7 +41,7 @@ metadata <- read_csv("2020_10_SW_Metadata.csv") %>% # read in the file
 setwd(raw.dir)
 dir()
 
-habitat <- read.delim(paste(study,"Dot Point Measurements.txt",sep = "_"),header=T,skip=4,stringsAsFactors=FALSE) %>% # read in the file
+habitat <- read.delim("2020-10_south-west_stereo_BRUVS_Habitat_BRUV_Syle_Dot Point Measurements.txt",header=T,skip=4,stringsAsFactors=FALSE) %>% # read in the file
   ga.clean.names() %>% # tidy the column names using GlobalArchive function
   mutate(sample=str_replace_all(.$filename,c(".png"="",".jpg"="",".JPG"=""))) %>%
   mutate(sample=as.character(sample)) %>% # in this example dataset, the samples are numerical
@@ -76,7 +77,7 @@ fov<-habitat%>%
   dplyr::select(-c(image.row,image.col, ID))%>%
   dplyr::group_by(sample)%>%
   dplyr::summarise_all(funs(sum))%>%
-  dplyr::mutate(total.sum=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>%
+  dplyr::mutate(total.sum=rowSums(.[,3:(ncol(.))],na.rm = TRUE ))%>%
   dplyr::group_by(sample)%>%
   mutate_at(vars(starts_with("fov")),funs(./total.sum*100))%>%
   dplyr::select(-c(total.sum))%>%
@@ -113,7 +114,7 @@ broad<-habitat%>%
   dplyr::select(-c(image.row,image.col,ID))%>%
   dplyr::group_by(sample)%>%
   dplyr::summarise_all(funs(sum))%>%
-  dplyr::mutate(Total.Sum=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>%
+  dplyr::mutate(Total.Sum=rowSums(.[,3:(ncol(.))],na.rm = TRUE ))%>% # Kye had left row sums to be included in the calc
   dplyr::group_by(sample)%>%
   dplyr::mutate_each(funs(./Total.Sum*100), matches("broad"))%>%  ## this errors but still seems to work
   dplyr::select(-Total.Sum)%>%
@@ -135,7 +136,7 @@ detailed<-habitat%>%
   dplyr::select(-c(image.row,image.col,ID))%>%
   dplyr::group_by(sample)%>%
   dplyr::summarise_if(is.numeric,sum,na.rm=TRUE)%>% 
-  dplyr::mutate(Total.Sum=rowSums(.[,2:(ncol(.))],na.rm = TRUE ))%>%
+  dplyr::mutate(Total.Sum=rowSums(.[,3:(ncol(.))],na.rm = TRUE ))%>%
   dplyr::group_by(sample)%>%
   dplyr::mutate_each(funs(./Total.Sum*100), matches("detailed"))%>%
   dplyr::select(-Total.Sum)%>%
@@ -156,5 +157,5 @@ habitat.detailed <- metadata%>%
   left_join(relief,by="sample")%>%
   left_join(detailed,by="sample")
   
-write.csv(habitat.broad,file=paste(study,"_broad.habitat.csv",sep = "."), row.names=FALSE)
-write.csv(habitat.detailed,file=paste(study,"_detailed.habitat.csv",sep = "."), row.names=FALSE)
+write.csv(habitat.broad,file=paste(study,"broad.habitat.csv",sep = "."), row.names=FALSE)
+write.csv(habitat.detailed,file=paste(study,"detailed.habitat.csv",sep = "."), row.names=FALSE)

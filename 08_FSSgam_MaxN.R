@@ -49,18 +49,19 @@ ramps <- read.csv(paste(name, 'distance.to.ramp.csv',sep=".")) %>%
   dplyr::glimpse()
 
 # Habitat ----
-setwd(h.dir)
-dir()
-
-habitat.2020.10 <- read.csv("2020-10_south-west_stereo_BRUVs_Habitat_BRUV_Syle._broad.habitat.csv") %>%
-  dplyr::select(-c(latitude,longitude,date,time,site,location,successful.count,rowid.x,rowid.y)) %>%
+habitat.2020.10 <- read.csv("2020-10_south-west_stereo-BRUVs_BRUV_style.broad.habitat.csv") %>%
+  dplyr::select(-c(rowid.x,rowid.y)) %>%
   dplyr::mutate(campaignid = "2020-10_south-west_stereo-BRUVs") %>%
   dplyr::glimpse()
+
+summary(habitat.2020.10)
 
 habitat.2020.06 <- read.csv("2020-06._broad.habitat_BRUV_Style.csv") %>%
   dplyr::select(-c(latitude,longitude,date,time,site,location,successful.count)) %>%
   dplyr::mutate(campaignid = "2020-06_south-west_stereo-BRUVs") %>%
   dplyr::glimpse()
+
+summary(habitat.2020.06) # 0-100
 
 habitat <-bind_rows(habitat.2020.06, habitat.2020.10) %>%
   tidyr::replace_na(list(broad.Consolidated=0,
@@ -192,13 +193,14 @@ unique(combined.maxn$scientific)
 names(maxn.fh)
 
 # Set predictor variables---
-pred.vars=c("depth", "slope", "aspect", "roughness", "tpi", "distance.to.ramp", "broad.bryozoa", "broad.consolidated", "broad.hydroids", "broad.macroalgae", "broad.octocoral.black", "broad.reef", "broad.seagrasses", "broad.sponges", "broad.stony.corals", "broad.unconsolidated", "mean.relief", "sd.relief" )
+pred.vars=c("depth", "slope", "aspect", "roughness", "tpi", "distance.to.ramp", "broad.bryozoa", "broad.consolidated", "broad.hydroids", "broad.macroalgae", "broad.octocoral.black", "broad.reef", "broad.seagrasses", "broad.sponges", "broad.stony.corals", "mean.relief", "sd.relief" )
 
 dat <- maxn.fh
 dat <- combined.maxn
 
 # Check for correlation of predictor variables- remove anything highly correlated (>0.95)---
 round(cor(dat[,pred.vars], use = "complete.obs"),2)
+# reef and sand correlated
 
 # Plot of likely transformations
 par(mfrow=c(3,2))
@@ -214,21 +216,48 @@ for (i in pred.vars) {
 }
 
 # use 
-# mean.relief
-# sd.relief
-# distance.to.ramp
-# aspect
-# depth
-# broad.reef
-# tpi
+# sd.relief - use non-transformed
+# mean.relief - use non-transformed
+# sponges - log
+# macroalgae - use non-transformed
+# distance.to.ramp - use non-transformed
+# aspect - use non-transformed
+# depth - use non-transformed
+# broad.reef - use non-transformed
+# tpi - log
 # roughness log
 # slope log
-# 
+
+# remove
+# sand - correlated with reef and mean relief
+# stony corals - too few
+# seagrasses - too few
+# octocoral - too few
+# hydroids - too few
+# consolidated - too few
+# bryozoa - too few
 
 # StART OF CHARLOTTES A4
+names(maxn.fh)
 
-#Set predictor variables 
-pred.vars=c("mean.relief","sd.relief","distance.to.ramp","aspect","depth","broad.reef")
+maxn.fh <- maxn.fh %>%
+  dplyr::mutate(log.sponges = log(broad.sponges + 1)) %>%
+  dplyr::mutate(log.tpi = log(tpi + 2)) %>%
+  dplyr::mutate(log.roughness = log(roughness + 1)) %>%
+  dplyr::mutate(log.slope = log(slope + 1))
+
+maxn.io <- maxn.io %>%
+  dplyr::mutate(log.sponges = log(broad.sponges + 1)) %>%
+  dplyr::mutate(log.tpi = log(tpi + 2)) %>%
+  dplyr::mutate(log.roughness = log(roughness + 1)) %>%
+  dplyr::mutate(log.slope = log(slope + 1))
+
+
+# Set predictor variables 
+pred.vars=c("mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef",
+            "distance.to.ramp",
+            "aspect", "log.tpi","log.roughness","log.slope",
+            "depth")
 
 #### FSSgam using lme4 + random site ####
 setwd(m.dir)
@@ -237,7 +266,11 @@ names(maxn.fh)
 
 # Remove any unused columns from the dataset 
 use.dat <- maxn.fh%>%
-  dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn, mean.relief, sd.relief, distance.to.ramp, aspect, depth, broad.reef) %>%
+  dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn,
+                "mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef",
+                "distance.to.ramp",
+                "aspect", "log.tpi","log.roughness","log.slope",
+                "depth") %>%
   filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
   as.data.frame()
 
