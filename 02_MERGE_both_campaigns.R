@@ -163,6 +163,21 @@ write.csv(length3dpoints,paste(study,"length3dpoints.csv",sep="_"),row.names = F
 # 
 # metadata.2020.10 <- read.csv("2020-10_south-west_stereo-BRUVs_Metadata.csv")
 # raw.metadata<-metadata.2020.10
+# setwd("C:/GitHub/mbh-d3-swc-fish/shapefiles")
+# dir()
+# mbh.legacy <- read.csv("2020-10_south-west_stereo-BRUVs_legacy.mbh.deans.csv")%>%
+#   rename(Longitude=X,Latitude=Y,Number=BRUVid)%>%
+#   dplyr::select(-c(Latitude,Longitude))%>%
+#   dplyr::mutate(Number=as.character(Number))%>%
+#   distinct()
+# 
+# mbh.doubles <-mbh.legacy %>%
+#   group_by(Number)%>%
+#   summarise(n=n())%>%
+#   filter(n>1)
+# 
+# test<-left_join(metadata.2020.10, mbh.legacy)
+# write.csv(test,"test.lumping.csv",row.names=FALSE)
 # 
 # # Spatial files ----
 # setwd(working.dir)
