@@ -182,9 +182,11 @@ out.of.range<-dplyr::filter(length,range>10000)%>% # 10 m = 10000 mm
 # 'Lord.Howe.Island' - Lord Howe Island
 
 # Use the abbreviation in the code below
-url <- "https://docs.google.com/spreadsheets/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPLcXd3lJ5g5Bo/edit?ts=5e6f36e2#gid=825736197"
+setwd(tidy.dir)
+dir()
 
-master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
+master <- read.csv("australia.life.history.csv") %>% 
+  ga.clean.names()%>%
   dplyr::filter(grepl('Australia', global.region))%>% # Change country here
   dplyr::filter(grepl('SW', marine.region))%>% # Select marine region (currently this is only for Australia)
   dplyr::mutate(all=as.numeric(all))%>%
@@ -195,9 +197,7 @@ master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
   dplyr::distinct()%>%
   dplyr::glimpse()
 
-synonymsurl <- "https://docs.google.com/spreadsheets/d/1R0uU9Q0VkUDQFgGTK3VnIGxmc101jxhlny926ztWoiQ/edit?ts=5e6f37a2#gid=567803926"
-
-synonyms<- googlesheets4::read_sheet(synonymsurl)%>%
+synonyms<- read.csv("synonyms.australia.csv") %>% 
   distinct()%>%
   ga.clean.names()%>%
   select(-comment)

@@ -99,8 +99,8 @@ length.families<-read_csv(file=paste(study,"checked.length.csv",sep = "."),na = 
   distinct()%>% #to join back in after complete
   glimpse()
 
-complete.length.number<-read_csv(file=paste(study,"checked.length.csv",sep = "."))%>% #na = c("", " "))
-  dplyr::(!family=="Unknown")%>%
+complete.length.number<-read_csv(file=paste(study,"checked.length.csv",sep = "."))%>% 
+  dplyr::filter(!family%in%c("Unknown"))%>%
   dplyr::mutate(id=paste(campaignid,sample,sep="."))%>%
   dplyr::right_join(metadata ,by = c("id","campaignid", "sample"))%>% # add in all samples
   dplyr::select(id,campaignid,sample,family,genus,species,length,number,range)%>%
@@ -138,9 +138,9 @@ ggplot(data=expanded.length, aes(y=as.numeric(length))) +
 # Make mass data from complete.length.number----
 # There are 6 steps
 # 1. use life.history---
-url <- "https://docs.google.com/spreadsheets/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPLcXd3lJ5g5Bo/edit?ts=5e6f36e2#gid=825736197"
-
-master<-googlesheets4::read_sheet(url)%>%ga.clean.names()%>%
+setwd(tidy.dir)
+master <- read.csv("australia.life.history.csv") %>% 
+  ga.clean.names()%>%
   filter(grepl('Australia', global.region))%>%
   filter(grepl('SW', marine.region))%>%
   dplyr::mutate(all=as.numeric(all))%>%

@@ -265,19 +265,35 @@ setwd(m.dir)
 names(maxn.fh)
 
 # Remove any unused columns from the dataset 
-use.dat <- maxn.fh%>%
+dat <- maxn.fh%>%
   dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn,
                 "mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef",
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
+  #filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
   as.data.frame()
 
-factor.vars <- c("status","planned.or.exploratory")
+unique.vars=unique(as.character(dat$scientific))
 
+unique.vars.use=character()
+for(i in 1:length(unique.vars)){
+  temp.dat=dat[which(dat$scientific==unique.vars[i]),]
+  if(length(which(temp.dat$response==0))/nrow(temp.dat)<0.8){
+    unique.vars.use=c(unique.vars.use,unique.vars[i])}
+}
+
+unique.vars.use  
+
+resp.vars <- unique.vars.use
+factor.vars <- c("status","planned.or.exploratory")
 out.all <- list()
 var.imp <- list()
+
+
+for(i in 1:length(resp.vars)){
+  
+  use.dat=dat[which(dat$scientific==resp.vars[i]),]
 
 Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
                 family=poisson, random=~(1|site),
@@ -315,8 +331,10 @@ var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw))
 all.mod.fits=do.call("rbind",out.all)
 all.var.imp=do.call("rbind",var.imp)
 
-write.csv(all.mod.fits[,-2],file=paste(name,"lme4.random.all.mod.fits.nofov.csv",sep="_"))
-write.csv(all.var.imp,file=paste(name,"lme4.all.var.imp.nofov.csv",sep="_"))
+write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"lme4.random.all.mod.fits.nofov.csv",sep="_"))
+write.csv(all.var.imp,file=paste(name,resp.vars[i],"lme4.all.var.imp.nofov.csv",sep="_"))
+
+}
 
 # Theme-
 Theme1 <-
