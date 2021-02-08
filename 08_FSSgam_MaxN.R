@@ -34,6 +34,10 @@ maxn <-read.csv(paste(name, 'complete.maxn.csv',sep=".")) %>%
 
 # Metadata ----
 metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
+  dplyr::mutate(status = as.factor(status)) %>%
+  dplyr::mutate(sample = as.factor(sample)) %>%
+  dplyr::mutate(planned.or.exploratory = as.factor(planned.or.exploratory)) %>%
+  dplyr::mutate(site = as.factor(site)) %>%
   dplyr::glimpse()
 
 # Bathymetry derivatives ----
@@ -73,6 +77,7 @@ habitat <-bind_rows(habitat.2020.06, habitat.2020.10) %>%
   dplyr::mutate(broad.reef = broad.bryozoa + broad.consolidated + broad.hydroids + broad.macroalgae + broad.octocoral.black + broad.seagrasses + broad.sponges + broad.stony.corals) %>%
   dplyr::select(order(colnames(.))) %>%
   dplyr::select(campaignid,sample,everything()) %>% # re-ordering hab columns 
+  dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
 # Create total abundance and species richness ----
@@ -117,6 +122,42 @@ list.for.tim <- fished.species %>%
 
 write.csv(list.for.tim,"fished.species.list.csv")
 
+# Come back to maybe getting rid of some of these, but for now we continue on
+fished.maxn <- fished.species %>%
+  dplyr::ungroup() %>%
+  dplyr::group_by(scientific,sample) %>%
+  dplyr::summarise(maxn = sum(maxn)) %>%
+  spread(scientific,maxn, fill = 0) %>%
+  dplyr::mutate(targeted.abundance=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
+  dplyr::select(sample,targeted.abundance) %>%
+  gather(.,"scientific","maxn",2:2) %>%
+  dplyr::glimpse()
+
+# Select species of interest to model ----
+species.maxn <- maxn %>%
+  dplyr::filter(scientific %in% c("Sparidae Chrysophrys auratus",
+                           "Glaucosomatidae Glaucosoma hebraicum",
+                           "Labridae Coris auricularis",
+                           "Scorpididae Neatypus obliquus",
+                           "Labridae Ophthalmolepis lineolatus",
+                           "Heterodontidae Heterodontus portusjacksoni",
+                           "Monacanthidae Nelusetta ayraud"))%>%
+  dplyr::select(sample,scientific,maxn)
+
+unique(species.maxn$scientific)
+
+centroberyx <- maxn %>%
+  dplyr::filter(genus%in%c("Centroberyx")) %>%
+  dplyr::group_by(scientific,sample) %>%
+  dplyr::summarise(maxn = sum(maxn)) %>%
+  spread(scientific,maxn, fill = 0) %>%
+  dplyr::mutate(centroberyx=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
+  dplyr::select(sample,centroberyx) %>%
+  gather(.,"scientific","maxn",2:2) %>%
+  dplyr::glimpse() # there is actually not that many
+
+unique(maxn$scientific)
+
 # Split metadata into Fishing HWY and In/Out dataframes
 summary(metadata)
 
@@ -131,14 +172,30 @@ plot(metadata$longitude, metadata$latitude)
 plot(metadata.fh$longitude, metadata.fhwy$latitude)
 plot(metadata.io$longitude, metadata.io$latitude)
 
+## Combine all the maxn data to be modeled into a single data frame
+combined.maxn <- bind_rows(fished.maxn, species.maxn, ta.sr, centroberyx)%>%
+  left_join(metadata) %>%
+  left_join(bathy) %>%
+  left_join(ramps) %>%
+  left_join(habitat)
 
+maxn.fh <- combined.maxn %>%
+  semi_join(., metadata.fh)
 
+unique(maxn.fh$sample)
 
+maxn.io <- combined.maxn %>%
+  semi_join(., metadata.io)
 
+unique(combined.maxn$scientific)
 
+names(maxn.fh)
 
 # Set predictor variables---
-pred.vars=c("depth",)
+pred.vars=c("depth", "slope", "aspect", "roughness", "tpi", "distance.to.ramp", "broad.bryozoa", "broad.consolidated", "broad.hydroids", "broad.macroalgae", "broad.octocoral.black", "broad.reef", "broad.seagrasses", "broad.sponges", "broad.stony.corals", "broad.unconsolidated", "mean.relief", "sd.relief" )
+
+dat <- maxn.fh
+dat <- combined.maxn
 
 # Check for correlation of predictor variables- remove anything highly correlated (>0.95)---
 round(cor(dat[,pred.vars], use = "complete.obs"),2)
@@ -150,69 +207,46 @@ for (i in pred.vars) {
   x = as.numeric(unlist(x))
   hist((x))#Looks best
   plot((x),main = paste(i))
-  hist((x)^2)
-  plot((x)^2)
-  hist((x)^3)
-  plot((x)^3)
+  hist(sqrt(x))
+  plot(sqrt(x))
+  hist(log(x+1))
+  plot(log(x+1))
 }
+
+# use 
+# mean.relief
+# sd.relief
+# distance.to.ramp
+# aspect
+# depth
+# broad.reef
+# tpi
+# roughness log
+# slope log
+# 
 
 # StART OF CHARLOTTES A4
 
-# Load the dataset - from github
-setwd(d.dir)
-dat <-read.csv('final.data.csv')%>%
-  rename(response=target.fish)%>%
-  select(!X)%>%
-  select(!X.1)%>%
-  glimpse()
-
-names(dat)
-
-# Correct Lat/Long - had been changed to UTM in a previous script
-metadata <- read.csv('ningaloo_metadata.csv')
-
-latlongs <- metadata%>%
-  select('longitude', 'latitude')
-
-dat <- cbind(dat, latlongs)
-glimpse(dat)
-dat <- dat[,-c(3,4)]
-
-# Remove NA values and sites in state no-take - for one of the predictor variables
-# (can interpolate but I don't know how to do that right now...)
-# 8.05 10.09 10.12 16.03 All have NAs
-
-dat<-dat%>%
-  filter(!sample%in%c("8.05","10.09","10.12","16.03", "10.14", "10.15", "10.13", "14.13", "14.12", "14.02"))
-
-# Transform variables 
-dat <- dat%>%
-  mutate(sqrt.reef=sqrt(reef))%>%
-  mutate(sqrt.slope=sqrt(Slope))%>%
-  #mutate(sqrt.TPI=sqrt(TPI))%>%
-  mutate(log.roughness=log(Roughness+1))%>%
-  mutate(cube.Aspect=(Aspect)^3)%>%
-  glimpse()
-
-# Subset data 
-legal.dat <- subset(dat, model=='Legal')
-
 #Set predictor variables 
-pred.vars=c("sqrt.slope","cube.Aspect","log.roughness",
-            "distance.to.ramp")
+pred.vars=c("mean.relief","sd.relief","distance.to.ramp","aspect","depth","broad.reef")
 
 #### FSSgam using lme4 + random site ####
 setwd(m.dir)
+
+names(maxn.fh)
+
 # Remove any unused columns from the dataset 
-use.dat <- legal.dat%>%
-  dplyr::select(response, distance.to.ramp, cube.Aspect, sqrt.slope, log.roughness, status,
-                bathymetry, site)
-factor.vars <- c("status")
+use.dat <- maxn.fh%>%
+  dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn, mean.relief, sd.relief, distance.to.ramp, aspect, depth, broad.reef) %>%
+  filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
+  as.data.frame()
+
+factor.vars <- c("status","planned.or.exploratory")
 
 out.all <- list()
 var.imp <- list()
 
-Model1 <- uGamm(response~s(bathymetry,k=5, bs='cr'),
+Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
                 family=poisson, random=~(1|site),
                 data=use.dat,
                 lme4=TRUE)
@@ -222,16 +256,17 @@ model.set <- generate.model.set(use.dat=use.dat,
                                 test.fit=Model1,
                                 pred.vars.cont=pred.vars,
                                 pred.vars.fact=factor.vars,
-                                smooth.smooth.interactions=TRUE,
-                                max.predictors=5,
+                                smooth.smooth.interactions=FALSE,
+                                max.predictors=3,
                                 k=5,
-                                null.terms= "s(bathymetry, k=5, bs='cr')")
+                                null.terms= "")
 
 
 
 out.list=fit.model.set(model.set,
                        max.models=600,
                        parallel=T)
+
 names(out.list)
 
 out.list$failed.models # examine the list of failed models
@@ -239,7 +274,7 @@ mod.table=out.list$mod.data.out  # look at the model selection table
 mod.table=mod.table[order(mod.table$AICc),]
 mod.table$cumsum.wi=cumsum(mod.table$wi.AICc)
 out.i=head(mod.table,10)
-#out.i=mod.table[which(mod.table$delta.AICc<=3),]
+out.i=mod.table[which(mod.table$delta.AICc<=3),]
 out.all=c(out.all,list(out.i))
 var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
 
