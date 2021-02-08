@@ -64,9 +64,21 @@ dir.create(file.path(data.dir, "Tidy"))
 metadata <- ga.list.files("_Metadata.csv") %>% # list all files ending in "_Metadata.csv"
   purrr::map_df(~ga.read.files_em.csv(.)) %>% # combine into dataframe
   dplyr::select(campaignid, sample, dataset, planned.or.exploratory, latitude, longitude, date, time, location, status, site, depth, observer, successful.count, successful.length, commonwealth.zone, state.zone)%>% 
+  dplyr::mutate(planned.or.exploratory = str_replace_all(.$planned.or.exploratory,c("Deans"="Legacy",
+                                                                                    "Captains pick"="Legacy"))) %>%
   glimpse()
 
 names(metadata)
+
+unique(metadata$planned.or.exploratory)
+
+sites <- metadata %>% 
+  distinct(site,planned.or.exploratory)
+
+multiple.types <- sites%>%
+  dplyr::filter(!planned.or.exploratory=="Captains pick") %>% # use this to see if clusters are given both MBH and Legacy - there is 3 clusters that have multiples
+  dplyr::group_by(site)%>%
+  dplyr::summarise(n=n())
 
 unique(metadata$campaignid) # check the number of campaigns in metadata, and the campaign name
 unique(metadata$sample) # 316
