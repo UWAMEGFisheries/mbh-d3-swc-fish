@@ -28,4 +28,3 @@
 "broad.macroalgae+log.sponges","broad.macroalgae+log.sponges",84.0172859068517,102.867510744962,0.00618,NA,9,4,2.812,15.287,0.015,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0.324
 "log.slope.by.status+mean.relief.by.status+status","log.slope.by.status+mean.relief.by.status+status",1504.67948356811,1538.57738608328,0.01569,NA,18,2,0,0,0.995,0.98,1,0,0,0,0,0,0,0,0,1,0,1,0,0.995
 "aspect.by.planned.or.exploratory+log.slope.by.planned.or.exploratory+planned.or.exploratory","aspect.by.planned.or.exploratory+log.slope.by.planned.or.exploratory+planned.or.exploratory",422.88921267679,456.787115191958,0.12325,NA,18,5,0,0,0.853,0.242,0,0,0,0,0,0,1,0,0,1,0,0,1,0.853
-"log.tpi+mean.relief.by.status+status","log.tpi+mean.relief.by.status+status",2849.82777018876,2877.78240118589,0.15033,NA,14,0,0,0,0.88,0.993,1,0,0,0,0,0,0,1,0,0,0,1,0,0.88

@@ -29,3 +29,17 @@
 "log.slope.by.status+mean.relief.by.status+status","log.slope.by.status+mean.relief.by.status+status",1504.67948356811,1538.57738608328,0.01569,NA,18,2,0,0,0.995,0.98,1,0,0,0,0,0,0,0,0,1,0,1,0,0.995
 "aspect.by.planned.or.exploratory+log.slope.by.planned.or.exploratory+planned.or.exploratory","aspect.by.planned.or.exploratory+log.slope.by.planned.or.exploratory+planned.or.exploratory",422.88921267679,456.787115191958,0.12325,NA,18,5,0,0,0.853,0.242,0,0,0,0,0,0,1,0,0,1,0,0,1,0.853
 "log.tpi+mean.relief.by.status+status","log.tpi+mean.relief.by.status+status",2849.82777018876,2877.78240118589,0.15033,NA,14,0,0,0,0.88,0.993,1,0,0,0,0,0,0,1,0,0,0,1,0,0.88
+"distance.to.ramp+mean.relief+sd.relief","distance.to.ramp+mean.relief+sd.relief",1004.28363592781,1029.22830071025,0.25378,NA,13.16,6,0,11.578,0.07,0.002,1,1,0,0,0,1,0,0,0,0,0,0,0,0.07
+"log.tpi+mean.relief+sd.relief","log.tpi+mean.relief+sd.relief",1004.36329690112,1029.30796168357,0.25206,NA,13.18,9,0.08,11.658,0.067,0.002,1,1,0,0,0,0,0,1,0,0,0,0,0,0.137
+"distance.to.ramp+mean.relief+planned.or.exploratory","distance.to.ramp+mean.relief+planned.or.exploratory",1004.74009783907,1026.64982025303,0.24218,NA,10.22,3,0.456,9,0.056,0.007,1,0,0,0,0,1,0,0,0,0,0,0,1,0.193
+"mean.relief+sd.relief","mean.relief+sd.relief",1004.77389960876,1023.62412444687,0.23422,NA,9.19,6,0.49,5.974,0.055,0.032,1,1,0,0,0,0,0,0,0,0,0,0,0,0.248
+"mean.relief+sd.relief+status","mean.relief+sd.relief+status",1004.92392152179,1026.83364393575,0.2434,NA,10.08,5,0.64,9.184,0.051,0.006,1,1,0,0,0,0,0,0,0,0,0,1,0,0.299
+"mean.relief","mean.relief",1004.99086439275,1017.65006547084,0.21584,NA,5.21,3,0.707,0,0.049,0.634,1,0,0,0,0,0,0,0,0,0,0,0,0,0.348
+"log.tpi+mean.relief","log.tpi+mean.relief",1005.00906427014,1023.85928910825,0.23283,NA,9.2,6,0.725,6.209,0.049,0.028,1,0,0,0,0,0,0,1,0,0,0,0,0,0.397
+"mean.relief+status","mean.relief+status",1005.01926902884,1020.7858526235,0.22658,NA,6.2,3,0.736,3.136,0.048,0.132,1,0,0,0,0,0,0,0,0,0,0,1,0,0.445
+"mean.relief+planned.or.exploratory+sd.relief","mean.relief+planned.or.exploratory+sd.relief",1005.04323424752,1026.95295666149,0.24309,NA,10.2,6,0.76,9.303,0.048,0.006,1,1,0,0,0,0,0,0,0,0,0,0,1,0.493
+"distance.to.ramp+mean.relief","distance.to.ramp+mean.relief",1005.06486615779,1023.91509099591,0.23222,NA,9.22,3,0.781,6.265,0.047,0.028,1,0,0,0,0,1,0,0,0,0,0,0,0,0.54
+"log.tpi+mean.relief+status","log.tpi+mean.relief+status",1005.67281428899,1027.58253670296,0.24236,NA,10.2,6,1.389,9.932,0.035,0.004,1,0,0,0,0,0,0,1,0,0,0,1,0,0.575
+"distance.to.ramp+log.tpi+mean.relief","distance.to.ramp+log.tpi+mean.relief",1005.7609934154,1030.70565819784,0.24824,NA,13.21,7,1.477,13.056,0.033,0.001,1,0,0,0,0,1,0,1,0,0,0,0,0,0.608
+"mean.relief+planned.or.exploratory","mean.relief+planned.or.exploratory",1006.15592863083,1021.9225122255,0.2206,NA,6.21,3,1.872,4.272,0.027,0.075,1,0,0,0,0,0,0,0,0,0,0,0,1,0.635
+"log.tpi+mean.relief+planned.or.exploratory","log.tpi+mean.relief+planned.or.exploratory",1006.61781717148,1028.52753958545,0.23534,NA,10.2,6,2.334,10.877,0.022,0.003,1,0,0,0,0,0,0,1,0,0,0,0,1,0.657
