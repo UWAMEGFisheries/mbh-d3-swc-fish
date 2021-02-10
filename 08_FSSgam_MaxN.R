@@ -114,7 +114,9 @@ unique(master$fishing.type)
 
 fished.species <- maxn %>%
   dplyr::left_join(master) %>%
-  dplyr::filter(fishing.type %in% c("B/R","B/C/R","R","C/R"))
+  dplyr::filter(fishing.type %in% c("B/R","B/C/R","R","C/R"))%>%
+  dplyr::filter(!species%in%c("nigricans","lineolatus","cirratus"))%>% # Brooke removed dusky morwong, maori wrasse, common saw shark
+  dplyr::filter(!family%in%c("Monacanthidae", "Scorpididae", "Mullidae")) # Brooke removed leatherjackets, sea sweeps and goat fish
   
 unique(fished.species$scientific)
 
