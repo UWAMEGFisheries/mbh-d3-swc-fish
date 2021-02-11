@@ -27,9 +27,10 @@ m.dir <- paste(working.dir,"Model Out GAM", sep="/")
 setwd(d.dir)
 dir()
 
-# MaxN ----
-maxn <-read.csv(paste(name, 'complete.maxn.csv',sep=".")) %>%
-  dplyr::select(campaignid, sample, scientific, maxn, family, genus, species) %>%
+# Length ----
+length <-read.csv(paste(name, 'complete.length.csv',sep=".")) %>%
+  dplyr::select(campaignid, sample, length, number, family, genus, species) %>%
+  dplyr::mutate(scientific=paste(family,genus,species,sep=" ")) %>%
   dplyr::glimpse()
 
 # Metadata ----
@@ -81,19 +82,7 @@ habitat <-bind_rows(habitat.2020.06, habitat.2020.10) %>%
   dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
-# Create total abundance and species richness ----
-ta.sr <- maxn %>%
-  dplyr::ungroup() %>%
-  dplyr::group_by(scientific,sample) %>%
-  dplyr::summarise(maxn = sum(maxn)) %>%
-  spread(scientific,maxn, fill = 0) %>%
-  dplyr::mutate(total.abundance=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
-  dplyr::mutate(species.richness=rowSums(.[,2:(ncol(.))] > 0)) %>% # double check these
-  dplyr::select(sample,total.abundance,species.richness) %>%
-  gather(.,"scientific","maxn",2:3) %>%
-  dplyr::glimpse()
-
-# Create abundance of all recreational fished species ----
+# merge length with list of recreational fished species ----
 setwd(d.dir)
 dir()
 
@@ -106,17 +95,17 @@ master <- read.csv("australia.life.history.csv") %>%
   dplyr::mutate(bll=as.numeric(bll))%>%
   dplyr::mutate(a=as.numeric(a))%>%
   dplyr::mutate(b=as.numeric(b))%>%
-  dplyr::select(family,genus,species,fishing.type,australian.common.name)%>%
+  dplyr::select(family,genus,species,fishing.type,australian.common.name,minlegal.wa)%>%
   dplyr::distinct()%>%
   dplyr::glimpse()
 
 unique(master$fishing.type)
 
-spp.species<-maxn%>%
+spp.species<-length%>%
   filter(species=="spp")%>%
   distinct(scientific,family,genus,species)
 
-fished.species <- maxn %>%
+fished.species <- length %>%
   dplyr::left_join(master) %>%
   dplyr::mutate(fishing.type = ifelse(scientific %in%c("Carangidae Pseudocaranx spp",
                                                        "Carangidae Unknown spp",
@@ -126,50 +115,72 @@ fished.species <- maxn %>%
                                                        "Sillaginidae Sillago spp"),"R",fishing.type))%>%
   dplyr::filter(fishing.type %in% c("B/R","B/C/R","R","C/R"))%>%
   dplyr::filter(!species%in%c("nigricans","lineolatus","cirratus"))%>% # Brooke removed dusky morwong, maori wrasse, common saw shark
-  dplyr::filter(!family%in%c("Monacanthidae", "Scorpididae", "Mullidae")) # Brooke removed leatherjackets, sea sweeps and goat fish
+  dplyr::filter(!family%in%c("Monacanthidae", "Scorpididae", "Mullidae")) %>% # Brooke removed leatherjackets, sea sweeps and goat fish
+  dplyr::mutate(minlegal.wa=ifelse(scientific%in%c("Carangidae Pseudocaranx spp"),250,minlegal.wa))%>%
+  dplyr::mutate(minlegal.wa=ifelse(scientific%in%c("Platycephalidae Platycephalus spp"),300,minlegal.wa))
   
-unique(fished.species$scientific)
-
-list.for.tim <- fished.species %>% 
-  distinct(scientific, australian.common.name, fishing.type)
-
-write.csv(list.for.tim,"fished.species.list.csv")
+without.min.length <- fished.species %>%
+  filter(is.na(minlegal.wa))%>%
+  distinct(scientific) # Checked all of these with rec fish app - all don't have one
 
 # Come back to maybe getting rid of some of these, but for now we continue on
-fished.maxn <- fished.species %>%
-  dplyr::ungroup() %>%
-  dplyr::group_by(scientific,sample) %>%
-  dplyr::summarise(maxn = sum(maxn)) %>%
-  spread(scientific,maxn, fill = 0) %>%
-  dplyr::mutate(targeted.abundance=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
-  dplyr::select(sample,targeted.abundance) %>%
-  gather(.,"scientific","maxn",2:2) %>%
+legal <- fished.species %>%
+  dplyr::filter(length>minlegal.wa) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "greater than legal size") %>%
   dplyr::glimpse()
 
-# Select species of interest to model ----
-species.maxn <- maxn %>%
-  dplyr::filter(scientific %in% c("Sparidae Chrysophrys auratus",
-                           "Glaucosomatidae Glaucosoma hebraicum",
-                           "Labridae Coris auricularis",
-                           "Scorpididae Neatypus obliquus",
-                           "Labridae Ophthalmolepis lineolatus",
-                           "Heterodontidae Heterodontus portusjacksoni",
-                           "Monacanthidae Nelusetta ayraud"))%>%
-  dplyr::select(sample,scientific,maxn)
+sublegal <- fished.species %>%
+  dplyr::filter(length<minlegal.wa) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "smaller than legal size") %>%
+  dplyr::glimpse()
 
-unique(species.maxn$scientific)
+pinksnapper.legal <- fished.species %>%
+  dplyr::filter(species%in%c("auratus")) %>%
+  dplyr::filter(length>minlegal.wa) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "legal size pink snapper") %>%
+  dplyr::glimpse()
 
-centroberyx <- maxn %>%
-  dplyr::filter(genus%in%c("Centroberyx")) %>%
-  dplyr::group_by(scientific,sample) %>%
-  dplyr::summarise(maxn = sum(maxn)) %>%
-  spread(scientific,maxn, fill = 0) %>%
-  dplyr::mutate(centroberyx=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
-  dplyr::select(sample,centroberyx) %>%
-  gather(.,"scientific","maxn",2:2) %>%
-  dplyr::glimpse() # there is actually not that many
+pinksnapper.sublegal <- fished.species %>%
+  dplyr::filter(species%in%c("auratus")) %>%
+  dplyr::filter(length<minlegal.wa) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "sublegal size pink snapper") %>%
+  dplyr::glimpse()
 
-unique(maxn$scientific)
+fished.bigger.20cm <- fished.species %>%
+  dplyr::filter(length>200) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "fished greater than 20 cm") %>%
+  dplyr::glimpse()
+
+fished.bigger.30cm <- fished.species %>%
+  dplyr::filter(length>300) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "fished greater than 30 cm") %>%
+  dplyr::glimpse()
+
+all.bigger.20cm <- length %>%
+  dplyr::filter(length>200) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "all greater than 20 cm") %>%
+  dplyr::glimpse()
+
+all.bigger.30cm <- length %>%
+  dplyr::filter(length>300) %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(number = sum(number)) %>%
+  dplyr::mutate(scientific = "all greater than 30 cm") %>%
+  dplyr::glimpse()
 
 # Split metadata into Fishing HWY and In/Out dataframes
 summary(metadata)
@@ -181,28 +192,34 @@ metadata.io <- metadata %>%
   dplyr::filter(latitude<=(-33.96))
 
 plot(metadata$longitude, metadata$latitude)
-
-plot(metadata.fh$longitude, metadata.fhwy$latitude)
+plot(metadata.fh$longitude, metadata.fh$latitude)
 plot(metadata.io$longitude, metadata.io$latitude)
 
 ## Combine all the maxn data to be modeled into a single data frame
-combined.maxn <- bind_rows(fished.maxn, species.maxn, ta.sr, centroberyx)%>%
-  left_join(metadata) %>%
-  left_join(bathy) %>%
-  left_join(ramps) %>%
-  left_join(habitat)
+combined.length <- bind_rows(legal, sublegal, fished.bigger.20cm, fished.bigger.30cm, all.bigger.20cm, all.bigger.30cm, 
+                             pinksnapper.legal, pinksnapper.sublegal) # add pink snapper and other indicator species
+  
+complete.length <- combined.length %>%
+  #dplyr::mutate(id=paste(campaignid,sample,sep="."))%>%
+  dplyr::right_join(metadata, by = c("sample")) %>% # add in all samples
+  dplyr::select(campaignid,sample,scientific,number) %>%
+  tidyr::complete(nesting(campaignid,sample), scientific) %>%
+  replace_na(list(number = 0)) %>% #we add in zeros - in case we want to calulate abundance of species based on a length rule (e.g. greater than legal size)
+  dplyr::ungroup()%>%
+  dplyr::filter(!is.na(scientific)) %>% # this should not do anything
+  dplyr::left_join(.,metadata) %>%
+  dplyr::left_join(.,bathy) %>%
+  dplyr::left_join(.,ramps) %>%
+  dplyr::left_join(.,habitat) %>%
+  dplyr::glimpse()
 
-maxn.fh <- combined.maxn %>%
+length.fh <- complete.length %>%
   semi_join(., metadata.fh)
 
-unique(maxn.fh$sample)
-
-maxn.io <- combined.maxn %>%
+length.io <- complete.length %>%
   semi_join(., metadata.io)
 
-unique(combined.maxn$scientific)
-
-names(maxn.fh)
+unique(combined.length$scientific)
 
 # Set predictor variables---
 pred.vars=c("depth", "slope", "aspect", "roughness", "tpi", "distance.to.ramp", "broad.bryozoa", "broad.consolidated", "broad.hydroids", "broad.macroalgae", "broad.octocoral.black", "broad.reef", "broad.seagrasses", "broad.sponges", "broad.stony.corals", "mean.relief", "sd.relief" )
