@@ -54,9 +54,18 @@ habitat <-bind_rows(habitat.2020.06, habitat.2020.10) %>%
   dplyr::select(order(colnames(.))) %>%
   dplyr::select(campaignid,sample,everything()) %>% # re-ordering hab columns 
   dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
+  dplyr::glimpse() %>%
+  left_join(metadata)
+
+
+metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
+  dplyr::mutate(status = as.factor(status)) %>%
+  dplyr::mutate(sample = as.factor(sample)) %>%
+  dplyr::mutate(planned.or.exploratory = as.factor(planned.or.exploratory)) %>%
+  dplyr::mutate(site = as.factor(site)) %>%
   dplyr::glimpse()
 
-write.csv(habitat,"2020-south-west_stereo-BRUVS.csv")
+write.csv(habitat,"2020-south-west_stereo-BRUVS_habitat_with_metadata.csv")
 
 
 drops
