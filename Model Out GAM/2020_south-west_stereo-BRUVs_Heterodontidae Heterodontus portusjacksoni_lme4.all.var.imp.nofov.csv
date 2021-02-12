@@ -1,0 +1,4 @@
+"","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status","planned.or.exploratory"
+"1",1,0.032,0,0,0,0,0,0.031,0.862,0.001,0.881,0.002,0.19
+"2",0.806,0.144,0.068,0.003,0.029,0.027,0.731,0.177,0.132,0.066,0.11,0.185,0.168
+"3",0.555,0.104,0.032,0.137,0.078,0.884,0.019,0.078,0.142,0.581,0.023,0.014,0.096

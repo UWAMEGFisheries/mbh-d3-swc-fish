@@ -112,9 +112,21 @@ master <- read.csv("australia.life.history.csv") %>%
 
 unique(master$fishing.type)
 
+spp.species<-maxn%>%
+  filter(species=="spp")%>%
+  distinct(scientific,family,genus,species)
+
 fished.species <- maxn %>%
   dplyr::left_join(master) %>%
-  dplyr::filter(fishing.type %in% c("B/R","B/C/R","R","C/R"))
+  dplyr::mutate(fishing.type = ifelse(scientific %in%c("Carangidae Pseudocaranx spp",
+                                                       "Carangidae Unknown spp",
+                                                       "Platycephalidae Platycephalus spp",
+                                                       "Scombridae Sarda spp",
+                                                       "Scombridae Unknown spp",
+                                                       "Sillaginidae Sillago spp"),"R",fishing.type))%>%
+  dplyr::filter(fishing.type %in% c("B/R","B/C/R","R","C/R"))%>%
+  dplyr::filter(!species%in%c("nigricans","lineolatus","cirratus"))%>% # Brooke removed dusky morwong, maori wrasse, common saw shark
+  dplyr::filter(!family%in%c("Monacanthidae", "Scorpididae", "Mullidae")) # Brooke removed leatherjackets, sea sweeps and goat fish
   
 unique(fished.species$scientific)
 
@@ -170,7 +182,7 @@ metadata.io <- metadata %>%
 
 plot(metadata$longitude, metadata$latitude)
 
-plot(metadata.fh$longitude, metadata.fhwy$latitude)
+plot(metadata.fh$longitude, metadata.fh$latitude)
 plot(metadata.io$longitude, metadata.io$latitude)
 
 ## Combine all the maxn data to be modeled into a single data frame
@@ -331,9 +343,81 @@ var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw))
 all.mod.fits=do.call("rbind",out.all)
 all.var.imp=do.call("rbind",var.imp)
 
-write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"lme4.random.all.mod.fits.nofov.csv",sep="_"))
-write.csv(all.var.imp,file=paste(name,resp.vars[i],"lme4.all.var.imp.nofov.csv",sep="_"))
+write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"FH","lme4.random.all.mod.fits.nofov.csv",sep="_"))
+write.csv(all.var.imp,file=paste(name,resp.vars[i],"FH","lme4.all.var.imp.nofov.csv",sep="_"))
 
+}
+
+# Remove any unused columns from the dataset 
+dat <- maxn.io%>%
+  dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn,
+                "mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef",
+                "distance.to.ramp",
+                "aspect", "log.tpi","log.roughness","log.slope",
+                "depth") %>%
+  #filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
+  as.data.frame()
+
+unique.vars=unique(as.character(dat$scientific))
+
+unique.vars.use=character()
+for(i in 1:length(unique.vars)){
+  temp.dat=dat[which(dat$scientific==unique.vars[i]),]
+  if(length(which(temp.dat$response==0))/nrow(temp.dat)<0.8){
+    unique.vars.use=c(unique.vars.use,unique.vars[i])}
+}
+
+unique.vars.use  
+
+resp.vars <- unique.vars.use
+factor.vars <- c("status","planned.or.exploratory")
+out.all <- list()
+var.imp <- list()
+
+
+for(i in 1:length(resp.vars)){
+  
+  use.dat=dat[which(dat$scientific==resp.vars[i]),]
+  
+  Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
+                  family=poisson, random=~(1|site),
+                  data=use.dat,
+                  lme4=TRUE)
+  
+  
+  model.set <- generate.model.set(use.dat=use.dat,
+                                  test.fit=Model1,
+                                  pred.vars.cont=pred.vars,
+                                  pred.vars.fact=factor.vars,
+                                  smooth.smooth.interactions=FALSE,
+                                  max.predictors=3,
+                                  k=5,
+                                  null.terms= "")
+  
+  
+  
+  out.list=fit.model.set(model.set,
+                         max.models=600,
+                         parallel=T)
+  
+  names(out.list)
+  
+  out.list$failed.models # examine the list of failed models
+  mod.table=out.list$mod.data.out  # look at the model selection table
+  mod.table=mod.table[order(mod.table$AICc),]
+  mod.table$cumsum.wi=cumsum(mod.table$wi.AICc)
+  out.i=head(mod.table,10)
+  out.i=mod.table[which(mod.table$delta.AICc<=3),]
+  out.all=c(out.all,list(out.i))
+  var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
+  
+  # Model fits and importance---
+  all.mod.fits=do.call("rbind",out.all)
+  all.var.imp=do.call("rbind",var.imp)
+  
+  write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"IO","lme4.random.all.mod.fits.nofov.csv",sep="_"))
+  write.csv(all.var.imp,file=paste(name,resp.vars[i],"IO","lme4.all.var.imp.nofov.csv",sep="_"))
+  
 }
 
 # Theme-
