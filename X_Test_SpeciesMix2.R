@@ -41,7 +41,7 @@ o.dir <- paste(w.dir, "outputs", sep='/')
 
 # 1. Load data ----
 df <- read.csv(paste(dt.dir, "2020_sw_maxn.env-cov.csv", sep = '/'))%>%
-  mutate_at(vars(sample, family, genus, species, dataset, unique.name, full.name, location, status, cluster, cluster.new, number, n, class), list(as.factor)) %>% # make these columns as factors
+  mutate_at(vars(sample, scientific, family, genus, species, dataset, unique.name, full.name, location, status, cluster, cluster.new, number, n, class), list(as.factor)) %>% # make these columns as factors
   # At some point filter for successful count
   glimpse()
 head(df)
@@ -49,6 +49,13 @@ str(df)
 names(df) # 278 BRUV deployments
 summary(df)
 levels(df$full.name)
+
+## Add log depth ----
+df <- df[,-49]
+df$logdepth <- log((df$depth.1*-1))
+any(is.na(df$depth.1))
+any(is.na(df$logdepth))
+length(which(is.na(df$logdepth)))
 
 # While I wait for checked MaxN, remove certain sp --
 # Caesioperca sp, Caesioperca sp1, Caesioperca spp, Platycephalus sp, Platycephalus spp
@@ -66,6 +73,7 @@ length(levels(df$full.name))
 # 2. Remove sp that are encountered less than 2.5% of the time ----
 # as per Foster et al 2015 ----
 # 278 BRUV drops so far, going to work with 2.5% which is more than 2 BRUVs
+
 head(df)
 names(df)
 
@@ -127,7 +135,7 @@ names(df2)
 
 dfl <- melt(df2,
             id.vars = names(df)[c(3:33)],
-            measure.vars = names(df)[c(34:48)],
+            measure.vars = names(df)[c(34:49)],
             variable.name = "covariate",
             value.name = "value"
 )
@@ -212,7 +220,7 @@ cd
 class(cd)
 colnames(cd)
 colnames(cd) <- c("sample"  ,"depth",  "slope"  ,  "aspect", "roughness", "tpi", "flowdir",
-                  "detrended.bathy" , "d.slope", "d.flowdir", "d.tri" ,  "d.tpi"  ,   "d.aspect", "SSTmean", "SSTster", "SSTtrend")     
+                  "detrended.bathy" , "d.slope", "d.flowdir", "d.tri" ,  "d.tpi"  ,   "d.aspect", "SSTmean", "SSTster", "SSTtrend", "logdepth")     
                    
 dim(cd)
 
@@ -238,7 +246,7 @@ cdm <- as.matrix(cd)
 ### Check Predicitor correlations ---
 
 # compute correlation matrix --
-C <- cor(cd[,c(2:16)], use = 'complete.obs') # remove NAs because they mess up the corr matrix
+C <- cor(cd[,c(2:17)], use = 'complete.obs') # remove NAs because they mess up the corr matrix
 head(round(C,2))
 
 # correlogram : visualizing the correlation matrix --
@@ -269,8 +277,8 @@ cor.mtest <- function(mat, ...) {
   p.mat
 }
 # matrix of the p-value of the correlation
-p.mat <- cor.mtest(cd[,c(2:16)])
-head(p.mat[, 1:15])
+p.mat <- cor.mtest(cd[,c(2:17)])
+head(p.mat[, 1:16])
 
 # customize correlogram --
 col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
@@ -308,7 +316,7 @@ mosthighlycorrelated <- function(mydataframe,numtoreport)
 }
 
 
-mosthighlycorrelated(cd[,c(2:16)], 30) # This results in only depth, rough and slope 4 not being correlated above 0.95
+mosthighlycorrelated(cd[,c(2:17)], 30) # This results in only depth, rough and slope 4 not being correlated above 0.95
 
 
 # 8. Make matrix of species and covariates ----
@@ -330,7 +338,7 @@ colnames(pd)
                                                     
 sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                     collapse = ','),
-                                                    ") ~ poly(depth, 2, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                                    ") ~ poly(logdepth, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
                                                 
 
                                                   
@@ -409,7 +417,7 @@ summary(arch3)
 # remove one covariate at a time ----
 sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                       collapse = ','),
-                                       ") ~ depth + poly(slope, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                       ") ~ poly(depth, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 sp_form <- ~1
@@ -434,13 +442,16 @@ test_model_b <- species_mix(
   #titbits = TRUE # could turn this off
 )
 
+
 BIC(test_model_b) # this gives a valie of BIC
 AIC(test_model_b)
 print(test_model_b)
 
 # look at the partial response of each covariate using:
+dev.off()
+plot(test_model_b)
 par(mfrow=c(2,3))
-eff.df <- effectPlotData(focal.predictors = c("depth", "SSTster", "SSTtrend", "aspect", "flowdir"), mod = test_model_b)
+eff.df <- effectPlotData(focal.predictors = c("depth", "SSTster", "aspect", "flowdir"), mod = test_model_b)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model_b, na.rm = T)
 
@@ -454,10 +465,10 @@ sp.boot <- species_mix.bootstrap(
   quiet = FALSE
 )
 
-preds <- c("depth","slope", "SSTster", "SSTtrend", "aspect", "flowdir")
+preds <- c("depth", "SSTster", "aspect", "flowdir")
 ef.plot <- effectPlotData(preds, test_model_b)
 head(ef.plot)
-
+par(mfrow=c(2,2))
 plot(ef.plot,
      test_model_b, 
      sp.boot,
@@ -495,7 +506,7 @@ str(arch3)
 summary(arch3)
 
 # to save this list --
-#write.csv(arch3, paste(o.dir, "species_archetypes.csv", sep ='/'))
+#write.csv(arch3, paste(o.dir, "species_archetypes_m2.csv", sep ='/'))
 
 
 # 11. Final model ----
@@ -889,7 +900,7 @@ t <- mask(t, d)
 f <- crop(b$flowdir, d)
 f <- mask(f, d)
 
-ds <- stack(d,s,a,f)
+ds <- stack(d,a,f)
 plot(ds)
 
 
@@ -900,9 +911,9 @@ t2 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
 t <- stack(t1, t2)
 plot(t)
 
-t2 <- disaggregate(t, 7.924524)
-t3 <- resample(t2, ds)
-plot(t3)
+ta <- disaggregate(t1, 7.924524)
+tb <- resample(ta, ds)
+plot(tb)
 
 
 # crop bathy to stack --
@@ -911,7 +922,7 @@ plot(t3)
 #plot(d)
 
 # stack preds --
-preds <- stack(ds, t3)
+preds <- stack(ds, tb)
 names(preds)
 plot(preds)
 
@@ -919,7 +930,7 @@ plot(preds)
 pr <- as.data.frame(preds, xy = TRUE)
 dim(pr)
 head(pr)
-names(pr) <- c('x', 'y', 'depth', 'slope', 'aspect', 'flowdir', 'SSTster', 'SSTtrend')
+names(pr) <- c('x', 'y', 'depth','aspect', 'flowdir', 'SSTster')
 str(pr)
 any(is.na(pr$slope))
 length(which(is.na(pr$slope)))
@@ -933,7 +944,7 @@ ptest2 <- predict(
   test_model_b,
   sp.boot,
   #nboot = 100,
-  pr[,c(3:8)],
+  pr[,c(3:6)],
   #alpha = 0.95,
   mc.cores = 10,
   prediction.type = "archetype"
@@ -954,9 +965,9 @@ head(SAMpreds)
 
 coordinates(SAMpreds) <- ~x+y
 head(SAMpreds)
-A1 <- SAMpreds[,7]
-A2 <- SAMpreds[,8]
-A3 <- SAMpreds[,9]
+A1 <- SAMpreds[,5]
+A2 <- SAMpreds[,6]
+A3 <- SAMpreds[,7]
 #A4 <- SAMpreds[,7]
 
 gridded(A1) <- TRUE
@@ -972,7 +983,7 @@ A3preds <- raster(A3)
 Allpreds <- stack(A1preds, A2preds, A3preds)
 plot(Allpreds)
 
-writeRaster(Allpreds, paste(o.dir, "pred-3a-noTIP-5Feb.tif", sep='/'))
+writeRaster(Allpreds, paste(o.dir, "Ecomix2-used.tif", sep='/'))
 
 test <- log(Allpreds)
 plot(test)
@@ -1038,4 +1049,22 @@ names(p4) <- c("Archetype1",  "Archetype2", "Archetype3")
 breaks1 <- c(-Inf, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 1000, Inf)
 p <- levelplot(Allpreds, par.settings=RdBuTheme(), at=breaks1, 
                colorkey=list(height=0.8, labels=list(at=breaks1, labels=round(breaks1, 2))))
+
+
+
+## FOR MAPS ####
+
+ab <- readOGR(paste(s.dir, "Australiaboundary67.shp", sep='/'))
+
+amp <- readOGR(paste(s.dir, "AustraliaNetworkMarineParks.shp", sep='/'))
+
+wamp <- readOGR(paste(s.dir, "WA_MPA_2018.shp", sep='/'))
+
+plot(test$Archetype3, main = "Archetype 3")
+plot(ab, add=T)
+plot(amp, add=T)
+plot(wamp, add=T)
+
+dev.off()
+
 p             
