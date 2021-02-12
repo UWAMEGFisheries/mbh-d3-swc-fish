@@ -182,7 +182,7 @@ metadata.io <- metadata %>%
 
 plot(metadata$longitude, metadata$latitude)
 
-plot(metadata.fh$longitude, metadata.fhwy$latitude)
+plot(metadata.fh$longitude, metadata.fh$latitude)
 plot(metadata.io$longitude, metadata.io$latitude)
 
 ## Combine all the maxn data to be modeled into a single data frame
