@@ -30,17 +30,14 @@ maxn <- read_csv("2020_south-west_stereo-BRUVs.complete.maxn.csv")%>%
   mutate(scientific=paste(family,genus,species,sep=" "))%>%
   glimpse()
 
-# Read in habitat ----
-habitat<-read_csv("2020_south-west_stereo-BRUVs.complete.habitat.csv" )
-
 # Read in metadata ----
 metadata<-read_csv("2020_south-west_stereo-BRUVs.checked.metadata.csv")%>%
   dplyr::select(sample,latitude,longitude,date,time,depth)
 
 # Read in life history
-url <- "https://docs.google.com/spreadsheets/u/1/d/1SMLvR9t8_F-gXapR2EemQMEPSw_bUbPLcXd3lJ5g5Bo/edit?usp=drive_web&ouid=100340010373917954123"
+setwd(tidy.dir)
 
-master<-googlesheets4::read_sheet(url)%>%
+master <- read.csv("australia.life.history.csv") %>% 
   ga.clean.names()%>%
   filter(grepl('Australia', global.region))%>%
   filter(grepl('SW', marine.region))%>%
@@ -92,9 +89,9 @@ unique(cleaned$fishing.type)
 # Descriptive stats
 
 # total abundance # these will all go down BG 2/2/21
-sum(maxn$maxn) # 12119
-length(unique(maxn$scientific)) # 162
-length(unique(maxn$family)) # 101 genus
+sum(maxn$maxn) # 13330
+length(unique(maxn$scientific)) # 153
+length(unique(maxn$family)) # 63 genus
 
 # # Make data for anita ----
 # summary<-maxn%>%

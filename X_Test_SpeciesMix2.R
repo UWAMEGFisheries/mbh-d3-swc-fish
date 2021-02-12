@@ -2,7 +2,7 @@
 # Fit Mixtures of Archetype Species # 
 
 # Load libraries ----
-install.packages('rasterVis')
+#install.packages('rasterVis')
 #library(devtools)
 #devtools::install_github('skiptoniam/ecomix')
 library(ecomix)
@@ -409,10 +409,10 @@ summary(arch3)
 # remove one covariate at a time ----
 sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                       collapse = ','),
-                                       ") ~ poly(depth, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                       ") ~ depth + poly(slope, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
-
+sp_form <- ~1
 
 test_model_b <- species_mix(
   archetype_formula = sam_form_b,
@@ -440,7 +440,7 @@ print(test_model_b)
 
 # look at the partial response of each covariate using:
 par(mfrow=c(2,3))
-eff.df <- effectPlotData(focal.predictors = c("depth","slope", "SSTster", "SSTtrend", "aspect", "flowdir"), mod = test_model_b)
+eff.df <- effectPlotData(focal.predictors = c("depth", "SSTster", "SSTtrend", "aspect", "flowdir"), mod = test_model_b)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model_b, na.rm = T)
 
@@ -493,6 +493,9 @@ arch3 <- arch2 %>%
 
 str(arch3)
 summary(arch3)
+
+# to save this list --
+#write.csv(arch3, paste(o.dir, "species_archetypes.csv", sep ='/'))
 
 
 # 11. Final model ----
@@ -869,8 +872,8 @@ d <- crop(d, e)
 plot(d)
 
 # cut to 150 m depth --
-values(d)[values(d) < -150] = NA
-values(d)[values(d) > -30] = NA
+values(d)[values(d) < -143] = NA
+values(d)[values(d) > -35] = NA
 #b[b < -150] <- NA
 #b[b > -30] <- NA
 
@@ -897,11 +900,9 @@ t2 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
 t <- stack(t1, t2)
 plot(t)
 
-t2 <- disaggregate(t1, 7.924524)
+t2 <- disaggregate(t, 7.924524)
 t3 <- resample(t2, ds)
 plot(t3)
-
-
 
 
 # crop bathy to stack --
@@ -918,7 +919,7 @@ plot(preds)
 pr <- as.data.frame(preds, xy = TRUE)
 dim(pr)
 head(pr)
-names(pr) <- c('x', 'y', 'depth', 'slope', 'aspect', 'flowdir', 'SSTster')
+names(pr) <- c('x', 'y', 'depth', 'slope', 'aspect', 'flowdir', 'SSTster', 'SSTtrend')
 str(pr)
 any(is.na(pr$slope))
 length(which(is.na(pr$slope)))
@@ -932,7 +933,7 @@ ptest2 <- predict(
   test_model_b,
   sp.boot,
   #nboot = 100,
-  pr[,c(3:7)],
+  pr[,c(3:8)],
   #alpha = 0.95,
   mc.cores = 10,
   prediction.type = "archetype"
@@ -953,9 +954,9 @@ head(SAMpreds)
 
 coordinates(SAMpreds) <- ~x+y
 head(SAMpreds)
-A1 <- SAMpreds[,6]
-A2 <- SAMpreds[,7]
-A3 <- SAMpreds[,8]
+A1 <- SAMpreds[,7]
+A2 <- SAMpreds[,8]
+A3 <- SAMpreds[,9]
 #A4 <- SAMpreds[,7]
 
 gridded(A1) <- TRUE
@@ -971,8 +972,10 @@ A3preds <- raster(A3)
 Allpreds <- stack(A1preds, A2preds, A3preds)
 plot(Allpreds)
 
-#writeRaster(Allpreds, paste(o.dir, "pred-3a-notpiSSTtrend.tif", sep='/'))
+writeRaster(Allpreds, paste(o.dir, "pred-3a-noTIP-5Feb.tif", sep='/'))
 
+test <- log(Allpreds)
+plot(test)
 
 
 
@@ -1032,7 +1035,7 @@ plot(p4)
 names(p4) <- c("Archetype1",  "Archetype2", "Archetype3")
 
 # define breaks manually
-b <- c(-Inf, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 1000, Inf)
-p <- levelplot(p4, par.settings=RdBuTheme(), at=b, 
-               colorkey=list(height=0.8, labels=list(at=b, labels=round(b, 2))))
+breaks1 <- c(-Inf, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, 1000, Inf)
+p <- levelplot(Allpreds, par.settings=RdBuTheme(), at=breaks1, 
+               colorkey=list(height=0.8, labels=list(at=breaks1, labels=round(breaks1, 2))))
 p             

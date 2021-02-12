@@ -64,9 +64,21 @@ dir.create(file.path(data.dir, "Tidy"))
 metadata <- ga.list.files("_Metadata.csv") %>% # list all files ending in "_Metadata.csv"
   purrr::map_df(~ga.read.files_em.csv(.)) %>% # combine into dataframe
   dplyr::select(campaignid, sample, dataset, planned.or.exploratory, latitude, longitude, date, time, location, status, site, depth, observer, successful.count, successful.length, commonwealth.zone, state.zone)%>% 
+  dplyr::mutate(planned.or.exploratory = str_replace_all(.$planned.or.exploratory,c("Deans"="Legacy",
+                                                                                    "Captains pick"="Legacy"))) %>%
   glimpse()
 
 names(metadata)
+
+unique(metadata$planned.or.exploratory)
+
+sites <- metadata %>% 
+  distinct(site,planned.or.exploratory)
+
+multiple.types <- sites%>%
+  dplyr::filter(!planned.or.exploratory=="Captains pick") %>% # use this to see if clusters are given both MBH and Legacy - there is 3 clusters that have multiples
+  dplyr::group_by(site)%>%
+  dplyr::summarise(n=n())
 
 unique(metadata$campaignid) # check the number of campaigns in metadata, and the campaign name
 unique(metadata$sample) # 316
@@ -163,6 +175,21 @@ write.csv(length3dpoints,paste(study,"length3dpoints.csv",sep="_"),row.names = F
 # 
 # metadata.2020.10 <- read.csv("2020-10_south-west_stereo-BRUVs_Metadata.csv")
 # raw.metadata<-metadata.2020.10
+# setwd("C:/GitHub/mbh-d3-swc-fish/shapefiles")
+# dir()
+# mbh.legacy <- read.csv("2020-10_south-west_stereo-BRUVs_legacy.mbh.deans.csv")%>%
+#   rename(Longitude=X,Latitude=Y,Number=BRUVid)%>%
+#   dplyr::select(-c(Latitude,Longitude))%>%
+#   dplyr::mutate(Number=as.character(Number))%>%
+#   distinct()
+# 
+# mbh.doubles <-mbh.legacy %>%
+#   group_by(Number)%>%
+#   summarise(n=n())%>%
+#   filter(n>1)
+# 
+# test<-left_join(metadata.2020.10, mbh.legacy)
+# write.csv(test,"test.lumping.csv",row.names=FALSE)
 # 
 # # Spatial files ----
 # setwd(working.dir)
