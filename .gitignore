@@ -2,6 +2,9 @@
 /Data/Habitat/Habitat Images/*
 /Data/Habitat/
 
+/Data/Habitat/Habitat Images/*.JPG
+/Data/Habitat/Habitat Images/*.jpg
+
 # History files
 .Rhistory
 .Rapp.history
