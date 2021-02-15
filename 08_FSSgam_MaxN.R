@@ -1,3 +1,4 @@
+#devtools::install_github("beckyfisher/FSSgam_package") #run once
 require(rstanarm)
 require(tidyverse)
 require(dplyr)
@@ -7,6 +8,7 @@ require(MuMIn)
 require(doBy)
 require(GlobalArchive)
 require(googlesheets4)
+require(stringr)
 
 rm(list=ls())
 
@@ -282,7 +284,7 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  filter(scientific%in%c("total.abundance","Sparidae Chrysophrys auratus"))%>% # Need to figure out how to fix this up
+  #filter(scientific%in%c("total.abundance","Sparidae Chrysophrys auratus"))%>% # Need to figure out how to fix this up
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -335,21 +337,23 @@ out.i=mod.table[which(mod.table$delta.AICc<=3),]
 out.all=c(out.all,list(out.i))
 var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
 
-# plot the best models
+# # plot the best models
 # for(m in 1:nrow(out.i)){
 #   best.model.name=as.character(out.i$modname[m])
-#   
+#   best.model=out.list$success.models[[best.model.name]]
+# 
 #   png(file=paste(name,m,resp.vars[i],"mod_fits.png",sep="_"))
 #   if(best.model.name!="null"){
-#     par(mfrow=c(3,1),mar=c(9,4,3,1))
-#     best.model=out.list$success.models[[best.model.name]]
 #     plot(best.model,all.terms=T,pages=1,residuals=T,pch=16)
-#     mtext(side=2,text=resp.vars[i],outer=F)}  
+#     mtext(side=3,text=resp.vars[i],outer=T)}
 #   dev.off()
 # }
 }
 
 # Model fits and importance---
+names(out.all)=resp.vars
+names(var.imp)=resp.vars
+
 all.mod.fits=do.call("rbind",out.all)
 all.var.imp=do.call("rbind",var.imp)
 

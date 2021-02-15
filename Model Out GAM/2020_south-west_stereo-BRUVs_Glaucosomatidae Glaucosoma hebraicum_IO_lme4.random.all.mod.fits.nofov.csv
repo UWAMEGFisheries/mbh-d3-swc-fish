@@ -1,9 +1,0 @@
-"","modname","AICc","BIC","r2.vals","r2.vals.unique","edf","edf.less.1","delta.AICc","delta.BIC","wi.AICc","wi.BIC","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status","planned.or.exploratory","cumsum.wi"
-"mean.relief.by.planned.or.exploratory+planned.or.exploratory+sd.relief.by.planned.or.exploratory","mean.relief.by.planned.or.exploratory+planned.or.exploratory+sd.relief.by.planned.or.exploratory",1500.32713759304,1536.10366329161,0.00198,NA,18.01,0,0,0,1,0.999,1,1,0,0,0,0,0,0,0,0,0,0,1,1
-"depth+log.roughness","depth+log.roughness",137.767804072533,157.821945812405,0.20267,NA,9.65,4,0,4.346,0.139,0.053,0,0,0,0,0,0,0,0,1,0,1,0,0,0.139
-"depth+log.tpi","depth+log.tpi",139.522921473911,159.577063213783,0.23567,NA,9.37,4,1.755,6.101,0.058,0.022,0,0,0,0,0,0,0,1,0,0,1,0,0,0.197
-"depth+log.roughness+planned.or.exploratory","depth+log.roughness+planned.or.exploratory",139.579649034972,162.908921202634,0.20679,NA,10.67,4,1.812,9.433,0.056,0.004,0,0,0,0,0,0,0,0,1,0,1,0,1,0.253
-"depth+log.roughness+status","depth+log.roughness+status",139.851388671868,163.180660839531,0.20106,NA,10.66,4,2.084,9.704,0.049,0.004,0,0,0,0,0,0,0,0,1,0,1,1,0,0.302
-"depth","depth",140.031142151988,153.476342999296,0.10553,NA,5,1,2.263,0,0.045,0.461,0,0,0,0,0,0,0,0,0,0,1,0,0,0.347
-"depth+log.slope","depth+log.slope",140.399390747195,160.453532487067,0.1523,NA,9.72,4,2.632,6.977,0.037,0.014,0,0,0,0,0,0,0,0,0,1,1,0,0,0.384
-"depth+log.tpi+planned.or.exploratory","depth+log.tpi+planned.or.exploratory",140.746516303942,164.075788471605,0.2392,NA,10.34,4,2.979,10.599,0.031,0.002,0,0,0,0,0,0,0,1,0,0,1,0,1,0.415
