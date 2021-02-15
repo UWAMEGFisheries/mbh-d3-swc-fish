@@ -264,7 +264,6 @@ maxn.io <- maxn.io %>%
   dplyr::mutate(log.roughness = log(roughness + 1)) %>%
   dplyr::mutate(log.slope = log(slope + 1))
 
-
 # Set predictor variables 
 pred.vars=c("mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef",
             "distance.to.ramp",
@@ -283,7 +282,7 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  #filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
+  filter(scientific%in%c("total.abundance","Sparidae Chrysophrys auratus"))%>% # Need to figure out how to fix this up
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -305,13 +304,12 @@ var.imp <- list()
 
 for(i in 1:length(resp.vars)){
   
-  use.dat=dat[which(dat$scientific==resp.vars[i]),]
+use.dat <- dat[which(dat$scientific==resp.vars[i]),]
 
 Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
                 family=poisson, random=~(1|site),
                 data=use.dat,
                 lme4=TRUE)
-
 
 model.set <- generate.model.set(use.dat=use.dat,
                                 test.fit=Model1,
@@ -321,8 +319,6 @@ model.set <- generate.model.set(use.dat=use.dat,
                                 max.predictors=3,
                                 k=5,
                                 null.terms= "")
-
-
 
 out.list=fit.model.set(model.set,
                        max.models=600,
@@ -339,14 +335,30 @@ out.i=mod.table[which(mod.table$delta.AICc<=3),]
 out.all=c(out.all,list(out.i))
 var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
 
+# plot the best models
+# for(m in 1:nrow(out.i)){
+#   best.model.name=as.character(out.i$modname[m])
+#   
+#   png(file=paste(name,m,resp.vars[i],"mod_fits.png",sep="_"))
+#   if(best.model.name!="null"){
+#     par(mfrow=c(3,1),mar=c(9,4,3,1))
+#     best.model=out.list$success.models[[best.model.name]]
+#     plot(best.model,all.terms=T,pages=1,residuals=T,pch=16)
+#     mtext(side=2,text=resp.vars[i],outer=F)}  
+#   dev.off()
+# }
+}
+
 # Model fits and importance---
 all.mod.fits=do.call("rbind",out.all)
 all.var.imp=do.call("rbind",var.imp)
 
-write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"FH","lme4.random.all.mod.fits.nofov.csv",sep="_"))
-write.csv(all.var.imp,file=paste(name,resp.vars[i],"FH","lme4.all.var.imp.nofov.csv",sep="_"))
+write.csv(all.mod.fits[,-2],file=paste(name,"FH_all.mod.fits.csv",sep="_"))
+write.csv(all.var.imp,file=paste(name,"FH_all.var.imp.csv",sep="_"))
 
-}
+# write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"FH","lme4.random.all.mod.fits.nofov.csv",sep="_"))
+# write.csv(all.var.imp,file=paste(name,resp.vars[i],"FH","lme4.all.var.imp.nofov.csv",sep="_"))
+
 
 # Remove any unused columns from the dataset 
 dat <- maxn.io%>%
