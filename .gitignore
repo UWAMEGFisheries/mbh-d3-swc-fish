@@ -4,8 +4,10 @@
 
 /Data/Habitat/Habitat Images/
 
-/Data/Habitat/Habitat Images/*.JPG
-/Data/Habitat/Habitat Images/*.jpg
+/Data/Habitat/Habitat Images/
+*.JPG
+/Data/Habitat/Habitat Images/
+*.jpg
 
 # History files
 .Rhistory
