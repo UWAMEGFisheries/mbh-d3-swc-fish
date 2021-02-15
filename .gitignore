@@ -1,5 +1,5 @@
 # Habitat images
-#/Data/Habitat/Habitat Images/*
+/Data/Habitat/Habitat Images/*
 
 # History files
 .Rhistory
