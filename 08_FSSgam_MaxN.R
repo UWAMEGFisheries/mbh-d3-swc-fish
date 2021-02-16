@@ -284,7 +284,9 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  #filter(scientific%in%c("total.abundance","Sparidae Chrysophrys auratus"))%>% # Need to figure out how to fix this up
+  # filter(scientific%in%c("total.abundance"
+  #                        ,"Sparidae Chrysophrys auratus"
+  #                        ))%>% 
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -300,17 +302,19 @@ unique.vars.use
 
 resp.vars <- unique.vars.use
 factor.vars <- c("status")
+
 out.all <- list()
 var.imp <- list()
-
+fss.all=list() # added from beckys example
+top.all=list()# added from beckys example
 
 for(i in 1:length(resp.vars)){
   
 use.dat <- dat[which(dat$scientific==resp.vars[i]),]
 
 Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
-                family=poisson, random=~(1|site),
-                data=use.dat,
+                family=poisson, random=~(1|site), 
+                data=use.dat, 
                 lme4=TRUE)
 
 model.set <- generate.model.set(use.dat=use.dat,
@@ -320,7 +324,8 @@ model.set <- generate.model.set(use.dat=use.dat,
                                 smooth.smooth.interactions=FALSE,
                                 max.predictors=3,
                                 k=5,
-                                null.terms= "planned.or.exploratory")
+                                null.terms = "planned.or.exploratory")
+
 
 out.list=fit.model.set(model.set,
                        max.models=600,
@@ -328,27 +333,33 @@ out.list=fit.model.set(model.set,
 
 names(out.list)
 
-out.list$failed.models # examine the list of failed models
-mod.table=out.list$mod.data.out  # look at the model selection table
+# out.list=fit.model.set(model.set) # this line is different, 
+fss.all=c(fss.all,list(out.list)) # new
+mod.table=out.list$mod.data.out
 mod.table=mod.table[order(mod.table$AICc),]
-mod.table$cumsum.wi=cumsum(mod.table$wi.AICc)
-out.i=head(mod.table,10)
-out.i=mod.table[which(mod.table$delta.AICc<=3),]
+out.i=mod.table[which(mod.table$delta.AICc<=2),]
 out.all=c(out.all,list(out.i))
-var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
+var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw))
+all.less.2AICc=mod.table[which(mod.table$delta.AICc<2),] # new term
+top.all=c(top.all,list(all.less.2AICc)) # new term
 
-# # plot the best models
-# for(m in 1:nrow(out.i)){
-#   best.model.name=as.character(out.i$modname[m])
-#   best.model=out.list$success.models[[best.model.name]]
-# 
-#   png(file=paste(name,m,resp.vars[i],"mod_fits.png",sep="_"))
-#   if(best.model.name!="null"){
-#     plot(best.model,all.terms=T,pages=1,residuals=T,pch=16)
-#     mtext(side=3,text=resp.vars[i],outer=T)}
-#   dev.off()
-# }
+# plot the best models
+#par(oma=c(1,1,4,1))
+for(m in 1:nrow(out.i)){
+  best.model.name=as.character(out.i$modname[m])
+  
+  png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
+  
+  if(best.model.name!="null"){
+    par(mfrow=c(3,1),mar=c(9,4,3,1))
+    best.model=update(Model1,out.list$success.models[[best.model.name]])
+    
+    plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
+    mtext(side=3,text=resp.vars[i],outer=T)}
 }
+}
+
+dev.off()
 
 # Model fits and importance---
 names(out.all)=resp.vars
@@ -357,58 +368,11 @@ names(var.imp)=resp.vars
 all.mod.fits=do.call("rbind",out.all)
 all.var.imp=do.call("rbind",var.imp)
 
-write.csv(all.mod.fits[,-2],file=paste(name,"FH_all.mod.fits.csv",sep="_"))
+write.csv(all.mod.fits,file=paste(name,"FH_all.mod.fits.csv",sep="_"))
 write.csv(all.var.imp,file=paste(name,"FH_all.var.imp.csv",sep="_"))
 
-zones=levels(dat$status)
-pdf("best_top_model_quick_plots.pdf",height=8,width=7,pointsize=12)
-par(mfcol=c(4,2),mar=c(4,4,0.5,0.5),oma=c(2,0.5,0.5,0.5),bty="l")
-for(r in 1:length(resp.vars)){
-  tab.r=out.all[[resp.vars[r]]]
-  top.mods.r=tab.r[1,]
-  mod.r.m=as.character(top.mods.r[1,"modname"])
-  mod.m=fss.all[[resp.vars[r]]]$success.models[[mod.r.m]]
-  mod.vars=unique(unlist(strsplit(unlist(strsplit(mod.r.m,split="+",fixed=T)),
-                                  split=".by.")))
-  # which continuous predictor is the variable included?
-  plot.var=as.character(na.omit(mod.vars[match(pred.vars,mod.vars)]))
-  # plot that variables, with symbol colours for zone
-  plot(dat[,plot.var],dat[,resp.vars[r]],pch=16,
-       ylab=resp.vars[r],xlab=plot.var,col=dat$ZONE)
-  legend("topleft",legend=paste("(",LETTERS[r],")",sep=""),
-         bty="n")
-  range.v=range(dat[,plot.var])
-  seq.v=seq(range.v[1],range.v[2],length=20)
-  newdat.list=list(seq.v,# across the range of the included variable
-                   mean(use.dat$depth), # for a median depth
-                   mean(use.dat$SQRTSA),# for a median SQRTSA
-                   "MANGROVE", # pick the first site, except don't predict on
-                   # this by setting terms=c(plot.var,"ZONE")
-                   zones)  # for each zone
-  names(newdat.list)=c(plot.var,"depth","SQRTSA","site","ZONE")
-  pred.vals=predict(mod.m,newdata=expand.grid(newdat.list),
-                    type="response",se=T,exclude=c("site","SQRTSA","depth"))
-  for(z in 1:length(zones)){
-    zone.index=which(expand.grid(newdat.list)$ZONE==zones[z])
-    lines(seq.v,pred.vals$fit[zone.index],col=z)
-    lines(seq.v,pred.vals$fit[zone.index]+pred.vals$se[zone.index]*1.96,lty=3,col=z)
-    lines(seq.v,pred.vals$fit[zone.index]-pred.vals$se[zone.index]*1.96,lty=3,col=z)}
-}
-legend("bottom",legend= zones,bty="n",ncol=2,col=c(1,2),pch=c(16,16),
-       inset=-0.61,xpd=NA,cex=.8)
-dev.off()
 
-
-
-
-
-
-
-
-# write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"FH","lme4.random.all.mod.fits.nofov.csv",sep="_"))
-# write.csv(all.var.imp,file=paste(name,resp.vars[i],"FH","lme4.all.var.imp.nofov.csv",sep="_"))
-
-
+############################################# Inside/Outside national park zone #############################################
 # Remove any unused columns from the dataset 
 dat <- maxn.io%>%
   dplyr::select(sample, status, site, planned.or.exploratory, scientific, maxn,
@@ -418,6 +382,7 @@ dat <- maxn.io%>%
                 "depth") %>%
   #filter(scientific=="total.abundance")%>% # Need to figure out how to fix this up
   as.data.frame()
+
 
 unique.vars=unique(as.character(dat$scientific))
 
@@ -431,20 +396,21 @@ for(i in 1:length(unique.vars)){
 unique.vars.use  
 
 resp.vars <- unique.vars.use
-factor.vars <- c("status","planned.or.exploratory")
+factor.vars <- c("status")
+
 out.all <- list()
 var.imp <- list()
-
+fss.all=list() # added from beckys example
+top.all=list()# added from beckys example
 
 for(i in 1:length(resp.vars)){
   
-  use.dat=dat[which(dat$scientific==resp.vars[i]),]
+  use.dat <- dat[which(dat$scientific==resp.vars[i]),]
   
   Model1 <- uGamm(maxn~s(mean.relief, k=5, bs='cr'),
-                  family=poisson, random=~(1|site),
-                  data=use.dat,
+                  family=poisson, random=~(1|site), 
+                  data=use.dat, 
                   lme4=TRUE)
-  
   
   model.set <- generate.model.set(use.dat=use.dat,
                                   test.fit=Model1,
@@ -453,8 +419,7 @@ for(i in 1:length(resp.vars)){
                                   smooth.smooth.interactions=FALSE,
                                   max.predictors=3,
                                   k=5,
-                                  null.terms= "")
-  
+                                  null.terms = "planned.or.exploratory")
   
   
   out.list=fit.model.set(model.set,
@@ -463,23 +428,43 @@ for(i in 1:length(resp.vars)){
   
   names(out.list)
   
-  out.list$failed.models # examine the list of failed models
-  mod.table=out.list$mod.data.out  # look at the model selection table
+  # out.list=fit.model.set(model.set) # this line is different, 
+  fss.all=c(fss.all,list(out.list)) # new
+  mod.table=out.list$mod.data.out
   mod.table=mod.table[order(mod.table$AICc),]
-  mod.table$cumsum.wi=cumsum(mod.table$wi.AICc)
-  out.i=head(mod.table,10)
-  out.i=mod.table[which(mod.table$delta.AICc<=3),]
+  out.i=mod.table[which(mod.table$delta.AICc<=2),]
   out.all=c(out.all,list(out.i))
-  var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw)) 
+  var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw))
+  all.less.2AICc=mod.table[which(mod.table$delta.AICc<2),] # new term
+  top.all=c(top.all,list(all.less.2AICc)) # new term
   
-  # Model fits and importance---
-  all.mod.fits=do.call("rbind",out.all)
-  all.var.imp=do.call("rbind",var.imp)
-  
-  write.csv(all.mod.fits[,-2],file=paste(name,resp.vars[i],"IO","lme4.random.all.mod.fits.nofov.csv",sep="_"))
-  write.csv(all.var.imp,file=paste(name,resp.vars[i],"IO","lme4.all.var.imp.nofov.csv",sep="_"))
-  
+  # plot the best models
+  #par(oma=c(1,1,4,1))
+  for(m in 1:nrow(out.i)){
+    best.model.name=as.character(out.i$modname[m])
+    
+    png(file=paste(name,m,resp.vars[i],"IO_mod_fits.png",sep="_"))
+    
+    if(best.model.name!="null"){
+      par(mfrow=c(3,1),mar=c(9,4,3,1))
+      best.model=update(Model1,out.list$success.models[[best.model.name]])
+      
+      plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
+      mtext(side=3,text=resp.vars[i],outer=T)}
+  }
 }
+
+dev.off()
+
+# Model fits and importance---
+names(out.all)=resp.vars
+names(var.imp)=resp.vars
+
+all.mod.fits=do.call("rbind",out.all)
+all.var.imp=do.call("rbind",var.imp)
+
+write.csv(all.mod.fits,file=paste(name,"IO_all.mod.fits.csv",sep="_"))
+write.csv(all.var.imp,file=paste(name,"IO_all.var.imp.csv",sep="_"))
 
 # Theme-
 Theme1 <-
