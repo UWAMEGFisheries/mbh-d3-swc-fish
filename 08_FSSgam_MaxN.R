@@ -301,7 +301,7 @@ for(i in 1:length(unique.vars)){
 unique.vars.use  
 
 resp.vars <- unique.vars.use
-factor.vars <- c("status")
+factor.vars <- c("status","planned.or.exploratory")
 
 out.all <- list()
 var.imp <- list()
@@ -345,18 +345,18 @@ top.all=c(top.all,list(all.less.2AICc)) # new term
 
 # plot the best models
 #par(oma=c(1,1,4,1))
-for(m in 1:nrow(out.i)){
-  best.model.name=as.character(out.i$modname[m])
-  
-  png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
-  
-  if(best.model.name!="null"){
-    par(mfrow=c(3,1),mar=c(9,4,3,1))
-    best.model=update(Model1,out.list$success.models[[best.model.name]])
-    
-    plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
-    mtext(side=3,text=resp.vars[i],outer=T)}
-}
+# for(m in 1:nrow(out.i)){
+#   best.model.name=as.character(out.i$modname[m])
+#   
+#   png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
+#   
+#   if(best.model.name!="null"){
+#     par(mfrow=c(3,1),mar=c(9,4,3,1))
+#     best.model=update(Model1,out.list$success.models[[best.model.name]])
+#     
+#     plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
+#     mtext(side=3,text=resp.vars[i],outer=T)}
+# }
 }
 
 dev.off()
