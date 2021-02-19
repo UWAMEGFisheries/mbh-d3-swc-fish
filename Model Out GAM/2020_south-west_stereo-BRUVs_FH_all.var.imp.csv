@@ -1,5 +1,11 @@
-"","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status","planned.or.exploratory"
-"1",1,0.017,0,0,0,0,0,0,0.983,0,1,0,0
-"2",0.886,0.216,0.044,0.007,0.035,0.033,0.706,0.097,0.096,0.027,0.168,0.142,0.241
-"3",0.576,0.043,0.033,0.137,0.077,0.919,0.023,0.075,0.08,0.452,0.021,0.007,0.292
-"4",0,0,0,0.203,0.797,0,1,0,0,0,0,1,0
+"","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status"
+"targeted.abundance",1,0.017,0,0,0,0,0,0,0.983,0,1,0
+"Glaucosomatidae Glaucosoma hebraicum",0.873,0.239,0.057,0.011,0.035,0.043,0.695,0.122,0.129,0.033,0.218,0.181
+"Heterodontidae Heterodontus portusjacksoni",0.589,0.057,0.05,0.155,0.096,0.933,0.028,0.103,0.115,0.545,0.03,0.011
+"Labridae Coris auricularis",0,0,0,0.203,0.797,0,1,0,0,0,0,1
+"Labridae Ophthalmolepis lineolatus",0.998,0.012,0.002,0,0,0.004,0.001,0,0,0.001,0.998,0.975
+"Scorpididae Neatypus obliquus",1,0,0.003,0,0,0,0,0.961,0,1,0,0.036
+"Sparidae Chrysophrys auratus",0.983,0,0.002,0.002,0.001,0,0.002,0.012,0.731,0.252,0.969,0.009
+"total.abundance",1,0,0,0,0,0,0,1,0,0,0,1
+"species.richness",0.99,0.415,0.089,0,0,0.269,0.063,0.247,0.047,0.061,0.046,0.326
+"centroberyx",0.452,0.507,0.001,0.006,0.003,0.002,0.013,0.003,0.279,0.002,0.662,0.944

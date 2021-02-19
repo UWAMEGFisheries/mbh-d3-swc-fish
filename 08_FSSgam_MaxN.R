@@ -40,6 +40,7 @@ metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
   dplyr::mutate(sample = as.factor(sample)) %>%
   dplyr::mutate(planned.or.exploratory = as.factor(planned.or.exploratory)) %>%
   dplyr::mutate(site = as.factor(site)) %>%
+  dplyr::filter(successful.count%in%c("Yes")) %>%
   dplyr::glimpse()
 
 # Bathymetry derivatives ----
@@ -156,10 +157,19 @@ species.maxn <- maxn %>%
                            "Scorpididae Neatypus obliquus",
                            "Labridae Ophthalmolepis lineolatus",
                            "Heterodontidae Heterodontus portusjacksoni",
-                           "Monacanthidae Nelusetta ayraud"))%>%
-  dplyr::select(sample,scientific,maxn)
+                           "Monacanthidae Nelusetta ayraud"
+                           ))%>%
+  dplyr::select(sample,scientific,maxn) %>%
+  distinct()
+
+test.samples <- species.maxn %>%
+  dplyr::group_by(sample) %>%
+  dplyr::summarise(n=n())
 
 unique(species.maxn$scientific)
+
+# 287 samples x 7 species
+287*7
 
 centroberyx <- maxn %>%
   dplyr::filter(genus%in%c("Centroberyx")) %>%
@@ -188,14 +198,23 @@ plot(metadata.fh$longitude, metadata.fh$latitude)
 plot(metadata.io$longitude, metadata.io$latitude)
 
 ## Combine all the maxn data to be modeled into a single data frame
-combined.maxn <- bind_rows(fished.maxn, species.maxn, ta.sr, centroberyx)%>%
+combined.maxn <- bind_rows(fished.maxn, species.maxn, 
+                           ta.sr, centroberyx)%>%
   left_join(metadata) %>%
   left_join(bathy) %>%
   left_join(ramps) %>%
-  left_join(habitat)
+  left_join(habitat) %>%
+  distinct()
+
+# rows should be 4 predictors x 287 samples
+4*287
+11*287 # when specific species are included
+
+unique(combined.maxn$sample) # 287
 
 maxn.fh <- combined.maxn %>%
-  semi_join(., metadata.fh)
+  semi_join(., metadata.fh) %>%
+  filter(!scientific%in%c("Monacanthidae Nelusetta ayraud"))
 
 unique(maxn.fh$sample)
 
@@ -286,7 +305,7 @@ dat <- maxn.fh%>%
                 "depth") %>%
   # filter(scientific%in%c("total.abundance"
   #                        ,"Sparidae Chrysophrys auratus"
-  #                        ))%>% 
+  #                        ))%>%
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -301,7 +320,7 @@ for(i in 1:length(unique.vars)){
 unique.vars.use  
 
 resp.vars <- unique.vars.use
-factor.vars <- c("status","planned.or.exploratory")
+factor.vars <- c("status")
 
 out.all <- list()
 var.imp <- list()
@@ -344,22 +363,33 @@ all.less.2AICc=mod.table[which(mod.table$delta.AICc<2),] # new term
 top.all=c(top.all,list(all.less.2AICc)) # new term
 
 # plot the best models
-#par(oma=c(1,1,4,1))
+# par(oma=c(1,1,4,1))
 # for(m in 1:nrow(out.i)){
 #   best.model.name=as.character(out.i$modname[m])
-#   
+# 
 #   png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
-#   
+# 
 #   if(best.model.name!="null"){
 #     par(mfrow=c(3,1),mar=c(9,4,3,1))
 #     best.model=update(Model1,out.list$success.models[[best.model.name]])
-#     
+# 
 #     plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
 #     mtext(side=3,text=resp.vars[i],outer=T)}
 # }
 }
 
 dev.off()
+
+# test 1 without dhueys start @ 10:45 AM - failed
+# test 2 ONLY pink snapper @ 11:23 - worked
+# test 3 - pink snapper and dheuys @ 12:32 - worked
+# test 4 - PS, D, and WKW @ 1:11 PM - worked
+# test 5 - test 4 + sweep @ 1:58 PM (checked at 2:32 PM) - worked
+# test 6 - test 5 + lineolatus @ 2:48 PM (checked 3:25) - worked
+# test 7 - add PJs @ 3:51 PM - worked
+# have removed ocean leatherjackets from Fishing HWY as not very many. Will leave in for in/out
+# test 8 - include plots of best models @ 9:02 AM (checked at 11:53 AM)
+
 
 # Model fits and importance---
 names(out.all)=resp.vars
