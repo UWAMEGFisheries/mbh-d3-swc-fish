@@ -535,7 +535,7 @@ plot.models <- setDT(all.mod.fits, keep.rownames = TRUE)[]
 
 setwd(p.dir)
 for(m in 1:nrow(plot.models)){
-  best.model.name=as.character(plot.models$modname[m])
+  best.model.name=as.character(out.i$modname[m])
   title <- as.character(plot.models$rn[m])
   
   png(file=paste(name,title,"IO_mod_fits.png",sep="_"))
