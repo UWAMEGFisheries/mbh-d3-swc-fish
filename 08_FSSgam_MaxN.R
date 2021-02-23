@@ -90,11 +90,11 @@ ta.sr <- maxn %>%
   dplyr::ungroup() %>%
   dplyr::group_by(scientific,sample) %>%
   dplyr::summarise(maxn = sum(maxn)) %>%
-  spread(scientific,maxn, fill = 0) %>%
+  tidyr::spread(scientific,maxn, fill = 0) %>%
   dplyr::mutate(total.abundance=rowSums(.[,2:(ncol(.))],na.rm = TRUE )) %>% #Add in Totals
   dplyr::mutate(species.richness=rowSums(.[,2:(ncol(.))] > 0)) %>% # double check these
   dplyr::select(sample,total.abundance,species.richness) %>%
-  gather(.,"scientific","maxn",2:3) %>%
+  tidyr::gather(.,"scientific","maxn",2:3) %>%
   dplyr::glimpse()
 
 # Create abundance of all recreational fished species ----
@@ -304,9 +304,6 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  # filter(scientific%in%c("total.abundance"
-  #                        ,"Sparidae Chrysophrys auratus"
-  #                        ))%>%
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -314,7 +311,7 @@ unique.vars=unique(as.character(dat$scientific))
 unique.vars.use=character()
 for(i in 1:length(unique.vars)){
   temp.dat=dat[which(dat$scientific==unique.vars[i]),]
-  if(length(which(temp.dat$response==0))/nrow(temp.dat)<0.8){
+  if(length(which(temp.dat$maxn==0))/nrow(temp.dat)<0.8){
     unique.vars.use=c(unique.vars.use,unique.vars[i])}
 }
 
@@ -363,22 +360,19 @@ var.imp=c(var.imp,list(out.list$variable.importance$aic$variable.weights.raw))
 all.less.2AICc=mod.table[which(mod.table$delta.AICc<2),] # new term
 top.all=c(top.all,list(all.less.2AICc)) # new term
 
-# plot the best models
-# par(oma=c(1,1,4,1))
-# for(m in 1:nrow(out.i)){
-#   best.model.name=as.character(out.i$modname[m])
-# 
-#   png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
-# 
-#   if(best.model.name!="null"){
-#     par(mfrow=c(3,1),mar=c(9,4,3,1))
-#     best.model=update(Model1,out.list$success.models[[best.model.name]])
-# 
-#     plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
-#     mtext(side=3,text=resp.vars[i],outer=T)}
-# }
-}
+# plot the all best models
+par(oma=c(1,1,4,1))
 
+for(r in 1:nrow(all.less.2AICc)){
+  best.model.name=as.character(all.less.2AICc$modname[r])
+  best.model=out.list$success.models[[best.model.name]]
+  
+  png(file=paste(name,r,resp.vars[i],"FH_mod_fits.png",sep="_"))
+  if(best.model.name!="null"){
+    plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
+    mtext(side=3,text=resp.vars[i],outer=T)}
+}
+}
 dev.off()
 
 # test 1 without dhueys start @ 10:45 AM - failed
@@ -411,15 +405,6 @@ dat <- maxn.io%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  #filter(scientific%in%c("total.abundance","targeted.abundance", "species.richness"))%>% 
-  # dplyr::filter(!scientific %in% c("Sparidae Chrysophrys auratus",
-  #                                 "Glaucosomatidae Glaucosoma hebraicum",
-  #                                 "Labridae Coris auricularis",
-  #                                 "Scorpididae Neatypus obliquus",
-  #                                 "Labridae Ophthalmolepis lineolatus",
-  #                                 "Heterodontidae Heterodontus portusjacksoni",
-  #                                 "Monacanthidae Nelusetta ayraud"
-  # ))%>%
   as.data.frame()
 
 # Only use if less than 80% zero
@@ -431,18 +416,6 @@ for(i in 1:length(unique.vars)){
     unique.vars.use=c(unique.vars.use,unique.vars[i])}
 }
 unique.vars.use     
-
-
-# unique.vars=unique(as.character(dat$scientific))
-# 
-# unique.vars.use=character()
-# for(i in 1:length(unique.vars)){
-#   temp.dat=dat[which(dat$scientific==unique.vars[i]),]
-#   if(length(which(temp.dat$response==0))/nrow(temp.dat)<0.8){
-#     unique.vars.use=c(unique.vars.use,unique.vars[i])}
-# }
-# 
-# unique.vars.use  
 
 resp.vars <- unique.vars.use
 factor.vars <- c("status")
@@ -487,22 +460,19 @@ for(i in 1:length(resp.vars)){
   all.less.2AICc=mod.table[which(mod.table$delta.AICc<2),] # new term
   top.all=c(top.all,list(all.less.2AICc)) # new term
   
-  # plot the best models
-  # par(oma=c(1,1,4,1))
-  # for(m in 1:nrow(out.i)){
-  #   best.model.name=as.character(out.i$modname[m])
-  # 
-  #   png(file=paste(name,m,resp.vars[i],"FH_mod_fits.png",sep="_"))
-  # 
-  #   if(best.model.name!="null"){
-  #     par(mfrow=c(3,1),mar=c(9,4,3,1))
-  #     best.model=update(Model1,out.list$success.models[[best.model.name]])
-  # 
-  #     plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
-  #     mtext(side=3,text=resp.vars[i],outer=T)}
-  # }
+  # plot the all best models
+  par(oma=c(1,1,4,1))
+  
+  for(r in 1:nrow(all.less.2AICc)){
+    best.model.name=as.character(all.less.2AICc$modname[r])
+    best.model=out.list$success.models[[best.model.name]]
+    
+    png(file=paste(name,r,resp.vars[i],"IO_mod_fits.png",sep="_"))
+    if(best.model.name!="null"){
+      plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
+      mtext(side=3,text=resp.vars[i],outer=T)}
+  }
 }
-
 dev.off()
 
 # Model fits and importance---
