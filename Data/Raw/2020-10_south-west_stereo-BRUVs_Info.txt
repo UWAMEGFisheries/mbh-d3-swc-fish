@@ -152,10 +152,10 @@ IO191	Rachel
 IO194	Rachel																		
 FH110	Daphne	44.7																	
 IO298	Rachel																		
-FHCO1	Daphne	44.8																	
+FHC02	Daphne	42																	
 FH69	Ramesh																		
 IO299	Rachel																		
-FHCO2	Daphne	42																	
+FHC03	Claude																		
 IO324	Rachel																		
 IO329	Rachel																		
 FH23	Daphne	44.2																	
@@ -221,7 +221,6 @@ IO126	Brooke Gibbons
 FH60	Claude																		
 FH61	Claude																		
 IO122	Brooke Gibbons																		
-FHCO3	Claude																		
 IO146	Claude																		
 IO244	Ramesh																		
 IO134	Claude																		
@@ -247,3 +246,5 @@ IO98	Daphne	128
 IO273	Rachel																		
 IO328	Rachel																		
 IO59	Rachel																		
+FH24	Brooke Gibbons																		
+FHC01	Daphne	44.8																	

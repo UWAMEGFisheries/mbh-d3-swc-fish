@@ -117,10 +117,10 @@ maxn<-points%>%
   tidyr::replace_na(list(maxn=0))%>%
   dplyr::mutate(maxn=as.numeric(maxn))%>%
   dplyr::filter(maxn>0)%>%
-  dplyr::inner_join(metadata)#%>%
-  #dplyr::filter(successful.count=="Yes") # This will need to be turned on once  we have cleaned the metadata
+  dplyr::inner_join(metadata)%>%
+  dplyr::filter(successful.count=="Yes") # This will need to be turned on once  we have cleaned the metadata
 
-unique(maxn$sample) #287 (this should drop)
+unique(maxn$sample) #288 (this should drop)
 
 # Save MaxN file ----
 setwd(staging.dir)

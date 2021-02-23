@@ -333,28 +333,28 @@ ggsave(file=paste(study,"check.stereo.vs.maxn.png",sep = "_"))
 # NOW check through the files in your "Errors to check" folder and make corrections to .EMObs / generic files and then re-run this script.
 # IF you are happy to proceed by removing the species, length and range errors here you can run the lines below and write the checked data 
 
-# Drop errors from data ----
-
-# CAUTION Standardise by Range if you wish  ----
-length<-length%>%
-  dplyr::filter(range<10000)%>%
-  glimpse()
-
-# CAUTION Remove taxa that don't match from the final data ----
-maxn<-anti_join(maxn,maxn.species.not.previously.observed)
-length<-anti_join(length,length.species.not.previously.observed)
-
-# CAUTION Drop wrong lengths ----
-drop.length<-wrong.length.taxa%>% # TO REMOVE LENGTHS OUTSIDE THE MIN/MAX OF MASTER LIST
-  dplyr::distinct(family,genus,species,length)%>%
-  dplyr::select(family,genus,species,length)%>%
-  dplyr::mutate(key = paste(family,genus,species,length, sep = '_'))
-
-length<-length%>%
-  dplyr::mutate(key = paste(family,genus,species,length, sep = '_'))%>%
-  dplyr::anti_join(drop.length,by="key")%>% # for dropping wrong.lengths
-  dplyr::select(-c(key))%>%
-  dplyr::glimpse()
+# # Drop errors from data ----
+# 
+# # CAUTION Standardise by Range if you wish  ----
+# length<-length%>%
+#   dplyr::filter(range<10000)%>%
+#   glimpse()
+# 
+# # CAUTION Remove taxa that don't match from the final data ----
+# maxn<-anti_join(maxn,maxn.species.not.previously.observed)
+# length<-anti_join(length,length.species.not.previously.observed)
+# 
+# # CAUTION Drop wrong lengths ----
+# drop.length<-wrong.length.taxa%>% # TO REMOVE LENGTHS OUTSIDE THE MIN/MAX OF MASTER LIST
+#   dplyr::distinct(family,genus,species,length)%>%
+#   dplyr::select(family,genus,species,length)%>%
+#   dplyr::mutate(key = paste(family,genus,species,length, sep = '_'))
+# 
+# length<-length%>%
+#   dplyr::mutate(key = paste(family,genus,species,length, sep = '_'))%>%
+#   dplyr::anti_join(drop.length,by="key")%>% # for dropping wrong.lengths
+#   dplyr::select(-c(key))%>%
+#   dplyr::glimpse()
 
 # WRITE FINAL checked data----
 setwd(tidy.dir)

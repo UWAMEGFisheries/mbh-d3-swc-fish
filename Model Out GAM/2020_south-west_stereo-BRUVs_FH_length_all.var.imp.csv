@@ -1,0 +1,7 @@
+"","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status"
+"all greater than 20 cm",0.399,0.061,0.019,0.013,0.553,0.195,0.012,0.624,0.011,0.327,0.637,0.041
+"all greater than 30 cm",0.41,0.067,0.164,0.117,0.193,0.05,0.066,0.394,0.088,0.067,0.7,0.142
+"fished greater than 20 cm",0.352,0.691,0.177,0.523,0.009,0.085,0.027,0.015,0.023,0.023,0.329,0.573
+"fished greater than 30 cm",0.981,0.052,0.352,0,0.008,0.091,0.101,0.03,0.047,0.039,0.975,0.002
+"greater than legal size",0.447,0.054,0.731,0.05,0.079,0.029,0.05,0.113,0.034,0.033,0.949,0.119
+"smaller than legal size",0.008,0.107,0.077,0.857,0.001,0.219,0.207,0.175,0.088,0.056,0.08,0.346
