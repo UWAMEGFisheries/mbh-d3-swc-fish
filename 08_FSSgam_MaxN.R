@@ -304,6 +304,8 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
+  dplyr::filter(scientific%in%c("total.abundance","species.richness",
+                                "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -363,17 +365,20 @@ top.all=c(top.all,list(all.less.2AICc)) # new term
 # plot the all best models
 par(oma=c(1,1,4,1))
 
-for(r in 1:nrow(all.less.2AICc)){
-  best.model.name=as.character(all.less.2AICc$modname[r])
+for(r in 1:nrow(out.i)){
+  best.model.name=as.character(out.i$modname[r])
+  
   best.model=out.list$success.models[[best.model.name]]
   
   png(file=paste(name,r,resp.vars[i],"FH_mod_fits.png",sep="_"))
   if(best.model.name!="null"){
     plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
     mtext(side=3,text=resp.vars[i],outer=T)}
+  dev.off()
 }
 }
 dev.off()
+
 
 # test 1 without dhueys start @ 10:45 AM - failed
 # test 2 ONLY pink snapper @ 11:23 - worked
@@ -384,7 +389,7 @@ dev.off()
 # test 7 - add PJs @ 3:51 PM - worked
 # have removed ocean leatherjackets from Fishing HWY as not very many. Will leave in for in/out
 # test 8 - include plots of best models @ 9:02 AM (checked at 11:53 AM)
-
+# RE-TRY on 23/2 @ 10:21 AM - pictures didn' work.
 
 # Model fits and importance---
 names(out.all)=resp.vars
@@ -405,6 +410,8 @@ dat <- maxn.io%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
+  dplyr::filter(scientific%in%c("total.abundance","species.richness",
+                                "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
   as.data.frame()
 
 # Only use if less than 80% zero
@@ -463,14 +470,16 @@ for(i in 1:length(resp.vars)){
   # plot the all best models
   par(oma=c(1,1,4,1))
   
-  for(r in 1:nrow(all.less.2AICc)){
-    best.model.name=as.character(all.less.2AICc$modname[r])
+  for(r in 1:nrow(out.i)){
+    best.model.name=as.character(out.i$modname[r])
+    
     best.model=out.list$success.models[[best.model.name]]
     
     png(file=paste(name,r,resp.vars[i],"IO_mod_fits.png",sep="_"))
     if(best.model.name!="null"){
       plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
       mtext(side=3,text=resp.vars[i],outer=T)}
+    dev.off()
   }
 }
 dev.off()
@@ -489,33 +498,3 @@ all.var.imp=do.call("rbind",var.imp)
 
 write.csv(all.mod.fits,file=paste(name,"IO_all.mod.fits.csv",sep="_"))
 write.csv(all.var.imp,file=paste(name,"IO_all.var.imp.csv",sep="_"))
-
-
-
-
-# TRY to plot the best models without running the gams
-# plot the best models
-par(oma=c(1,1,4,1))
-
-glimpse(all.mod.fits)
-
-plot.models <- setDT(all.mod.fits, keep.rownames = TRUE)[]
-
-
-
-setwd(p.dir)
-for(m in 1:nrow(plot.models)){
-  best.model.name=as.character(out.i$modname[m])
-  title <- as.character(plot.models$rn[m])
-  
-  png(file=paste(name,title,"IO_mod_fits.png",sep="_"))
-  if(best.model.name!="null"){
-    par(mfrow=c(3,1),mar=c(9,4,3,1))
-    best.model=out.list$success.models[[best.model.name]]
-    plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
-    mtext(side=2,text=resp.vars[i],outer=F)}  
-  dev.off()
-}
-
-dir()
-test.plot <- plot(best.model$gam,all.terms=T,pages=1,residuals=T,pch=16)
