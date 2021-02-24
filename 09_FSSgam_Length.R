@@ -33,6 +33,12 @@ length <-read.csv(paste(name, 'complete.length.csv',sep=".")) %>%
   dplyr::mutate(scientific=paste(family,genus,species,sep=" ")) %>%
   dplyr::glimpse()
 
+unique(length$sample)
+
+test <- length %>%
+  filter(number>0)%>%
+  distinct(sample)
+
 # Metadata ----
 metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
   dplyr::mutate(status = as.factor(status)) %>%
