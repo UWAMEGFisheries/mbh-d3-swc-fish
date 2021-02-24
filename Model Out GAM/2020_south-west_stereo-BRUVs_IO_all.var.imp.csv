@@ -1,5 +1,10 @@
 "","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status"
+"targeted.abundance",1,1,0,0,0,0,0,0,1,0,0,0
+"Heterodontidae Heterodontus portusjacksoni",0,0.103,0,0,0.004,0,0.031,0.076,0.518,0.467,0.991,0.243
 "Labridae Coris auricularis",0,1,0,0,0,0,0,0,0,0,1,1
+"Labridae Ophthalmolepis lineolatus",0,0.134,0,0,0,0,0.148,0.153,0.079,0.075,0.959,0.404
+"Monacanthidae Nelusetta ayraud",0,0.294,0,0,0,0,0.045,0.05,0.299,0.121,0.968,0.673
+"Scorpididae Neatypus obliquus",1,0,0,0,0,0,0,0,1,0,0,1
 "Sparidae Chrysophrys auratus",0.997,0.286,0,0,0,0,0.116,0.031,0.021,0.977,0,0.411
 "total.abundance",1,0,0,0,0,0,0,1,0,0,0,1
 "species.richness",0.953,0.216,0,0,0.012,0,0.133,0.185,0.093,0.129,0.001,0.28

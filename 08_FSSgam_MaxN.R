@@ -304,8 +304,8 @@ dat <- maxn.fh%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  dplyr::filter(scientific%in%c("total.abundance","species.richness",
-                                "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
+  #dplyr::filter(scientific%in%c("total.abundance","species.richness",
+  #                              "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
   as.data.frame()
 
 unique.vars=unique(as.character(dat$scientific))
@@ -410,8 +410,8 @@ dat <- maxn.io%>%
                 "distance.to.ramp",
                 "aspect", "log.tpi","log.roughness","log.slope",
                 "depth") %>%
-  dplyr::filter(scientific%in%c("total.abundance","species.richness",
-                                "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
+  # dplyr::filter(scientific%in%c("total.abundance","species.richness",
+  #                               "Sparidae Chrysophrys auratus", "Labridae Coris auricularis")) %>%
   as.data.frame()
 
 # Only use if less than 80% zero
