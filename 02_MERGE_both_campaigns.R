@@ -134,6 +134,8 @@ length3dpoints<-ga.create.em.length3dpoints()%>%
   dplyr::filter(successful.length=="Yes")%>%
   glimpse()
 
+unique(length3dpoints$sample) # 254
+
 ## Save length files ----
 setwd(staging.dir)
 write.csv(length3dpoints,paste(study,"length3dpoints.csv",sep="_"),row.names = FALSE)
