@@ -30,6 +30,8 @@ maxn <- read_csv("2020_south-west_stereo-BRUVs.complete.maxn.csv")%>%
   mutate(scientific=paste(family,genus,species,sep=" "))%>%
   glimpse()
 
+length <-read.csv("2020_south-west_stereo-BRUVs.complete.length.csv")
+
 # Read in metadata ----
 metadata<-read_csv("2020_south-west_stereo-BRUVs.checked.metadata.csv")%>%
   dplyr::select(sample,latitude,longitude,date,time,depth)
@@ -48,17 +50,24 @@ master <- read.csv("australia.life.history.csv") %>%
 names(master)
 
 
+total.number.fish <- sum(maxn$maxn) # 13596
+total.number.measured <- length%>%
+  filter(length>0)
+sum(total.number.measured$number) # 7575
+7575/13596 # 55%
 
+total.measurable <- maxn%>%filter(!successful.length%in%c("No"))%>%filter(successful.count%in%c("Yes"))
+sum(total.measurable$maxn)
+
+no.lengths <- length %>% filter(number>0)
+videos.not.measured <- anti_join(metadata,no.lengths, by = c("sample", "latitude", "longitude"))
+
+fish.to.measure <- semi_join(maxn,videos.not.measured)
+sum(fish.to.measure$maxn)
 
 
 ###### NEED TO READ IN LUMPED COMMON NAMES FOR PSEUDOCARANX
 ###### WILL ALSO NEED TO ADD INTO CHECKEM AND VISUALISER!!!!!!!
-
-
-
-
-
-
 
 # Create Species list ----
 species.table <- maxn%>%
@@ -89,8 +98,8 @@ unique(cleaned$fishing.type)
 # Descriptive stats
 
 # total abundance # these will all go down BG 2/2/21
-sum(maxn$maxn) # 13330
-length(unique(maxn$scientific)) # 153
+sum(maxn$maxn) # 13596
+length(unique(maxn$scientific)) # 147
 length(unique(maxn$family)) # 63 genus
 
 # # Make data for anita ----

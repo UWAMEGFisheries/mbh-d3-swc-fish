@@ -39,6 +39,17 @@ test <- length %>%
   filter(number>0)%>%
   distinct(sample)
 
+total.no.pinkies <- length %>%
+  dplyr::filter(species=="auratus") %>%
+  filter(number>0)
+
+sum(total.no.pinkies$number) # 196
+test <- total.no.pinkies %>%
+  filter(length>0)
+sum(test$number) # 168 measured
+
+168/196*100 # 85% measured
+
 # Metadata ----
 metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
   dplyr::mutate(status = as.factor(status)) %>%

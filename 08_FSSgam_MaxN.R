@@ -33,6 +33,7 @@ dir()
 # MaxN ----
 maxn <-read.csv(paste(name, 'complete.maxn.csv',sep=".")) %>%
   dplyr::select(campaignid, sample, scientific, maxn, family, genus, species) %>%
+  dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
 # Metadata ----
@@ -42,14 +43,17 @@ metadata <- read.csv(paste(name, 'checked.metadata.csv',sep=".")) %>%
   dplyr::mutate(planned.or.exploratory = as.factor(planned.or.exploratory)) %>%
   dplyr::mutate(site = as.factor(site)) %>%
   dplyr::filter(successful.count%in%c("Yes")) %>%
+  dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
 # Bathymetry derivatives ----
 bathy <- read.csv(paste(name, 'bathymetry.derivatives.csv',sep=".")) %>%
+  dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
 # Distance to boat ramp ----
 ramps <- read.csv(paste(name, 'distance.to.ramp.csv',sep=".")) %>%
+  dplyr::mutate(sample=str_replace_all(.$sample,c("FHC01"="FHCO1","FHC02"="FHCO2","FHC03"="FHCO3"))) %>%
   dplyr::glimpse()
 
 # Habitat ----
