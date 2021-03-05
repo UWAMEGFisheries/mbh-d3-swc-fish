@@ -63,7 +63,7 @@ dir.create(file.path(data.dir, "Tidy"))
 # Metadata ----
 metadata <- ga.list.files("_Metadata.csv") %>% # list all files ending in "_Metadata.csv"
   purrr::map_df(~ga.read.files_em.csv(.)) %>% # combine into dataframe
-  dplyr::select(campaignid, sample, dataset, planned.or.exploratory, latitude, longitude, date, time, location, status, site, depth, observer, successful.count, successful.length, commonwealth.zone, state.zone)%>% 
+  dplyr::select(campaignid, sample, dataset, planned.or.exploratory, latitude, longitude, date, time, location, status, site, depth, observer, successful.count, successful.length, commonwealth.zone, state.zone,raw.hdd.number,con.hdd.number)%>% 
   dplyr::mutate(planned.or.exploratory = str_replace_all(.$planned.or.exploratory,c("Deans"="Legacy",
                                                                                     "Captains pick"="Legacy"))) %>%
   glimpse()
@@ -106,7 +106,7 @@ points<-as.data.frame(points.files)%>%
 
 maxn<-points%>%
   dplyr::mutate(species=if_else(genus%in%c("Orectolobus","Caesioperca","Platycephalus","Squalus"),"spp",species))%>%
-  dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species,comment)%>%
+  dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species)%>% # removed comment from here
   dplyr::mutate(number=as.numeric(number))%>%
   dplyr::summarise(maxn=sum(number))%>%
   dplyr::group_by(campaignid,sample,family,genus,species)%>%
@@ -118,6 +118,8 @@ maxn<-points%>%
   dplyr::mutate(maxn=as.numeric(maxn))%>%
   dplyr::filter(maxn>0)%>%
   dplyr::inner_join(metadata)%>%
+  replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
+  dplyr::filter(!family%in%c("Unknown"))%>%
   dplyr::filter(successful.count=="Yes") # This will need to be turned on once  we have cleaned the metadata
 
 unique(maxn$sample) #288 (this should drop)
@@ -132,6 +134,8 @@ length3dpoints<-ga.create.em.length3dpoints()%>%
   dplyr::select(-c(time,comment))%>% # take time out as there is also a time column in the metadata
   dplyr::inner_join(metadata)%>%
   dplyr::filter(successful.length=="Yes")%>%
+  replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
+  dplyr::filter(!family%in%c("Unknown"))%>%
   glimpse()
 
 unique(length3dpoints$sample) # 254

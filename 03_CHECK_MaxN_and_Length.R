@@ -158,6 +158,9 @@ summary(length$range) # shows min, mean and max range
 out.of.range<-dplyr::filter(length,range>10000)%>% # 10 m = 10000 mm
   dplyr::glimpse() # Shows fish more than 10 m away
 
+setwd(error.dir)
+write.csv(out.of.range, "out.of.range.csv")
+
 # SERIOUS data checks using the life.history googlesheet ----
 # Checks on fish length vs their max.length in the life.history sheet will be done below
 
@@ -208,6 +211,9 @@ synonyms<- read.csv("synonyms.australia.csv") %>%
 # Use return.changes=T to view the taxa.names.updated
 # Use save.report to save .csv file in your error directory
 
+hard.drives <-metadata %>%
+  dplyr::select(campaignid,sample,raw.hdd.number,con.hdd.number)
+
 maxn<-ga.change.synonyms(maxn,return.changes=T,save.report = T)
 length<-ga.change.synonyms(length,return.changes=T,save.report = T)
 
@@ -217,6 +223,7 @@ maxn.species.not.previously.observed<-master%>%
   dplyr::distinct(campaignid,sample,family,genus,species)%>% # use this line to show specific drops OR
   #distinct(family,genus,species)%>% # use this line to keep only fam, gen, spe
   dplyr::filter(!species%in%c("spp","sp1","sp"))%>% # Ignore spp in the report
+  dplyr::left_join(hard.drives) %>%
   dplyr::glimpse()
 
 setwd(error.dir)
@@ -228,6 +235,7 @@ length.species.not.previously.observed<-master%>%
   dplyr::anti_join(length,.,by=c("family","genus","species"))%>%
   dplyr::distinct(campaignid,sample,family,genus,species)%>%
   dplyr::filter(!species%in%c("spp"))%>% # Ignore spp in the report
+  dplyr::left_join(hard.drives) %>%
   dplyr::glimpse()
 
 setwd(error.dir)
@@ -270,6 +278,7 @@ wrong.length.taxa<-left_join(length,master.min.max,by=c("family","genus","specie
   dplyr::select(campaignid,sample,family,genus,species,length,min.length,max.length,fb.length_max,reason)%>%
   dplyr::mutate(difference=ifelse(reason%in%c("too small"),(min.length-length),(length-max.length)))%>%
   dplyr::mutate(percent.of.fb.max=(length/fb.length_max*100))%>%
+  dplyr::left_join(hard.drives) %>%
   dplyr::glimpse()
 
 setwd(error.dir)
@@ -290,7 +299,7 @@ taxa.maxn.vs.stereo.summary<-length%>%
   dplyr::group_by(campaignid,sample,family,genus,species)%>%
   dplyr::summarise(stereo.maxn=sum(number))%>%
   dplyr::full_join(maxn)%>%
-  replace_na(list(maxn=0))%>%
+  replace_na(list(maxn=0,stereo.maxn=0))%>%
   dplyr::filter(!stereo.maxn==maxn)%>%
   dplyr::mutate(percent.difference = (maxn-stereo.maxn)/maxn*100)%>%
   dplyr::semi_join(length.sample)%>% # only keep ones where length was possible
@@ -301,6 +310,7 @@ taxa.maxn.vs.stereo.summary<-length%>%
   dplyr::mutate(percent.difference=abs(percent.difference))%>%
   dplyr::select(campaignid,sample,family,genus,species,maxn,stereo.maxn,difference,percent.difference)%>%
   arrange(-difference)%>%
+  dplyr::left_join(hard.drives) %>%
   dplyr::glimpse()
 
 setwd(error.dir)

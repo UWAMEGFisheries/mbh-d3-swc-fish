@@ -162,7 +162,7 @@ FH23	Daphne	44.2
 IO100	Rachel																		
 FH99	Hayley																		
 FH71	Daphne	45.3																	
-FH68	Hayley																		
+FH68	Rachel																		
 IO119	Rachel																		
 FH79	Daphne	44.9																	
 FH52	Hayley 																		
@@ -248,3 +248,9 @@ IO328	Rachel
 IO59	Rachel																		
 FH24	Brooke Gibbons																		
 FHC01	Daphne	44.8																	
+FH14	Daphne	44.4																	
+FH54	Daphne	43.2																	
+FH2	Daphne	43.9																	
+FH40	Daphne	42.9																	
+IO189	Daphne	139																	
+IO16	Daphne	41.4																	

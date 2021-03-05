@@ -510,16 +510,20 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 02	216	02_L378.avi	53469	35.64600	1	18.90000	1289.10891	902.97030	Monacanthidae	Meuschenia	galii	37465040	1	AD	Passing			
 02	217	02_L378.avi	70807	47.20467	1	30.45867	1281.98020	640.39604	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 02	218	02_L378.avi	70807	47.20467	1	30.45867	1839.20792	534.65347	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
-02	219	02_L378.avi	98285	65.52333	1	48.77733	1271.28713	123.56436	Scombridae	Sarda	spp		1	AD	Passing			
-02	220	02_L378.avi	98508	65.67200	1	48.92600	626.13861	234.05941	Scombridae	Sarda	spp		1	AD	Passing			
-02	221	02_L378.avi	98508	65.67200	1	48.92600	866.13861	197.22772	Scombridae	Sarda	spp		1	AD	Passing			
-02	222	02_L378.avi	102971	68.64733	1	51.90133	882.77228	919.60396	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	223	02_L378.avi	102971	68.64733	1	51.90133	1036.03960	883.96040	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	224	02_L378.avi	102971	68.64733	1	51.90133	1201.18812	1003.96040	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	225	02_L378.avi	102971	68.64733	1	51.90133	1259.40594	964.75248	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	226	02_L378.avi	102971	68.64733	1	51.90133	1390.09901	982.57426	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	227	02_L378.avi	102971	68.64733	1	51.90133	1241.58416	914.85149	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-02	228	02_L378.avi	112254	74.83600	1	58.09000	458.61386	762.77228	Triakidae	Furgaleus	macki	37017003	1	AD	Passing			
+02	219	02_L378.avi	98285	65.52333	1	48.77733	1271.28713	123.56436	Scombridae				1	AD	Passing			
+02	220	02_L378.avi	98507	65.67133	1	48.92533	171.42857	138.24945	Scombridae				1	AD	Passing			
+02	221	02_L378.avi	98507	65.67133	1	48.92533	602.95567	256.41138	Scombridae				1	AD	Passing			
+02	222	02_L378.avi	98507	65.67133	1	48.92533	852.41379	194.96718	Scombridae				1	AD	Passing			
+02	223	02_L378.avi	98507	65.67133	1	48.92533	1774.58128	140.61269	Scombridae				1	AD	Passing			
+02	224	02_L378.avi	98508	65.67200	1	48.92600	626.13861	234.05941	Scombridae				1	AD	Passing			
+02	225	02_L378.avi	98508	65.67200	1	48.92600	866.13861	197.22772	Scombridae				1	AD	Passing			
+02	226	02_L378.avi	102971	68.64733	1	51.90133	882.77228	919.60396	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	227	02_L378.avi	102971	68.64733	1	51.90133	1036.03960	883.96040	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	228	02_L378.avi	102971	68.64733	1	51.90133	1201.18812	1003.96040	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	229	02_L378.avi	102971	68.64733	1	51.90133	1259.40594	964.75248	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	230	02_L378.avi	102971	68.64733	1	51.90133	1390.09901	982.57426	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	231	02_L378.avi	102971	68.64733	1	51.90133	1241.58416	914.85149	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+02	232	02_L378.avi	112254	74.83600	1	58.09000	458.61386	762.77228	Triakidae	Furgaleus	macki	37017003	1	AD	Passing			
 03	0	03_L367.avi	10479	6.98600	1	0.02133	589.30693	349.30693	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
 03	1	03_L367.avi	11123	7.41533	1	0.45067	542.97030	86.73267	Gerreidae	Parequula	melbournensis	37349001	1	AD	Passing			
 03	2	03_L367.avi	11248	7.49867	1	0.53400	920.79208	218.61386	Gerreidae	Parequula	melbournensis	37349001	1	AD	Passing			
@@ -1497,486 +1501,473 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 08	78	08_L367.avi	7057	4.70467	1	0.00400	1451.88119	685.54455	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
 08	79	08_L367.avi	7058	4.70533	1	0.00467	968.31683	230.49505	Pempherididae	Parapriacanthus	elongatus	37357002	600	AD	Passing			
 08	80	08_L367.avi	7093	4.72867	1	0.02800	20.19802	863.76238	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	81	08_L367.avi	7310	4.87333	1	0.17267	1608.71287	567.92079	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	82	08_L367.avi	7430	4.95333	1	0.25267	647.52475	288.71287	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
-08	83	08_L367.avi	7586	5.05733	1	0.35667	159.20792	153.26733	Labridae	Choerodon	rubescens	37384039	1	AD	Passing			
-08	84	08_L367.avi	7586	5.05733	1	0.35667	580.99010	212.67327	Scorpididae	Tilodon	sexfasciatus	37361003	1	AD	Passing			
-08	85	08_L367.avi	7586	5.05733	1	0.35667	1518.41584	392.07921	Scorpididae	Tilodon	sexfasciatus	37361003	1	AD	Passing			
-08	86	08_L367.avi	8191	5.46067	1	0.76000	1420.99010	109.30693	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	87	08_L367.avi	8356	5.57067	1	0.87000	700.99010	809.10891	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	88	08_L367.avi	8356	5.57067	1	0.87000	1291.48515	711.68317	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	89	08_L367.avi	8356	5.57067	1	0.87000	1617.02970	649.90099	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	90	08_L367.avi	8570	5.71333	1	1.01267	670.09901	510.89109	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	91	08_L367.avi	8570	5.71333	1	1.01267	1100.19802	588.11881	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	92	08_L367.avi	8570	5.71333	1	1.01267	1259.40594	565.54455	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	93	08_L367.avi	8570	5.71333	1	1.01267	1322.37624	734.25743	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	94	08_L367.avi	8570	5.71333	1	1.01267	407.52475	883.96040	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	95	08_L367.avi	8780	5.85333	1	1.15267	483.56436	525.14851	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	96	08_L367.avi	8780	5.85333	1	1.15267	344.55446	633.26733	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	97	08_L367.avi	9006	6.00400	1	1.30333	405.14851	717.62376	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	98	08_L367.avi	9006	6.00400	1	1.30333	483.56436	935.04950	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	99	08_L367.avi	9006	6.00400	1	1.30333	733.06931	810.29703	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	100	08_L367.avi	9006	6.00400	1	1.30333	447.92079	482.37624	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	101	08_L367.avi	9006	6.00400	1	1.30333	275.64356	509.70297	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	102	08_L367.avi	9006	6.00400	1	1.30333	623.76238	525.14851	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	103	08_L367.avi	9057	6.03800	1	1.33733	528.71287	270.89109	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	104	08_L367.avi	9057	6.03800	1	1.33733	1173.86139	525.14851	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	105	08_L367.avi	9426	6.28400	1	1.58333	766.33663	583.36634	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing			
-08	106	08_L367.avi	9543	6.36200	1	1.66133	282.04852	572.98204	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
-08	107	08_L367.avi	9543	6.36200	1	1.66133	931.53639	53.02994	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
-08	108	08_L367.avi	9712	6.47467	1	1.77400	555.04043	262.56287	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	109	08_L367.avi	9712	6.47467	1	1.77400	693.47709	688.09581	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	110	08_L367.avi	9712	6.47467	1	1.77400	1521.50943	73.72455	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	111	08_L367.avi	9976	6.65067	1	1.95000	487.12871	861.38614	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	112	08_L367.avi	10617	7.07800	1	2.37733	710.29650	896.33533	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	113	08_L367.avi	10617	7.07800	1	2.37733	692.18329	768.28743	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	114	08_L367.avi	10617	7.07800	1	2.37733	769.81132	657.05389	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	115	08_L367.avi	10617	7.07800	1	2.37733	473.53100	570.39521	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	116	08_L367.avi	10617	7.07800	1	2.37733	1157.95148	407.42515	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	117	08_L367.avi	10617	7.07800	1	2.37733	1311.91375	298.77844	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	118	08_L367.avi	10617	7.07800	1	2.37733	1487.87062	447.52096	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	119	08_L367.avi	10621	7.08067	1	2.38000	1182.53369	615.66467	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	120	08_L367.avi	10958	7.30533	1	2.60467	742.64151	937.72455	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	121	08_L367.avi	10958	7.30533	1	2.60467	784.04313	918.32335	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	122	08_L367.avi	10958	7.30533	1	2.60467	458.00539	933.84431	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	123	08_L367.avi	10958	7.30533	1	2.60467	1245.92992	547.11377	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	124	08_L367.avi	10958	7.30533	1	2.60467	672.77628	150.03593	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	125	08_L367.avi	10958	7.30533	1	2.60467	1090.67385	663.52096	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	126	08_L367.avi	11198	7.46533	1	2.76467	643.01887	1050.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	127	08_L367.avi	11198	7.46533	1	2.76467	693.47709	776.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	128	08_L367.avi	11198	7.46533	1	2.76467	399.78437	849.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	129	08_L367.avi	11198	7.46533	1	2.76467	341.56334	729.48503	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	130	08_L367.avi	11198	7.46533	1	2.76467	1586.19946	672.57485	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	131	08_L367.avi	11198	7.46533	1	2.76467	785.33693	168.14371	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	132	08_L367.avi	11198	7.46533	1	2.76467	944.47439	441.05389	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	133	08_L367.avi	11198	7.46533	1	2.76467	813.80054	271.61677	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	134	08_L367.avi	11198	7.46533	1	2.76467	553.74663	128.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	135	08_L367.avi	11198	7.46533	1	2.76467	536.92722	759.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	136	08_L367.avi	11198	7.46533	1	2.76467	725.82210	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	137	08_L367.avi	11198	7.46533	1	2.76467	1046.68464	566.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	138	08_L367.avi	11198	7.46533	1	2.76467	1537.03504	560.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	139	08_L367.avi	11198	7.46533	1	2.76467	267.81671	849.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	140	08_L367.avi	11691	7.79400	1	3.09333	481.29380	95.71257	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
-08	141	08_L367.avi	12611	8.40733	1	3.70667	512.34501	451.40120	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	142	08_L367.avi	12611	8.40733	1	3.70667	719.35310	244.45509	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	143	08_L367.avi	12611	8.40733	1	3.70667	1262.74933	626.01198	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	144	08_L367.avi	12611	8.40733	1	3.70667	1231.69811	285.84431	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	145	08_L367.avi	12614	8.40933	1	3.70867	884.95957	851.06587	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	146	08_L367.avi	12614	8.40933	1	3.70867	1681.94070	641.53293	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	147	08_L367.avi	13187	8.79133	1	4.09067	1797.08895	616.95808	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	148	08_L367.avi	13187	8.79133	1	4.09067	1389.54178	212.11976	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	149	08_L367.avi	13187	8.79133	1	4.09067	1214.87871	184.95808	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	150	08_L367.avi	13187	8.79133	1	4.09067	1731.10512	307.83234	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	151	08_L367.avi	13299	8.86600	1	4.16533	716.76550	929.96407	Scorpididae	Scorpis	georgiana	37361015	1	AD	Passing			
-08	152	08_L367.avi	13363	8.90867	1	4.20800	621.02426	729.48503	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	153	08_L367.avi	13363	8.90867	1	4.20800	824.15094	738.53892	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	154	08_L367.avi	13363	8.90867	1	4.20800	818.97574	294.89820	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	155	08_L367.avi	13363	8.90867	1	4.20800	1157.95148	204.35928	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	156	08_L367.avi	13363	8.90867	1	4.20800	1275.68733	106.05988	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	157	08_L367.avi	13363	8.90867	1	4.20800	1700.05391	194.01198	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	158	08_L367.avi	13363	8.90867	1	4.20800	1476.22642	279.37725	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	159	08_L367.avi	13406	8.93733	1	4.23667	288.51752	314.29940	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	160	08_L367.avi	13406	8.93733	1	4.23667	652.07547	223.76048	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	161	08_L367.avi	13406	8.93733	1	4.23667	809.91914	446.22754	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	162	08_L367.avi	13406	8.93733	1	4.23667	718.05930	645.41317	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	163	08_L367.avi	13406	8.93733	1	4.23667	1314.50135	347.92814	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	164	08_L367.avi	13406	8.93733	1	4.23667	1257.57412	153.91617	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	165	08_L367.avi	13406	8.93733	1	4.23667	1390.83558	156.50299	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	166	08_L367.avi	13406	8.93733	1	4.23667	941.88679	159.08982	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	167	08_L367.avi	13406	8.93733	1	4.23667	822.85714	799.32934	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	168	08_L367.avi	17043	11.36200	1	6.66133	632.66846	998.51497	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
-08	169	08_L367.avi	17043	11.36200	1	6.66133	1440.00000	172.02395	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
-08	170	08_L367.avi	17937	11.95800	1	7.25733	856.49596	936.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	171	08_L367.avi	17937	11.95800	1	7.25733	1015.63342	532.88623	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	172	08_L367.avi	17937	11.95800	1	7.25733	1350.72776	689.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	173	08_L367.avi	17937	11.95800	1	7.25733	1762.15633	534.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	174	08_L367.avi	17937	11.95800	1	7.25733	1846.25337	669.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	175	08_L367.avi	17937	11.95800	1	7.25733	1811.32075	891.16168	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	176	08_L367.avi	17937	11.95800	1	7.25733	1882.47978	982.99401	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	177	08_L367.avi	17937	11.95800	1	7.25733	1516.33423	1014.03593	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	178	08_L367.avi	17937	11.95800	1	7.25733	1213.58491	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	179	08_L367.avi	17937	11.95800	1	7.25733	1273.09973	479.85629	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	180	08_L367.avi	17937	11.95800	1	7.25733	1363.66577	931.25749	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	181	08_L367.avi	18480	12.32000	1	7.61933	1267.62431	686.42945	Sparidae	Chrysophrys	auratus	37353001	1	AD	Feeding			
-08	182	08_L367.avi	19872	13.24800	1	8.54733	323.45013	187.54491	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
-08	183	08_L367.avi	19957	13.30467	1	8.60400	614.55526	248.33533	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-08	184	08_L367.avi	22597	15.06467	1	10.36400	796.98113	796.74251	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	185	08_L367.avi	22597	15.06467	1	10.36400	1270.51213	697.14970	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	186	08_L367.avi	22597	15.06467	1	10.36400	1722.04852	796.74251	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	187	08_L367.avi	22597	15.06467	1	10.36400	1320.97035	408.71856	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	188	08_L367.avi	22597	15.06467	1	10.36400	705.12129	380.26347	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	189	08_L367.avi	23043	15.36200	1	10.66133	542.10243	517.36527	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-08	190	08_L367.avi	23043	15.36200	1	10.66133	736.17251	182.37126	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-08	191	08_L367.avi	25333	16.88867	1	12.18800	847.43935	720.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	192	08_L367.avi	25333	16.88867	1	12.18800	909.54178	726.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	193	08_L367.avi	25333	16.88867	1	12.18800	1095.84906	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	194	08_L367.avi	25333	16.88867	1	12.18800	1562.91105	611.78443	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	195	08_L367.avi	25333	16.88867	1	12.18800	1621.13208	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	196	08_L367.avi	25333	16.88867	1	12.18800	1412.83019	636.35928	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	197	08_L367.avi	25333	16.88867	1	12.18800	1355.90296	578.15569	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	198	08_L367.avi	25333	16.88867	1	12.18800	1631.48248	289.72455	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	199	08_L367.avi	25333	16.88867	1	12.18800	1631.48248	327.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	200	08_L367.avi	25333	16.88867	1	12.18800	1692.29111	430.70659	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	201	08_L367.avi	25333	16.88867	1	12.18800	1760.86253	453.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	202	08_L367.avi	25333	16.88867	1	12.18800	1759.56873	660.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	203	08_L367.avi	25333	16.88867	1	12.18800	1750.51213	779.92814	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	204	08_L367.avi	25333	16.88867	1	12.18800	1091.96765	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	205	08_L367.avi	25333	16.88867	1	12.18800	993.63881	593.67665	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	206	08_L367.avi	25333	16.88867	1	12.18800	1112.66846	776.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	207	08_L367.avi	25333	16.88867	1	12.18800	1278.27493	658.34731	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	208	08_L367.avi	25333	16.88867	1	12.18800	1298.97574	574.27545	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	209	08_L367.avi	25333	16.88867	1	12.18800	1320.97035	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	210	08_L367.avi	25333	16.88867	1	12.18800	1763.45013	177.19760	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	211	08_L367.avi	25333	16.88867	1	12.18800	1121.72507	667.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	212	08_L367.avi	25333	16.88867	1	12.18800	1054.44744	677.74850	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	213	08_L367.avi	25333	16.88867	1	12.18800	839.67655	820.02395	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	214	08_L367.avi	25333	16.88867	1	12.18800	862.96496	796.74251	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	215	08_L367.avi	25333	16.88867	1	12.18800	1507.27763	684.21557	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	216	08_L367.avi	25333	16.88867	1	12.18800	1539.62264	302.65868	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	217	08_L367.avi	26521	17.68067	1	12.98000	573.15364	633.77246	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	218	08_L367.avi	26521	17.68067	1	12.98000	711.59030	777.34132	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	219	08_L367.avi	26521	17.68067	1	12.98000	469.64960	827.78443	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	220	08_L367.avi	26521	17.68067	1	12.98000	496.81941	752.76647	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	221	08_L367.avi	26521	17.68067	1	12.98000	1112.66846	672.57485	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	222	08_L367.avi	26521	17.68067	1	12.98000	1124.31267	373.79641	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	223	08_L367.avi	26521	17.68067	1	12.98000	724.52830	605.31737	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	224	08_L367.avi	26521	17.68067	1	12.98000	557.62803	999.80838	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	225	08_L367.avi	26521	17.68067	1	12.98000	870.72776	483.73653	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	226	08_L367.avi	26521	17.68067	1	12.98000	1240.75472	660.93413	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	227	08_L367.avi	27116	18.07733	1	13.37667	512.34501	979.11377	Scorpaenidae	Scorpaena	sumptuosa	37287072	1	AD	Passing			
-08	228	08_L367.avi	27116	18.07733	1	13.37667	1379.40594	948.11881	Scorpaenidae	Scorpaena	sumptuosa	37287072	1	AD	Passing			
-08	229	08_L367.avi	28295	18.86333	1	14.16267	952.23720	951.95210	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	230	08_L367.avi	28295	18.86333	1	14.16267	1045.39084	655.76048	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	231	08_L367.avi	28295	18.86333	1	14.16267	795.68733	565.22156	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	232	08_L367.avi	28295	18.86333	1	14.16267	1358.49057	566.51497	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	233	08_L367.avi	28295	18.86333	1	14.16267	1330.02695	826.49102	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	234	08_L367.avi	28295	18.86333	1	14.16267	1397.30458	984.28743	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-08	235	08_L367.avi	29843	19.89533	1	15.19467	388.14016	689.38922	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	236	08_L367.avi	29843	19.89533	1	15.19467	511.05121	624.71856	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	237	08_L367.avi	29843	19.89533	1	15.19467	850.02695	545.82036	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	238	08_L367.avi	29843	19.89533	1	15.19467	1799.67655	209.53293	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	239	08_L367.avi	29843	19.89533	1	15.19467	1292.50674	375.08982	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	240	08_L367.avi	29843	19.89533	1	15.19467	1168.30189	15.52096	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	241	08_L367.avi	29843	19.89533	1	15.19467	1599.13747	389.31737	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	242	08_L367.avi	29843	19.89533	1	15.19467	1592.66846	199.18563	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	243	08_L367.avi	29843	19.89533	1	15.19467	1463.28841	173.31737	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	244	08_L367.avi	31220	20.81333	1	16.11267	477.41240	497.96407	Labridae	Coris	auricularis	37384088	1	M	Passing			
-08	245	08_L367.avi	31220	20.81333	1	16.11267	1635.36388	77.60479	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	246	08_L367.avi	31220	20.81333	1	16.11267	1795.79515	116.40719	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	247	08_L367.avi	33457	22.30467	1	17.60400	1835.90296	862.70659	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	248	08_L367.avi	33457	22.30467	1	17.60400	1785.44474	942.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	249	08_L367.avi	33457	22.30467	1	17.60400	1733.69272	633.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	250	08_L367.avi	33457	22.30467	1	17.60400	1790.61995	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	251	08_L367.avi	33457	22.30467	1	17.60400	1738.86792	359.56886	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	252	08_L367.avi	33457	22.30467	1	17.60400	1728.51752	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	253	08_L367.avi	33457	22.30467	1	17.60400	1609.48787	275.49701	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	254	08_L367.avi	33457	22.30467	1	17.60400	1577.14286	420.35928	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	255	08_L367.avi	33457	22.30467	1	17.60400	1507.27763	460.45509	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	256	08_L367.avi	33457	22.30467	1	17.60400	720.64690	443.64072	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	257	08_L367.avi	33457	22.30467	1	17.60400	485.17520	517.36527	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	258	08_L367.avi	33457	22.30467	1	17.60400	1058.32884	147.44910	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	259	08_L367.avi	33457	22.30467	1	17.60400	857.78976	860.11976	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	260	08_L367.avi	33457	22.30467	1	17.60400	921.18598	866.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	261	08_L367.avi	33457	22.30467	1	17.60400	1354.60916	1029.55689	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	262	08_L367.avi	33457	22.30467	1	17.60400	1331.32075	967.47305	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	263	08_L367.avi	33457	22.30467	1	17.60400	571.85984	576.86228	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	264	08_L367.avi	33457	22.30467	1	17.60400	1388.24798	1028.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	265	08_L367.avi	34967	23.31133	1	18.61067	261.34771	291.01796	Labridae	Notolabrus	parilus	37384022	1	AD	Passing			
-08	266	08_L367.avi	35133	23.42200	1	18.72133	1725.92992	667.40120	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	267	08_L367.avi	35133	23.42200	1	18.72133	1690.99730	746.29940	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	268	08_L367.avi	35133	23.42200	1	18.72133	1650.88949	704.91018	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	269	08_L367.avi	35133	23.42200	1	18.72133	1618.54447	667.40120	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	270	08_L367.avi	35133	23.42200	1	18.72133	1640.53908	572.98204	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	271	08_L367.avi	35133	23.42200	1	18.72133	1564.20485	470.80240	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	272	08_L367.avi	35133	23.42200	1	18.72133	1468.46361	441.05389	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	273	08_L367.avi	35133	23.42200	1	18.72133	1216.17251	545.82036	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	274	08_L367.avi	35133	23.42200	1	18.72133	1639.24528	71.13772	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	275	08_L367.avi	35133	23.42200	1	18.72133	1458.11321	156.50299	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	276	08_L367.avi	35133	23.42200	1	18.72133	971.64420	320.76647	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	277	08_L367.avi	35133	23.42200	1	18.72133	1064.79784	280.67066	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	278	08_L367.avi	35133	23.42200	1	18.72133	1384.36658	501.84431	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	279	08_L367.avi	35133	23.42200	1	18.72133	1733.69272	280.67066	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	280	08_L367.avi	35133	23.42200	1	18.72133	1744.04313	316.88623	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	281	08_L367.avi	35133	23.42200	1	18.72133	1745.33693	341.46108	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	282	08_L367.avi	35133	23.42200	1	18.72133	1755.68733	116.40719	Labridae	Coris	auricularis	37384088	1	F	Passing			
-08	283	08_L367.avi	35146	23.43067	1	18.73000	1543.50404	323.35329	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-08	284	08_L367.avi	35146	23.43067	1	18.73000	1159.24528	659.64072	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	285	08_L367.avi	35146	23.43067	1	18.73000	1134.66307	723.01796	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	286	08_L367.avi	35146	23.43067	1	18.73000	1331.32075	532.88623	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	287	08_L367.avi	35146	23.43067	1	18.73000	795.68733	327.23353	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	288	08_L367.avi	35146	23.43067	1	18.73000	1024.69003	452.69461	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	289	08_L367.avi	35477	23.65133	1	18.95067	179.83827	1039.90419	Pomacentridae	Parma	bicolor	37372092	1	AD	Passing			
-08	290	08_L367.avi	38632	25.75467	1	21.05400	636.05911	647.52735	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
-08	291	08_L367.avi	39418	26.27867	1	21.57800	1467.16981	291.01796	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Passing			
-08	292	08_L367.avi	46650	31.10000	1	26.39933	260.05391	588.50299	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-08	293	08_L367.avi	46650	31.10000	1	26.39933	352.31527	177.24289	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-08	294	08_L367.avi	47873	31.91533	1	27.21467	121.61725	353.10180	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	295	08_L367.avi	47873	31.91533	1	27.21467	505.87601	65.96407	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	296	08_L367.avi	47873	31.91533	1	27.21467	913.42318	655.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	297	08_L367.avi	47873	31.91533	1	27.21467	1314.50135	759.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	298	08_L367.avi	47873	31.91533	1	27.21467	1694.87871	720.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	299	08_L367.avi	47873	31.91533	1	27.21467	1847.54717	757.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	300	08_L367.avi	47873	31.91533	1	27.21467	1891.53639	686.80240	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	301	08_L367.avi	47873	31.91533	1	27.21467	1899.29919	631.18563	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	302	08_L367.avi	47873	31.91533	1	27.21467	1613.36927	650.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	303	08_L367.avi	47873	31.91533	1	27.21467	1408.94879	660.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	304	08_L367.avi	47873	31.91533	1	27.21467	1333.90836	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	305	08_L367.avi	47873	31.91533	1	27.21467	1223.93531	416.47904	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	306	08_L367.avi	47873	31.91533	1	27.21467	1340.37736	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	307	08_L367.avi	47873	31.91533	1	27.21467	1575.84906	174.61078	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	308	08_L367.avi	47873	31.91533	1	27.21467	1088.08625	403.54491	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	309	08_L367.avi	47873	31.91533	1	27.21467	800.86253	435.88024	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	310	08_L367.avi	47873	31.91533	1	27.21467	1759.56873	931.25749	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	311	08_L367.avi	47873	31.91533	1	27.21467	1900.59299	961.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	312	08_L367.avi	47873	31.91533	1	27.21467	1890.24259	1023.08982	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	313	08_L367.avi	47873	31.91533	1	27.21467	1381.77898	953.24551	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	314	08_L367.avi	47873	31.91533	1	27.21467	1300.26954	681.62874	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	315	08_L367.avi	47873	31.91533	1	27.21467	1564.20485	673.86826	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	316	08_L367.avi	47873	31.91533	1	27.21467	1669.00270	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	317	08_L367.avi	47873	31.91533	1	27.21467	1698.76011	413.89222	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	318	08_L367.avi	47873	31.91533	1	27.21467	1309.32615	376.38323	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	319	08_L367.avi	47873	31.91533	1	27.21467	1813.90836	397.07784	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	320	08_L367.avi	47873	31.91533	1	27.21467	1440.00000	364.74251	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	321	08_L367.avi	47873	31.91533	1	27.21467	755.57951	614.37126	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	322	08_L367.avi	47873	31.91533	1	27.21467	628.78706	424.23952	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	323	08_L367.avi	48681	32.45400	1	27.75333	249.70350	598.85030	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	324	08_L367.avi	48681	32.45400	1	27.75333	229.00270	788.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	325	08_L367.avi	48681	32.45400	1	27.75333	599.02965	878.22754	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	326	08_L367.avi	48681	32.45400	1	27.75333	529.16442	323.35329	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	327	08_L367.avi	48681	32.45400	1	27.75333	382.96496	186.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	328	08_L367.avi	48681	32.45400	1	27.75333	538.22102	349.22156	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	329	08_L367.avi	48681	32.45400	1	27.75333	914.71698	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	330	08_L367.avi	48681	32.45400	1	27.75333	1098.43666	567.80838	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	331	08_L367.avi	48681	32.45400	1	27.75333	1336.49596	553.58084	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	332	08_L367.avi	48681	32.45400	1	27.75333	1357.19677	620.83832	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	333	08_L367.avi	48681	32.45400	1	27.75333	1597.84367	594.97006	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	334	08_L367.avi	48681	32.45400	1	27.75333	1606.90027	547.11377	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	335	08_L367.avi	48681	32.45400	1	27.75333	1645.71429	492.79042	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	336	08_L367.avi	48681	32.45400	1	27.75333	1854.01617	641.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	337	08_L367.avi	48681	32.45400	1	27.75333	1887.65499	503.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	338	08_L367.avi	48681	32.45400	1	27.75333	1883.77358	429.41317	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	339	08_L367.avi	48681	32.45400	1	27.75333	1806.14555	453.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	340	08_L367.avi	48681	32.45400	1	27.75333	1731.10512	439.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	341	08_L367.avi	48681	32.45400	1	27.75333	1842.37197	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	342	08_L367.avi	48681	32.45400	1	27.75333	1543.50404	377.67665	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	343	08_L367.avi	48681	32.45400	1	27.75333	1326.14555	349.22156	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	344	08_L367.avi	48681	32.45400	1	27.75333	1210.99730	406.13174	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	345	08_L367.avi	48681	32.45400	1	27.75333	963.88140	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	346	08_L367.avi	48681	32.45400	1	27.75333	1104.90566	287.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	347	08_L367.avi	48681	32.45400	1	27.75333	1141.13208	72.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	348	08_L367.avi	48681	32.45400	1	27.75333	932.83019	152.62275	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	349	08_L367.avi	48681	32.45400	1	27.75333	1639.24528	196.59880	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	350	08_L367.avi	48681	32.45400	1	27.75333	1753.09973	287.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	351	08_L367.avi	48681	32.45400	1	27.75333	1374.01617	41.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	352	08_L367.avi	48681	32.45400	1	27.75333	476.11860	790.27545	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	353	08_L367.avi	48681	32.45400	1	27.75333	245.82210	1004.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	354	08_L367.avi	48681	32.45400	1	27.75333	1106.19946	235.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	355	08_L367.avi	48681	32.45400	1	27.75333	1324.85175	102.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	356	08_L367.avi	48681	32.45400	1	27.75333	1458.11321	49.14970	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	357	08_L367.avi	48681	32.45400	1	27.75333	368.73315	922.20359	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	358	08_L367.avi	48681	32.45400	1	27.75333	752.99191	1025.67665	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	359	08_L367.avi	48681	32.45400	1	27.75333	866.84636	728.19162	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	360	08_L367.avi	48681	32.45400	1	27.75333	1463.28841	422.94611	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	361	08_L367.avi	48778	32.51867	1	27.81800	1465.87601	1033.43713	Monacanthidae	Meuschenia	galii	37465040	1	AD	Passing			
-08	362	08_L367.avi	48800	32.53333	1	27.83267	1072.56065	857.53293	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Feeding			
-08	363	08_L367.avi	48800	32.53333	1	27.83267	655.95687	763.11377	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	364	08_L367.avi	48800	32.53333	1	27.83267	574.44744	560.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	365	08_L367.avi	48800	32.53333	1	27.83267	654.66307	402.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	366	08_L367.avi	48800	32.53333	1	27.83267	513.63881	363.44910	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	367	08_L367.avi	48800	32.53333	1	27.83267	402.37197	441.05389	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	368	08_L367.avi	48800	32.53333	1	27.83267	327.33154	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	369	08_L367.avi	48800	32.53333	1	27.83267	68.57143	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	370	08_L367.avi	48800	32.53333	1	27.83267	69.86523	254.80240	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	371	08_L367.avi	48800	32.53333	1	27.83267	470.94340	228.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	372	08_L367.avi	48800	32.53333	1	27.83267	760.75472	267.73653	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	373	08_L367.avi	48800	32.53333	1	27.83267	914.71698	397.07784	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	374	08_L367.avi	48800	32.53333	1	27.83267	923.77358	434.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	375	08_L367.avi	48800	32.53333	1	27.83267	877.19677	459.16168	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	376	08_L367.avi	48800	32.53333	1	27.83267	742.64151	566.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	377	08_L367.avi	48800	32.53333	1	27.83267	1024.69003	399.66467	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	378	08_L367.avi	48800	32.53333	1	27.83267	1113.96226	356.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	379	08_L367.avi	48800	32.53333	1	27.83267	1104.90566	473.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	380	08_L367.avi	48800	32.53333	1	27.83267	1111.37466	541.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	381	08_L367.avi	48800	32.53333	1	27.83267	1319.67655	629.89222	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	382	08_L367.avi	48800	32.53333	1	27.83267	1489.16442	494.08383	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	383	08_L367.avi	48800	32.53333	1	27.83267	1513.74663	367.32934	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	384	08_L367.avi	48800	32.53333	1	27.83267	1270.51213	426.82635	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	385	08_L367.avi	48800	32.53333	1	27.83267	1226.52291	261.26946	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	386	08_L367.avi	48800	32.53333	1	27.83267	1513.74663	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	387	08_L367.avi	48800	32.53333	1	27.83267	1728.51752	117.70060	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	388	08_L367.avi	48800	32.53333	1	27.83267	1751.80593	223.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	389	08_L367.avi	48800	32.53333	1	27.83267	1542.21024	325.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	390	08_L367.avi	48800	32.53333	1	27.83267	1737.57412	395.78443	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	391	08_L367.avi	48800	32.53333	1	27.83267	1799.67655	582.03593	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	392	08_L367.avi	48800	32.53333	1	27.83267	1876.01078	569.10180	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	393	08_L367.avi	48800	32.53333	1	27.83267	1905.76819	644.11976	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	394	08_L367.avi	48800	32.53333	1	27.83267	1900.59299	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	395	08_L367.avi	48800	32.53333	1	27.83267	1511.15903	604.02395	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	396	08_L367.avi	48800	32.53333	1	27.83267	991.05121	1030.85030	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	397	08_L367.avi	48800	32.53333	1	27.83267	786.63073	684.21557	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	398	08_L367.avi	48800	32.53333	1	27.83267	771.10512	1029.55689	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	399	08_L367.avi	48800	32.53333	1	27.83267	1483.98922	698.44311	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	400	08_L367.avi	48800	32.53333	1	27.83267	388.14016	550.99401	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	401	08_L367.avi	48800	32.53333	1	27.83267	230.29650	659.64072	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	402	08_L367.avi	48800	32.53333	1	27.83267	18.11321	998.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	403	08_L367.avi	48800	32.53333	1	27.83267	1526.68464	426.82635	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	404	08_L367.avi	48800	32.53333	1	27.83267	1778.97574	422.94611	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	405	08_L367.avi	48800	32.53333	1	27.83267	1703.93531	20.69461	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	406	08_L367.avi	48800	32.53333	1	27.83267	1780.26954	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	407	08_L367.avi	48800	32.53333	1	27.83267	1696.17251	53.02994	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	408	08_L367.avi	48800	32.53333	1	27.83267	1452.93801	685.50898	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	409	08_L367.avi	48800	32.53333	1	27.83267	806.03774	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	410	08_L367.avi	48800	32.53333	1	27.83267	235.47170	632.47904	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	411	08_L367.avi	48800	32.53333	1	27.83267	966.46900	723.01796	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-08	412	08_L367.avi	48800	32.53333	1	27.83267	1174.77089	433.29341	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	413	08_L367.avi	51546	34.36400	1	29.66333	75.04043	80.19162	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
-08	414	08_L367.avi	55884	37.25600	1	32.55533	64.69003	742.41916	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	415	08_L367.avi	55884	37.25600	1	32.55533	258.76011	810.97006	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	416	08_L367.avi	55884	37.25600	1	32.55533	282.04852	907.97605	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	417	08_L367.avi	55884	37.25600	1	32.55533	993.63881	966.17964	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	418	08_L367.avi	55884	37.25600	1	32.55533	906.95418	755.35329	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	419	08_L367.avi	55884	37.25600	1	32.55533	1134.66307	743.71257	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	420	08_L367.avi	55884	37.25600	1	32.55533	899.19137	594.97006	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	421	08_L367.avi	55884	37.25600	1	32.55533	1063.50404	626.01198	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	422	08_L367.avi	55884	37.25600	1	32.55533	591.26685	607.90419	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	423	08_L367.avi	55884	37.25600	1	32.55533	412.72237	682.92216	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	424	08_L367.avi	55884	37.25600	1	32.55533	715.47170	820.02395	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	425	08_L367.avi	55884	37.25600	1	32.55533	687.00809	954.53892	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	426	08_L367.avi	55884	37.25600	1	32.55533	1797.08895	271.61677	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	427	08_L367.avi	62652	41.76800	1	37.06733	382.96496	920.91018	Plesiopidae	Paraplesiops	meleagris	37316009	1	AD	Passing			
-08	428	08_L367.avi	65791	43.86067	1	39.16000	1155.36388	690.68263	Serranidae	Hypoplectrodes	nigroruber	37311037	1	AD	Passing			
-08	429	08_L367.avi	67125	44.75000	1	40.04933	175.95687	942.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	430	08_L367.avi	67125	44.75000	1	40.04933	655.95687	1063.18563	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	431	08_L367.avi	67125	44.75000	1	40.04933	617.14286	733.36527	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	432	08_L367.avi	67125	44.75000	1	40.04933	600.32345	812.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	433	08_L367.avi	67125	44.75000	1	40.04933	621.02426	628.59880	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	434	08_L367.avi	67125	44.75000	1	40.04933	791.80593	460.45509	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	435	08_L367.avi	67125	44.75000	1	40.04933	1420.59299	585.91617	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	436	08_L367.avi	67125	44.75000	1	40.04933	1505.98383	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	437	08_L367.avi	67125	44.75000	1	40.04933	1298.97574	664.81437	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	438	08_L367.avi	67125	44.75000	1	40.04933	1245.92992	485.02994	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	439	08_L367.avi	67125	44.75000	1	40.04933	1168.30189	534.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	440	08_L367.avi	67125	44.75000	1	40.04933	1015.63342	429.41317	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	441	08_L367.avi	67125	44.75000	1	40.04933	949.64960	504.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	442	08_L367.avi	67125	44.75000	1	40.04933	945.76819	536.76647	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	443	08_L367.avi	67125	44.75000	1	40.04933	1265.33693	245.74850	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	444	08_L367.avi	67125	44.75000	1	40.04933	1504.69003	235.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	445	08_L367.avi	67125	44.75000	1	40.04933	1621.13208	240.57485	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	446	08_L367.avi	67125	44.75000	1	40.04933	1618.54447	162.97006	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	447	08_L367.avi	67125	44.75000	1	40.04933	1690.99730	535.47305	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	448	08_L367.avi	67125	44.75000	1	40.04933	1729.81132	641.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	449	08_L367.avi	67125	44.75000	1	40.04933	1891.53639	592.38323	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	450	08_L367.avi	67125	44.75000	1	40.04933	1760.86253	523.83234	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	451	08_L367.avi	67125	44.75000	1	40.04933	1394.71698	532.88623	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	452	08_L367.avi	67125	44.75000	1	40.04933	1375.30997	512.19162	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	453	08_L367.avi	67125	44.75000	1	40.04933	1565.49865	444.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	454	08_L367.avi	67125	44.75000	1	40.04933	1399.89218	355.68862	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	455	08_L367.avi	67125	44.75000	1	40.04933	1279.56873	263.85629	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	456	08_L367.avi	67125	44.75000	1	40.04933	1461.99461	307.83234	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	457	08_L367.avi	67125	44.75000	1	40.04933	1727.22372	421.65269	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	458	08_L367.avi	67125	44.75000	1	40.04933	1882.47978	452.69461	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	459	08_L367.avi	67125	44.75000	1	40.04933	1718.16712	813.55689	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	460	08_L367.avi	67125	44.75000	1	40.04933	1784.15094	803.20958	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	461	08_L367.avi	67125	44.75000	1	40.04933	1798.38275	857.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	462	08_L367.avi	67125	44.75000	1	40.04933	1148.89488	735.95210	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	463	08_L367.avi	67125	44.75000	1	40.04933	1133.36927	666.10778	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	464	08_L367.avi	67125	44.75000	1	40.04933	665.01348	483.73653	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	465	08_L367.avi	67125	44.75000	1	40.04933	1067.38544	455.28144	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	466	08_L367.avi	67125	44.75000	1	40.04933	1524.09704	310.41916	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-08	467	08_L367.avi	70868	47.24533	1	42.54467	1741.45553	230.22754	Labridae	Notolabrus	parilus	37384022	1	AD	Passing			
-08	468	08_L367.avi	73157	48.77133	1	44.07067	1279.56873	778.63473	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-08	469	08_L367.avi	73157	48.77133	1	44.07067	1679.35310	516.07186	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-08	470	08_L367.avi	73667	49.11133	1	44.41067	566.68464	225.05389	Cheilodactylidae	Nemadactylus	valenciennesi	37377004	1	AD	Passing			
-08	471	08_L367.avi	79621	53.08067	1	48.38000	451.62562	601.44420	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
-08	472	08_L367.avi	79621	53.08067	1	48.38000	333.39901	444.28884	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
-08	473	08_L367.avi	84159	56.10600	1	51.40533	1631.48248	649.29341	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	474	08_L367.avi	84159	56.10600	1	51.40533	1547.38544	644.11976	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	475	08_L367.avi	84159	56.10600	1	51.40533	1464.58221	653.17365	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	476	08_L367.avi	84159	56.10600	1	51.40533	1353.31536	646.70659	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	477	08_L367.avi	84159	56.10600	1	51.40533	1502.10243	497.96407	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	478	08_L367.avi	84159	56.10600	1	51.40533	1714.28571	548.40719	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	479	08_L367.avi	84159	56.10600	1	51.40533	1667.70889	505.72455	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	480	08_L367.avi	84159	56.10600	1	51.40533	1669.00270	424.23952	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	481	08_L367.avi	84159	56.10600	1	51.40533	1619.83827	364.74251	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	482	08_L367.avi	84159	56.10600	1	51.40533	1524.09704	368.62275	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	483	08_L367.avi	84159	56.10600	1	51.40533	1282.15633	363.44910	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	484	08_L367.avi	84159	56.10600	1	51.40533	525.28302	646.70659	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	485	08_L367.avi	84159	56.10600	1	51.40533	756.87332	715.25749	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	486	08_L367.avi	84159	56.10600	1	51.40533	771.10512	690.68263	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	487	08_L367.avi	84159	56.10600	1	51.40533	822.85714	660.93413	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	488	08_L367.avi	84159	56.10600	1	51.40533	241.94070	933.84431	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	489	08_L367.avi	84159	56.10600	1	51.40533	305.33693	984.28743	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	490	08_L367.avi	84159	56.10600	1	51.40533	1775.09434	623.42515	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	491	08_L367.avi	84159	56.10600	1	51.40533	1376.60377	694.56287	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	492	08_L367.avi	84159	56.10600	1	51.40533	1276.98113	228.93413	Labridae	Pseudolabrus	biserialis	37384149	1	J	Passing			
-08	493	08_L367.avi	84159	56.10600	1	51.40533	904.36658	779.92814	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	494	08_L367.avi	84159	56.10600	1	51.40533	1081.98895	287.55828	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	495	08_L367.avi	84159	56.10600	1	51.40533	1746.29834	447.90184	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	496	08_L367.avi	84159	56.10600	1	51.40533	1906.74033	553.91411	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	497	08_L367.avi	84159	56.10600	1	51.40533	827.40331	439.95092	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
-08	498	08_L367.avi	88374	58.91600	1	54.21533	285.92992	205.65269	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
-08	499	08_L367.avi	88374	58.91600	1	54.21533	320.86253	99.59281	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
-08	500	08_L367.avi	90943	60.62867	1	55.92800	124.20485	809.67665	Aplodactylidae	Aplodactylus	westralis	37376004	1	AD	Passing			
-08	501	08_L367.avi	94007	62.67133	1	57.97067	851.32075	861.41317	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
-08	502	08_L367.avi	94007	62.67133	1	57.97067	1873.89163	812.95405	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
-08	503	08_L367.avi	94044	62.69600	1	57.99533	1884.35644	273.26733	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
-08	504	08_L367.avi	94044	62.69600	1	57.99533	1669.30693	848.31683	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
-08	505	08_L367.avi	94044	62.69600	1	57.99533	589.30693	844.75248	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
-08	506	08_L367.avi	94375	62.91667	1	58.21600	399.78437	898.92216	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	507	08_L367.avi	94375	62.91667	1	58.21600	531.75202	979.11377	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	508	08_L367.avi	94375	62.91667	1	58.21600	635.25606	989.46108	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	509	08_L367.avi	94375	62.91667	1	58.21600	746.52291	1051.54491	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	510	08_L367.avi	94375	62.91667	1	58.21600	772.39892	1021.79641	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	511	08_L367.avi	94375	62.91667	1	58.21600	800.86253	1003.68862	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	512	08_L367.avi	94375	62.91667	1	58.21600	828.03235	896.33533	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	513	08_L367.avi	94375	62.91667	1	58.21600	826.73854	866.58683	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	514	08_L367.avi	94375	62.91667	1	58.21600	793.09973	813.55689	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	515	08_L367.avi	94375	62.91667	1	58.21600	751.69811	854.94611	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	516	08_L367.avi	94375	62.91667	1	58.21600	733.58491	817.43713	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	517	08_L367.avi	94375	62.91667	1	58.21600	675.36388	848.47904	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	518	08_L367.avi	94375	62.91667	1	58.21600	699.94609	763.11377	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	519	08_L367.avi	94375	62.91667	1	58.21600	575.74124	812.26347	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	520	08_L367.avi	94375	62.91667	1	58.21600	662.42588	754.05988	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	521	08_L367.avi	94375	62.91667	1	58.21600	644.31267	765.70060	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	522	08_L367.avi	94375	62.91667	1	58.21600	611.96765	745.00599	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	523	08_L367.avi	94375	62.91667	1	58.21600	574.44744	741.12575	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	524	08_L367.avi	94375	62.91667	1	58.21600	530.45822	800.62275	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	525	08_L367.avi	94375	62.91667	1	58.21600	542.10243	755.35329	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	526	08_L367.avi	94375	62.91667	1	58.21600	516.22642	772.16766	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	527	08_L367.avi	94375	62.91667	1	58.21600	494.23181	773.46108	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	528	08_L367.avi	94375	62.91667	1	58.21600	437.30458	781.22156	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	529	08_L367.avi	94375	62.91667	1	58.21600	439.89218	823.90419	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	530	08_L367.avi	94375	62.91667	1	58.21600	371.32075	832.95808	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	531	08_L367.avi	94375	62.91667	1	58.21600	319.56873	822.61078	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	532	08_L367.avi	94375	62.91667	1	58.21600	331.21294	825.19760	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	533	08_L367.avi	94375	62.91667	1	58.21600	287.22372	954.53892	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	534	08_L367.avi	94375	62.91667	1	58.21600	287.22372	1012.74251	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	535	08_L367.avi	94375	62.91667	1	58.21600	225.12129	1010.15569	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	536	08_L367.avi	94375	62.91667	1	58.21600	232.88410	951.95210	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	537	08_L367.avi	94375	62.91667	1	58.21600	75.04043	915.73653	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	538	08_L367.avi	94375	62.91667	1	58.21600	71.15903	860.11976	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	539	08_L367.avi	94375	62.91667	1	58.21600	136.57459	1060.12270	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	540	08_L367.avi	94375	62.91667	1	58.21600	156.46409	997.84049	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	541	08_L367.avi	94375	62.91667	1	58.21600	125.96685	989.88957	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	542	08_L367.avi	94375	62.91667	1	58.21600	18.56354	967.36196	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	543	08_L367.avi	94375	62.91667	1	58.21600	164.41989	883.87730	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	544	08_L367.avi	94375	62.91667	1	58.21600	212.15470	844.12270	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	545	08_L367.avi	94375	62.91667	1	58.21600	132.59669	820.26994	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	546	08_L367.avi	94375	62.91667	1	58.21600	51.71271	810.99387	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	547	08_L367.avi	94375	62.91667	1	58.21600	41.10497	846.77301	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	548	08_L367.avi	94375	62.91667	1	58.21600	33.14917	793.76687	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	549	08_L367.avi	94375	62.91667	1	58.21600	59.66851	759.31288	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	550	08_L367.avi	94375	62.91667	1	58.21600	103.42541	746.06135	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	551	08_L367.avi	94375	62.91667	1	58.21600	270.49724	754.01227	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	552	08_L367.avi	94375	62.91667	1	58.21600	283.75691	792.44172	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	553	08_L367.avi	94375	62.91667	1	58.21600	580.77348	1061.44785	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	554	08_L367.avi	94375	62.91667	1	58.21600	399.11602	760.63804	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	555	08_L367.avi	94375	62.91667	1	58.21600	395.13812	748.71166	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	556	08_L367.avi	94375	62.91667	1	58.21600	429.61326	858.69939	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	557	08_L367.avi	94375	62.91667	1	58.21600	534.36464	881.22699	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	558	08_L367.avi	94375	62.91667	1	58.21600	214.80663	993.86503	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	559	08_L367.avi	94375	62.91667	1	58.21600	10.60773	1038.92025	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
-08	560	08_L367.avi	94375	62.91667	1	58.21600	39.77901	761.96319	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	81	08_L367.avi	7252	4.83467	1	0.13400	1591.60546	898.65672	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing	measurements taken here		
+08	82	08_L367.avi	7310	4.87333	1	0.17267	1608.71287	567.92079	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	83	08_L367.avi	7430	4.95333	1	0.25267	647.52475	288.71287	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
+08	84	08_L367.avi	7586	5.05733	1	0.35667	159.20792	153.26733	Labridae	Choerodon	rubescens	37384039	1	AD	Passing			
+08	85	08_L367.avi	7586	5.05733	1	0.35667	580.99010	212.67327	Scorpididae	Tilodon	sexfasciatus	37361003	1	AD	Passing			
+08	86	08_L367.avi	7586	5.05733	1	0.35667	1518.41584	392.07921	Scorpididae	Tilodon	sexfasciatus	37361003	1	AD	Passing			
+08	87	08_L367.avi	8191	5.46067	1	0.76000	1420.99010	109.30693	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	88	08_L367.avi	8356	5.57067	1	0.87000	700.99010	809.10891	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	89	08_L367.avi	8356	5.57067	1	0.87000	1291.48515	711.68317	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	90	08_L367.avi	8356	5.57067	1	0.87000	1617.02970	649.90099	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	91	08_L367.avi	8570	5.71333	1	1.01267	670.09901	510.89109	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	92	08_L367.avi	8570	5.71333	1	1.01267	1100.19802	588.11881	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	93	08_L367.avi	8570	5.71333	1	1.01267	1259.40594	565.54455	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	94	08_L367.avi	8570	5.71333	1	1.01267	1322.37624	734.25743	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	95	08_L367.avi	8570	5.71333	1	1.01267	407.52475	883.96040	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	96	08_L367.avi	8780	5.85333	1	1.15267	483.56436	525.14851	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	97	08_L367.avi	8780	5.85333	1	1.15267	344.55446	633.26733	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	98	08_L367.avi	9006	6.00400	1	1.30333	405.14851	717.62376	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	99	08_L367.avi	9006	6.00400	1	1.30333	483.56436	935.04950	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	100	08_L367.avi	9006	6.00400	1	1.30333	733.06931	810.29703	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	101	08_L367.avi	9006	6.00400	1	1.30333	447.92079	482.37624	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	102	08_L367.avi	9006	6.00400	1	1.30333	275.64356	509.70297	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	103	08_L367.avi	9006	6.00400	1	1.30333	623.76238	525.14851	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	104	08_L367.avi	9057	6.03800	1	1.33733	528.71287	270.89109	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	105	08_L367.avi	9057	6.03800	1	1.33733	1173.86139	525.14851	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	106	08_L367.avi	9426	6.28400	1	1.58333	766.33663	583.36634	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing			
+08	107	08_L367.avi	9543	6.36200	1	1.66133	282.04852	572.98204	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
+08	108	08_L367.avi	9543	6.36200	1	1.66133	931.53639	53.02994	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
+08	109	08_L367.avi	9712	6.47467	1	1.77400	555.04043	262.56287	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	110	08_L367.avi	9712	6.47467	1	1.77400	693.47709	688.09581	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	111	08_L367.avi	9712	6.47467	1	1.77400	1521.50943	73.72455	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	112	08_L367.avi	9976	6.65067	1	1.95000	487.12871	861.38614	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	113	08_L367.avi	10617	7.07800	1	2.37733	710.29650	896.33533	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	114	08_L367.avi	10617	7.07800	1	2.37733	692.18329	768.28743	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	115	08_L367.avi	10617	7.07800	1	2.37733	769.81132	657.05389	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	116	08_L367.avi	10617	7.07800	1	2.37733	473.53100	570.39521	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	117	08_L367.avi	10617	7.07800	1	2.37733	1157.95148	407.42515	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	118	08_L367.avi	10617	7.07800	1	2.37733	1311.91375	298.77844	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	119	08_L367.avi	10617	7.07800	1	2.37733	1487.87062	447.52096	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	120	08_L367.avi	10621	7.08067	1	2.38000	1182.53369	615.66467	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	121	08_L367.avi	10958	7.30533	1	2.60467	672.77628	150.03593	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	122	08_L367.avi	11198	7.46533	1	2.76467	643.01887	1050.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	123	08_L367.avi	11198	7.46533	1	2.76467	693.47709	776.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	124	08_L367.avi	11198	7.46533	1	2.76467	399.78437	849.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	125	08_L367.avi	11198	7.46533	1	2.76467	341.56334	729.48503	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	126	08_L367.avi	11198	7.46533	1	2.76467	1586.19946	672.57485	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	127	08_L367.avi	11198	7.46533	1	2.76467	785.33693	168.14371	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	128	08_L367.avi	11198	7.46533	1	2.76467	944.47439	441.05389	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	129	08_L367.avi	11198	7.46533	1	2.76467	813.80054	271.61677	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	130	08_L367.avi	11198	7.46533	1	2.76467	553.74663	128.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	131	08_L367.avi	11198	7.46533	1	2.76467	536.92722	759.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	132	08_L367.avi	11198	7.46533	1	2.76467	725.82210	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	133	08_L367.avi	11198	7.46533	1	2.76467	1046.68464	566.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	134	08_L367.avi	11198	7.46533	1	2.76467	1537.03504	560.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	135	08_L367.avi	11198	7.46533	1	2.76467	267.81671	849.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	136	08_L367.avi	11691	7.79400	1	3.09333	481.29380	95.71257	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
+08	137	08_L367.avi	12611	8.40733	1	3.70667	512.34501	451.40120	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	138	08_L367.avi	12611	8.40733	1	3.70667	719.35310	244.45509	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	139	08_L367.avi	12611	8.40733	1	3.70667	1262.74933	626.01198	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	140	08_L367.avi	12611	8.40733	1	3.70667	1231.69811	285.84431	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	141	08_L367.avi	12614	8.40933	1	3.70867	884.95957	851.06587	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	142	08_L367.avi	12614	8.40933	1	3.70867	1681.94070	641.53293	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	143	08_L367.avi	13187	8.79133	1	4.09067	1797.08895	616.95808	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	144	08_L367.avi	13187	8.79133	1	4.09067	1389.54178	212.11976	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	145	08_L367.avi	13187	8.79133	1	4.09067	1214.87871	184.95808	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	146	08_L367.avi	13187	8.79133	1	4.09067	1731.10512	307.83234	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	147	08_L367.avi	13299	8.86600	1	4.16533	716.76550	929.96407	Scorpididae	Scorpis	georgiana	37361015	1	AD	Passing			
+08	148	08_L367.avi	13363	8.90867	1	4.20800	621.02426	729.48503	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	149	08_L367.avi	13363	8.90867	1	4.20800	824.15094	738.53892	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	150	08_L367.avi	13363	8.90867	1	4.20800	818.97574	294.89820	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	151	08_L367.avi	13363	8.90867	1	4.20800	1157.95148	204.35928	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	152	08_L367.avi	13363	8.90867	1	4.20800	1275.68733	106.05988	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	153	08_L367.avi	13363	8.90867	1	4.20800	1700.05391	194.01198	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	154	08_L367.avi	13363	8.90867	1	4.20800	1476.22642	279.37725	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	155	08_L367.avi	13406	8.93733	1	4.23667	288.51752	314.29940	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	156	08_L367.avi	13406	8.93733	1	4.23667	652.07547	223.76048	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	157	08_L367.avi	13406	8.93733	1	4.23667	809.91914	446.22754	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	158	08_L367.avi	13406	8.93733	1	4.23667	718.05930	645.41317	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	159	08_L367.avi	13406	8.93733	1	4.23667	1314.50135	347.92814	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	160	08_L367.avi	13406	8.93733	1	4.23667	1257.57412	153.91617	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	161	08_L367.avi	13406	8.93733	1	4.23667	1390.83558	156.50299	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	162	08_L367.avi	13406	8.93733	1	4.23667	941.88679	159.08982	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	163	08_L367.avi	13406	8.93733	1	4.23667	822.85714	799.32934	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	164	08_L367.avi	17043	11.36200	1	6.66133	632.66846	998.51497	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
+08	165	08_L367.avi	17043	11.36200	1	6.66133	1440.00000	172.02395	Glaucosomatidae	Glaucosoma	hebraicum	37320004	1	AD	Passing			
+08	166	08_L367.avi	17937	11.95800	1	7.25733	856.49596	936.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	167	08_L367.avi	17937	11.95800	1	7.25733	1015.63342	532.88623	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	168	08_L367.avi	17937	11.95800	1	7.25733	1350.72776	689.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	169	08_L367.avi	17937	11.95800	1	7.25733	1762.15633	534.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	170	08_L367.avi	17937	11.95800	1	7.25733	1846.25337	669.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	171	08_L367.avi	17937	11.95800	1	7.25733	1811.32075	891.16168	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	172	08_L367.avi	17937	11.95800	1	7.25733	1882.47978	982.99401	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	173	08_L367.avi	17937	11.95800	1	7.25733	1516.33423	1014.03593	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	174	08_L367.avi	17937	11.95800	1	7.25733	1213.58491	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	175	08_L367.avi	17937	11.95800	1	7.25733	1273.09973	479.85629	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	176	08_L367.avi	17937	11.95800	1	7.25733	1363.66577	931.25749	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	177	08_L367.avi	18480	12.32000	1	7.61933	1267.62431	686.42945	Sparidae	Chrysophrys	auratus	37353001	1	AD	Feeding			
+08	178	08_L367.avi	19872	13.24800	1	8.54733	323.45013	187.54491	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
+08	179	08_L367.avi	19957	13.30467	1	8.60400	614.55526	248.33533	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
+08	180	08_L367.avi	22597	15.06467	1	10.36400	796.98113	796.74251	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	181	08_L367.avi	22597	15.06467	1	10.36400	1270.51213	697.14970	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	182	08_L367.avi	22597	15.06467	1	10.36400	1722.04852	796.74251	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	183	08_L367.avi	22597	15.06467	1	10.36400	1320.97035	408.71856	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	184	08_L367.avi	22597	15.06467	1	10.36400	705.12129	380.26347	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	185	08_L367.avi	23043	15.36200	1	10.66133	542.10243	517.36527	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
+08	186	08_L367.avi	23043	15.36200	1	10.66133	736.17251	182.37126	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
+08	187	08_L367.avi	25333	16.88867	1	12.18800	847.43935	720.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	188	08_L367.avi	25333	16.88867	1	12.18800	909.54178	726.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	189	08_L367.avi	25333	16.88867	1	12.18800	1095.84906	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	190	08_L367.avi	25333	16.88867	1	12.18800	1562.91105	611.78443	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	191	08_L367.avi	25333	16.88867	1	12.18800	1621.13208	596.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	192	08_L367.avi	25333	16.88867	1	12.18800	1412.83019	636.35928	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	193	08_L367.avi	25333	16.88867	1	12.18800	1355.90296	578.15569	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	194	08_L367.avi	25333	16.88867	1	12.18800	1631.48248	289.72455	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	195	08_L367.avi	25333	16.88867	1	12.18800	1631.48248	327.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	196	08_L367.avi	25333	16.88867	1	12.18800	1692.29111	430.70659	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	197	08_L367.avi	25333	16.88867	1	12.18800	1760.86253	453.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	198	08_L367.avi	25333	16.88867	1	12.18800	1759.56873	660.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	199	08_L367.avi	25333	16.88867	1	12.18800	1750.51213	779.92814	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	200	08_L367.avi	25333	16.88867	1	12.18800	1091.96765	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	201	08_L367.avi	25333	16.88867	1	12.18800	993.63881	593.67665	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	202	08_L367.avi	25333	16.88867	1	12.18800	1112.66846	776.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	203	08_L367.avi	25333	16.88867	1	12.18800	1278.27493	658.34731	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	204	08_L367.avi	25333	16.88867	1	12.18800	1298.97574	574.27545	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	205	08_L367.avi	25333	16.88867	1	12.18800	1320.97035	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	206	08_L367.avi	25333	16.88867	1	12.18800	1763.45013	177.19760	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	207	08_L367.avi	25333	16.88867	1	12.18800	1121.72507	667.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	208	08_L367.avi	25333	16.88867	1	12.18800	1054.44744	677.74850	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	209	08_L367.avi	25333	16.88867	1	12.18800	839.67655	820.02395	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	210	08_L367.avi	25333	16.88867	1	12.18800	862.96496	796.74251	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	211	08_L367.avi	25333	16.88867	1	12.18800	1507.27763	684.21557	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	212	08_L367.avi	25333	16.88867	1	12.18800	1539.62264	302.65868	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	213	08_L367.avi	27116	18.07733	1	13.37667	512.34501	979.11377	Scorpaenidae	Scorpaena	sumptuosa	37287072	1	AD	Passing			
+08	214	08_L367.avi	27116	18.07733	1	13.37667	1379.40594	948.11881	Scorpaenidae	Scorpaena	sumptuosa	37287072	1	AD	Passing			
+08	215	08_L367.avi	28295	18.86333	1	14.16267	952.23720	951.95210	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	216	08_L367.avi	28295	18.86333	1	14.16267	1045.39084	655.76048	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	217	08_L367.avi	28295	18.86333	1	14.16267	795.68733	565.22156	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	218	08_L367.avi	28295	18.86333	1	14.16267	1358.49057	566.51497	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	219	08_L367.avi	28295	18.86333	1	14.16267	1330.02695	826.49102	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	220	08_L367.avi	28295	18.86333	1	14.16267	1397.30458	984.28743	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
+08	221	08_L367.avi	29843	19.89533	1	15.19467	388.14016	689.38922	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	222	08_L367.avi	29843	19.89533	1	15.19467	511.05121	624.71856	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	223	08_L367.avi	29843	19.89533	1	15.19467	850.02695	545.82036	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	224	08_L367.avi	29843	19.89533	1	15.19467	1799.67655	209.53293	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	225	08_L367.avi	29843	19.89533	1	15.19467	1292.50674	375.08982	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	226	08_L367.avi	29843	19.89533	1	15.19467	1168.30189	15.52096	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	227	08_L367.avi	29843	19.89533	1	15.19467	1599.13747	389.31737	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	228	08_L367.avi	29843	19.89533	1	15.19467	1592.66846	199.18563	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	229	08_L367.avi	29843	19.89533	1	15.19467	1463.28841	173.31737	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	230	08_L367.avi	31220	20.81333	1	16.11267	477.41240	497.96407	Labridae	Coris	auricularis	37384088	1	M	Passing			
+08	231	08_L367.avi	31220	20.81333	1	16.11267	1635.36388	77.60479	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	232	08_L367.avi	31220	20.81333	1	16.11267	1795.79515	116.40719	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	233	08_L367.avi	33457	22.30467	1	17.60400	1835.90296	862.70659	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	234	08_L367.avi	33457	22.30467	1	17.60400	1785.44474	942.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	235	08_L367.avi	33457	22.30467	1	17.60400	1733.69272	633.77246	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	236	08_L367.avi	33457	22.30467	1	17.60400	1790.61995	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	237	08_L367.avi	33457	22.30467	1	17.60400	1738.86792	359.56886	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	238	08_L367.avi	33457	22.30467	1	17.60400	1728.51752	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	239	08_L367.avi	33457	22.30467	1	17.60400	1609.48787	275.49701	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	240	08_L367.avi	33457	22.30467	1	17.60400	1577.14286	420.35928	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	241	08_L367.avi	33457	22.30467	1	17.60400	1507.27763	460.45509	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	242	08_L367.avi	33457	22.30467	1	17.60400	720.64690	443.64072	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	243	08_L367.avi	33457	22.30467	1	17.60400	485.17520	517.36527	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	244	08_L367.avi	33457	22.30467	1	17.60400	1058.32884	147.44910	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	245	08_L367.avi	33457	22.30467	1	17.60400	857.78976	860.11976	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	246	08_L367.avi	33457	22.30467	1	17.60400	921.18598	866.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	247	08_L367.avi	33457	22.30467	1	17.60400	1354.60916	1029.55689	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	248	08_L367.avi	33457	22.30467	1	17.60400	1331.32075	967.47305	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	249	08_L367.avi	33457	22.30467	1	17.60400	571.85984	576.86228	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	250	08_L367.avi	33457	22.30467	1	17.60400	1388.24798	1028.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	251	08_L367.avi	34967	23.31133	1	18.61067	261.34771	291.01796	Labridae	Notolabrus	parilus	37384022	1	AD	Passing			
+08	252	08_L367.avi	35133	23.42200	1	18.72133	1725.92992	667.40120	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	253	08_L367.avi	35133	23.42200	1	18.72133	1690.99730	746.29940	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	254	08_L367.avi	35133	23.42200	1	18.72133	1650.88949	704.91018	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	255	08_L367.avi	35133	23.42200	1	18.72133	1618.54447	667.40120	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	256	08_L367.avi	35133	23.42200	1	18.72133	1640.53908	572.98204	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	257	08_L367.avi	35133	23.42200	1	18.72133	1564.20485	470.80240	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	258	08_L367.avi	35133	23.42200	1	18.72133	1468.46361	441.05389	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	259	08_L367.avi	35133	23.42200	1	18.72133	1216.17251	545.82036	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	260	08_L367.avi	35133	23.42200	1	18.72133	1639.24528	71.13772	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	261	08_L367.avi	35133	23.42200	1	18.72133	1458.11321	156.50299	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	262	08_L367.avi	35133	23.42200	1	18.72133	971.64420	320.76647	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	263	08_L367.avi	35133	23.42200	1	18.72133	1064.79784	280.67066	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	264	08_L367.avi	35133	23.42200	1	18.72133	1384.36658	501.84431	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	265	08_L367.avi	35133	23.42200	1	18.72133	1733.69272	280.67066	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	266	08_L367.avi	35133	23.42200	1	18.72133	1744.04313	316.88623	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	267	08_L367.avi	35133	23.42200	1	18.72133	1745.33693	341.46108	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	268	08_L367.avi	35133	23.42200	1	18.72133	1755.68733	116.40719	Labridae	Coris	auricularis	37384088	1	F	Passing			
+08	269	08_L367.avi	35133	23.42200	1	18.72133	1317.60756	157.16418	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	270	08_L367.avi	35133	23.42200	1	18.72133	840.12592	548.05970	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	271	08_L367.avi	35133	23.42200	1	18.72133	1196.72613	670.97015	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	272	08_L367.avi	35133	23.42200	1	18.72133	739.39140	308.28358	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	273	08_L367.avi	35133	23.42200	1	18.72133	682.98006	167.23881	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	274	08_L367.avi	35133	23.42200	1	18.72133	1799.11857	372.76119	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	275	08_L367.avi	35133	23.42200	1	18.72133	1609.73767	312.31343	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	276	08_L367.avi	35133	23.42200	1	18.72133	1909.92655	570.22388	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	277	08_L367.avi	35133	23.42200	1	18.72133	1390.13641	40.29851	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	278	08_L367.avi	35133	23.42200	1	18.72133	1297.46065	683.05970	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	279	08_L367.avi	35133	23.42200	1	18.72133	1170.53515	741.49254	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	280	08_L367.avi	35133	23.42200	1	18.72133	1361.93075	852.31343	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	281	08_L367.avi	35133	23.42200	1	18.72133	233.70409	999.40299	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	282	08_L367.avi	35133	23.42200	1	18.72133	793.78804	699.17910	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	283	08_L367.avi	35133	23.42200	1	18.72133	1037.56558	316.34328	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	284	08_L367.avi	35133	23.42200	1	18.72133	948.91920	296.19403	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	285	08_L367.avi	35133	23.42200	1	18.72133	1001.30115	459.40299	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	286	08_L367.avi	35133	23.42200	1	18.72133	1424.38615	139.02985	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+08	287	08_L367.avi	35146	23.43067	1	18.73000	1543.50404	323.35329	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+08	288	08_L367.avi	35146	23.43067	1	18.73000	1159.24528	659.64072	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	289	08_L367.avi	35146	23.43067	1	18.73000	1331.32075	532.88623	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	290	08_L367.avi	35176	23.45067	1	18.75000	104.76390	386.86567	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	291	08_L367.avi	35176	23.45067	1	18.75000	282.05666	352.61194	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	292	08_L367.avi	35176	23.45067	1	18.75000	98.71983	326.41791	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	293	08_L367.avi	35206	23.47067	1	18.77000	92.67576	362.68657	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	294	08_L367.avi	35206	23.47067	1	18.77000	136.99895	411.04478	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	295	08_L367.avi	35206	23.47067	1	18.77000	28.20567	658.88060	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	296	08_L367.avi	35206	23.47067	1	18.77000	64.47009	586.34328	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	297	08_L367.avi	35206	23.47067	1	18.77000	227.66002	769.70149	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	298	08_L367.avi	35206	23.47067	1	18.77000	231.68940	501.71642	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	299	08_L367.avi	35273	23.51533	1	18.81467	233.70409	324.40299	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	300	08_L367.avi	35273	23.51533	1	18.81467	247.80693	411.04478	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	301	08_L367.avi	35273	23.51533	1	18.81467	143.04302	419.10448	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	302	08_L367.avi	35273	23.51533	1	18.81467	255.86569	529.92537	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	303	08_L367.avi	35273	23.51533	1	18.81467	219.60126	501.71642	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	304	08_L367.avi	35273	23.51533	1	18.81467	157.14586	548.05970	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	305	08_L367.avi	35273	23.51533	1	18.81467	38.27912	648.80597	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	306	08_L367.avi	35273	23.51533	1	18.81467	380.77650	699.17910	Plesiopidae	Trachinops	noarlungae	37316017	1	AD	Passing			
+08	307	08_L367.avi	35477	23.65133	1	18.95067	179.83827	1039.90419	Pomacentridae	Parma	bicolor	37372092	1	AD	Passing			
+08	308	08_L367.avi	38632	25.75467	1	21.05400	636.05911	647.52735	Carangidae	Seriola	hippos	37337007	1	AD	Passing			
+08	309	08_L367.avi	39418	26.27867	1	21.57800	1467.16981	291.01796	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Passing			
+08	310	08_L367.avi	46650	31.10000	1	26.39933	260.05391	588.50299	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
+08	311	08_L367.avi	46650	31.10000	1	26.39933	352.31527	177.24289	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
+08	312	08_L367.avi	47873	31.91533	1	27.21467	121.61725	353.10180	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	313	08_L367.avi	47873	31.91533	1	27.21467	505.87601	65.96407	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	314	08_L367.avi	47873	31.91533	1	27.21467	913.42318	655.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	315	08_L367.avi	47873	31.91533	1	27.21467	1314.50135	759.23353	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	316	08_L367.avi	47873	31.91533	1	27.21467	1694.87871	720.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	317	08_L367.avi	47873	31.91533	1	27.21467	1847.54717	757.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	318	08_L367.avi	47873	31.91533	1	27.21467	1891.53639	686.80240	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	319	08_L367.avi	47873	31.91533	1	27.21467	1899.29919	631.18563	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	320	08_L367.avi	47873	31.91533	1	27.21467	1613.36927	650.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	321	08_L367.avi	47873	31.91533	1	27.21467	1408.94879	660.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	322	08_L367.avi	47873	31.91533	1	27.21467	1333.90836	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	323	08_L367.avi	47873	31.91533	1	27.21467	1223.93531	416.47904	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	324	08_L367.avi	47873	31.91533	1	27.21467	1340.37736	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	325	08_L367.avi	47873	31.91533	1	27.21467	1575.84906	174.61078	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	326	08_L367.avi	47873	31.91533	1	27.21467	1088.08625	403.54491	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	327	08_L367.avi	47873	31.91533	1	27.21467	800.86253	435.88024	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	328	08_L367.avi	47873	31.91533	1	27.21467	1759.56873	931.25749	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	329	08_L367.avi	47873	31.91533	1	27.21467	1900.59299	961.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	330	08_L367.avi	47873	31.91533	1	27.21467	1890.24259	1023.08982	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	331	08_L367.avi	47873	31.91533	1	27.21467	1381.77898	953.24551	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	332	08_L367.avi	47873	31.91533	1	27.21467	1300.26954	681.62874	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	333	08_L367.avi	47873	31.91533	1	27.21467	1564.20485	673.86826	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	334	08_L367.avi	47873	31.91533	1	27.21467	1669.00270	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	335	08_L367.avi	47873	31.91533	1	27.21467	1698.76011	413.89222	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	336	08_L367.avi	47873	31.91533	1	27.21467	1309.32615	376.38323	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	337	08_L367.avi	47873	31.91533	1	27.21467	1813.90836	397.07784	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	338	08_L367.avi	47873	31.91533	1	27.21467	1440.00000	364.74251	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	339	08_L367.avi	47873	31.91533	1	27.21467	755.57951	614.37126	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	340	08_L367.avi	47873	31.91533	1	27.21467	628.78706	424.23952	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	341	08_L367.avi	48681	32.45400	1	27.75333	249.70350	598.85030	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	342	08_L367.avi	48681	32.45400	1	27.75333	229.00270	788.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	343	08_L367.avi	48681	32.45400	1	27.75333	599.02965	878.22754	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	344	08_L367.avi	48681	32.45400	1	27.75333	529.16442	323.35329	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	345	08_L367.avi	48681	32.45400	1	27.75333	382.96496	186.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	346	08_L367.avi	48681	32.45400	1	27.75333	538.22102	349.22156	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	347	08_L367.avi	48681	32.45400	1	27.75333	914.71698	572.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	348	08_L367.avi	48681	32.45400	1	27.75333	1098.43666	567.80838	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	349	08_L367.avi	48681	32.45400	1	27.75333	1336.49596	553.58084	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	350	08_L367.avi	48681	32.45400	1	27.75333	1357.19677	620.83832	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	351	08_L367.avi	48681	32.45400	1	27.75333	1597.84367	594.97006	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	352	08_L367.avi	48681	32.45400	1	27.75333	1606.90027	547.11377	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	353	08_L367.avi	48681	32.45400	1	27.75333	1645.71429	492.79042	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	354	08_L367.avi	48681	32.45400	1	27.75333	1854.01617	641.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	355	08_L367.avi	48681	32.45400	1	27.75333	1887.65499	503.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	356	08_L367.avi	48681	32.45400	1	27.75333	1883.77358	429.41317	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	357	08_L367.avi	48681	32.45400	1	27.75333	1806.14555	453.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	358	08_L367.avi	48681	32.45400	1	27.75333	1731.10512	439.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	359	08_L367.avi	48681	32.45400	1	27.75333	1842.37197	313.00599	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	360	08_L367.avi	48681	32.45400	1	27.75333	1543.50404	377.67665	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	361	08_L367.avi	48681	32.45400	1	27.75333	1326.14555	349.22156	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	362	08_L367.avi	48681	32.45400	1	27.75333	1210.99730	406.13174	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	363	08_L367.avi	48681	32.45400	1	27.75333	963.88140	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	364	08_L367.avi	48681	32.45400	1	27.75333	1104.90566	287.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	365	08_L367.avi	48681	32.45400	1	27.75333	1141.13208	72.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	366	08_L367.avi	48681	32.45400	1	27.75333	932.83019	152.62275	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	367	08_L367.avi	48681	32.45400	1	27.75333	1639.24528	196.59880	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	368	08_L367.avi	48681	32.45400	1	27.75333	1753.09973	287.13772	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	369	08_L367.avi	48681	32.45400	1	27.75333	1374.01617	41.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	370	08_L367.avi	48681	32.45400	1	27.75333	476.11860	790.27545	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	371	08_L367.avi	48681	32.45400	1	27.75333	245.82210	1004.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	372	08_L367.avi	48681	32.45400	1	27.75333	1106.19946	235.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	373	08_L367.avi	48681	32.45400	1	27.75333	1324.85175	102.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	374	08_L367.avi	48681	32.45400	1	27.75333	1458.11321	49.14970	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	375	08_L367.avi	48681	32.45400	1	27.75333	368.73315	922.20359	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	376	08_L367.avi	48681	32.45400	1	27.75333	752.99191	1025.67665	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	377	08_L367.avi	48681	32.45400	1	27.75333	866.84636	728.19162	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	378	08_L367.avi	48681	32.45400	1	27.75333	1463.28841	422.94611	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	379	08_L367.avi	48778	32.51867	1	27.81800	1465.87601	1033.43713	Monacanthidae	Meuschenia	galii	37465040	1	AD	Passing			
+08	380	08_L367.avi	48800	32.53333	1	27.83267	1072.56065	857.53293	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Feeding			
+08	381	08_L367.avi	48800	32.53333	1	27.83267	655.95687	763.11377	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	382	08_L367.avi	48800	32.53333	1	27.83267	574.44744	560.04790	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	383	08_L367.avi	48800	32.53333	1	27.83267	654.66307	402.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	384	08_L367.avi	48800	32.53333	1	27.83267	513.63881	363.44910	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	385	08_L367.avi	48800	32.53333	1	27.83267	402.37197	441.05389	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	386	08_L367.avi	48800	32.53333	1	27.83267	327.33154	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	387	08_L367.avi	48800	32.53333	1	27.83267	68.57143	385.43713	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	388	08_L367.avi	48800	32.53333	1	27.83267	69.86523	254.80240	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	389	08_L367.avi	48800	32.53333	1	27.83267	470.94340	228.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	390	08_L367.avi	48800	32.53333	1	27.83267	760.75472	267.73653	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	391	08_L367.avi	48800	32.53333	1	27.83267	914.71698	397.07784	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	392	08_L367.avi	48800	32.53333	1	27.83267	923.77358	434.58683	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	393	08_L367.avi	48800	32.53333	1	27.83267	877.19677	459.16168	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	394	08_L367.avi	48800	32.53333	1	27.83267	742.64151	566.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	395	08_L367.avi	48800	32.53333	1	27.83267	1024.69003	399.66467	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	396	08_L367.avi	48800	32.53333	1	27.83267	1113.96226	356.98204	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	397	08_L367.avi	48800	32.53333	1	27.83267	1104.90566	473.38922	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	398	08_L367.avi	48800	32.53333	1	27.83267	1111.37466	541.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	399	08_L367.avi	48800	32.53333	1	27.83267	1319.67655	629.89222	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	400	08_L367.avi	48800	32.53333	1	27.83267	1489.16442	494.08383	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	401	08_L367.avi	48800	32.53333	1	27.83267	1513.74663	367.32934	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	402	08_L367.avi	48800	32.53333	1	27.83267	1270.51213	426.82635	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	403	08_L367.avi	48800	32.53333	1	27.83267	1226.52291	261.26946	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	404	08_L367.avi	48800	32.53333	1	27.83267	1513.74663	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	405	08_L367.avi	48800	32.53333	1	27.83267	1728.51752	117.70060	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	406	08_L367.avi	48800	32.53333	1	27.83267	1751.80593	223.76048	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	407	08_L367.avi	48800	32.53333	1	27.83267	1542.21024	325.94012	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	408	08_L367.avi	48800	32.53333	1	27.83267	1737.57412	395.78443	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	409	08_L367.avi	48800	32.53333	1	27.83267	1799.67655	582.03593	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	410	08_L367.avi	48800	32.53333	1	27.83267	1876.01078	569.10180	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	411	08_L367.avi	48800	32.53333	1	27.83267	1905.76819	644.11976	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	412	08_L367.avi	48800	32.53333	1	27.83267	1900.59299	389.31737	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	413	08_L367.avi	48800	32.53333	1	27.83267	1511.15903	604.02395	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	414	08_L367.avi	48800	32.53333	1	27.83267	991.05121	1030.85030	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	415	08_L367.avi	48800	32.53333	1	27.83267	786.63073	684.21557	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	416	08_L367.avi	48800	32.53333	1	27.83267	771.10512	1029.55689	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	417	08_L367.avi	48800	32.53333	1	27.83267	1483.98922	698.44311	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	418	08_L367.avi	48800	32.53333	1	27.83267	388.14016	550.99401	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	419	08_L367.avi	48800	32.53333	1	27.83267	230.29650	659.64072	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	420	08_L367.avi	48800	32.53333	1	27.83267	18.11321	998.51497	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	421	08_L367.avi	48800	32.53333	1	27.83267	1526.68464	426.82635	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	422	08_L367.avi	48800	32.53333	1	27.83267	1778.97574	422.94611	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	423	08_L367.avi	48800	32.53333	1	27.83267	1703.93531	20.69461	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	424	08_L367.avi	48800	32.53333	1	27.83267	1780.26954	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	425	08_L367.avi	48800	32.53333	1	27.83267	1696.17251	53.02994	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	426	08_L367.avi	48800	32.53333	1	27.83267	1452.93801	685.50898	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	427	08_L367.avi	48800	32.53333	1	27.83267	806.03774	237.98802	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	428	08_L367.avi	48800	32.53333	1	27.83267	235.47170	632.47904	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	429	08_L367.avi	48800	32.53333	1	27.83267	966.46900	723.01796	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
+08	430	08_L367.avi	48800	32.53333	1	27.83267	1174.77089	433.29341	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	431	08_L367.avi	51546	34.36400	1	29.66333	75.04043	80.19162	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
+08	432	08_L367.avi	55884	37.25600	1	32.55533	1134.66307	743.71257	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	433	08_L367.avi	55884	37.25600	1	32.55533	1230.97587	20.14925	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
+08	434	08_L367.avi	55884	37.25600	1	32.55533	1891.79433	197.46269	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
+08	435	08_L367.avi	55884	37.25600	1	32.55533	1861.57398	612.53731	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
+08	436	08_L367.avi	62652	41.76800	1	37.06733	382.96496	920.91018	Plesiopidae	Paraplesiops	meleagris	37316009	1	AD	Passing			
+08	437	08_L367.avi	65791	43.86067	1	39.16000	1155.36388	690.68263	Serranidae	Hypoplectrodes	nigroruber	37311037	1	AD	Passing			
+08	438	08_L367.avi	67125	44.75000	1	40.04933	175.95687	942.89820	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	439	08_L367.avi	67125	44.75000	1	40.04933	655.95687	1063.18563	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	440	08_L367.avi	67125	44.75000	1	40.04933	617.14286	733.36527	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	441	08_L367.avi	67125	44.75000	1	40.04933	600.32345	812.26347	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	442	08_L367.avi	67125	44.75000	1	40.04933	621.02426	628.59880	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	443	08_L367.avi	67125	44.75000	1	40.04933	791.80593	460.45509	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	444	08_L367.avi	67125	44.75000	1	40.04933	1420.59299	585.91617	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	445	08_L367.avi	67125	44.75000	1	40.04933	1505.98383	618.25150	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	446	08_L367.avi	67125	44.75000	1	40.04933	1298.97574	664.81437	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	447	08_L367.avi	67125	44.75000	1	40.04933	1245.92992	485.02994	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	448	08_L367.avi	67125	44.75000	1	40.04933	1168.30189	534.17964	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	449	08_L367.avi	67125	44.75000	1	40.04933	1015.63342	429.41317	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	450	08_L367.avi	67125	44.75000	1	40.04933	949.64960	504.43114	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	451	08_L367.avi	67125	44.75000	1	40.04933	945.76819	536.76647	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	452	08_L367.avi	67125	44.75000	1	40.04933	1265.33693	245.74850	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	453	08_L367.avi	67125	44.75000	1	40.04933	1504.69003	235.40120	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	454	08_L367.avi	67125	44.75000	1	40.04933	1621.13208	240.57485	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	455	08_L367.avi	67125	44.75000	1	40.04933	1618.54447	162.97006	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	456	08_L367.avi	67125	44.75000	1	40.04933	1690.99730	535.47305	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	457	08_L367.avi	67125	44.75000	1	40.04933	1729.81132	641.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	458	08_L367.avi	67125	44.75000	1	40.04933	1891.53639	592.38323	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	459	08_L367.avi	67125	44.75000	1	40.04933	1760.86253	523.83234	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	460	08_L367.avi	67125	44.75000	1	40.04933	1394.71698	532.88623	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	461	08_L367.avi	67125	44.75000	1	40.04933	1375.30997	512.19162	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	462	08_L367.avi	67125	44.75000	1	40.04933	1565.49865	444.93413	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	463	08_L367.avi	67125	44.75000	1	40.04933	1399.89218	355.68862	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	464	08_L367.avi	67125	44.75000	1	40.04933	1279.56873	263.85629	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	465	08_L367.avi	67125	44.75000	1	40.04933	1461.99461	307.83234	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	466	08_L367.avi	67125	44.75000	1	40.04933	1727.22372	421.65269	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	467	08_L367.avi	67125	44.75000	1	40.04933	1882.47978	452.69461	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	468	08_L367.avi	67125	44.75000	1	40.04933	1718.16712	813.55689	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	469	08_L367.avi	67125	44.75000	1	40.04933	1784.15094	803.20958	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	470	08_L367.avi	67125	44.75000	1	40.04933	1798.38275	857.53293	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	471	08_L367.avi	67125	44.75000	1	40.04933	1148.89488	735.95210	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	472	08_L367.avi	67125	44.75000	1	40.04933	1133.36927	666.10778	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	473	08_L367.avi	67125	44.75000	1	40.04933	665.01348	483.73653	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	474	08_L367.avi	67125	44.75000	1	40.04933	1067.38544	455.28144	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	475	08_L367.avi	67125	44.75000	1	40.04933	1524.09704	310.41916	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
+08	476	08_L367.avi	70868	47.24533	1	42.54467	1741.45553	230.22754	Labridae	Notolabrus	parilus	37384022	1	AD	Passing			
+08	477	08_L367.avi	73157	48.77133	1	44.07067	1279.56873	778.63473	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+08	478	08_L367.avi	73157	48.77133	1	44.07067	1679.35310	516.07186	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
+08	479	08_L367.avi	73667	49.11133	1	44.41067	566.68464	225.05389	Cheilodactylidae	Nemadactylus	valenciennesi	37377004	1	AD	Passing			
+08	480	08_L367.avi	79621	53.08067	1	48.38000	451.62562	601.44420	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
+08	481	08_L367.avi	79621	53.08067	1	48.38000	333.39901	444.28884	Scorpididae	Scorpis	aequipinnis	37361004	1	AD	Passing	Check		
+08	482	08_L367.avi	84159	56.10600	1	51.40533	1746.29834	447.90184	Labridae	Ophthalmolepis	lineolatus	37384040	1	J	Passing			
+08	483	08_L367.avi	84159	56.10600	1	51.40533	1633.91396	338.50746	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
+08	484	08_L367.avi	88374	58.91600	1	54.21533	285.92992	205.65269	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
+08	485	08_L367.avi	88374	58.91600	1	54.21533	320.86253	99.59281	Monacanthidae	Meuschenia	flavolineata	37465035	1	AD	Passing			
+08	486	08_L367.avi	90943	60.62867	1	55.92800	124.20485	809.67665	Aplodactylidae	Aplodactylus	westralis	37376004	1	AD	Passing			
+08	487	08_L367.avi	94007	62.67133	1	57.97067	851.32075	861.41317	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
+08	488	08_L367.avi	94007	62.67133	1	57.97067	1873.89163	812.95405	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
+08	489	08_L367.avi	94044	62.69600	1	57.99533	1884.35644	273.26733	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
+08	490	08_L367.avi	94044	62.69600	1	57.99533	1669.30693	848.31683	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
+08	491	08_L367.avi	94044	62.69600	1	57.99533	589.30693	844.75248	Callanthiidae	Callanthias	allporti	37311004	1	AD	Passing	check with todd		
+08	492	08_L367.avi	94375	62.91667	1	58.21600	399.78437	898.92216	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	493	08_L367.avi	94375	62.91667	1	58.21600	531.75202	979.11377	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	494	08_L367.avi	94375	62.91667	1	58.21600	635.25606	989.46108	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	495	08_L367.avi	94375	62.91667	1	58.21600	746.52291	1051.54491	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	496	08_L367.avi	94375	62.91667	1	58.21600	772.39892	1021.79641	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	497	08_L367.avi	94375	62.91667	1	58.21600	800.86253	1003.68862	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	498	08_L367.avi	94375	62.91667	1	58.21600	828.03235	896.33533	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	499	08_L367.avi	94375	62.91667	1	58.21600	826.73854	866.58683	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	500	08_L367.avi	94375	62.91667	1	58.21600	793.09973	813.55689	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	501	08_L367.avi	94375	62.91667	1	58.21600	751.69811	854.94611	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	502	08_L367.avi	94375	62.91667	1	58.21600	733.58491	817.43713	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	503	08_L367.avi	94375	62.91667	1	58.21600	675.36388	848.47904	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	504	08_L367.avi	94375	62.91667	1	58.21600	699.94609	763.11377	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	505	08_L367.avi	94375	62.91667	1	58.21600	575.74124	812.26347	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	506	08_L367.avi	94375	62.91667	1	58.21600	662.42588	754.05988	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	507	08_L367.avi	94375	62.91667	1	58.21600	644.31267	765.70060	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	508	08_L367.avi	94375	62.91667	1	58.21600	611.96765	745.00599	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	509	08_L367.avi	94375	62.91667	1	58.21600	574.44744	741.12575	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	510	08_L367.avi	94375	62.91667	1	58.21600	530.45822	800.62275	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	511	08_L367.avi	94375	62.91667	1	58.21600	542.10243	755.35329	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	512	08_L367.avi	94375	62.91667	1	58.21600	516.22642	772.16766	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	513	08_L367.avi	94375	62.91667	1	58.21600	494.23181	773.46108	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	514	08_L367.avi	94375	62.91667	1	58.21600	437.30458	781.22156	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	515	08_L367.avi	94375	62.91667	1	58.21600	439.89218	823.90419	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	516	08_L367.avi	94375	62.91667	1	58.21600	371.32075	832.95808	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	517	08_L367.avi	94375	62.91667	1	58.21600	319.56873	822.61078	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	518	08_L367.avi	94375	62.91667	1	58.21600	331.21294	825.19760	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	519	08_L367.avi	94375	62.91667	1	58.21600	287.22372	954.53892	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	520	08_L367.avi	94375	62.91667	1	58.21600	287.22372	1012.74251	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	521	08_L367.avi	94375	62.91667	1	58.21600	225.12129	1010.15569	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	522	08_L367.avi	94375	62.91667	1	58.21600	232.88410	951.95210	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	523	08_L367.avi	94375	62.91667	1	58.21600	75.04043	915.73653	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	524	08_L367.avi	94375	62.91667	1	58.21600	71.15903	860.11976	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	525	08_L367.avi	94375	62.91667	1	58.21600	136.57459	1060.12270	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	526	08_L367.avi	94375	62.91667	1	58.21600	156.46409	997.84049	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	527	08_L367.avi	94375	62.91667	1	58.21600	125.96685	989.88957	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	528	08_L367.avi	94375	62.91667	1	58.21600	18.56354	967.36196	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	529	08_L367.avi	94375	62.91667	1	58.21600	164.41989	883.87730	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	530	08_L367.avi	94375	62.91667	1	58.21600	212.15470	844.12270	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	531	08_L367.avi	94375	62.91667	1	58.21600	132.59669	820.26994	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	532	08_L367.avi	94375	62.91667	1	58.21600	51.71271	810.99387	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	533	08_L367.avi	94375	62.91667	1	58.21600	41.10497	846.77301	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	534	08_L367.avi	94375	62.91667	1	58.21600	33.14917	793.76687	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	535	08_L367.avi	94375	62.91667	1	58.21600	59.66851	759.31288	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	536	08_L367.avi	94375	62.91667	1	58.21600	103.42541	746.06135	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	537	08_L367.avi	94375	62.91667	1	58.21600	270.49724	754.01227	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	538	08_L367.avi	94375	62.91667	1	58.21600	283.75691	792.44172	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	539	08_L367.avi	94375	62.91667	1	58.21600	580.77348	1061.44785	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	540	08_L367.avi	94375	62.91667	1	58.21600	399.11602	760.63804	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	541	08_L367.avi	94375	62.91667	1	58.21600	395.13812	748.71166	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	542	08_L367.avi	94375	62.91667	1	58.21600	429.61326	858.69939	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	543	08_L367.avi	94375	62.91667	1	58.21600	534.36464	881.22699	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	544	08_L367.avi	94375	62.91667	1	58.21600	214.80663	993.86503	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	545	08_L367.avi	94375	62.91667	1	58.21600	10.60773	1038.92025	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	546	08_L367.avi	94375	62.91667	1	58.21600	39.77901	761.96319	Pempherididae	Parapriacanthus	elongatus	37357002	1	AD	Passing			
+08	547	08_L367.avi	94383	62.92200	1	58.22133	1565.41448	890.59701	Pempherididae	Parapriacanthus	elongatus	37357002	600	AD	Passing	measurements taken around here		
 09	0	09_L369.avi	15893	10.59533	1	1.29933	1459.40701	541.94012	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
 09	1	09_L369.avi	16115	10.74333	1	1.44733	1443.88140	472.09581	Gerreidae	Parequula	melbournensis	37349001	1	AD	Passing			
 09	2	09_L369.avi	16490	10.99333	1	1.69733	928.94879	904.09581	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
@@ -3136,8 +3127,8 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 14	344	14_L372.avi	58624	39.08267	1	33.73933	338.82353	816.47059	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 14	345	14_L372.avi	58624	39.08267	1	33.73933	764.70588	378.82353	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 14	346	14_L372.avi	62830	41.88667	1	36.54333	170.58824	628.23529	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
-14	347	14_L372.avi	80374	53.58267	1	48.23933	1088.23529	517.64706	Carcharhinidae	Carcharhinus	brevipinna	37018023	1	AD	Passing			
-14	348	14_L372.avi	80374	53.58267	1	48.23933	1608.23529	295.29412	Carcharhinidae	Carcharhinus	brevipinna	37018023	1	AD	Passing			
+14	347	14_L372.avi	80374	53.58267	1	48.23933	1088.23529	517.64706	Carcharhinidae	Carcharhinus	limbatus	37018039	1	AD	Passing			
+14	348	14_L372.avi	80374	53.58267	1	48.23933	1608.23529	295.29412	Carcharhinidae	Carcharhinus	limbatus	37018039	1	AD	Passing			
 14	349	14_L372.avi	85985	57.32333	1	51.98000	441.17647	624.70588	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 14	350	14_L372.avi	85985	57.32333	1	51.98000	1328.23529	347.05882	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 14	351	14_L372.avi	93182	62.12133	1	56.77800	502.35294	707.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
@@ -3415,9 +3406,9 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 16	182	16_L373.avi	57677	38.45133	1	33.03400	1591.76471	165.88235	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 16	183	16_L373.avi	57677	38.45133	1	33.03400	1676.47059	305.88235	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 16	184	16_L373.avi	64616	43.07733	1	37.66000	1618.82353	358.82353	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing			
-16	185	16_L373.avi	64816	43.21067	1	37.79333	458.82353	296.47059	Labridae	Bodianus	frenchii	37384057	1	AD	Passing			
-16	186	16_L373.avi	77564	51.70933	1	46.29200	1527.05882	395.29412	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing			
-16	187	16_L373.avi	77564	51.70933	1	46.29200	1576.47059	281.17647	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing	Double Check		
+16	185	16_L373.avi	64816	43.21067	1	37.79333	458.82353	296.47059	Labridae	Notolabrus	parilus	37384022	1	AD	Passing			
+16	186	16_L373.avi	77564	51.70933	1	46.29200	1527.05882	395.29412	Haemulidae	Plectorhinchus	flavomaculatus	37350007	1	AD	Passing			
+16	187	16_L373.avi	77564	51.70933	1	46.29200	1576.47059	281.17647	Serranidae	Epinephelides	armatus	37311100	1	AD	Passing			
 16	188	16_L373.avi	80702	53.80133	1	48.38400	122.35294	135.29412	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 16	189	16_L373.avi	80702	53.80133	1	48.38400	85.88235	17.64706	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 16	190	16_L373.avi	80702	53.80133	1	48.38400	227.05882	63.52941	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
@@ -3648,7 +3639,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 17	61	17_L375.avi	26235	17.49000	1	12.21133	1463.52941	312.94118	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 17	62	17_L375.avi	26235	17.49000	1	12.21133	1547.05882	252.94118	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 17	63	17_L375.avi	26235	17.49000	1	12.21133	1870.58824	268.23529	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
-17	64	17_L375.avi	28665	19.11000	1	13.83133	1385.88235	123.52941	Carcharhinidae	Carcharhinus	brevipinna	37018023	1	AD	Passing	check		
+17	64	17_L375.avi	28665	19.11000	1	13.83133	1385.88235	123.52941	Carcharhinidae	Carcharhinus	limbatus	37018039	1	AD	Passing			
 17	65	17_L375.avi	34729	23.15267	1	17.87400	17.64706	649.41176	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
 17	66	17_L375.avi	34729	23.15267	1	17.87400	164.70588	692.94118	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
 17	67	17_L375.avi	34729	23.15267	1	17.87400	320.00000	798.82353	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
@@ -6601,7 +6592,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 25	545	25_L378.avi	67046	44.69733	1	38.73600	782.35294	901.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	546	25_L378.avi	67046	44.69733	1	38.73600	964.70588	725.88235	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	547	25_L378.avi	67046	44.69733	1	38.73600	202.87293	661.25153	Labridae	Coris	auricularis	37384088	1	F	Passing			
-25	548	25_L378.avi	72804	48.53600	1	42.57467	603.52941	717.64706	Carcharhinidae	Carcharhinus	brevipinna	37018023	1	AD	Passing	Long nosed grey shark?		
+25	548	25_L378.avi	72804	48.53600	1	42.57467	603.52941	717.64706	Carcharhinidae	Carcharhinus	limbatus	37018039	1	AD	Passing			
 25	549	25_L378.avi	72889	48.59267	1	42.63133	856.63366	752.07921	Labridae	Coris	auricularis	37384088	1	M	Passing			
 25	550	25_L378.avi	72889	48.59267	1	42.63133	591.68317	496.63366	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	551	25_L378.avi	72889	48.59267	1	42.63133	742.57426	653.46535	Labridae	Coris	auricularis	37384088	1	F	Passing			
@@ -6630,7 +6621,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 25	574	25_L378.avi	72889	48.59267	1	42.63133	1169.10891	689.10891	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	575	25_L378.avi	72889	48.59267	1	42.63133	1003.96040	576.23762	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	576	25_L378.avi	72889	48.59267	1	42.63133	1108.51485	702.17822	Labridae	Coris	auricularis	37384088	1	F	Passing			
-25	577	25_L378.avi	73184	48.78933	1	42.82800	739.00990	501.38614	Carcharhinidae	Carcharhinus	brevipinna	37018023	1	AD	Passing			
+25	577	25_L378.avi	73184	48.78933	1	42.82800	739.00990	501.38614	Carcharhinidae	Carcharhinus	limbatus	37018039	1	AD	Passing			
 25	578	25_L378.avi	75556	50.37067	1	44.40933	1607.05882	237.64706	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 25	579	25_L378.avi	92374	61.58267	1	55.62133	116.47059	642.35294	Labridae	Coris	auricularis	37384088	1	F	Passing			
 25	580	25_L378.avi	92374	61.58267	1	55.62133	137.64706	581.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
@@ -7231,58 +7222,58 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 27	332	27_L367.avi	92943	61.96200	1	58.58667	1449.41176	1056.47059	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
 27	333	27_L367.avi	92943	61.96200	1	58.58667	1662.35294	1023.52941	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
 27	334	27_L367.avi	92943	61.96200	1	58.58667	1568.23529	985.88235	Scorpididae	Neatypus	obliquus	37361002	1	AD	Passing			
-27	335	27_L367.avi	95867	63.91133	1	60.53600	242.35294	535.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	336	27_L367.avi	95867	63.91133	1	60.53600	151.76471	461.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	337	27_L367.avi	95867	63.91133	1	60.53600	78.82353	404.70588	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	338	27_L367.avi	95867	63.91133	1	60.53600	18.82353	341.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	339	27_L367.avi	95867	63.91133	1	60.53600	45.88235	203.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	340	27_L367.avi	95867	63.91133	1	60.53600	238.82353	165.88235	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	341	27_L367.avi	95867	63.91133	1	60.53600	350.58824	51.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	342	27_L367.avi	95867	63.91133	1	60.53600	462.35294	318.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	343	27_L367.avi	95867	63.91133	1	60.53600	347.05882	407.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	344	27_L367.avi	95867	63.91133	1	60.53600	352.94118	603.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	345	27_L367.avi	95867	63.91133	1	60.53600	488.23529	621.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	346	27_L367.avi	95867	63.91133	1	60.53600	505.88235	489.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	347	27_L367.avi	95867	63.91133	1	60.53600	545.88235	565.88235	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	348	27_L367.avi	95867	63.91133	1	60.53600	614.11765	667.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	349	27_L367.avi	95867	63.91133	1	60.53600	607.05882	727.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	350	27_L367.avi	95867	63.91133	1	60.53600	362.35294	907.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	351	27_L367.avi	95867	63.91133	1	60.53600	725.88235	948.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	352	27_L367.avi	95867	63.91133	1	60.53600	1009.41176	937.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	353	27_L367.avi	95867	63.91133	1	60.53600	1014.11765	894.11765	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	354	27_L367.avi	95867	63.91133	1	60.53600	1089.41176	987.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	355	27_L367.avi	95867	63.91133	1	60.53600	1321.17647	1055.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	356	27_L367.avi	95867	63.91133	1	60.53600	1157.64706	875.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	357	27_L367.avi	95867	63.91133	1	60.53600	1068.23529	857.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	358	27_L367.avi	95867	63.91133	1	60.53600	1255.29412	875.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	359	27_L367.avi	95867	63.91133	1	60.53600	1227.05882	731.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	360	27_L367.avi	95867	63.91133	1	60.53600	1240.00000	688.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	361	27_L367.avi	95867	63.91133	1	60.53600	1247.05882	636.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	362	27_L367.avi	95867	63.91133	1	60.53600	1355.29412	624.70588	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	363	27_L367.avi	95867	63.91133	1	60.53600	1540.00000	657.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	364	27_L367.avi	95867	63.91133	1	60.53600	976.47059	689.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	365	27_L367.avi	95867	63.91133	1	60.53600	978.82353	750.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	366	27_L367.avi	95867	63.91133	1	60.53600	857.64706	703.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	367	27_L367.avi	95867	63.91133	1	60.53600	745.88235	627.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	368	27_L367.avi	95867	63.91133	1	60.53600	872.94118	600.00000	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	369	27_L367.avi	95867	63.91133	1	60.53600	788.23529	429.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	370	27_L367.avi	95867	63.91133	1	60.53600	744.70588	290.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	371	27_L367.avi	95867	63.91133	1	60.53600	837.64706	251.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	372	27_L367.avi	95867	63.91133	1	60.53600	1074.11765	221.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	373	27_L367.avi	95867	63.91133	1	60.53600	1069.41176	31.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	374	27_L367.avi	95867	63.91133	1	60.53600	1289.41176	222.35294	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	375	27_L367.avi	95867	63.91133	1	60.53600	1163.52941	218.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	376	27_L367.avi	95867	63.91133	1	60.53600	1398.82353	108.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	377	27_L367.avi	95867	63.91133	1	60.53600	1557.64706	256.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	378	27_L367.avi	95867	63.91133	1	60.53600	1823.52941	167.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	379	27_L367.avi	95867	63.91133	1	60.53600	1575.29412	477.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	380	27_L367.avi	95867	63.91133	1	60.53600	1454.11765	430.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	381	27_L367.avi	95867	63.91133	1	60.53600	1201.17647	523.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	382	27_L367.avi	95867	63.91133	1	60.53600	1196.47059	476.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	383	27_L367.avi	95867	63.91133	1	60.53600	1232.94118	412.94118	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	384	27_L367.avi	95867	63.91133	1	60.53600	1224.70588	340.00000	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	385	27_L367.avi	95867	63.91133	1	60.53600	1336.47059	778.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
-27	386	27_L367.avi	95867	63.91133	1	60.53600	1137.64706	803.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	335	27_L367.avi	95867	63.91133		-1.00000	242.35294	535.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	336	27_L367.avi	95867	63.91133		-1.00000	151.76471	461.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	337	27_L367.avi	95867	63.91133		-1.00000	78.82353	404.70588	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	338	27_L367.avi	95867	63.91133		-1.00000	18.82353	341.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	339	27_L367.avi	95867	63.91133		-1.00000	45.88235	203.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	340	27_L367.avi	95867	63.91133		-1.00000	238.82353	165.88235	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	341	27_L367.avi	95867	63.91133		-1.00000	350.58824	51.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	342	27_L367.avi	95867	63.91133		-1.00000	462.35294	318.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	343	27_L367.avi	95867	63.91133		-1.00000	347.05882	407.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	344	27_L367.avi	95867	63.91133		-1.00000	352.94118	603.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	345	27_L367.avi	95867	63.91133		-1.00000	488.23529	621.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	346	27_L367.avi	95867	63.91133		-1.00000	505.88235	489.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	347	27_L367.avi	95867	63.91133		-1.00000	545.88235	565.88235	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	348	27_L367.avi	95867	63.91133		-1.00000	614.11765	667.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	349	27_L367.avi	95867	63.91133		-1.00000	607.05882	727.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	350	27_L367.avi	95867	63.91133		-1.00000	362.35294	907.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	351	27_L367.avi	95867	63.91133		-1.00000	725.88235	948.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	352	27_L367.avi	95867	63.91133		-1.00000	1009.41176	937.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	353	27_L367.avi	95867	63.91133		-1.00000	1014.11765	894.11765	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	354	27_L367.avi	95867	63.91133		-1.00000	1089.41176	987.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	355	27_L367.avi	95867	63.91133		-1.00000	1321.17647	1055.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	356	27_L367.avi	95867	63.91133		-1.00000	1157.64706	875.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	357	27_L367.avi	95867	63.91133		-1.00000	1068.23529	857.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	358	27_L367.avi	95867	63.91133		-1.00000	1255.29412	875.29412	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	359	27_L367.avi	95867	63.91133		-1.00000	1227.05882	731.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	360	27_L367.avi	95867	63.91133		-1.00000	1240.00000	688.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	361	27_L367.avi	95867	63.91133		-1.00000	1247.05882	636.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	362	27_L367.avi	95867	63.91133		-1.00000	1355.29412	624.70588	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	363	27_L367.avi	95867	63.91133		-1.00000	1540.00000	657.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	364	27_L367.avi	95867	63.91133		-1.00000	976.47059	689.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	365	27_L367.avi	95867	63.91133		-1.00000	978.82353	750.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	366	27_L367.avi	95867	63.91133		-1.00000	857.64706	703.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	367	27_L367.avi	95867	63.91133		-1.00000	745.88235	627.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	368	27_L367.avi	95867	63.91133		-1.00000	872.94118	600.00000	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	369	27_L367.avi	95867	63.91133		-1.00000	788.23529	429.41176	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	370	27_L367.avi	95867	63.91133		-1.00000	744.70588	290.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	371	27_L367.avi	95867	63.91133		-1.00000	837.64706	251.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	372	27_L367.avi	95867	63.91133		-1.00000	1074.11765	221.17647	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	373	27_L367.avi	95867	63.91133		-1.00000	1069.41176	31.76471	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	374	27_L367.avi	95867	63.91133		-1.00000	1289.41176	222.35294	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	375	27_L367.avi	95867	63.91133		-1.00000	1163.52941	218.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	376	27_L367.avi	95867	63.91133		-1.00000	1398.82353	108.23529	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	377	27_L367.avi	95867	63.91133		-1.00000	1557.64706	256.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	378	27_L367.avi	95867	63.91133		-1.00000	1823.52941	167.05882	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	379	27_L367.avi	95867	63.91133		-1.00000	1575.29412	477.64706	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	380	27_L367.avi	95867	63.91133		-1.00000	1454.11765	430.58824	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	381	27_L367.avi	95867	63.91133		-1.00000	1201.17647	523.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	382	27_L367.avi	95867	63.91133		-1.00000	1196.47059	476.47059	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	383	27_L367.avi	95867	63.91133		-1.00000	1232.94118	412.94118	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	384	27_L367.avi	95867	63.91133		-1.00000	1224.70588	340.00000	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	385	27_L367.avi	95867	63.91133		-1.00000	1336.47059	778.82353	Labridae	Coris	auricularis	37384088	1	F	Passing			
+27	386	27_L367.avi	95867	63.91133		-1.00000	1137.64706	803.52941	Labridae	Coris	auricularis	37384088	1	F	Passing			
 28	0	28_L378.avi	11336	7.55733	1	0.06933	1830.58824	903.52941	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
 28	1	28_L378.avi	11565	7.71000	1	0.22200	1851.76471	340.00000	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 28	2	28_L378.avi	11565	7.71000	1	0.22200	1851.76471	457.64706	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
@@ -8960,7 +8951,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 33	88	33_L564 (1).MP4	21372	11.88521	1	7.07707	534.90196	73.80589	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 33	89	33_L564 (1).MP4	21372	11.88521	1	7.07707	1090.19608	175.87786	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 33	90	33_L564 (1).MP4	21372	11.88521	1	7.07707	734.11765	428.70229	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
-33	91	33_L564 (1).MP4	21831	12.14046	1	7.33232	1143.52941	599.86914	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
+33	91	33_L564 (1).MP4	21831	12.14046	1	7.33232	1143.52941	599.86914	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
 33	92	33_L564 (1).MP4	26002	14.46000	1	9.65186	73.72549	345.47437	Labridae	Coris	auricularis	37384088	1	F	Passing			
 33	93	33_L564 (1).MP4	26002	14.46000	1	9.65186	348.23529	168.02617	Labridae	Coris	auricularis	37384088	1	F	Passing			
 33	94	33_L564 (1).MP4	26002	14.46000	1	9.65186	417.25490	146.04144	Labridae	Coris	auricularis	37384088	1	F	Passing			
@@ -9017,8 +9008,8 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 33	145	33_L564 (2).MP4	4868	20.34143	1	15.53330	385.88235	895.09269	Labridae	Coris	auricularis	37384088	1	F	Passing			
 33	146	33_L564 (2).MP4	4868	20.34143	1	15.53330	53.33333	380.02181	Labridae	Coris	auricularis	37384088	1	F	Passing			
 33	147	33_L564 (2).MP4	4868	20.34143	1	15.53330	881.56863	369.02944	Labridae	Coris	auricularis	37384088	1	F	Passing			
-33	148	33_L564 (2).MP4	4912	20.36590	1	15.55776	836.07843	493.08615	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
-33	149	33_L564 (2).MP4	4912	20.36590	1	15.55776	1471.37255	544.90731	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
+33	148	33_L564 (2).MP4	4912	20.36590	1	15.55776	836.07843	493.08615	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
+33	149	33_L564 (2).MP4	4912	20.36590	1	15.55776	1471.37255	544.90731	Labridae	Ophthalmolepis	lineolatus	37384040	1	AD	Passing			
 33	150	33_L564 (2).MP4	11610	24.09073	1	19.28260	972.54902	653.26063	Labridae	Coris	auricularis	37384088	1	M	Passing			
 33	151	33_L564 (2).MP4	11610	24.09073	1	19.28260	1098.03922	568.46238	Labridae	Coris	auricularis	37384088	1	F	Passing			
 33	152	33_L564 (2).MP4	11610	24.09073	1	19.28260	997.64706	698.80044	Labridae	Coris	auricularis	37384088	1	F	Passing			
@@ -9181,10 +9172,10 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 33	309	33_L564 (4).MP4	3635	54.92431	1	50.11618	540.19802	800.00000	Pomacentridae	Chromis	klunzingeri	37372044	1	AD	Passing			
 33	310	33_L564 (4).MP4	7733	57.20326	1	52.39512	203.92157	263.81679	Sparidae	Chrysophrys	auratus	37353001	1	AD	Passing			
 33	311	33_L564 (4).MP4	9745	58.32215	1	53.51402	1022.74510	833.84951	Labridae	Austrolabrus	maculatus	37384025	1	AD	Feeding			
-34	0	34_L564 (1).MP4	16365	9.10076	1	6.23512	1253.33333	1163.62050	Pinguipedidae	Parapercis	haackei	37390004	1	AD	Passing			
+34	0	34_L564 (1).MP4	16365	9.10076	1	6.23512	1253.33333	1163.62050	Labridae	Eupetrichthys	angustipes	37384105	1	AD	Passing			
 34	1	34_L564 (1).MP4	27939	15.53719	1	12.67155	1168.62745	929.64013	Pinguipedidae	Parapercis	ramsayi	37390002	1	AD	Passing			
-34	2	34_L564 (1).MP4	29839	16.59380	1	13.72816	986.66667	807.15376	Trygonorrhinidae	Trygonorrhina	dumerilii	37027011	1	AD	Passing			
-34	3	34_L564 (1).MP4	31510	17.52306	1	14.65742	930.19608	846.41221	Trygonorrhinidae	Trygonorrhina	dumerilii	37027011	1	AD	Feeding			
+34	2	34_L564 (1).MP4	29839	16.59380	1	13.72816	986.66667	807.15376	Rhinobatidae	Trygonorrhina	dumerilii	37027011	1	AD	Passing			
+34	3	34_L564 (1).MP4	31510	17.52306	1	14.65742	930.19608	846.41221	Rhinobatidae	Trygonorrhina	dumerilii	37027011	1	AD	Feeding			
 34	4	34_L564 (2).MP4	511	17.91846	1	15.05282	1303.52941	672.10469	Labridae	Coris	auricularis	37384088	1	M	Passing			
 34	5	34_L564 (2).MP4	23362	30.62615	1	27.76051	1356.86275	706.65213	Labridae	Coris	auricularis	37384088	1	F	Passing			
 34	6	34_L564 (2).MP4	28744	33.61914	1	30.75350	123.92157	639.12759	Serranidae	Caesioperca	sp1		1	AD	Passing			
@@ -9196,16 +9187,17 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 34	12	34_L564 (4).MP4	11853	59.49443	1	56.62879	323.13725	931.21047	Labridae	Eupetrichthys	angustipes	37384105	1	AD	Passing			
 34	13	34_L564 (4).MP4	12747	59.99160	1	57.12596	848.62745	896.66303	Labridae	Eupetrichthys	angustipes	37384105	1	AD	Passing			
 34	14	34_L564 (4).MP4	12747	59.99160	1	57.12596	720.00000	797.73173	Labridae	Eupetrichthys	angustipes	37384105	1	AD	Passing			
-34	15	34_L564 (4).MP4	17207	62.47185	1	59.60621	327.84314	689.37841	Labridae	Coris	auricularis	37384088	1	M	Passing			
-34	16	34_L564 (4).MP4	17542	62.65815	1	59.79251	561.56863	664.25300	Labridae	Coris	auricularis	37384088	1	M	Passing			
-34	17	34_L564 (4).MP4	17542	62.65815	1	59.79251	831.37255	752.19193	Labridae	Coris	auricularis	37384088	1	M	Passing			
-34	18	34_L564 (4).MP4	17913	62.86447	1	59.99883	1038.43137	664.25300	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	19	34_L564 (4).MP4	17913	62.86447	1	59.99883	1096.47059	659.54198	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	20	34_L564 (4).MP4	17913	62.86447	1	59.99883	1229.80392	632.84624	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	21	34_L564 (4).MP4	17986	62.90506	1	60.03942	1197.62376	660.59406	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	22	34_L564 (4).MP4	17986	62.90506	1	60.03942	1354.45545	627.32673	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	23	34_L564 (4).MP4	17986	62.90506	1	60.03942	1487.52475	592.47525	Labridae	Coris	auricularis	37384088	1	F	Passing			
-34	24	34_L564 (4).MP4	17986	62.90506	1	60.03942	1428.91089	552.87129	Labridae	Coris	auricularis	37384088	1	F	Passing			
+34	15	34_L564 (4).MP4	16707	62.19380	1	59.32816	1745.45455	1099.03084	Odacidae	Siphonognathus	caninis	37385011	1	AD	Passing			
+34	16	34_L564 (4).MP4	17207	62.47185	1	59.60621	327.84314	689.37841	Labridae	Coris	auricularis	37384088	1	M	Passing			
+34	17	34_L564 (4).MP4	17542	62.65815	1	59.79251	561.56863	664.25300	Labridae	Coris	auricularis	37384088	1	M	Passing			
+34	18	34_L564 (4).MP4	17542	62.65815	1	59.79251	831.37255	752.19193	Labridae	Coris	auricularis	37384088	1	M	Passing			
+34	19	34_L564 (4).MP4	17910	62.86280	1	59.99716	1082.89256	656.18502	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+34	20	34_L564 (4).MP4	17910	62.86280	1	59.99716	1072.97521	650.83260	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+34	21	34_L564 (4).MP4	17910	62.86280	1	59.99716	1255.45455	630.81057	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+34	22	34_L564 (4).MP4	17910	62.86280	1	59.99716	1033.42149	668.05286	Labridae	Coris	auricularis	37384088	1	AD	Passing			
+34	23	34_L564 (4).MP4	17913	62.86447	1	59.99883	1038.43137	664.25300	Labridae	Coris	auricularis	37384088	1	F	Passing			
+34	24	34_L564 (4).MP4	17913	62.86447	1	59.99883	1096.47059	659.54198	Labridae	Coris	auricularis	37384088	1	F	Passing			
+34	25	34_L564 (4).MP4	17913	62.86447	1	59.99883	1229.80392	632.84624	Labridae	Coris	auricularis	37384088	1	F	Passing			
 35	0	35_L369.avi	7972	5.31467	1	1.02867	157.64706	237.64706	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 35	1	35_L369.avi	9352	6.23467	1	1.94867	1476.47059	536.47059	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
 35	2	35_L369.avi	9593	6.39533	1	2.10933	1167.05882	175.29412	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
@@ -9622,7 +9614,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 37	6	37_L373.avi	43497	28.99800	1	25.30067	844.13793	684.15755	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 37	7	37_L373.avi	49290	32.86000	1	29.16267	1210.58824	1029.41176	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Passing			
 37	8	37_L373.avi	51302	34.20133	1	30.50400	1109.41176	1018.82353	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Feeding			
-37	9	37_L373.avi	52056	34.70400	1	31.00667	671.76471	837.64706	Monacanthidae	Acanthaluteres	vittiger	37465002	1	AD	Passing			
+37	9	37_L373.avi	52056	34.70400	1	31.00667	671.76471	837.64706	Monacanthidae	Meuschenia	freycineti	37465036	1	AD	Passing			
 37	10	37_L373.avi	62633	41.75533	1	38.05800	1116.47059	1047.05882	Labridae	Austrolabrus	maculatus	37384025	1	AD	Feeding			
 37	11	37_L373.avi	64326	42.88400	1	39.18667	350.58824	1005.88235	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Passing			
 37	12	37_L373.avi	64326	42.88400	1	39.18667	1345.88235	930.58824	Heterodontidae	Heterodontus	portusjacksoni	37007001	1	AD	Passing			
@@ -9632,8 +9624,8 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 37	16	37_L373.avi	80602	53.73467	1	50.03733	988.23529	943.52941	Labridae	Austrolabrus	maculatus	37384025	1	AD	Passing			
 37	17	37_L373.avi	80602	53.73467	1	50.03733	1062.35294	985.88235	Labridae	Austrolabrus	maculatus	37384025	1	AD	Passing			
 37	18	37_L373.avi	80602	53.73467	1	50.03733	1296.47059	940.00000	Labridae	Austrolabrus	maculatus	37384025	1	AD	Passing			
-37	19	37_L373.avi	84760	56.50667	1	52.80933	1264.70588	1043.52941	Trygonorrhinidae	Trygonorrhina	dumerilii	37027011	1	AD	Passing			
-37	20	37_L373.avi	92141	61.42733	1	57.73000	1144.70588	965.88235	Trygonorrhinidae	Trygonorrhina	dumerilii	37027011	1	AD	Feeding			
+37	19	37_L373.avi	84760	56.50667	1	52.80933	1264.70588	1043.52941	Trygonorrhinidae	Trygonorrhina	dumerilii		1	AD	Passing			
+37	20	37_L373.avi	92141	61.42733	1	57.73000	1144.70588	965.88235	Trygonorrhinidae	Trygonorrhina	dumerilii		1	AD	Feeding			
 38	0	38_L372.avi	8346	5.56400	1	1.57533	402.35294	847.05882	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 38	1	38_L372.avi	9699	6.46600	1	2.47733	691.76471	1030.58824	Labridae	Austrolabrus	maculatus	37384025	1	AD	Passing			
 38	2	38_L372.avi	9851	6.56733	1	2.57867	270.58824	904.70588	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
@@ -9929,7 +9921,7 @@ OpCode	PointIndex	Filename	Frame	Time	Period	PeriodTime	ImageCol	ImageRow	Family
 40	3	40_L367.avi	9386	6.25733	1	1.85067	676.47059	168.23529	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 40	4	40_L367.avi	9386	6.25733	1	1.85067	1098.82353	85.88235	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 40	5	40_L367.avi	9386	6.25733	1	1.85067	81.17647	118.82353	Labridae	Pseudolabrus	biserialis	37384149	1	AD	Passing			
-40	6	40_L367.avi	10058	6.70533	1	2.29867	1463.52941	288.23529					1	AD	Passing	Leaf?		
+40	6	40_L367.avi	10058	6.70533	1	2.29867	1463.52941	288.23529	Odacidae	Siphonognathus	sp1		1	AD	Passing			
 40	7	40_L367.avi	10368	6.91200	1	2.50533	611.76471	301.17647	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 40	8	40_L367.avi	10368	6.91200	1	2.50533	941.17647	14.11765	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			
 40	9	40_L367.avi	10368	6.91200	1	2.50533	1717.64706	220.00000	Labridae	Ophthalmolepis	lineolatus	37384040	1	F	Passing			

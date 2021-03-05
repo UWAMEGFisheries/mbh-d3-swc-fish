@@ -1,8 +1,9 @@
-"campaignid","sample","family","genus","species"
-"2020-06_south-west_stereo-BRUVs","10","Batrachoididae","Batrachomoeus","rubricephalus"
-"2020-10_south-west_stereo-BRUVs","FH70","Gobiesocidae","Aspasmogaster","occidentalis"
-"2020-10_south-west_stereo-BRUVs","IO155","Platycephalidae","Leviprora","inops"
-"2020-10_south-west_stereo-BRUVs","IO217","Carangidae","Unknown","sp10"
-"2020-10_south-west_stereo-BRUVs","IO264","Gobiesocidae","Aspasmogaster","occidentalis"
-"2020-10_south-west_stereo-BRUVs","IO333","Scombridae","Katsuwonus","pelamis"
-"2020-10_south-west_stereo-BRUVs","IO91","Gobiesocidae","Aspasmogaster","occidentalis"
+"campaignid","sample","family","genus","species","raw.hdd.number","con.hdd.number"
+"2020-06_south-west_stereo-BRUVs","10","Batrachoididae","Batrachomoeus","rubricephalus","1",NA
+"2020-10_south-west_stereo-BRUVs","FH50","Carangidae","Carangoides","sp10","RAW1",NA
+"2020-10_south-west_stereo-BRUVs","FH70","Gobiesocidae","Aspasmogaster","occidentalis","RAW2","CON1/CON2"
+"2020-10_south-west_stereo-BRUVs","IO155","Platycephalidae","Leviprora","inops","RAW2","CON1"
+"2020-10_south-west_stereo-BRUVs","IO217","Carangidae","Unknown","sp10","RAW2",NA
+"2020-10_south-west_stereo-BRUVs","IO264","Gobiesocidae","Aspasmogaster","occidentalis","RAW3","BU5.5"
+"2020-10_south-west_stereo-BRUVs","IO333","Scombridae","Katsuwonus","pelamis","RAW3","BU3"
+"2020-10_south-west_stereo-BRUVs","IO91","Gobiesocidae","Aspasmogaster","occidentalis","RAW2","CON1"
