@@ -1,17 +1,21 @@
-"","modname","formula","AICc","BIC","r2.vals","r2.vals.unique","edf","edf.less.1","delta.AICc","delta.BIC","wi.AICc","wi.BIC","mean.relief","sd.relief","log.sponges","broad.macroalgae","broad.reef","distance.to.ramp","aspect","log.tpi","log.roughness","log.slope","depth","status"
-"targeted.abundance","log.roughness+mean.relief+sd.relief","s(log.roughness, k = 5, bs = ""cr"") + s(mean.relief, k = 5, bs = ""cr"") + s(sd.relief, k = 5, bs = ""cr"") + planned.or.exploratory",1353.08195876011,1382.30592653657,0.02347,NA,14,1,0,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0
-"Heterodontidae Heterodontus portusjacksoni.depth+log.roughness","depth+log.roughness","s(depth, k = 5, bs = ""cr"") + s(log.roughness, k = 5, bs = ""cr"") + planned.or.exploratory",334.048368886038,356.923666155515,0.12851,NA,10.27,4,0,0,0.358,0.574,0,0,0,0,0,0,0,0,1,0,1,0
-"Heterodontidae Heterodontus portusjacksoni.depth+log.slope","depth+log.slope","s(depth, k = 5, bs = ""cr"") + s(log.slope, k = 5, bs = ""cr"") + planned.or.exploratory",335.599973329467,358.475270598945,0.27774,NA,10.15,5,1.552,1.552,0.165,0.264,0,0,0,0,0,0,0,0,0,1,1,0
-"Labridae Coris auricularis","depth.by.status+sd.relief.by.status+status","s(depth, by = status, k = 5, bs = ""cr"") + s(sd.relief, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",1858.33943471957,1896.920968743,0.05122,NA,19.16,1,0,0,1,1,0,1,0,0,0,0,0,0,0,0,1,1
-"Labridae Ophthalmolepis lineolatus.depth","depth","s(depth, k = 5, bs = ""cr"") + planned.or.exploratory",610.074625656539,626.516045663068,0.51227,NA,7.18,2,0,0,0.172,0.837,0,0,0,0,0,0,0,0,0,0,1,0
-"Labridae Ophthalmolepis lineolatus.depth+status","depth+status","s(depth, k = 5, bs = ""cr"") + status + planned.or.exploratory",611.10010925934,630.768961340196,0.52695,NA,8.17,2,1.025,4.253,0.103,0.1,0,0,0,0,0,0,0,0,0,0,1,1
-"Labridae Ophthalmolepis lineolatus.depth+log.sponges","depth+log.sponges","s(depth, k = 5, bs = ""cr"") + s(log.sponges, k = 5, bs = ""cr"") + planned.or.exploratory",611.318811443269,634.194108712747,0.52616,NA,11.12,4,1.244,7.678,0.092,0.018,0,0,1,0,0,0,0,0,0,0,1,0
-"Monacanthidae Nelusetta ayraud.depth.by.status+log.roughness+status","depth.by.status+log.roughness+status","s(log.roughness, k = 5, bs = ""cr"") + s(depth, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",545.065122312512,577.430669981496,0.67083,NA,15,4,0,12.083,0.262,0.002,0,0,0,0,0,0,0,0,1,0,1,1
-"Monacanthidae Nelusetta ayraud.depth.by.status+sd.relief+status","depth.by.status+sd.relief+status","s(sd.relief, k = 5, bs = ""cr"") + s(depth, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",546.737911277401,579.103458946385,0.59585,NA,15.05,3,1.673,13.755,0.114,0.001,0,1,0,0,0,0,0,0,0,0,1,1
-"Scorpididae Neatypus obliquus","log.roughness.by.status+mean.relief.by.status+status","s(log.roughness, by = status, k = 5, bs = ""cr"") + s(mean.relief, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",1207.96019421578,1246.54172823921,0.05143,NA,19.08,0,0,4.305,0.926,0.104,1,0,0,0,0,0,0,0,1,0,0,1
-"Sparidae Chrysophrys auratus.log.slope.by.status+mean.relief+status","log.slope.by.status+mean.relief+status","s(mean.relief, k = 5, bs = ""cr"") + s(log.slope, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",549.4959367766,581.861484445584,0.05605,NA,15.09,4,0,6.337,0.416,0.034,1,0,0,0,0,0,0,0,0,1,0,1
-"Sparidae Chrysophrys auratus.log.slope.by.status+mean.relief.by.status+status","log.slope.by.status+mean.relief.by.status+status","s(log.slope, by = status, k = 5, bs = ""cr"") + s(mean.relief, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",550.302759558757,588.884293582189,0.04933,NA,19.03,4,0.807,13.36,0.278,0.001,1,0,0,0,0,0,0,0,0,1,0,1
-"total.abundance","log.tpi.by.status+mean.relief.by.status+status","s(log.tpi, by = status, k = 5, bs = ""cr"") + s(mean.relief, by = status, k = 5, bs = ""cr"") + status + planned.or.exploratory",3203.56979038409,3242.15132440752,1e-05,NA,19.29,0,0,0,1,1,1,0,0,0,0,0,0,1,0,0,0,1
-"species.richness.mean.relief","mean.relief","s(mean.relief, k = 5, bs = ""cr"") + planned.or.exploratory",1081.99570478475,1098.43712479128,0.51711,NA,6,3,0,0,0.206,0.862,1,0,0,0,0,0,0,0,0,0,0,0
-"species.richness.mean.relief+sd.relief","mean.relief+sd.relief","s(mean.relief, k = 5, bs = ""cr"") + s(sd.relief, k = 5, bs = ""cr"") + planned.or.exploratory",1083.49241856193,1106.3677158314,0.52407,NA,10,5,1.497,7.931,0.097,0.016,1,1,0,0,0,0,0,0,0,0,0,0
-"species.richness.log.slope+mean.relief","log.slope+mean.relief","s(log.slope, k = 5, bs = ""cr"") + s(mean.relief, k = 5, bs = ""cr"") + planned.or.exploratory",1083.61475950814,1106.49005677762,0.53013,NA,10,5,1.619,8.053,0.092,0.015,1,0,0,0,0,0,0,0,0,1,0,0
+,modname,delta.AICc,wi.AICc,r2.vals,AICc,BIC,r2.vals.unique,edf,edf.less.1,delta.BIC,,wi.BIC,mean.relief,sd.relief,log.sponges,broad.macroalgae,broad.reef,distance.to.ramp,aspect,log.tpi,log.roughness,log.slope,depth,status
+total.abundance,log.tpi.by.status+mean.relief.by.status+status,0,1,1.00E-05,3203.56979,3242.151324,NA,19.29,0,0,,1,1,0,0,0,0,0,0,1,0,0,0,1
+species.richness.mean.relief,mean.relief,0,0.206,0.51711,1081.995705,1098.437125,NA,6,3,0,,0.862,1,0,0,0,0,0,0,0,0,0,0,0
+species.richness.mean.relief+sd.relief,mean.relief+sd.relief,1.497,0.097,0.52407,1083.492419,1106.367716,NA,10,5,7.931,,0.016,1,1,0,0,0,0,0,0,0,0,0,0
+species.richness.log.slope+mean.relief,log.slope+mean.relief,1.619,0.092,0.53013,1083.61476,1106.490057,NA,10,5,8.053,,0.015,1,0,0,0,0,0,0,0,0,1,0,0
+Sparidae Chrysophrys auratus.log.slope.by.status+mean.relief+status,log.slope.by.status+mean.relief+status,0,0.416,0.05605,549.4959368,581.8614844,NA,15.09,4,6.337,,0.034,1,0,0,0,0,0,0,0,0,1,0,1
+Sparidae Chrysophrys auratus.log.slope.by.status+mean.relief.by.status+status,log.slope.by.status+mean.relief.by.status+status,0.807,0.278,0.04933,550.3027596,588.8842936,NA,19.03,4,13.36,,0.001,1,0,0,0,0,0,0,0,0,1,0,1
+Labridae Coris auricularis,depth.by.status+sd.relief.by.status+status,0,1,0.05122,1858.339435,1896.920969,NA,19.16,1,0,,1,0,1,0,0,0,0,0,0,0,0,1,1
+Heterodontidae Heterodontus portusjacksoni.depth+log.roughness,depth+log.roughness,0,0.358,0.12851,334.0483689,356.9236662,NA,10.27,4,0,,0.574,0,0,0,0,0,0,0,0,1,0,1,0
+Heterodontidae Heterodontus portusjacksoni.depth+log.slope,depth+log.slope,1.552,0.165,0.27774,335.5999733,358.4752706,NA,10.15,5,1.552,,0.264,0,0,0,0,0,0,0,0,0,1,1,0
+Monacanthidae Nelusetta ayraud.depth.by.status+log.roughness+status,depth.by.status+log.roughness+status,0,0.262,0.67083,545.0651223,577.43067,NA,15,4,12.083,,0.002,0,0,0,0,0,0,0,0,1,0,1,1
+Monacanthidae Nelusetta ayraud.depth.by.status+sd.relief+status,depth.by.status+sd.relief+status,1.673,0.114,0.59585,546.7379113,579.1034589,NA,15.05,3,13.755,,0.001,0,1,0,0,0,0,0,0,0,0,1,1
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+targeted.abundance,log.roughness+mean.relief+sd.relief,0,1,0.02347,1353.081959,1382.305927,NA,14,1,0,,1,1,1,0,0,0,0,0,0,1,0,0,0
+Labridae Ophthalmolepis lineolatus.depth,depth,0,0.172,0.51227,610.0746257,626.5160457,NA,7.18,2,0,,0.837,0,0,0,0,0,0,0,0,0,0,1,0
+Labridae Ophthalmolepis lineolatus.depth+status,depth+status,1.025,0.103,0.52695,611.1001093,630.7689613,NA,8.17,2,4.253,,0.1,0,0,0,0,0,0,0,0,0,0,1,1
+Labridae Ophthalmolepis lineolatus.depth+log.sponges,depth+log.sponges,1.244,0.092,0.52616,611.3188114,634.1941087,NA,11.12,4,7.678,,0.018,0,0,1,0,0,0,0,0,0,0,1,0
+Scorpididae Neatypus obliquus,log.roughness.by.status+mean.relief.by.status+status,0,0.926,0.05143,1207.960194,1246.541728,NA,19.08,0,4.305,,0.104,1,0,0,0,0,0,0,0,1,0,0,1
