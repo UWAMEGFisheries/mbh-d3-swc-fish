@@ -79,11 +79,13 @@ maxn<-read_csv(paste(study,"maxn.csv",sep="_"))%>%
   dplyr::mutate(species=tolower(species))%>%
   dplyr::select(campaignid,sample,family,genus,species,maxn)%>%
   replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
+  dplyr::mutate(genus=ifelse((family%in%c("Carangidae")&species%in%c("sp10")),"Pseudocaranx",genus)) %>%
+  dplyr::mutate(species=ifelse((species%in%c("sp10")),"spp",species)) %>%
   dplyr::glimpse()
 
 # Check that there is no fish with family unknown
 
-unique(maxn$sample) # 287 - will drop
+unique(maxn$sample) # 294
 
 # Import length/3d file----
 length<-read_csv(file=paste(study,"length3dpoints.csv",sep = "_"),na = c("", " "))%>%

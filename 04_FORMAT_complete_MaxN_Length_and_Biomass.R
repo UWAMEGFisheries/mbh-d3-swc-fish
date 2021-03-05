@@ -110,10 +110,11 @@ complete.length.number<-read_csv(file=paste(study,"checked.length.csv",sep = "."
   dplyr::filter(!is.na(number))%>% # this should not do anything
   dplyr::mutate(length=as.numeric(length))%>%
   dplyr::left_join(.,metadata)%>%
+  dplyr::filter(successful.length=="Yes")%>%
   dplyr::glimpse()
 
-length(unique(metadata$id)) # 316
-length(unique(complete.length.number$id)) # 316
+length(unique(metadata$id)) # 295
+length(unique(complete.length.number$id)) # 274
 
 # Make the expanded length data----
 # For use in length analyses - i.e KDE or histograms

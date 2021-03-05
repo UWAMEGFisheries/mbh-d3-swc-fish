@@ -66,7 +66,11 @@ metadata <- ga.list.files("_Metadata.csv") %>% # list all files ending in "_Meta
   dplyr::select(campaignid, sample, dataset, planned.or.exploratory, latitude, longitude, date, time, location, status, site, depth, observer, successful.count, successful.length, commonwealth.zone, state.zone,raw.hdd.number,con.hdd.number)%>% 
   dplyr::mutate(planned.or.exploratory = str_replace_all(.$planned.or.exploratory,c("Deans"="Legacy",
                                                                                     "Captains pick"="Legacy"))) %>%
+  dplyr::mutate(sample=as.character(sample)) %>%
+  dplyr::filter(successful.count%in%c("Yes"))%>%
   glimpse()
+
+unique(metadata$successful.count)
 
 names(metadata)
 
@@ -81,7 +85,7 @@ multiple.types <- sites%>%
   dplyr::summarise(n=n())
 
 unique(metadata$campaignid) # check the number of campaigns in metadata, and the campaign name
-unique(metadata$sample) # 316
+unique(metadata$sample) # 294 (39+255)
 
 double.ups <- metadata %>%
   dplyr::group_by(sample) %>%
@@ -105,10 +109,13 @@ points<-as.data.frame(points.files)%>%
   dplyr::select(-c(project))
 
 maxn<-points%>%
+  dplyr::select(-c(time)) %>%
   dplyr::mutate(species=if_else(genus%in%c("Orectolobus","Caesioperca","Platycephalus","Squalus"),"spp",species))%>%
+  dplyr::ungroup() %>%
   dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species)%>% # removed comment from here
   dplyr::mutate(number=as.numeric(number))%>%
   dplyr::summarise(maxn=sum(number))%>%
+  dplyr::ungroup() %>%
   dplyr::group_by(campaignid,sample,family,genus,species)%>%
   dplyr::slice(which.max(maxn))%>%
   dplyr::ungroup()%>%
@@ -117,12 +124,16 @@ maxn<-points%>%
   tidyr::replace_na(list(maxn=0))%>%
   dplyr::mutate(maxn=as.numeric(maxn))%>%
   dplyr::filter(maxn>0)%>%
+  dplyr::ungroup() %>%
   dplyr::inner_join(metadata)%>%
   replace_na(list(family="Unknown",genus="Unknown",species="spp"))%>% # remove any NAs in taxa name
   dplyr::filter(!family%in%c("Unknown"))%>%
-  dplyr::filter(successful.count=="Yes") # This will need to be turned on once  we have cleaned the metadata
+  dplyr::filter(successful.count=="Yes")%>%dplyr::ungroup() # This will need to be turned on once  we have cleaned the metadata
 
-unique(maxn$sample) #288 (this should drop)
+unique(maxn$sample) #294 (this should drop)
+
+
+no.fish <- anti_join(metadata,maxn)
 
 # Save MaxN file ----
 setwd(staging.dir)
@@ -138,7 +149,11 @@ length3dpoints<-ga.create.em.length3dpoints()%>%
   dplyr::filter(!family%in%c("Unknown"))%>%
   glimpse()
 
-unique(length3dpoints$sample) # 254
+unique(length3dpoints$sample) # 274 (243 + 31)
+
+no.lengths <- anti_join(metadata,length3dpoints)
+
+lengths.no.metadata <- anti_join(length3dpoints,metadata)
 
 ## Save length files ----
 setwd(staging.dir)
