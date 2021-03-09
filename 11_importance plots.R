@@ -23,6 +23,7 @@ dir()
 
 # Part 2 - custom plot of importance scores----
 
+# FISHING HIGHWAY ----
 # Load the importance score dataset produced above
 dat.fh1 <-read.csv("2020_south-west_stereo-BRUVs_FH_all.var.imp.csv")%>% #from local copy
   rename(resp.var=X)%>%
@@ -141,6 +142,102 @@ gg.importance.scores <- ggplot(dat.taxa.label, aes(x=predictor,y=resp.var,fill=i
   Theme1+
   geom_text(aes(label=label))
 gg.importance.scores
+
+
+# IN/OUT----
+# Load the importance score dataset produced above
+dat.io1 <-read.csv("2020_south-west_stereo-BRUVs_IO_all.var.imp.csv")%>% #from local copy
+  rename(resp.var=X)%>%
+  gather(key=predictor,value=importance,2:ncol(.))%>%
+  glimpse()
+
+dat.io2 <-read.csv("2020_south-west_stereo-BRUVs_IO_length_all.var.imp.csv")%>% #from local copy
+  rename(resp.var=X)%>%
+  gather(key=predictor,value=importance,2:ncol(.))%>%
+  glimpse()
+
+
+dat.io <- bind_rows(dat.io1,dat.io2) %>%
+  filter(!resp.var%in%c("targeted.abundance","Labridae Ophthalmolepis lineolatus","Scorpididae Neatypus obliquus",
+                        "fished greater than 20 cm","fished greater than 30 cm","sublegal size pink snapper"))
+
+
+
+# 
+# Annotations-
+dat.taxa.label<-dat.io%>%
+  mutate(label=NA)%>%
+  mutate(label=ifelse(predictor=="Distance"&resp.var=="BDS","X",
+                      ifelse(predictor=="Status"&resp.var=="BDS","X",
+                             ifelse(predictor=="sqrt.X500um"&resp.var=="BDS","X",label))))%>%
+  mutate(label=ifelse(predictor=="lobster"&resp.var=="BMS","X",label))%>%
+  mutate(label=ifelse(predictor=="sqrt.X4mm"&resp.var=="CPN","X",
+                      ifelse(predictor=="lobster"&resp.var=="CPN","X",label)))%>%
+  glimpse()
+
+unique(dat.io$predictor)
+unique(dat.io$resp.var)
+
+# Plot gg.importance.scores ----
+gg.importance.scores <- ggplot(dat.taxa.label, aes(x=predictor,y=resp.var,fill=importance))+
+  geom_tile(show.legend=T) +
+  scale_fill_gradientn(legend_title,colours=c("white", re), na.value = "grey98",
+                       limits = c(0, max(dat.taxa.label$importance)))+
+  scale_x_discrete(limits=c("status",
+                            "distance.to.ramp",
+                            "depth",
+                            "mean.relief",
+                            "sd.relief",
+                            "broad.reef",
+                            "broad.macroalgae",
+                            "log.sponges",
+                            "aspect",
+                            "log.tpi",
+                            "log.roughness",
+                            "log.slope"),
+                   labels=c(
+                     "Status",
+                     "Distance to ramp",
+                     "Depth",
+                     "Mean relief",
+                     "SD relief",
+                     "Reef",
+                     "Macroalgae",
+                     "Log Sponges",
+                     "Aspect",
+                     "Log TPI",
+                     "Log Roughness",
+                     "Log Slope"
+                   ))+
+  scale_y_discrete(limits = c("smaller than legal size" ,
+                              "greater than legal size",
+                              "all greater than 30 cm",
+                              "all greater than 20 cm" ,
+                              "Monacanthidae Nelusetta ayraud",
+                              "Heterodontidae Heterodontus portusjacksoni",
+                              "Sparidae Chrysophrys auratus",
+                              "Labridae Coris auricularis",
+                              "species.richness",
+                              "total.abundance"
+  ),
+  labels=c(                            "Smaller than legal size",
+                                       "Greater than legal size",
+                                       "Greater than 30 cm",
+                                       "Greater than 20 cm",
+                                       "N. ayraud",
+                                       "H. portusjacksoni",
+                                       "C. auratus",
+                                       "C. auricularis",
+                                       "Species richness",
+                                       "Total abundance"
+  ))+
+  xlab(NULL)+
+  ylab(NULL)+
+  theme_classic()+
+  Theme1+
+  geom_text(aes(label=label))
+gg.importance.scores
+
 
 
 # Part 3 - plots of the most parsimonious models----
