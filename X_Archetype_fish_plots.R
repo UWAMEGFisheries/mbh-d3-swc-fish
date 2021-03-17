@@ -1,5 +1,9 @@
 # Load libraries ----
-install.packages("tibble")
+#install.packages("tibble")
+w.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+o.dir <- paste(w.dir, "outputs", sep = '/')
+
+
 library(tidyverse)
 library(fst)
 
@@ -92,7 +96,7 @@ maxn.filtered<-maxn%>%
   
   #PLOT#
 
-bluepal <- choose_palette()
+#bluepal <- choose_palette()
 
 theme_set(theme_bw())
 
@@ -105,27 +109,34 @@ Archetype.plot <-ggplot(data=top.mxn, aes(order, mean), y=mean) +
   #scale_fill_manual(values = bluepal(10)) +
   #scale_fill_manual(values = zonecolors) +
   scale_fill_grey (start = 0.8, end = 0.8, na.value = "red", aesthetics = "fill") +
-  labs(x = "Species", y = "Average Abundance (MaxN)") +
+  labs(x = "Species", 
+       y = "Average Abundance (MaxN)") +
   # Add categories to axis
   scale_x_continuous(
     breaks = top.mxn$order,
     labels = top.mxn$full.name,
     expand = c(0,0)
   ) +
+  ylim(0, 10) +
+  ggtitle("Deep Archetype") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), legend.position = "none",
         axis.title.x = element_text(size = 14, face="bold"), axis.title.y = element_text(size = 14, face="bold"), 
-        axis.text.y = element_text(size = 10, face="italic"), 
+        axis.text.y = element_text(size = 14, face="italic"), 
         axis.text.x = element_text(size=14, face="bold", color = "grey20", angle = 45, hjust = 1),
         title = element_text(size = 14, face= "bold"),
         strip.background = element_rect(color = 'black', fill = "white"),
         strip.text.x = element_text(size = 14, color = "black", face ="bold"),
         strip.text.y = element_text(size = 14, color = "black", face ="bold")) +
-  coord_flip() +
-  ggtitle("Archetype 1")
+  coord_flip() 
+  
 
 
 Archetype.plot
 
+ggsave(paste(o.dir, "Archetype1.png", sep='/'), plot = Archetype.plot, device = "png", scale = 1, dpi = 600)
+
+
+  
 
 
 # Maxn abundance Archetype 2 plot ----
@@ -183,7 +194,7 @@ top.mxn2 <- maxn.filtered2 %>%
 
 #PLOT#
 
-bluepal <- choose_palette()
+#bluepal <- choose_palette()
 
 theme_set(theme_bw())
 
@@ -203,21 +214,22 @@ Archetype.plot2 <-ggplot(data=top.mxn2, aes(order, mean), y=mean) +
     labels = top.mxn2$full.name,
     expand = c(0,0)
   ) +
+  ylim(0,10) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), legend.position = "none",
         axis.title.x = element_text(size = 14, face="bold"), axis.title.y = element_text(size = 14, face="bold"), 
-        axis.text.y = element_text(size = 10, face="italic"), 
+        axis.text.y = element_text(size = 14, face="italic"), 
         axis.text.x = element_text(size=14, face="bold", color = "grey20", angle = 45, hjust = 1),
         title = element_text(size = 14, face= "bold"),
         strip.background = element_rect(color = 'black', fill = "white"),
         strip.text.x = element_text(size = 14, color = "black", face ="bold"),
         strip.text.y = element_text(size = 14, color = "black", face ="bold")) +
   coord_flip() +
-  ggtitle("Archetype 2")
+  ggtitle("Ubiquitous Archetype")
 
 
 Archetype.plot2
 
-
+ggsave(paste(o.dir, "Archetype2.png", sep='/'), plot = Archetype.plot2, device = "png", scale = 1, dpi = 600)
 
 # Maxn abundance Archetype 3 plot ----
 maxn.filtered3<-maxn%>%
@@ -279,7 +291,7 @@ top.mxn3 <- maxn.filtered3 %>%
 
 #PLOT#
 
-bluepal <- choose_palette()
+#bluepal <- choose_palette()
 
 theme_set(theme_bw())
 
@@ -299,16 +311,19 @@ Archetype.plot3 <-ggplot(data=top.mxn3, aes(order, mean), y=mean) +
     labels = top.mxn3$full.name,
     expand = c(0,0)
   ) +
+  ylim(0,10) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), legend.position = "none",
         axis.title.x = element_text(size = 14, face="bold"), axis.title.y = element_text(size = 14, face="bold"), 
-        axis.text.y = element_text(size = 10, face="italic"), 
+        axis.text.y = element_text(size = 14, face="italic"), 
         axis.text.x = element_text(size=14, face="bold", color = "grey20", angle = 45, hjust = 1),
         title = element_text(size = 14, face= "bold"),
         strip.background = element_rect(color = 'black', fill = "white"),
         strip.text.x = element_text(size = 14, color = "black", face ="bold"),
         strip.text.y = element_text(size = 14, color = "black", face ="bold")) +
   coord_flip() +
-  ggtitle("Archetype 3")
+  ggtitle("Shallow Archetype")
 
 
 Archetype.plot3
+
+ggsave(paste(o.dir, "Archetype3.png", sep='/'), plot = Archetype.plot3, device = "png", scale = 1, dpi = 600)
