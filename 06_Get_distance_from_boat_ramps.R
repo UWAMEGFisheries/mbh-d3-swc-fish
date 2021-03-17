@@ -50,18 +50,25 @@ ramps <- read.csv("2020_SWC_boat_ramps.csv")# %>%
  # dplyr::rename(x=Longitude,y=Latitude,id=Boat.ramp)
 
 samples.ramps <- metadata %>% 
-  select("sample", "latitude", "longitude") #this has OpCode,Latitude,Longitude in it
+  dplyr::select("sample", "latitude", "longitude") #this has OpCode,Latitude,Longitude in it
+
+canal.rocks <- ramps%>%
+  filter(Boat.ramp%in%c("Canal Rocks")) 
+
+canal.rocks.lat <- unique(canal.rocks$Latitude)
+canal.rocks.lon <- unique(canal.rocks$Longitude)
 
 distance.to.ramp<-samples.ramps%>%
   dplyr::select(sample,latitude,longitude)%>%
-  mutate(To.canal.rocks=distance(lat1=ramps[1,2],lat2=.$latitude,lon1=ramps[1,3],lon2=.$longitude))%>%
-  mutate(To.gracetown=distance(lat1=ramps[2,2],lat2=.$latitude,lon1=ramps[2,3],lon2=.$longitude))%>%
-  mutate(To.gnarabup=distance(lat1=ramps[3,2],lat2=.$latitude,lon1=ramps[3,3],lon2=.$longitude))%>%
-  mutate(To.hamelin=distance(lat1=ramps[4,2],lat2=.$latitude,lon1=ramps[4,3],lon2=.$longitude))%>%
+  dplyr::mutate(canal.rocks = distance(ramps[1,3], .$latitude  ,ramps[1,2], .$longitude))%>%
+  mutate(gracetown=distance(lat1=ramps[2,3],lat2=.$latitude,lon1=ramps[2,2],lon2=.$longitude))%>%
+  mutate(gnarabup=distance(lat1=ramps[3,3],lat2=.$latitude,lon1=ramps[3,2],lon2=.$longitude))%>%
+  mutate(hamelin=distance(lat1=ramps[4,3],lat2=.$latitude,lon1=ramps[4,2],lon2=.$longitude))%>%
   mutate(distance.to.ramp=do.call(pmin, .[,4:7]))%>%
-  select(sample,distance.to.ramp)%>%
+  dplyr::select(sample,distance.to.ramp)%>%
   distinct()%>% #need to be distinct otherwise joins dont work
   glimpse()
+
 
 # Save to tidy data folder
 setwd(d.dir)
