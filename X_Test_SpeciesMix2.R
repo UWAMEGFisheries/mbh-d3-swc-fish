@@ -4,7 +4,7 @@
 # Load libraries ----
 #install.packages('rasterVis')
 #library(devtools)
-#devtools::install_github('skiptoniam/ecomix')
+devtools::install_github('skiptoniam/ecomix')
 library(ecomix)
 library(plyr)
 library(dplyr)
@@ -21,6 +21,8 @@ library(BBmisc) # to normalize
 library(corrplot)
 library(tibble)
 library(rasterVis)
+library(RColorBrewer)
+library(broman)
 
 
 # clear workspace ----
@@ -338,7 +340,7 @@ colnames(pd)
                                                     
 sam_form_full <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                     collapse = ','),
-                                                    ") ~ poly(logdepth, raw = TRUE) + poly(tpi, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                                    ") ~ poly(logdepth, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE)+ + poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
                                                 
 
                                                   
@@ -373,7 +375,7 @@ print(test_model)
 
 # look at the partial response of each covariate using:
 par(mfrow=c(2,2))
-eff.df <- effectPlotData(focal.predictors = c("depth","slope","aspect", "tpi", "flowdir", "SSTster", "SSTtrend"), mod = test_model)
+eff.df <- effectPlotData(focal.predictors = c("depth","slope","aspect", "tpi", "flowdir", "SSTster"), mod = test_model)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model, na.rm = T)
 
@@ -415,9 +417,11 @@ summary(arch3)
 # now that you know the no. of archetypes, start removing convariates and test AIC to find the most parismonious model--
 
 # remove one covariate at a time ----
+init_method='kmeans' 
+
 sam_form_b <- stats::as.formula(paste0('cbind(',paste(paste0('spp',1:78),
                                                       collapse = ','),
-                                       ") ~ poly(depth, 2, raw = TRUE) + poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
+                                       ") ~ poly(depth, 2, raw = TRUE) + poly(slope, 2, raw = TRUE) +  poly(aspect, 2, raw = TRUE) + poly(flowdir, 2, raw = TRUE) + poly(SSTster, 2, raw = TRUE) +  poly(SSTtrend, 2, raw = TRUE)")) # raw = T will stop you from using orthogonal polynomials, which are not working yet
 
 
 sp_form <- ~1
@@ -436,7 +440,7 @@ test_model_b <- species_mix(
   #bb_weights = NULL,
   #size = NULL, # for presence absence - benthic point data
   #power = NULL, # for tweedie : eg. biomass data
-  control = list(), # for tuning the model if needed
+  control = list(init_method="kmeans") # for tuning the model if needed
   #inits = NULL, # if you have fitted the model previously: use the same values
   #standardise = FALSE, # has been removed in new update it scales
   #titbits = TRUE # could turn this off
@@ -451,7 +455,7 @@ print(test_model_b)
 dev.off()
 plot(test_model_b)
 par(mfrow=c(2,3))
-eff.df <- effectPlotData(focal.predictors = c("depth", "SSTster", "aspect", "flowdir"), mod = test_model_b)
+eff.df <- effectPlotData(focal.predictors = c("depth", "slope", "SSTster","SSTtrend", "aspect", "flowdir"), mod = test_model_b)
 #eff.df <- effectPlotData(focal.predictors = c("bathy"), mod = test_model)
 plot(x = eff.df, object = test_model_b, na.rm = T)
 
@@ -465,10 +469,11 @@ sp.boot <- species_mix.bootstrap(
   quiet = FALSE
 )
 
-preds <- c("depth", "SSTster", "aspect", "flowdir")
+preds <- c("depth", "slope", "SSTtrend", "SSTster", "aspect", "flowdir")
 ef.plot <- effectPlotData(preds, test_model_b)
 head(ef.plot)
-par(mfrow=c(2,2))
+dev.off()
+par(mfrow=c(2,3))
 plot(ef.plot,
      test_model_b, 
      sp.boot,
@@ -506,7 +511,7 @@ str(arch3)
 summary(arch3)
 
 # to save this list --
-#write.csv(arch3, paste(o.dir, "species_archetypes_m2.csv", sep ='/'))
+#write.csv(arch3, paste(o.dir, "species_archetypes_m5.csv", sep ='/'))
 
 
 # 11. Final model ----
@@ -779,7 +784,7 @@ t <- stack(t1, t2)
 t2 <- disaggregate(t, 7.924524)
 t3 <- resample(t2, ds)
 
-
+plot(t3)
 
 
 # crop bathy to stack --
@@ -863,8 +868,17 @@ sp.boot <- species_mix.bootstrap(
   quiet = FALSE
 )
 
+# vairance -- Still not sure how to do this an the summary
+sp.var <- vcov(
+  test_model_b,
+  object2 = NULL,
+  method = "BayesBoot",
+  nboot = 10,
+  mc.cores = 10
+)
 
 
+summary.species_mix(test_model_b, sp.var)
 
 # load predictors --
 
@@ -900,7 +914,7 @@ t <- mask(t, d)
 f <- crop(b$flowdir, d)
 f <- mask(f, d)
 
-ds <- stack(d,a,f)
+ds <- stack(d,a,f,s)
 plot(ds)
 
 
@@ -908,12 +922,18 @@ plot(ds)
 t1 <- raster(paste(r.dir, "SSTsterr_SSTARRS.tif", sep='/'))
 t2 <- raster(paste(r.dir, "SSTtrend_SSTARRS.tif", sep='/'))
 
-t <- stack(t1, t2)
-plot(t)
+tx <- stack(t1, t2)
+plot(tx)
 
 ta <- disaggregate(t1, 7.924524)
-tb <- resample(ta, ds)
+tb <- disaggregate(t2, 7.924524)
+ta <- resample(ta, ds)
+plot(ta)
+
+tb <- resample(tb, ds)
 plot(tb)
+
+t <- stack(ta, tb)
 
 
 # crop bathy to stack --
@@ -922,7 +942,7 @@ plot(tb)
 #plot(d)
 
 # stack preds --
-preds <- stack(ds, tb)
+preds <- stack(ds, t)
 names(preds)
 plot(preds)
 
@@ -930,7 +950,7 @@ plot(preds)
 pr <- as.data.frame(preds, xy = TRUE)
 dim(pr)
 head(pr)
-names(pr) <- c('x', 'y', 'depth','aspect', 'flowdir', 'SSTster')
+names(pr) <- c('x', 'y', 'depth','aspect', 'slope', 'flowdir', 'SSTster', 'SSTtrend')
 str(pr)
 any(is.na(pr$slope))
 length(which(is.na(pr$slope)))
@@ -944,7 +964,7 @@ ptest2 <- predict(
   test_model_b,
   sp.boot,
   #nboot = 100,
-  pr[,c(3:6)],
+  pr[,c(3:8)],
   #alpha = 0.95,
   mc.cores = 10,
   prediction.type = "archetype"
@@ -965,9 +985,9 @@ head(SAMpreds)
 
 coordinates(SAMpreds) <- ~x+y
 head(SAMpreds)
-A1 <- SAMpreds[,5]
-A2 <- SAMpreds[,6]
-A3 <- SAMpreds[,7]
+A1 <- SAMpreds[,7]
+A2 <- SAMpreds[,8]
+A3 <- SAMpreds[,9]
 #A4 <- SAMpreds[,7]
 
 gridded(A1) <- TRUE
@@ -983,7 +1003,7 @@ A3preds <- raster(A3)
 Allpreds <- stack(A1preds, A2preds, A3preds)
 plot(Allpreds)
 
-writeRaster(Allpreds, paste(o.dir, "Ecomix2-used.tif", sep='/'))
+writeRaster(Allpreds, paste(o.dir, "Ecomix5.tif", sep='/'), overwrite =T)
 
 test <- log(Allpreds)
 plot(test)
@@ -1052,13 +1072,16 @@ p <- levelplot(Allpreds, par.settings=RdBuTheme(), at=breaks1,
 
 
 
+p
+
+
 ## FOR MAPS ####
 
 ab <- readOGR(paste(s.dir, "Australiaboundary67.shp", sep='/'))
 
 amp <- readOGR(paste(s.dir, "AustraliaNetworkMarineParks.shp", sep='/'))
 
-wamp <- readOGR(paste(s.dir, "WA_MPA_2018.shp", sep='/'))
+wamp <- readOGR(paste(s.dir, "All_StateReserves.shp", sep='/'))
 
 plot(test$Archetype3, main = "Archetype 3")
 plot(ab, add=T)
@@ -1067,4 +1090,108 @@ plot(wamp, add=T)
 
 dev.off()
 
-p             
+p     
+
+
+## Get quantiles ----
+A1 <- A1preds
+A2 <- A2preds
+A3 <- A3preds
+
+A1[A1>5000] <- 5000
+plot(A1)
+
+A2[A2>5000] <- 5000
+plot(A2)
+
+A3[A3>1000] <- 1000
+plot(A3)
+
+plot(Allpreds$Archetype1)
+plot(Allpreds$Archetype2)
+plot(Allpreds$Archetype3)
+plot(test$Archetype1)
+ecomix.quant <- c(0,0.05,0.95,1)
+ecomix.cuts <- quantile(Allpreds$Archetype1, ecomix.quant)
+ecomix.cuts
+brk<- quantile(c(Allpreds$Archetype2))
+#catA1 <- cut(Allpreds$Archetype1, breaks=ecomix.cuts, na.rm=TRUE)
+#plot(catA1)
+plot(Allpreds$Archetype2)
+ahist<-hist(Allpreds$Archetype2,
+              breaks= 100,
+              main="Histogram Archetype 2",
+              col="blue",  # changes bin color
+              xlab= "Abundance")
+ahist
+breaks1 <- c(0,1,10,50,100,1000,Inf)
+breaks2 <- c(0, 1, 10, 50, 100, 1000, 5000, 38405.51)
+breaks2 <- c(0, 1, 10, 50, 100, 1000, 2500, 5000)
+p <- levelplot(Allpreds$Archetype2, par.settings=RdBuTheme(), at=breaks1, 
+               colorkey=list(height=0.8, labels=list(at=breaks1, labels=round(breaks1, 2))))
+
+
+
+p
+
+
+plot_crayons()
+yel <- brocolors("crayons")["Canary"]
+or <- brocolors("crayons")["Vivid Tangerine"]
+g0 <- brocolors("crayons")["Electric Lime"]
+g1 <- brocolors("crayons")["Screamin Green"]
+g2 <- brocolors("crayons")["Sea Green"]
+b1 <- brocolors("crayons")["Caribbean Green"]
+b2 <- brocolors("crayons")["Blue Green"]
+b3 <- brocolors("crayons")["Navy Blue"]
+b4 <- brocolors("crayons")["Violet Blue"]
+r1 <- brocolors("crayons")["Radical Red"]
+r2 <- brocolors("crayons")["Maroon"]
+
+#pal <- colorRampPalette(c("red","blue", "green"))
+pal <- colorRampPalette(c(yel, g0, g1, b1, g2, b2, b3, r1))
+
+plot(A2,
+     #Allpreds$Archetype2,
+     breaks = breaks2,
+     #col = terrain.colors(6),
+     col = pal(7),
+     main = "Archetype 2",
+     legend = FALSE)
+#r.range <- c(minValue(Allpreds$Archetype2), maxValue(Allpreds$Archetype2))
+#plot(Allpreds$Archetype2)
+plot(A2,
+     #Allpreds$Archetype2,
+     legend.only = TRUE,
+     #col = terrain.colors(6),
+     col = pal(7),
+     legend.width=1, legend.shrink=0.75,
+     axis.args = list(at = c(714, 1428, 2142, 2856, 3570, 4284, 5000), 
+                      labels = c('1','10','50','100','1000', '2500','5000')))
+     #axis.args=list(at =  c(0, 1, 10, 50, 100, 1000, 5000, Inf)),
+                #labels = breaks2), 
+       #             cex.axis=0.6),
+     #legend.args=list(text='Abundance', side=1, font=2, line=2.5, cex=0.8))
+
+dev.off()
+
+plot(ab, col = 'orange', alpha= 0.5, add=T)
+plot(amp, add=T)
+plot(wamp, add=T)
+
+## USING ggplot ----
+r = Allpreds$Archetype2 #raster object
+#preparing raster object to plot with geom_tile in ggplot2
+r_points = rasterToPoints(r)
+r_df = data.frame(r_points)
+head(r_df) #breaks will be set to column "layer"
+r_df$cuts=cut(r_df$Archetype2, breaks=c(1, 10, 50, 100, 1000, 5000, 39000)) #set breaks
+
+ggplot(data=r_df) + 
+  geom_tile(aes(x=x,y=y,fill=cuts)) + 
+  #scale_fill_brewer("Legend_title",type = "seq", palette = "Greys") +
+  scale_fill_manual("Abundance",  values = pal(7)) +
+  coord_equal() +
+  theme_bw() +
+  theme(panel.grid.major = element_blank()) +
+  xlab("Longitude") + ylab("Latitude")
