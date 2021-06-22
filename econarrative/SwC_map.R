@@ -56,8 +56,13 @@ dt.dir <- paste(m.dir, "Data/Tidy", sep='/')
 s.dir <- paste(m.dir, "shapefiles", sep='/')
 r.dir <- paste(m.dir, "rasters", sep='/')
 
-
-
+au <- readOGR(paste(s.dir, "AustraliaNetworkMarineParks.shp",sep='/'))
+plot(au)
+e <- drawExtent()
+extent1 <- extent(106,122.2549,-38.80666,-33.06172)
+au2 <- crop(au2,e)
+plot(au2)
+plot(wa, add=T)
 
 ### Read sw cmr polys ----
 cmr <- readOGR(paste(s.dir, "GB-SwC-AMP.shp",sep='/'))
@@ -186,10 +191,10 @@ map11
 
 ### MAP version2 ----
 
-map <- tm_shape(cmr)  + tm_borders(col ='white', lwd = 1.5) +
-  tm_compass(type = "arrow", position = c(0.087, 0.1), size = 2) +
+map <- tm_shape(cmr, bbox=tmaptools::bb(extent1)) + tm_borders(col ='white', lwd = 1.5) +
+  tm_compass(type = "arrow", position = c(0.045, 0.85), size = 2) +
   #tm_fill(col ='ZONENAME', palette=c('yellow', 'red'), alpha = 0.1) +
-  tm_scale_bar(breaks = c(0, 50, 100), text.size = 0.5, position = c(0.08, 0.02)) + 
+  tm_scale_bar(breaks = c(0, 50, 100), text.size = 1, position = c(0.03, 0.7)) + 
   #tm_graticules(ticks = FALSE) +
   tm_grid(n.x = 4, n.y = 4, labels.size = 0.5, lines = FALSE) +
   tm_layout(bg.color = "lightcyan1")
@@ -201,11 +206,40 @@ map4 <- map + tm_shape(wa) + tm_borders(col = 'black', lwd = 1.5) + tm_fill(col=
   #tm_add_legend(type = 'fill', labels = "Coastline today", col = sg, lwd = 2, size = 2)
 map4
 
+pal1 <- c("#FFFF99","#99FFFF", 'chartreuse3',   'steelblue2', "#324ab2")
+levels(cmr$ZoneName)
 
-
-map55 <- map4 + tm_shape(cmr) + tm_borders(col = 'grey35', lwd = 1.5) 
+map55 <- map4 + tm_shape(cmr) + tm_borders(col = 'grey35', lwd = 1.5) +
+  tm_fill(col = 'ZoneName', palette = pal1, title = NA) +
+  tm_shape(cw) + tm_lines(col = 'red', lwd = 1) +
+  tm_layout(#legend.outside = TRUE,
+            #legend.outside.size = 3,
+            #legend.outside.position = 'right'
+            legend.position = c(0.02, 0.04),
+            legend.title.color = "lightcyan1",
+            legend.title.size = 0.7,
+            legend.text.size = 1,
+            #legend.outside = TRUE,
+            legend.width = 0.6,
+            legend.height = 0.5,
+            #legend.bg.color = 'white'
+            #legend.just = 'right',
+            )
 
 map55
+
+# save ----
+tmap_save(
+  tm = map55,
+  filename = paste(p.dir, "SwC_Map.png", sep ='/'),
+  #width = NA,
+  #height = NA,
+  #units = NA,
+  #scale = 1,
+  dpi = 300)
+
+
+# Other additions if needed ----
 
 map6 <- map55 + tm_shape(NPZ) + tm_borders(col = 'black', lwd = 1.5) + tm_fill(col='chartreuse3') 
   
@@ -231,10 +265,14 @@ map11 <- map10 + tm_shape(cw) + tm_lines(col = 'red', lwd = 1)
   
 map11
 
+
+
+# Legend
+
 map.leg <- tm_shape(cmr) + tm_borders(col ='white', lwd = 1.5) +
   #tm_shape(cw1) + tm_lines(col = 'red', lwd = 1) +
   tm_layout(#outer.margins = 0.1,
-    legend.text.size = 0.3,
+    legend.text.size = 3,
     #legend.outside = TRUE,
     #   #legend.outside.position = 'right',
     #   #legend.outside.position = 'right',
@@ -242,19 +280,20 @@ map.leg <- tm_shape(cmr) + tm_borders(col ='white', lwd = 1.5) +
   #   legend.title.size = 1.5,
   #   legend.title.color = 'black',
   #legend.width = 1) +
-  tm_add_legend(type = 'fill', labels = "National Park Zone", col = 'chartreuse3', lwd = 2, size = 0.2) + 
-  tm_add_legend(type = 'fill', labels = "Special Purpose Zone (Mining exclusion)", col = colspzme, lwd = 2, size = 0.2) +
-  tm_add_legend(type = 'fill', labels = "Special Purpose Zone", col = 'steelblue2', lwd = 2, size = 0.2) +
-  tm_add_legend(type = 'fill', labels = "Mutiple Use Zone", col = "#99FFFF", lwd = 2, size = 0.2) +
-  tm_add_legend(type = 'fill', labels = "Habitat Protection Zone", col = "#FFFF99", lwd = 2, size = 0.2) +
+  tm_add_legend(type = 'fill', labels = "National Park Zone", col = 'chartreuse3', lwd = 1, size = 1) + 
+  tm_add_legend(type = 'fill', labels = "Special Purpose Zone (Mining exclusion)", col = colspzme, lwd = 1, size = 1) +
+  tm_add_legend(type = 'fill', labels = "Special Purpose Zone", col = 'steelblue2', lwd = 1, size = 1) +
+  tm_add_legend(type = 'fill', labels = "Mutiple Use Zone", col = "#99FFFF", lwd = 1, size = 1) +
+  tm_add_legend(type = 'fill', labels = "Habitat Protection Zone", col = "#FFFF99", lwd = 1, size = 1) +
   #tm_add_legend(type = 'fill', labels = "Special Purpose Zone", col = 'steelblue2', lwd = 2, size = 1) +
-  tm_add_legend(type = 'line', labels = "Coastal waters limit", col = 'red', lwd = 2, size = 0.2)
+  tm_add_legend(type = 'line', labels = "Coastal waters limit", col = 'red', lwd = 1, size = 1)
 
 
 map.leg
 
 current.mode <- tmap_mode("plot")
-f.map <- tmap_arrange(map11, map.leg, ncol=2, widths = c(0.75, 0.25))
+f.map <- tmap_arrange(map11, map.leg, ncol=2)
+f.map <- tmap_arrange(map11, map.leg, ncol=2, widths = c(0.8, 0.2))
 tmap_mode(current.mode)
 
 # save ----
@@ -273,12 +312,24 @@ tmap_save(
 #e <- drawExtent()
 ext1 <- extent(114.1463, 115.8601, -34.63865, -33.07346)
 
+
+### CLOSE UP MAP ----
+
+plot(au2)
+#e2 <- drawExtent()
+e2 <- extent(114.1463, 115.9504, -34.69117, -33.34007)
+au3 <- crop(au2, e2)
+plot(au3)
 # crop polys ----
-cmr1 <- crop(cmr, ext1)
-wa1 <- crop(wa, ext1)
-wamp1 <- crop(wamp, ext1)
-bathy1 <- crop(bathy, ext1)
-cw1 <- crop(cw, ext1)
+cmr1 <- crop(cmr, e2)
+head(cmr1)
+wa1 <- crop(wa, e2)
+cw1 <- crop(cw, e2)
+head(cw1)
+cw1$ZoneName <- "State Marine Park"
+mps <- raster::union(cmr1, cw1)
+head(mps)
+plot(mps)
 
 # check
 plot(bathy1)
