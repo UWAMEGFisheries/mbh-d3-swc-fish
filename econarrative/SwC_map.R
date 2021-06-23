@@ -89,7 +89,7 @@ wa <- readOGR(paste(s.dir, "WA_wgs84.shp",sep='/'))
 plot(wa)
 
 # read state reserves ----
-wamp <- readOGR(paste(s.dir, "All_StateReserves.shp", sep='/'))
+wamp <- readOGR(paste(s.dir, "WA_MPA_2018.shp", sep='/'))
 wamp
 
 # read coastal waters ----
@@ -100,7 +100,7 @@ cw
 bathy <- raster(paste(r.dir, "GB-SW_250mBathy.tif", sep='/'))
 plot(bathy)
 
-# colours
+# Colours ----
 sg <- brocolors("crayons")["Spring Green"]
 colspzme <- brocolors("crayons")["Violet Blue"]
 colnpz <- brocolors("crayons")["Granny Smith Apple"]
@@ -108,6 +108,7 @@ colmuz <- brocolors("crayons")["Canary"]
 colhpz <- brocolors("crayons")["Yellow Orange"]
 colspz <- brocolors("crayons")["Sky Blue"]
 colbg <- brocolors("crayons")["Blizzard Blue"]
+colst <- brocolors("crayons")["Peach"]
 y1 <- brocolors("crayons")["Canary"]
 g1 <- brocolors("crayons")["Asparagus"]
 g2 <- brocolors("crayons")["Fern"]
@@ -191,13 +192,24 @@ map11
 
 ### MAP version2 ----
 
+#### To create the inset map ----
+
+
+sw_region <- st_bbox(e2,
+                     crs = st_crs(wa)) %>%
+  st_as_sfc()
+
 map <- tm_shape(cmr, bbox=tmaptools::bb(extent1)) + tm_borders(col ='white', lwd = 1.5) +
   tm_compass(type = "arrow", position = c(0.045, 0.85), size = 2) +
   #tm_fill(col ='ZONENAME', palette=c('yellow', 'red'), alpha = 0.1) +
   tm_scale_bar(breaks = c(0, 50, 100), text.size = 1, position = c(0.03, 0.7)) + 
   #tm_graticules(ticks = FALSE) +
-  tm_grid(n.x = 4, n.y = 4, labels.size = 0.5, lines = FALSE) +
-  tm_layout(bg.color = "lightcyan1")
+  tm_grid(n.x = 4, n.y = 4, labels.size = 1, lines = FALSE) +
+  tm_layout(bg.color = "lightcyan1",
+            main.title = "a",
+            main.title.size = 2,
+            main.title.fontface = "bold",
+            main.title.position = "left")
 
 map
 
@@ -224,14 +236,20 @@ map55 <- map4 + tm_shape(cmr) + tm_borders(col = 'grey35', lwd = 1.5) +
             legend.height = 0.5,
             #legend.bg.color = 'white'
             #legend.just = 'right',
-            )
+            ) +
+  tm_add_legend(type = 'fill', labels = "State Marine Park", col = colst, lwd = 1, size = 1) +
+  tm_add_legend(type = 'line', labels = "Coastal waters limit", col = 'red', lwd = 1, size = 1)
+
 
 map55
 
+map6 <- map55 + tm_shape(sw_region) + tm_borders(col = 'red', lwd = 3)
+map6
+
 # save ----
 tmap_save(
-  tm = map55,
-  filename = paste(p.dir, "SwC_Map.png", sep ='/'),
+  tm = map6,
+  filename = paste(p.dir, "SwC3_Map.png", sep ='/'),
   #width = NA,
   #height = NA,
   #units = NA,
@@ -317,7 +335,7 @@ ext1 <- extent(114.1463, 115.8601, -34.63865, -33.07346)
 
 plot(au2)
 #e2 <- drawExtent()
-e2 <- extent(114.1463, 115.9504, -34.69117, -33.34007)
+e2 <- extent(114, 115.9504, -34.69117, -33.34007)
 au3 <- crop(au2, e2)
 plot(au3)
 # crop polys ----
@@ -325,73 +343,10 @@ cmr1 <- crop(cmr, e2)
 head(cmr1)
 wa1 <- crop(wa, e2)
 cw1 <- crop(cw, e2)
+wamp1 <- crop(wamp, e2)
 head(cw1)
-cw1$ZoneName <- "State Marine Park"
-mps <- raster::union(cmr1, cw1)
 head(mps)
 plot(mps)
-
-# check
-plot(bathy1)
-plot(cmr1, add=T)
-
-# Polygons of different sealevels ----
-
-ybf70k <- bathy1
-ybf70k[ybf70k < (-70)] <- NA
-plot(ybf70k, add=T)
-ybf70k[ybf70k > (-70)] <- 1
-
-ybf21k <- bathy1
-ybf21k[ybf21k < (-125)] <- NA
-plot(ybf21k, col="blue")
-ybf21k[ybf21k > (-125)] <- 1
-
-ybf11k <- bathy1
-ybf11k[ybf11k < (-40)] <- NA
-plot(ybf11k, col="red")
-plot(wa1, add=T)
-ybf11k[ybf11k > (-40)] <- 1
-
-
-plot(ybf21k, col="blue")
-plot(ybf70k, col="green", add=T)
-plot(ybf11k, col="red", add=T)
-
-bathy2 <- bathy
-bathy2[bathy2 > (-125)] <- NA
-plot(bathy2)
-
-
-## to polys --
-
-k70 <- rasterToPolygons(ybf70k, na.rm =T, dissolve=T)
-plot(k70)
-
-k21 <- rasterToPolygons(ybf21k, na.rm =T, dissolve=T)
-plot(k21)
-
-k11 <- rasterToPolygons(ybf11k, na.rm =T, dissolve=T)
-plot(k11)
-
-
-## TRYING SOME STUFF ----
-# k11$OBJECTID <- '1'
-# wa2 <- wa1
-# wa2$OBJECTID <- '11'
-# wa2 <- wa2[,-c(2:7)]
-# plot(wa2)
-# k11 <- k11[,-1]
-# k11a <- raster::merge(k11, wa1)
-# plot(k11a)
-# k11a$OBJECTID
-# k <- k11a[k11a$OBJECTID.1 == 1,]
-# plot(k)
-# w <- k11a[k11a$OBJECTID.2 == 11,]
-# plot(w)
-# k11b <- raster::aggregate(rbind(wa2,k11))
-# plot(k11b, col='red')
-# k11b$OBJECTID
 
 
 
@@ -404,43 +359,95 @@ df
 dfs <- df
 coordinates(dfs) <- ~Lon+Lat
 #plot(dfs)
+head(dfs)
 
 
 ### Map ----
 
-## Colours ----
 
-sg <- brocolors("crayons")["Spring Green"]
-y1 <- brocolors("crayons")["Canary"]
-g1 <- brocolors("crayons")["Asparagus"]
-g2 <- brocolors("crayons")["Fern"]
-g3 <- brocolors("crayons")["Tropical Rainforest"]
-g4 <- brocolors("crayons")["Yellow Green"]
-g5 <- brocolors("crayons")["Pine Green"]
-g6 <- brocolors("crayons")["Electric Lime"]
-
-
-map <- tm_shape(cmr1)  + tm_borders(col ='white', lwd = 1.5) +
-  tm_compass(type = "arrow", position = c(0.1, 0.1), size = 2) +
+map <- tm_shape(cmr, bbox=tmaptools::bb(e2)) + tm_borders(col ='white', lwd = 1.5) +
+  #tm_compass(type = "arrow", position = c(0.04, 0.85), size = 2) +
   #tm_fill(col ='ZONENAME', palette=c('yellow', 'red'), alpha = 0.1) +
-  tm_scale_bar(breaks = c(0, 10, 20), text.size = 0.5, position = c(0.08, 0.02)) + 
+  #tm_scale_bar(breaks = c(0, 10, 20), text.size = 0.8, position = c(0.03, 0.7)) + 
   #tm_graticules(ticks = FALSE) +
-  tm_grid(n.x = 3, n.y = 3, labels.size = 1.5, lines = FALSE) 
+  tm_grid(n.x = 4, n.y = 4, labels.size = 1, lines = FALSE) +
+  tm_layout(bg.color = "lightcyan1",
+            main.title = "b",
+            main.title.size = 2,
+            main.title.fontface = "bold",
+            main.title.position = "left")
+
 map
 
-map0 <- map + tm_shape(bathy2) + tm_raster(palette=viridis(40, direction =-1), style = 'cont', legend.reverse = TRUE) +
-  tm_layout(legend.text.size = 1.7,
-            legend.outside = TRUE,
-            legend.outside.position = 'right',
-            #legend.position = c(1, 0.05),
-            legend.title.size = 0.5,
-            legend.title.color = 'white',
-            legend.width = 1) 
-map0
+map4 <- map + tm_shape(wa) + tm_borders(col = 'black', lwd = 1.5) + tm_fill(col='lightgoldenrodyellow') # +
+#tm_add_legend(type = 'fill', labels = "Coastline today", col = sg, lwd = 2, size = 2)
+map4
+
+#pal1 <- c("#FFFF99","#99FFFF", 'chartreuse3',   'steelblue2', "#324ab2")
+#levels(cmr$ZoneName)
+
+map55 <- map4 + tm_shape(cmr) + tm_borders(col = 'grey35', lwd = 1.5) +
+  tm_fill(col = 'ZoneName', palette = pal1, title = NA) +
+  tm_legend(show = FALSE)
+  #tm_shape(cw) + tm_lines(col = 'red', lwd = 1) +
+  #tm_shape(wamp) + tm_fill(col = colst) +
+  # tm_layout(legend.outside = TRUE,
+  #   #legend.outside.size = 3,
+  #   legend.outside.position = 'bottom',
+  #   #legend.position = c(0.02, 0.04),
+  #   legend.title.color = "white",
+  #   legend.title.size = 0.9,
+  #   legend.text.size = 0.6,
+  #   #legend.outside = TRUE,
+  #   #legend.width = 0.6,
+  #   #legend.height = 0.5,
+  #   #legend.bg.color = 'white'
+  #   #legend.just = 'right',
+  # ) #+
+  #tm_add_legend(type = 'fill', labels = "State Marine Park", col = colst, lwd = 1, size = 1) +
+  #tm_add_legend(type = 'line', labels = "Limit of coastal waters", col = 'red', lwd = 1, size = 1)
+
+map55
+
+
+map6 <- map55 + tm_shape(wamp1) + tm_fill(col = colst) +
+  tm_shape(cw1) + tm_lines(col = 'red', lwd = 1) +
+  tm_compass(type = "arrow", position = c(0.04, 0.15), size = 3) +
+  #tm_fill(col ='ZONENAME', palette=c('yellow', 'red'), alpha = 0.1) +
+  tm_scale_bar(breaks = c(0, 10, 20), text.size = 0.8, position = c(0.03, 0.05)) 
+  #tm_graticules(ticks = FALSE)
+map6
+
+
+map7 <- map6 + tm_shape(dfs[1,]) + tm_dots(size = 0.1, shape = 21) + tm_text("Location", size = 1.2, 
+                                                                             just = 'left', xmod = 0.4)
+map7
+
+
+# save ----
+tmap_save(
+  tm = map7,
+  filename = paste(p.dir, "SwC_Map4.png", sep ='/'),
+  #width = NA,
+  #height = NA,
+  #units = NA,
+  scale = 1,
+  dpi = 300)
+
+
+# map0 <- map + tm_shape(bathy2) + tm_raster(palette=viridis(40, direction =-1), style = 'cont', legend.reverse = TRUE) +
+#   tm_layout(legend.text.size = 1.7,
+#             legend.outside = TRUE,
+#             legend.outside.position = 'right',
+#             #legend.position = c(1, 0.05),
+#             legend.title.size = 0.5,
+#             legend.title.color = 'white',
+#             legend.width = 1) 
+# map0
             
             
 
-map1 <- map0 + tm_shape(k21) + tm_borders(col = g2, lwd = 2) + tm_fill(col=g2) +
+map1 <- map + tm_shape(cmr1) + tm_borders(col = g2, lwd = 2) + tm_fill(col=g2) +
   tm_add_legend(type = 'fill', labels = "21,000 years ago", col = g2, lwd = 2, size = 2)
 
 map1
