@@ -338,6 +338,12 @@ plot(au2)
 e2 <- extent(114, 115.9504, -34.69117, -33.34007)
 au3 <- crop(au2, e2)
 plot(au3)
+
+#e3 <- drawExtent()
+e3 <- extent(114.5697,114.938,-34.13724,-33.94978)
+study.area <- st_bbox(e3,
+                      crs = st_crs(wa)) %>%
+  st_as_sfc()
 # crop polys ----
 cmr1 <- crop(cmr, e2)
 head(cmr1)
@@ -423,11 +429,14 @@ map7 <- map6 + tm_shape(dfs[1,]) + tm_dots(size = 0.1, shape = 21) + tm_text("Lo
                                                                              just = 'left', xmod = 0.4)
 map7
 
+map8 <- map7 + tm_shape(study.area) + tm_borders(col = 'black', lwd = 3, lty = 33)
+map8
+
 
 # save ----
 tmap_save(
-  tm = map7,
-  filename = paste(p.dir, "SwC_Map4.png", sep ='/'),
+  tm = map8,
+  filename = paste(p.dir, "SwC_Map5.png", sep ='/'),
   #width = NA,
   #height = NA,
   #units = NA,
